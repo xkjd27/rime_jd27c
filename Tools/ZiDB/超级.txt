@@ -11,7 +11,6 @@
 卍	0	aivi	wan	6
 卐	0	aviv	wan	6
 叒	0	aoao	ruo	4
-叕	0	aoao	zhuo	4
 呾	0	ooiv	dan	6	da	6
 喎	0	oiaa	wai	6
 喦	0	ooia	yan	6
@@ -26,7 +25,7 @@
 弔	0	avai	diao	6
 惢	0	oaoa	suo	6
 挊	0	iuiv	nong	4
-敩	0	oouv	xiao	5
+敩	0	oouv	xiao	6
 昖	0	oiuo	yan	6
 曱	0	iavv	yue	4
 枔	0	vioa	xin	6
@@ -39,7 +38,7 @@
 猋	0	vuvu	biao	5
 瑠	0	vvua	liu	6
 瑽	0	vvuu	cong	6
-甴	0	iavi	you	4	zha	4
+甴	0	iavi	you	6	zha	5
 礐	0	uivu	que	6
 祂	0	oaai	ta	6
 苂	0	iiou	yin	6	chan	6
@@ -76,7 +75,7 @@
 𫍯	0	oavu	xian	6
 𫍲	0	oaui	xiao	5
 𫍽	0	oaia	xuan	6
-𫐄	0	vavu	yue	4
+𫐄	0	vavu	yue	5
 𫐐	0	vaui	ni	4
 𫐓	0	vaao	rou	4
 𫑡	0	oaii	meng	4
@@ -98,7 +97,7 @@
 𫘧	0	aaav	lu	5
 𫘨	0	aaoi	ti	6
 𫘪	0	aavu	yuan	5
-𫘬	0	aauo	xi	5
+𫘬	0	aauo	xi	6
 𫚕	0	uaiu	shi	6
 𫚖	0	ivua	ci	5	ji	5
 𫚭	0	uaaa	lie	4
@@ -113,7 +112,7 @@
 𫠜	0	ivui	ni	4
 𫢸	0	ioui	dan	4
 𫫇	0	ovii	~e	5
-𫭟	0	vovu	~ou	4
+𫭟	0	vovu	~ou	5
 𫭢	0	voiu	lun	5
 𫭼	0	voii	lao	4
 𫮃	0	voou	shan	6
@@ -129,7 +128,7 @@
 𬇕	0	avau	wan	4	man	4
 𬇙	0	aaoo	pei	5
 𬇹	0	aiav	guo	4
-𬉼	0	ouvu	~ou	5
+𬉼	0	ouvu	~ou	6
 𬊈	0	ouav	xun	4
 𬊤	0	ouou	dan	5	chan	5
 𬌗	0	vaiv	he	4
@@ -218,6 +217,6 @@
 𬹼	0	iviu	xie	5
 𬺈	0	ivvu	yi	5
 𬺓	0	ivvv	chu	4
-𭎂	0	voii	zong	4
+𭎂	0	voii	zong	5
 𮔅	0	iaua	fu	6
 𮝷	0	vauo	fen	4

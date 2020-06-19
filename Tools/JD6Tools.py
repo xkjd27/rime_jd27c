@@ -57,7 +57,7 @@ JD6_S2K = {
     'sh': ['e'],
     '~': ['x'],
 }
-# 㑇
+
 # 键道6 zh/ch拼合 + 飞键
 JD6_SFLY = {
     'zh': [
@@ -194,7 +194,7 @@ def zi2codes(zi):
     for sy in sy_codes:
         w = sy_codes[sy]
         full_code = sy+b
-        if (w < 6):
+        if (w < len(full_code)):
             codes.append((char, full_code[:w], rank, which))
         codes.append((char, full_code, rank, which))
 
@@ -207,8 +207,8 @@ def zi2codes(zi):
 # 读取字库
 Zi = ZiDB()
 
-# 生成单字码表
 def make_danzi_dict():
+    """生成单字码表"""
     entries = []
     chars = Zi.all()
     for zi in chars:

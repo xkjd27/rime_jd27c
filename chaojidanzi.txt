@@ -56,13 +56,11 @@
 蹠	fkoiov
 㩼	fkuauo
 𬃊	fkvuuu
-叕	flao
-叕	flaoao
 𬸦	flovu
 𬸦	flovua
 𮝷	fnva
 𮝷	fnvauo
-甴	fsia
+甴	fsiav
 甴	fsiavi
 	fwaaiv
 𬬿	fzioa
@@ -316,13 +314,11 @@
 枔	xbvioa
 𫍲	xcoau
 𫍲	xcoaui
-敩	xcoou
 敩	xcoouv
 𬹼	xdivi
 𬹼	xdiviu
-𬉼	xdouv
 𬉼	xdouvu
-𫭟	xdvo
+𫭟	xdvov
 𫭟	xdvovu
 𫫇	xeovi
 𫫇	xeovii
@@ -330,7 +326,6 @@
 𫰛	xgauao
 𬮿	xhai
 𬮿	xhaiia
-𫘬	xkaau
 𫘬	xkaauo
 𬭳	xkiov
 𬭳	xkiovo
@@ -366,7 +361,6 @@
 𬮱	yboiv
 𬮱	yboivi
 烎	ybvvou
-甴	ydia
 甴	ydiavi
 𬨎	ydva
 𬨎	ydvaou
@@ -383,7 +377,7 @@
 曱	yhiavv
 𬸚	yhua
 𬸚	yhuaua
-𫐄	yhva
+𫐄	yhvav
 𫐄	yhvavu
 𫄷	ykaaov
 𫖮	ykiavu
@@ -398,5 +392,5 @@
 垚	yzvvvv
 孖	zkaaaa
 囃	zsovii
-𭎂	zyvo
+𭎂	zyvoi
 𭎂	zyvoii

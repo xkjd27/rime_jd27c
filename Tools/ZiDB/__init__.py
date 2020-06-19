@@ -32,43 +32,42 @@ class Zi:
     def which(self):
         return self._type
 
-class ZiDB:
-    def __init__(self):
-        self.db = {}
-        self._fixed = []
 
-        path = os.path.dirname(os.path.abspath(__file__))
+_db = {}
+_fixed = []
 
-        with open(os.path.join(path, '通常.txt'), mode='r', encoding='utf-8') as f:
-            lines = f.readlines()
-            for line in lines:
-                char = Zi(line.strip(), 'general')
-                self.db[char._char] = char
+_path = os.path.dirname(os.path.abspath(__file__))
 
-        with open(os.path.join(path, '超级.txt'), mode='r', encoding='utf-8') as f:
-            lines = f.readlines()
-            for line in lines:
-                char = Zi(line.strip(), 'super')
-                self.db[char._char] = char
-    
-        with open(os.path.join(path, '无理.txt'), mode='r', encoding='utf-8') as f:
-            lines = f.readlines()
-            for line in lines:
-                char = Zi(line.strip(), 'hidden')
-                self.db[char._char] = char
+with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:
+    lines = f.readlines()
+    for line in lines:
+        char = Zi(line.strip(), 'general')
+        _db[char._char] = char
 
-        with open(os.path.join(path, '固定.txt'), mode='r', encoding='utf-8') as f:
-            for entry in f.readlines():
-                data = entry.strip().split('\t')
-                self._fixed.append((data[0], data[1]))
-    
-    def get(self, char):
-        if char not in self.db:
-            return None
-        return self.db[char]
+with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
+    lines = f.readlines()
+    for line in lines:
+        char = Zi(line.strip(), 'super')
+        _db[char._char] = char
 
-    def all(self):
-        return self.db.values()
+with open(os.path.join(_path, '无理.txt'), mode='r', encoding='utf-8') as f:
+    lines = f.readlines()
+    for line in lines:
+        char = Zi(line.strip(), 'hidden')
+        _db[char._char] = char
 
-    def fixed(self):
-        return self._fixed
+with open(os.path.join(_path, '固定.txt'), mode='r', encoding='utf-8') as f:
+    for entry in f.readlines():
+        data = entry.strip().split('\t')
+        _fixed.append((data[0], data[1]))
+
+def get(char):
+    if char not in _db:
+        return None
+    return _db[char]
+
+def all():
+    return _db.values()
+
+def fixed():
+    return _fixed

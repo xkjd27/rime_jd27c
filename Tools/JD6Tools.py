@@ -1,5 +1,4 @@
-# Sorry but this is for non-tech savvy people
-from ZiDB import ZiDB
+import ZiDB
 
 # ---------------------------------
 #             布局定义
@@ -133,6 +132,12 @@ JD6_Y2K = {
 }
 
 # ---------------------------------
+#               常量
+# ---------------------------------
+
+RIME_HEADER = '---\nname: xkjd6.%s\nversion: "Q1"\nsort: original\n...\n'
+
+# ---------------------------------
 #             辅助函数
 # ---------------------------------
 def sheng(py):
@@ -204,25 +209,26 @@ def zi2codes(zi):
 #              主行为
 # ---------------------------------
 
-# 读取字库
-Zi = ZiDB()
-
 def make_danzi_dict():
     """生成单字码表"""
     entries = []
-    chars = Zi.all()
+    chars = ZiDB.all()
     for zi in chars:
         entries += zi2codes(zi)
 
-    for entry in Zi.fixed():
+    for entry in ZiDB.fixed():
         entries.append((entry[0], entry[1], -1, 'general'))
     
     entries.sort(key=lambda e: (e[1], e[2]))
+
+    char_shortcode = {}
     last_code = ''
     dups = []
 
-    danzi = open('danzi.txt', mode='w', encoding='utf-8')
-    chaoji = open('chaojidanzi.txt', mode='w', encoding='utf-8')
+    danzi = open('rime/xkjd6.danzi.yaml', mode='w', encoding='utf-8', newline='\n')
+    chaoji = open('rime/xkjd6.chaojizi.yaml', mode='w', encoding='utf-8', newline='\n')
+    danzi.write(RIME_HEADER % 'danzi')
+    chaoji.write(RIME_HEADER % 'chaojizi')
 
     for entry in entries:
         code = entry[1]
@@ -248,8 +254,14 @@ def make_danzi_dict():
             if (len(dups) > 1):
                 print('重码：', last_code, dups)
             dups.clear()
+        
+        # Warning: might be jank
+        if (which == 'general' and code.startswith(last_code) and len(code) - len(last_code) >= 2 and char not in char_shortcode):
+            print('可缩码：', code, code[:len(last_code)+1], char)
 
         last_code = code
+        if (char not in char_shortcode):
+            char_shortcode[char] = len(code)
 
         if f is not None:
             f.write(char+'\t'+code+'\n')

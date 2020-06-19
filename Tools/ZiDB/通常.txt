@@ -1182,7 +1182,7 @@
 圊	0	iavv	qing	5
 圌	0	iaia	chuan	5
 圐	0	iaia	ku	5
-圕	0	iaav	tuan	6
+圕	0	iaav	tuan	5
 圙	0	iauo	lue	5
 圜	0	iaia	huan	4	yuan	5
 土	0	voo	tu	3
@@ -4317,7 +4317,7 @@
 甜	0	uvvi	tian	3
 生	0	uvvi	sheng	2
 甡	0	uvuv	shen	5
-甥	0	uvia	sheng	6
+甥	0	uvia	sheng	5
 甦	0	viuv	su	6
 用	0	uavv	yong	2
 甩	0	uavv	shuai	3
@@ -4750,7 +4750,7 @@
 礽	0	oaau	reng	3
 社	0	oavo	she	3
 祀	0	oaav	si	5
-祁	0	oaai	zhi	6	qi	5
+祁	0	oaai	zhi	5	qi	5
 祃	0	oaaa	ma	4
 祆	0	oavv	xian	5
 祇	0	oaua	qi	6	zhi	6
@@ -7862,7 +7862,7 @@
 鳅	0	uauv	qiu	4
 鳆	0	uauv	fu	6
 鳇	1	uaui	huang	5
-鳈	0	uaui	quan	5
+鳈	0	uaui	quan	4
 鳉	0	uaov	jiang	3
 鳊	0	uaoa	bian	4
 鳋	0	uaao	sao	4

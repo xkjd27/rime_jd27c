@@ -1,56 +1,56 @@
-㩼	0	uauo	zhi	6
+㩼	0	uauo	zhi	5
 㹴	0	uavi	geng	4
-䜮	0	uooo	lao	6
-䜰	0	uoui	hao	6
+䜮	0	uooo	lao	4
+䜰	0	uoui	hao	5
 丼	0	vvoo	jing	6
 亖	0	vvvv	si	5
-佮	0	iivo	ge	6
+佮	0	iivo	ge	5
 円	0	iaiv	yuan	6
-冇	0	vuia	mao	6
+冇	0	vuia	mao	4
 卌	0	viii	xi	6
-卍	0	aivi	wan	6
-卐	0	aviv	wan	6
+卍	0	aivi	wan	4
+卐	0	aviv	wan	5
 叒	0	aoao	ruo	4
-呾	0	ooiv	dan	6	da	6
-喎	0	oiaa	wai	6
-喦	0	ooia	yan	6
-嘢	0	oiav	ye	6
-囃	0	ovii	za	6
-垚	0	vvvv	yao	6
+呾	0	ooiv	dan	5	da	5
+喎	0	oiaa	wai	3
+喦	0	ooia	yan	5
+嘢	0	oiav	ye	5
+囃	0	ovii	za	5
+垚	0	vvvv	yao	5
 夶	0	vuvu	bi	5
 嫑	0	vuvi	biao	6
-孖	0	aaaa	zi	6	ma	6
-尛	0	iuiu	mo	6
+孖	0	aaaa	zi	6	ma	5
+尛	0	iuiu	mo	5
 巭	0	vivv	gu	5
-弔	0	avai	diao	6
-惢	0	oaoa	suo	6
+弔	0	avai	diao	5
+惢	0	oaoa	suo	5
 挊	0	iuiv	nong	4
 敩	0	oouv	xiao	6
 昖	0	oiuo	yan	6
 曱	0	iavv	yue	4
-枔	0	vioa	xin	6
-椛	0	viii	hua	6
+枔	0	vioa	xin	4
+椛	0	viii	hua	5
 槑	0	ovov	mei	5
-檵	0	vaao	ji	6
+檵	0	vaao	ji	5
 炁	0	vaoo	qi	5
-烎	0	vvou	yin	6
-犽	0	uava	ya	6
+烎	0	vvou	yin	5
+犽	0	uava	ya	5
 猋	0	vuvu	biao	5
 瑠	0	vvua	liu	6
 瑽	0	vvuu	cong	6
 甴	0	iavi	you	6	zha	5
-礐	0	uivu	que	6
-祂	0	oaai	ta	6
-苂	0	iiou	yin	6	chan	6
+礐	0	uivu	que	4
+祂	0	oaai	ta	5
+苂	0	iiou	yin	5	chan	5
 菓	0	iiia	guo	4
 薙	0	iiuv	ti	5
 蚍	0	iava	pi	6
 誧	0	ovvi	bu	6
 譞	0	ovia	xuan	5
 蹠	0	oiov	zhi	6
-骹	0	iaov	qiao	6
-鲶	0	uaio	nian	6
-鵺	0	ovui	ye	6
+骹	0	iaov	qiao	5
+鲶	0	uaio	nian	5
+鵺	0	ovui	ye	5
 鼍	0	oooi	tuo	4
 鿏	0	iovv	mai	4
 	0	voua	gang	5
@@ -63,7 +63,7 @@
 𪨊	0	avii	song	4
 𪨰	0	iaia	qv	6
 𪨶	0	iavu	she	5
-𪩘	0	iauo	yan	6
+𪩘	0	iauo	yan	5
 𪾢	0	iaia	xian	6
 𫄧	0	aaui	yan	5	xian	6
 𫄨	0	aauo	chi	5	zhi	6
@@ -139,7 +139,7 @@
 𬒔	0	vuiv	geng	4
 𬒗	0	vuii	lan	4
 𬕂	0	uvvi	gan	6	long	5	gong	5
-𬘓	0	aaui	xun	6
+𬘓	0	aaui	xun	5
 𬘘	0	aaoa	dan	4
 𬘡	0	aaia	yin	5
 𬘩	0	aauv	ting	4

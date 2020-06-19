@@ -1,3 +1,4 @@
+import sys
 import ZiDB
 
 # ---------------------------------
@@ -136,6 +137,7 @@ JD6_Y2K = {
 # ---------------------------------
 
 RIME_HEADER = '---\nname: xkjd6.%s\nversion: "Q1"\nsort: original\n...\n'
+PUNC = set('＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘’‛“”„‟…‧﹏！？｡。')
 
 # ---------------------------------
 #             辅助函数
@@ -177,7 +179,16 @@ def pinyins2sys(py):
     for ss in s:
         for yy in y:
             sy.append(ss+yy)
+
     return sy
+
+def isGBK(char):
+    """检查字符是否属于GBK"""
+    try:
+        char.encode('gbk')
+        return True
+    except:
+        return False
 
 def zi2codes(zi):
     codes = []
@@ -185,62 +196,129 @@ def zi2codes(zi):
 
     weights = zi.weights()
     for w in weights:
-        sys = pinyins2sys(w[0])
-        for sy in sys:
-            if sy in sy_codes:
-                sy_codes[sy] = min(sy_codes[sy], w[1])
+        sy = pinyins2sys(w[0])
+        if (len(sy) == 0):
+            continue
+
+        # 飞键标记
+        is_fly = len(sy) > 1
+        if (is_fly):
+            if sy[0] in sy_codes:
+                sy_codes[sy[0]] = (min(sy_codes[sy[0]][0], w[1]), sy[1])
             else:
-                sy_codes[sy] = w[1]
+                sy_codes[sy[0]] = (w[1], sy[1])
+
+            if sy[1] in sy_codes:
+                sy_codes[sy[1]] = (min(sy_codes[sy[1]][0], w[1]), sy[0])
+            else:
+                sy_codes[sy[1]] = (w[1], sy[0])
+        else:
+            sy = sy[0]
+            if sy in sy_codes:
+                sy_codes[sy] = (min(sy_codes[sy][0], w[1]), sy_codes[sy][1])
+            else:
+                sy_codes[sy] = (w[1], None)
 
     b = zi.shape()
     char = zi.char()
     rank = zi.rank()
     which = zi.which()
+
     for sy in sy_codes:
-        w = sy_codes[sy]
+        w, fly = sy_codes[sy]
         full_code = sy+b
         if (w < len(full_code)):
-            codes.append((char, full_code[:w], rank, which))
-        codes.append((char, full_code, rank, which))
+            has_short = True
+            if (w > 1):
+                # 不自动生成一简
+                codes.append((char, full_code[:w], rank, which, None))
+        else:
+            has_short = False
+        codes.append((char, full_code, rank, which, (has_short, fly + full_code[2:] if fly is not None else None)))
 
     return codes
+
+def get_danzi_codes():
+    """获取单字码表"""
+
+    global _entries
+    global _entries_r
+
+    try:
+        _entries
+    except:
+        _entries = None
+
+    try:
+        _entries_r
+    except:
+        _entries_r = None
+
+    if (_entries == None or _entries_r == None):
+        _entries = []
+        _entries_r = {}
+
+    chars = ZiDB.all()
+    for zi in chars:
+        codes = zi2codes(zi)
+        _entries += codes
+        for code in codes:
+            if (code[1] in _entries_r):
+                _entries_r[code[1]].append(code)
+            else:
+                _entries_r[code[1]] = [code]
+
+
+    for entry in ZiDB.fixed():
+        code = (entry[0], entry[1], -1, ZiDB.GENERAL, None)
+        _entries.append(code)
+        if (code[1] in _entries_r):
+            _entries_r[code[1]].append(code)
+        else:
+            _entries_r[code[1]] = [code]
+    
+    return _entries, _entries_r
+
+def clear_danzi_codes():
+    """Dirtify单字码表"""
+    global _entries
+    global _entries_r
+    _entries = None
+    _entries_r = None
 
 # ---------------------------------
 #              主行为
 # ---------------------------------
-
-def make_danzi_dict():
-    """生成单字码表"""
-    entries = []
-    chars = ZiDB.all()
-    for zi in chars:
-        entries += zi2codes(zi)
-
-    for entry in ZiDB.fixed():
-        entries.append((entry[0], entry[1], -1, 'general'))
-    
+def traverse_danzi(build = False):
+    """遍历单字码表"""
+    entries, codes = get_danzi_codes() 
     entries.sort(key=lambda e: (e[1], e[2]))
 
-    char_shortcode = {}
+    # char_shortcode = set()
+    # last_which = ''
+    # last_char = ''
+
     last_code = ''
     dups = []
 
-    danzi = open('rime/xkjd6.danzi.yaml', mode='w', encoding='utf-8', newline='\n')
-    chaoji = open('rime/xkjd6.chaojizi.yaml', mode='w', encoding='utf-8', newline='\n')
-    danzi.write(RIME_HEADER % 'danzi')
-    chaoji.write(RIME_HEADER % 'chaojizi')
+    if build:
+        danzi = open('rime/xkjd6.danzi.yaml', mode='w', encoding='utf-8', newline='\n')
+        chaoji = open('rime/xkjd6.chaojizi.yaml', mode='w', encoding='utf-8', newline='\n')
+        danzi.write(RIME_HEADER % 'danzi')
+        chaoji.write(RIME_HEADER % 'chaojizi')
+    else:
+        danzi = None
+        chaoji = None
 
     for entry in entries:
-        code = entry[1]
-        char = entry[0]
-        which = entry[3]
+        char, code, rank, which, full_code = entry
 
-        if which == 'general':
+        if which == ZiDB.GENERAL:
             f = danzi
-        elif which == 'super':
+        elif which == ZiDB.SUPER:
             f = chaoji
         else:
-            f = None
+            continue
 
         # 检查重码
         if (len(code) < 6 and len(code) > 1):
@@ -248,28 +326,88 @@ def make_danzi_dict():
                 dups.append(char)
             else:
                 if (len(dups) > 1):
-                    print('重码：', last_code, dups)
+                    print('重码：%6s %s' % (last_code, str(dups)))
                 dups = [char]
         else:
             if (len(dups) > 1):
-                print('重码：', last_code, dups)
+                print('重码：%6s %s' % (last_code, str(dups)))
             dups.clear()
         
-        # Warning: might be jank
-        if (which == 'general' and code.startswith(last_code) and len(code) - len(last_code) >= 2 and char not in char_shortcode):
-            print('可缩码：', code, code[:len(last_code)+1], char)
+        # # Warning: might be jank
+        # if (code.startswith(last_code) and char not in char_shortcode):
+        #     if (len(code) - len(last_code) >= 2):
+        #         print('可缩码："%s" %6s -> %6s (%s)' % (char, code, code[:len(last_code)+1], ('通常' if which == ZiDB.GENERAL else '超级')))
+        #     if (len(code) - len(last_code) >= 1 and last_which == ZiDB.SUPER and which == ZiDB.GENERAL):
+        #         print('可顶替："%s" %6s -> %6s (顶替超级字 "%s")' % (char, code, code[:len(last_code)], last_char))
+
+        if (full_code and not full_code[0]):
+            fly = full_code[1]
+            tmp_codes = [code[:-1]]
+            if (fly is not None):
+                tmp_codes.append(fly[:-1])
+
+            avaliable_short = None
+            substitute = None
+            while True:
+                short_avaliable = True
+                for sc in tmp_codes:
+                    if sc in codes and len(codes[sc]) == 1:
+                        if (codes[sc][0][3] != ZiDB.SUPER or which != ZiDB.GENERAL):
+                            short_avaliable = False
+                        else:
+                            substitute = codes[sc][0][0]
+                    else:
+                        substitute = None
+            
+                if not short_avaliable:
+                    if (avaliable_short is not None):
+                        if (substitute is not None):
+                            print('可替换："%s" %6s -> %6s (替换超级字 "%s")' % (char, code, avaliable_short, substitute))
+                        else:
+                            print('可缩码："%s" %6s -> %6s (%s)' % (char, code, avaliable_short, ('通常' if which == ZiDB.GENERAL else '超级')))
+                    break
+
+                avaliable_short = tmp_codes[0]
+                tmp_codes = [sc[:-1] for sc in tmp_codes]
+
+
 
         last_code = code
-        if (char not in char_shortcode):
-            char_shortcode[char] = len(code)
+
+        #     last_char = char
+        #     last_which =  which
+
+        # if (char not in char_shortcode):
+        #     char_shortcode.add(char)
 
         if f is not None:
             f.write(char+'\t'+code+'\n')
     
     if (len(dups) > 1):
-        print('重码：', last_code, dups)
+        print('重码：%6s %s' % (last_code, str(dups)))
 
-    danzi.close()
-    chaoji.close()
+    if (danzi is not None):
+        danzi.close()
+    if (chaoji is not None):
+        chaoji.close()
 
-make_danzi_dict()
+    if build:
+        print('码表已保存')
+    else:
+        print('检查完毕')
+
+def full_cizu_check(build = False):
+    pass
+
+if __name__ == "__main__":
+    action = sys.argv[1] if len(sys.argv) > 1 else None
+
+    if action == "build_danzi":
+        traverse_danzi(True)
+    elif action == "danzi_change":
+        pass
+    elif action == "full_cizu_check":
+        full_cizu_check()
+
+    traverse_danzi(True)
+

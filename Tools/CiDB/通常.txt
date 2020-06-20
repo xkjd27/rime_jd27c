@@ -10073,7 +10073,7 @@
 逗点	dddm
 叮叮当	dddo
 跌宕	dddp
-螲蟷    dddpi
+螲蟷	dddpi
 跌荡	dddpo
 兜裆	dddpu
 大敌当前	dddq

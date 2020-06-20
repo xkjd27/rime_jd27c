@@ -93,6 +93,9 @@ class Ci:
             if pyt not in existing:
                 self._pinyins.append((pyt, pinyin[1], pinyin[2]))
 
+    def sound_chars(self):
+        return sound_chars(self._word)
+
 _path = os.path.dirname(os.path.abspath(__file__))
 
 with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:

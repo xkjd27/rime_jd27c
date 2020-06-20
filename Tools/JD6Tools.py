@@ -1,6 +1,7 @@
 import sys
 import ZiDB
 import CiDB
+import itertools
 
 # ---------------------------------
 #             布局定义
@@ -201,6 +202,12 @@ def pinyin2sy(py):
 
     return sy
 
+def pinyin2s(py):
+    """全拼转声拼"""
+    shengmu = sheng(py)
+    s = JD6_S2K[shengmu]
+    return s
+
 def transform_py(py):
     """全拼预处理"""
     pinyin = py.strip().lower()
@@ -216,7 +223,7 @@ def isGBK(char):
     except:
         return False
 
-def zi2codes(zi):
+def zi2codes(zi, short = True, full = True):
     codes = []
     sy_codes = {}
 
@@ -259,12 +266,13 @@ def zi2codes(zi):
     
         if (w < len(full_code)):
             has_short = True
-            if (w > 1):   # 不自动生成一简
+            if (w > 1 and short):   # 不自动生成一简
                 codes.append((char, full_code[:w], rank, which, None))
         else:
             has_short = False
-        codes.append((char, full_code, rank, which, (has_short, fly + full_code[2:] if fly is not None else None)))
-
+        
+        if full:
+            codes.append((char, full_code, rank, which, (has_short, fly + full_code[2:] if fly is not None else None)))
     return codes
 
 def get_danzi_codes():
@@ -314,6 +322,32 @@ def clear_danzi_codes():
     global _entries_r
     _entries = None
     _entries_r = None
+
+def word_pinyin2codes(pys):
+    """词拼音转声码"""
+    if len(pys) <= 2:
+        # 二字词
+        codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2sy(py) for py in pys]))
+    else:
+        # 多字词
+        codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2s(py) for py in pys]))
+    
+    return codes
+
+def ci2codes(ci, short = True, full = False):
+    """生成词6码"""
+    pinyins = ci.pinyins()
+    sound_chars = ci.sound_chars()
+    codes = set()
+    for pinyin in pinyins:
+        if len(pinyin) == 3:
+            # 三字词需三码
+            shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0] + ZiDB.get(sound_chars[2]).shape()[0]
+        else:
+            shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0]
+        
+        codes = codes.union(set(code + shape for code in word_pinyin2codes(pinyin)))
+    return codes
 
 # ---------------------------------
 #              主行为
@@ -419,7 +453,7 @@ def traverse_danzi(build = False):
     else:
         print('检查完毕')
 
-def full_cizu_check(build = False):
+def build_cizu(build = False):
     pass
 
 if __name__ == "__main__":
@@ -432,7 +466,7 @@ if __name__ == "__main__":
     elif action == "full_cizu_check":
         full_cizu_check()
 
-    traverse_danzi(True)
-    # print(ZiDB.get('吰').line())
+    # traverse_danzi(True)
     # ZiDB.commit()
+    print(ci2codes(CiDB.get('飒爽'), short = False, full = True))
 

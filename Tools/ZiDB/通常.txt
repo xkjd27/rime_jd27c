@@ -5249,7 +5249,7 @@
 缧	0	aaia	lei	5
 缨	0	aaao	ying	4
 缩	0	aaoo	suo	3
-缪	0	aaao	miao	5	miu	3
+缪	0	aaao	miao	5	miu	3	mou	6
 缫	0	aaaa	sao	4
 缬	0	aavo	xie	4
 缭	0	aavu	liao	4

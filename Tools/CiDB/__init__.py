@@ -117,42 +117,18 @@ SYMBOL_CHAR = set('＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［�
 
 def sound_chars(words):
     """词组取音字"""
-    final = []
-    
-    index = 0
-    while True:
-        if index >= len(words):
-            break
-        
-        char = words[index]
+
+    sanitized = []
+    for char in words:
         if char.isdigit():
-            final.append(NUM_CHAR[int(char)])
+            sanitized.append(NUM_CHAR[int(char)])
         elif char not in SYMBOL_CHAR:
-            final.append(char)
+            sanitized.append(char)
 
-        index += 1
-        if (len(final) >= 3):
-            break
-    
-    if index >= len(words):
-        return "".join(final)
-    
-    index = len(words) - 1
-    while True:
-        if index < 0:
-            break
-        
-        char = words[index]
-        if char.isdigit():
-            final.append(NUM_CHAR[int(char)])
-        elif char not in SYMBOL_CHAR:
-            final.append(char)
+    if len(sanitized) > 4:
+        sanitized = sanitized[:3] + [sanitized[-1]]
 
-        index -=1
-        if (len(final) >= 4):
-            break
-
-    return "".join(final)
+    return "".join(sanitized)
 
 def get(word):
     if word not in _db:

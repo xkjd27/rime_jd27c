@@ -62,10 +62,7 @@ class Zi:
         self._type = which
         self._comment = None
         for i in range(3, len(data) - 1, 2):
-            if which == HIDDEN:
-                self._pinyins.append((data[i], -1))
-            else:
-                self._pinyins.append((data[i], int(data[i+1])))
+            self._pinyins.append((data[i], int(data[i+1])))
         
         if (len(data) % 2 == 0):
             self._comment = data[-1]
@@ -95,6 +92,15 @@ class Zi:
         if self._comment is None:
             return ''
         return self._comment
+    
+    def line(self):
+        line = '%s\t%d\t%s' % (self._char, self._rank, self._shape)
+        for pinyin in self._pinyins:
+            line += '\t%s\t%d' % pinyin
+        if self._comment is not None:
+            line += '\t%s' % self._comment
+        return line
+
 
 _db = {}
 _fixed = []
@@ -141,7 +147,7 @@ def all():
 def fixed():
     return _fixed
 
-def add(char, shape, pinyins, rank, which = HIDDEN):
+def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
     assert re.search("^[aiouv]{3,4}$", shape), '形码不合法'
     assert char not in _db, '该字已存在'
     assert len(pinyins) != 0, '没有提供拼音'
@@ -151,4 +157,24 @@ def add(char, shape, pinyins, rank, which = HIDDEN):
     line = '%s\t%d\t%s' % (char, rank, shape)
     for pinyin in pinyins:
         line += '\t%s\t6' % pinyin
+    if comment is not None:
+        line += '\t%s' % comment
     _db[char] = Zi(line, which)
+
+def commit():
+    all_char = sorted(all(), key=lambda x: x._char)
+    danzi = open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n')
+    chaoji = open(os.path.join(_path, '超级.txt'), mode='w', encoding='utf-8', newline='\n')
+    hidden = open(os.path.join(_path, '无理.txt'), mode='w', encoding='utf-8', newline='\n')
+
+    for zi in all_char:
+        if zi.which() == GENERAL:
+            danzi.write(zi.line()+'\n')
+        elif zi.which() == SUPER:
+            chaoji.write(zi.line()+'\n')
+        else:
+            hidden.write(zi.line()+'\n')
+    
+    danzi.close()
+    chaoji.close()
+    hidden.close()

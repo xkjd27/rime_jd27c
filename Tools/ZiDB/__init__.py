@@ -60,8 +60,12 @@ class Zi:
         self._shape = data[2]
         self._pinyins = []
         self._type = which
-        for i in range(3, len(data), 2):
+        self._comment = None
+        for i in range(3, len(data) - 1, 2):
             self._pinyins.append((data[i], int(data[i+1])))
+        
+        if (len(data) % 2 == 0):
+            self._comment = data[-1]
 
     def pinyins(self):
         result = set()
@@ -84,6 +88,10 @@ class Zi:
     def which(self):
         return self._type
 
+    def comment(self):
+        if self._comment is None:
+            return ''
+        return self._comment
 
 _db = {}
 _fixed = []

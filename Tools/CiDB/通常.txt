@@ -10073,6 +10073,7 @@
 逗点	dddm
 叮叮当	dddo
 跌宕	dddp
+螲蟷    dddpi
 跌荡	dddpo
 兜裆	dddpu
 大敌当前	dddq
@@ -61176,7 +61177,7 @@
 龙盘虎踞	lphj
 浪花	lphq
 琅嬛	lpht
-老婆孩子熱炕頭	lphtu
+老婆孩子热炕头	lphtu
 狼嚎	lphz
 老婆孩子	lphzu
 狼毫	lphzuo
@@ -113419,7 +113420,7 @@
 有这么	yqm
 验证码	yqma
 有这么大	yqmd
-元氣满满	yqmm
+元气满满	yqmm
 以权谋私	yqms
 邀请码	yqmu
 原住民	yqmv

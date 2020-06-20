@@ -8103,3 +8103,9 @@
 𩽾	0	uaoo	~an	5
 𩾃	0	uaua	mian	5
 𩾌	0	uaov	kang	3
+叡	0	ivao	rui	5
+栱	0	vviu	gong	5
+螲	0	iaoo	zhi	6	die	6
+蟷	0	iaio	dang	4
+搢	0	iuvi	jin	4
+跅	0	oiuu	tuo	5

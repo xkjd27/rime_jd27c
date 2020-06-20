@@ -294,10 +294,6 @@ def traverse_danzi(build = False):
     entries, codes = get_danzi_codes() 
     entries.sort(key=lambda e: (e[1], e[2]))
 
-    # char_shortcode = set()
-    # last_which = ''
-    # last_char = ''
-
     last_code = ''
     dups = []
 
@@ -332,14 +328,8 @@ def traverse_danzi(build = False):
             if (len(dups) > 1):
                 print('重码：%6s %s' % (last_code, str(dups)))
             dups.clear()
-        
-        # # Warning: might be jank
-        # if (code.startswith(last_code) and char not in char_shortcode):
-        #     if (len(code) - len(last_code) >= 2):
-        #         print('可缩码："%s" %6s -> %6s (%s)' % (char, code, code[:len(last_code)+1], ('通常' if which == ZiDB.GENERAL else '超级')))
-        #     if (len(code) - len(last_code) >= 1 and last_which == ZiDB.SUPER and which == ZiDB.GENERAL):
-        #         print('可顶替："%s" %6s -> %6s (顶替超级字 "%s")' % (char, code, code[:len(last_code)], last_char))
 
+        # 简码空间检查
         if (full_code and not full_code[0]):
             fly = full_code[1]
             tmp_codes = [code[:-1]]
@@ -370,15 +360,7 @@ def traverse_danzi(build = False):
                 avaliable_short = tmp_codes[0]
                 tmp_codes = [sc[:-1] for sc in tmp_codes]
 
-
-
         last_code = code
-
-        #     last_char = char
-        #     last_which =  which
-
-        # if (char not in char_shortcode):
-        #     char_shortcode.add(char)
 
         if f is not None:
             f.write(char+'\t'+code+'\n')

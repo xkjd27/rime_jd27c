@@ -40956,7 +40956,7 @@
 荒草	hmcz
 黑名单	hmd
 黄豆	hmdd
-黃蝶	hmddv
+黄蝶	hmddv
 黄的	hmde
 荒诞	hmdf
 黄疸	hmdfv
@@ -43071,8 +43071,7 @@
 好兄弟	hxda
 韩信点兵	hxdb
 黄豆	hxdd
-黃蝶	hxddv
-黄蝶	hxddvi
+黄蝶	hxddv
 黄的	hxde
 荒诞	hxdf
 好心当成驴肝肺	hxdfa

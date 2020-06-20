@@ -860,7 +860,7 @@
 告	0	uvoo	gao	3
 呋	1	ovvu	fu	5
 呐	0	oiau	ne	4	na	4
-呒	1	ovvu	fu	6	wu	6
+呒	2	ovvu	fu	6	wu	6
 呓	0	oiia	yi	5
 呔	0	ovuo	tai	4	dai	4
 呕	0	ovuo	~ou	4
@@ -1080,7 +1080,7 @@
 嗥	0	ouia	hao	4
 嗦	0	ouoo	suo	3
 嗨	0	oauv	hai	4	hei	5
-嗪	1	ovvv	qin	4
+嗪	2	ovvv	qin	4
 嗫	0	ovii	nie	4
 嗬	0	oiii	he	4
 嗯	0	oiav	~eng	2	~en	3
@@ -3270,7 +3270,7 @@
 歇	0	oiua	xie	4
 歉	0	ouua	qian	4
 歌	0	voua	ge	3
-歘	0	ouua	chua	4
+歘	1	ouua	chua	4
 歙	0	ivua	she	5	xi	5
 止	0	iviv	zhi	4
 正	1	vivi	zheng	2
@@ -3595,7 +3595,7 @@
 涸	0	aiav	he	4
 涿	0	avua	zhuo	4
 淀	0	aooa	dian	4
-淄	0	aaaa	zi	4
+淄	1	aaaa	zi	4
 淅	1	avuu	xi	5
 淆	2	auov	xiao	4
 淇	0	avii	qi	5
@@ -5208,7 +5208,7 @@
 绾	0	aaoo	wan	4
 绿	0	aaav	lv	3	lu	4
 缀	0	aaao	zhui	4
-缁	1	aaaa	zi	5
+缁	2	aaaa	zi	5
 缂	0	aavi	ke	4
 缃	0	aavi	xiang	5
 缄	0	aavu	jian	5
@@ -5710,7 +5710,7 @@
 苹	0	iivo	ping	4	peng	5
 苻	1	iiiv	fu	5
 苾	0	iioa	bi	5
-茀	1	iiav	fu	5
+茀	2	iiav	fu	5
 茁	0	iiai	zhuo	5
 茂	0	iivu	mao	4
 范	0	iiaa	fan	3
@@ -6060,7 +6060,7 @@
 蚊	0	iaov	wen	3
 蚋	0	iaia	rui	4
 蚌	0	iavv	bang	4	beng	4
-蚍	0	iava	pi	6
+蚍	1	iava	pi	6
 蚓	0	iaav	yin	4
 蚕	0	vvia	can	4
 蚜	1	iava	ya	6
@@ -6150,7 +6150,7 @@
 蝗	0	iaui	huang	5
 蝘	0	iavo	yan	6
 蝙	0	iaoa	bian	4
-蝠	0	iavo	fu	6
+蝠	1	iavo	fu	6
 蝣	0	iaov	you	5
 蝤	0	iaou	qiu	5	you	6
 蝥	0	aoia	mao	6
@@ -6180,7 +6180,7 @@
 螭	0	iaov	chi	4
 螯	1	vvia	~ao	6
 螱	0	avia	wei	5
-螲	0	iaoo	zhi	6	die	6
+螲	1	iaoo	zhi	6	die	6
 螳	0	iaio	tang	4
 螵	1	iavi	piao	4
 螺	0	iaia	luo	5
@@ -6413,7 +6413,7 @@
 诊	1	oaiu	zhen	3
 诋	0	oaua	di	5
 诌	0	oaua	zhou	4
-词	1	oaav	ci	3
+词	2	oaav	ci	3
 诎	0	oaai	qv	4
 诏	0	oaau	zhao	4
 诐	0	oaau	bi	6
@@ -7540,7 +7540,7 @@
 鞮	0	vioi	di	5
 鞯	0	viii	jian	6
 鞲	0	vivv	gou	4
-鞳	0	viii	ta	4
+鞳	1	viii	ta	4
 鞴	0	vivi	bei	4
 韂	0	viua	chan	4
 韦	0	vvai	wei	5
@@ -7698,7 +7698,7 @@
 驽	0	auaa	nu	6
 驾	0	auaa	jia	4
 驿	1	aaao	yi	5
-骀	0	aaao	tai	4	dai	5
+骀	1	aaao	tai	4	dai	5
 骁	0	aava	xiao	4
 骂	0	ooaa	ma	4
 骃	0	aaia	yin	4
@@ -7745,7 +7745,7 @@
 骸	0	iaov	hai	3
 骺	0	iauu	hou	5
 骼	0	iaua	ge	4
-髀	1	iaui	bi	5
+髀	2	iaui	bi	5
 髁	0	iaia	ke	5
 髂	0	iaoo	qia	4
 髃	1	iaia	yv	6
@@ -8074,7 +8074,7 @@
 𠅤	1	ovia	xi	5
 𠙶	0	aiai	~ou	5
 𠳐	0	ovvu	bang	4
-𠳬	0	uouo	jing	5
+𠳬	1	uouo	jing	5
 𡎚	0	vooa	pian	4
 𡐓	0	voov	kang	3
 𣗋	1	viou	dang	4

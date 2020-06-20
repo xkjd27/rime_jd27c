@@ -1,5 +1,6 @@
 import sys
 import ZiDB
+import CiDB
 
 # ---------------------------------
 #             布局定义
@@ -137,7 +138,25 @@ JD6_Y2K = {
 # ---------------------------------
 
 RIME_HEADER = '---\nname: xkjd6.%s\nversion: "Q1"\nsort: original\n...\n'
-PUNC = set('＂＃＄％＆＇（）＊＋，－／：；＜＝＞＠［＼］＾＿｀｛｜｝～｟｠｢｣､、〃》「」『』【】〔〕〖〗〘〙〚〛〜〝〞〟〰〾〿–—‘’‛“”„‟…‧﹏！？｡。')
+
+# 拼音变体转换表
+PY_TRANSFORM = {
+    'a': '~a', 
+    'ai': '~ai',
+    'an': '~an',
+    'ang': '~ang',
+    'ao': '~ao',
+    'e': '~e',
+    'ei': '~ei',
+    'en': '~en',
+    'eng': '~eng',
+    'er': '~er',
+    'o': '~o',
+    'ou': '~ou',
+    'ju': 'jv',
+    'qu': 'qv',
+    'xu': 'xv'
+}
 
 # ---------------------------------
 #             辅助函数
@@ -181,6 +200,13 @@ def pinyin2sy(py):
             sy.append(ss+yy)
 
     return sy
+
+def transform_py(py):
+    """全拼预处理"""
+    pinyin = py.strip().lower()
+    if pinyin in PY_TRANSFORM:
+        return PY_TRANSFORM[pinyin]
+    return pinyin
 
 def isGBK(char):
     """检查字符是否属于GBK"""
@@ -298,6 +324,13 @@ def traverse_danzi(build = False):
     entries.sort(key=lambda e: (e[1], e[2]))
 
     last_code = ''
+
+    rank_check = [
+        None,
+        ('', '', -2),
+        ('', '', -2),
+    ]
+
     dups = []
 
     if build:
@@ -332,6 +365,9 @@ def traverse_danzi(build = False):
                 print('重码：%6s %s' % (last_code, str(dups)))
             dups.clear()
 
+        if (len(code) == 6 and rank_check[which][0] == code and rank_check[which][2] == rank):
+            print('全码序冲突：%6s %s %s [%d] (%s)' % (code, char, rank_check[which][1], rank, ('通常' if which == ZiDB.GENERAL else '超级')))
+
         # 简码空间检查
         if (full_code and not full_code[0]):
             fly = full_code[1]
@@ -365,6 +401,8 @@ def traverse_danzi(build = False):
 
         last_code = code
 
+        rank_check[which] = (code, char, rank)
+
         if f is not None:
             f.write(char+'\t'+code+'\n')
     
@@ -395,4 +433,6 @@ if __name__ == "__main__":
         full_cizu_check()
 
     traverse_danzi(True)
+    # print(ZiDB.get('吰').line())
+    # ZiDB.commit()
 

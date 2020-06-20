@@ -148,11 +148,12 @@ def fixed():
     return _fixed
 
 def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
-    assert re.search("^[aiouv]{3,4}$", shape), '形码不合法'
-    assert char not in _db, '该字已存在'
-    assert len(pinyins) != 0, '没有提供拼音'
+    assert re.search("^[aiouv]{3,4}$", shape), '"%s" 字形码不合法: %s' % (char, shape)
+    assert char not in _db, '"%s" 字已存在' % char
+    assert len(pinyins) != 0, '"%s" 字没有提供拼音' % char
+
     for pinyin in pinyins:
-        assert pinyin in VALID_PY, '拼音 "%s" 不合法' % pinyin
+        assert pinyin in VALID_PY, '"%s" 字拼音 "%s" 不合法' % (char, pinyin)
 
     line = '%s\t%d\t%s' % (char, rank, shape)
     for pinyin in pinyins:

@@ -1,5 +1,7 @@
 import os
-_db = {}
+
+_db_general = None
+_db_super = None
 
 UNDEFINED = 0       # 未定义
 GENERAL = 1         # 通常
@@ -86,6 +88,9 @@ class Ci:
     def which(self):
         return self._which
 
+    def weights(self):
+        return self._pinyins
+
     def add_pinyins(self, pinyins):
         existing = self.pinyins()
         for pinyin in pinyins:
@@ -98,21 +103,30 @@ class Ci:
 
 _path = os.path.dirname(os.path.abspath(__file__))
 
-with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:
-    lines = f.readlines()
-    for line in lines:
-        word = Ci.fromLine(line.strip(), GENERAL)
-        _db[word._word] = word
+def _loadDB():
+    global _db_general
+    global _db_super
+    if _db_general == None or _db_super == None:
+        _db_general = {}
+        _db_super = {}
+    else:
+        return
+    
+    with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:
+        lines = f.readlines()
+        for line in lines:
+            word = Ci.fromLine(line.strip(), GENERAL)
+            _db_general[word._word] = word
 
-with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
-    lines = f.readlines()
-    for line in lines:
-        word = Ci.fromLine(line.strip(), SUPER)
+    with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
+        lines = f.readlines()
+        for line in lines:
+            word = Ci.fromLine(line.strip(), SUPER)
 
-        if (word._word in _db):
-            print('警告，通常词和超级词重复：', word.word())
-        else:
-            _db[word._word] = word
+            if (word._word in _db_general):
+                print('警告，通常词和超级词重复：', word.word())
+            else:
+                _db_super[word._word] = word
 
 # 符号
 NUM_CHAR = '零一二三四五六七八九'
@@ -134,14 +148,24 @@ def sound_chars(words):
     return "".join(sanitized)
 
 def get(word):
-    if word not in _db:
-        return None
-    return _db[word]
+    _loadDB()
+    
+    if word not in _db_general:
+        if word not in _db_super:
+            return None
+        return _db_super[word]
+    return _db_general[word]
 
-def all():
-    return _db.values()
+def all(which):
+    _loadDB()
+    if which == GENERAL:
+        return _db_general.values()
+    else:
+        return _db_super.values()
 
 def add(word, pinyins, which = GENERAL):
+    _loadDB()
+
     assert len(pinyins) != 0, '"%s" 词没有提供拼音' % word
 
     sound = sound_chars(word)
@@ -157,15 +181,14 @@ def add(word, pinyins, which = GENERAL):
         _db[word].add_pinyins(pinyins)
 
 def commit():
-    all_words = sorted(all(), key=lambda x: x._word)
-    danzi = open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n')
-    chaoji = open(os.path.join(_path, '超级.txt'), mode='w', encoding='utf-8', newline='\n')
+    _loadDB()
 
-    for ci in all_words:
-        if ci.which() == GENERAL:
-            danzi.write(ci.line()+'\n')
-        elif ci.which() == SUPER:
-            chaoji.write(ci.line()+'\n')
-    
-    danzi.close()
-    chaoji.close()
+    with open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n') as f:
+        all_words = sorted(all(GENERAL), key=lambda x: x._word)
+        for ci in all_words:
+            f.write(ci.line()+'\n')
+
+    with open(os.path.join(_path, '超级.txt'), mode='w', encoding='utf-8', newline='\n') as f:
+        all_words = sorted(all(SUPER), key=lambda x: x._word)
+        for ci in all_words:
+            f.write(ci.line()+'\n')

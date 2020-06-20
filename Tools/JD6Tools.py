@@ -205,7 +205,19 @@ def pinyin2sy(py):
 def pinyin2s(py):
     """全拼转声拼"""
     shengmu = sheng(py)
-    s = JD6_S2K[shengmu]
+    yunmu = yun(py)
+
+    s = []
+    if (shengmu in JD6_SFLY):
+        # 一类
+        if yunmu in JD6_SFLY[shengmu][0]:
+            s.append(JD6_S2K[shengmu][0])
+        # 二类
+        if yunmu in JD6_SFLY[shengmu][1]:
+            s.append(JD6_S2K[shengmu][1])
+    else:
+        s = JD6_S2K[shengmu]
+
     return s
 
 def transform_py(py):
@@ -336,17 +348,25 @@ def word_pinyin2codes(pys):
 
 def ci2codes(ci, short = True, full = False):
     """生成词6码"""
-    pinyins = ci.pinyins()
+    weights = ci.weights()
     sound_chars = ci.sound_chars()
     codes = set()
-    for pinyin in pinyins:
+    for data in weights:
+        pinyin, shortcode_len, rank = data
         if len(pinyin) == 3:
             # 三字词需三码
             shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0] + ZiDB.get(sound_chars[2]).shape()[0]
         else:
             shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0]
         
-        codes = codes.union(set(code + shape for code in word_pinyin2codes(pinyin)))
+        for code in word_pinyin2codes(pinyin):
+            full_code = code + shape
+            if (full):
+                codes.add((ci.word(), full_code, rank))
+            if (short):
+                short_code = full_code[:shortcode_len]
+                codes.add((ci.word(), short_code, rank))
+            
     return codes
 
 # ---------------------------------
@@ -453,8 +473,40 @@ def traverse_danzi(build = False):
     else:
         print('检查完毕')
 
-def build_cizu(build = False):
-    pass
+def traverse_cizu(which, build = False):
+    """遍历词组码表"""
+    last_code = ''
+    last_word = ''
+
+    entries = []
+
+    words = CiDB.all(which)
+    for ci in words:
+        codes = ci2codes(ci, True, False)
+        entries += codes
+
+    entries.sort(key=lambda e: (e[1], e[2]))
+
+    if build:
+        if which == CiDB.GENERAL:
+            f = open('rime/xkjd6.cizu.yaml', mode='w', encoding='utf-8', newline='\n')
+            f.write(RIME_HEADER % 'cizu')
+        else:
+            f = open('rime/xkjd6.chaojici.yaml', mode='w', encoding='utf-8', newline='\n')
+            f.write(RIME_HEADER % 'chaojici')
+    else:
+        f = None
+
+    for entry in entries:
+        word, code, rank = entry
+        if f is not None:
+            f.write(word+'\t'+code+'\n')
+
+        last_code = code
+        last_word = word
+
+    if (f is not None):
+        f.close()
 
 if __name__ == "__main__":
     action = sys.argv[1] if len(sys.argv) > 1 else None
@@ -464,9 +516,10 @@ if __name__ == "__main__":
     elif action == "danzi_change":
         pass
     elif action == "full_cizu_check":
-        full_cizu_check()
+        build_cizu()
 
     # traverse_danzi(True)
     # ZiDB.commit()
-    print(ci2codes(CiDB.get('飒爽'), short = False, full = True))
-
+    # print(ci2codes(CiDB.get('飒爽'), short = True, full = False))
+    # CiDB.commit()
+    traverse_cizu(CiDB.GENERAL, True)

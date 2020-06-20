@@ -158,7 +158,7 @@ def yun(py):
         return py[2:]
     return py[1:]
 
-def pinyins2sys(py):
+def pinyin2sy(py):
     """全拼转双拼"""
     shengmu = sheng(py)
     yunmu = yun(py)
@@ -196,7 +196,7 @@ def zi2codes(zi):
 
     weights = zi.weights()
     for w in weights:
-        sy = pinyins2sys(w[0])
+        sy = pinyin2sy(w[0])
         if (len(sy) == 0):
             continue
 
@@ -227,10 +227,13 @@ def zi2codes(zi):
     for sy in sy_codes:
         w, fly = sy_codes[sy]
         full_code = sy+b
+
+        if (w <= 0):  # 忽略无理读音
+            continue
+    
         if (w < len(full_code)):
             has_short = True
-            if (w > 1):
-                # 不自动生成一简
+            if (w > 1):   # 不自动生成一简
                 codes.append((char, full_code[:w], rank, which, None))
         else:
             has_short = False

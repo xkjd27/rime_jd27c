@@ -1408,7 +1408,9 @@ sort: original
 代	dh
 逮	dha
 绐	dhaa
+骀	dhaaa
 绐	dhaaao
+骀	dhaaao
 怠	dhao
 迨	dhaoo
 怠	dhaooa
@@ -2037,6 +2039,8 @@ sort: original
 蛇	eeia
 蛇	eeiaoo
 摄	eeiu
+拾	eeiui
+拾	eeiuiv
 折	eeiuu
 折	eeiuuu
 揲	eeiuv
@@ -3872,6 +3876,8 @@ sort: original
 闺	gboivo
 宄	gboo
 宄	gbooua
+炔	gbou
+炔	gbouav
 庋	gbov
 廆	gbovu
 廆	gbovui
@@ -4518,6 +4524,8 @@ sort: original
 珖	gxvvio
 共	gy
 弓	gya
+红	gyaa
+红	gyaavi
 弓	gyavaa
 供	gyi
 蚣	gyia
@@ -5222,6 +5230,8 @@ sort: original
 鸻	hruu
 衡	hruuua
 鸻	hruuua
+行	hruuv
+行	hruuvv
 珩	hrv
 桁	hrvu
 桁	hrvuui
@@ -5975,6 +5985,8 @@ sort: original
 肼	jguvvu
 箐	jguvvv
 静	jgv
+更	jgvi
+更	jgviav
 境	jgvo
 境	jgvoov
 井	jgvv
@@ -6162,6 +6174,7 @@ sort: original
 缉	jkaaov
 级	jkaaua
 绩	jkaav
+骑	jkaavu
 绩	jkaavv
 际	jkai
 瀱	jkaia
@@ -6759,6 +6772,8 @@ sort: original
 韭	jqivvv
 究	jqo
 阄	jqoi
+蹴	jqoio
+蹴	jqoiov
 阄	jqoiua
 究	jqooua
 啾	jqou
@@ -9191,7 +9206,9 @@ sort: original
 镆	mlio
 镆	mlioii
 抹	mliu
+尛	mliui
 摸	mliuii
+尛	mliuiu
 抹	mliuvv
 魔	mlo
 谟	mloa
@@ -9382,6 +9399,8 @@ sort: original
 吗	ms
 妈	msa
 马	msaa
+孖	msaaa
+孖	msaaaa
 马	msaavv
 妈	msauaa
 抹	msi
@@ -9449,7 +9468,9 @@ sort: original
 煤	mwouvi
 美	mwouvu
 糜	mwov
+槑	mwovo
 糜	mwovou
+槑	mwovov
 魅	mwu
 猸	mwua
 猸	mwuaai
@@ -9995,6 +10016,8 @@ sort: original
 盼	pfiauo
 蟠	pfiauo
 拌	pfiu
+拚	pfiua
+拚	pfiuao
 拌	pfiuou
 判	pfo
 袢	pfoa
@@ -10189,6 +10212,7 @@ sort: original
 睥	pkiaui
 毗	pkiav
 毗	pkiava
+蚍	pkiava
 罢	pkiavo
 僻	pkiavu
 芘	pkii
@@ -11318,6 +11342,7 @@ sort: original
 杄	qmvu
 牵	qmvuuv
 杄	qmvuvi
+瓩	qmwsva
 真	qn
 阵	qna
 缜	qnaa
@@ -12808,6 +12833,8 @@ sort: original
 跎	tloioo
 跅	tloiu
 跅	tloiuu
+鼍	tloo
+鼍	tloooi
 唾	tlouvi
 庹	tlov
 庹	tlovav
@@ -14135,6 +14162,7 @@ sort: original
 恔	xcooo
 恔	xcooov
 咲	xcoou
+敩	xcoouv
 咲	xcoouv
 嚣	xcoov
 嚣	xcoovu
@@ -16781,8 +16809,9 @@ sort: original
 要	yzviau
 杳	yzvo
 杳	yzvoii
-㙘	yzvov
+垚	yzvov
 㙘	yzvovi
+垚	yzvovo
 珧	yzvv
 珧	yzvvuo
 瑶	yzvvuo
@@ -16924,6 +16953,7 @@ sort: original
 子	zka
 淄	zkaa
 缁	zkaaa
+孖	zkaaaa
 淄	zkaaaa
 缁	zkaaaa
 甾	zkaai

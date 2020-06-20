@@ -62,7 +62,10 @@ class Zi:
         self._type = which
         self._comment = None
         for i in range(3, len(data) - 1, 2):
-            self._pinyins.append((data[i], int(data[i+1])))
+            if which == HIDDEN:
+                self._pinyins.append((data[i], -1))
+            else:
+                self._pinyins.append((data[i], int(data[i+1])))
         
         if (len(data) % 2 == 0):
             self._comment = data[-1]
@@ -108,13 +111,19 @@ with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
     lines = f.readlines()
     for line in lines:
         char = Zi(line.strip(), SUPER)
-        _db[char._char] = char
+        if (char._char in _db):
+            print('警告，通常字和超级字重复：', char.char())
+        else:
+            _db[char._char] = char
 
 with open(os.path.join(_path, '无理.txt'), mode='r', encoding='utf-8') as f:
     lines = f.readlines()
     for line in lines:
         char = Zi(line.strip(), HIDDEN)
-        _db[char._char] = char
+        if (char._char in _db):
+            print('警告，通常字和无理字重复：', char.char())
+        else:
+            _db[char._char] = char
 
 with open(os.path.join(_path, '固定.txt'), mode='r', encoding='utf-8') as f:
     for entry in f.readlines():

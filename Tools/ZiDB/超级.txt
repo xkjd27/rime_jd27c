@@ -16,21 +16,16 @@
 喦	0	ooia	yan	5
 嘢	0	oiav	ye	5
 囃	0	ovii	za	5
-垚	0	vvvv	yao	5
 夶	0	vuvu	bi	5
 嫑	0	vuvi	biao	6
-孖	0	aaaa	zi	6	ma	5
-尛	0	iuiu	mo	5
 巭	0	vivv	gu	5
 弔	0	avai	diao	5
 惢	0	oaoa	suo	5
 挊	0	iuiv	nong	4
-敩	0	oouv	xiao	6
 昖	0	oiuo	yan	6
 曱	0	iavv	yue	4
 枔	0	vioa	xin	4
 椛	0	viii	hua	5
-槑	0	ovov	mei	5
 檵	0	vaao	ji	5
 炁	0	vaoo	qi	5
 烎	0	vvou	yin	5
@@ -44,14 +39,12 @@
 苂	0	iiou	yin	5	chan	5
 菓	0	iiia	guo	4
 薙	0	iiuv	ti	5
-蚍	0	iava	pi	6
 誧	0	ovvi	bu	6
 譞	0	ovia	xuan	5
 蹠	0	oiov	zhi	6
 骹	0	iaov	qiao	5
 鲶	0	uaio	nian	5
 鵺	0	ovui	ye	5
-鼍	0	oooi	tuo	4
 鿏	0	iovv	mai	4
 	0	voua	gang	5
 	0	vuvu	da	5	ta	4

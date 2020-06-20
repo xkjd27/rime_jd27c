@@ -7,7 +7,7 @@
 㘵	0	vovu	bu	6
 㙂	0	voou	dui	4
 㙍	0	voao	duo	5
-㙘	0	vovi	yao	5
+㙘	0	vovi	yao	6
 㙦	0	ivvo	xie	6
 㛃	0	vvau	jie	6
 㛚	0	auao	tong	4
@@ -853,7 +853,7 @@
 吾	0	vioo	wu	4
 呀	0	ovai	ya	3
 呃	0	ovua	~e	3
-呆	0	ovv	dai	3
+呆	0	ovv	dai	3	~ai	0
 呇	0	aaoo	qi	5
 呈	0	ovvi	cheng	3
 告	0	uvoo	gao	3
@@ -1118,7 +1118,7 @@
 噀	0	oava	xun	5
 噂	0	oouv	zun	4
 噇	0	oovo	chuang	5
-噌	0	ooui	ceng	4
+噌	0	ooui	ceng	4	zeng	0
 噍	0	oiov	jiao	5
 噎	0	ovoo	ye	5
 噔	0	oaou	deng	4
@@ -1609,7 +1609,7 @@
 孓	0	aioo	jue	4
 孔	0	aiaa	kong	3
 孕	0	auai	yun	4
-孖	0	aiai	zi	5
+孖	0	aaaa	zi	6	ma	5
 字	0	ooai	zi	2
 存	0	vuai	cun	2
 孙	0	aiiu	sun	2
@@ -1712,7 +1712,7 @@
 尖	0	iuvu	jian	5
 尘	0	iuvo	chen	3
 尚	0	ioia	shang	3
-尛	0	iuiu	mo	6
+尛	0	iuiu	mo	5
 尜	0	iuvu	ga	4
 尝	0	iovv	chang	4
 尢	0	vuaa	you	6
@@ -2351,7 +2351,7 @@
 户	0	oavu	hu	3
 戽	0	oaoo	hu	5
 戾	0	oavu	li	5
-房	0	oaov	fang	4
+房	0	oaov	fang	4	pang	0
 所	0	uuuu	suo	2
 扁	0	oaia	bian	4	pian	4
 扂	0	oaiv	dian	4
@@ -2442,7 +2442,7 @@
 拗	0	iuaa	niu	4	~ao	4
 拘	1	iuua	jv	5	gou	5
 拙	0	iuai	zhuo	4
-拚	0	iuao	pin	4
+拚	0	iuao	pin	4	pan	5
 招	0	iuau	zhao	3
 拜	0	iuvv	bai	4
 拟	0	iuao	ni	3
@@ -2465,7 +2465,7 @@
 拷	0	iuuo	kao	3
 拼	0	iuou	pin	3
 拽	0	iuia	zhuai	3	ye	5
-拾	0	iuiv	shi	5
+拾	0	iuiv	shi	5	she	5
 拿	0	iviu	na	3
 持	0	iuvo	chi	3
 挂	0	iuvo	gua	2
@@ -2867,7 +2867,7 @@
 曰	0	oii	yue	5
 曲	0	iavi	qv	3
 曳	0	iavv	ye	5
-更	0	viav	geng	2
+更	0	viav	geng	2	jing	4
 曷	1	oiua	he	5
 曹	0	vioi	cao	3
 曼	0	oiia	man	4
@@ -3041,7 +3041,7 @@
 桄	0	viou	guang	3
 桅	0	vuav	wei	5
 框	0	vvvv	kuang	3
-案	0	oovv	~an	3
+案	0	oovv	~an	3	wan	0
 桉	0	vooa	~an	4
 桊	0	ouvv	juan	5
 桌	0	ivvv	zhuo	2
@@ -3402,7 +3402,7 @@
 沇	0	aaou	yan	5
 沈	0	aoau	shen	4
 沉	0	aoau	chen	3
-沌	0	avai	tun	4	dun	3
+沌	0	avai	tun	4	dun	3	zhuan	0
 沏	0	avaa	qi	5
 沐	0	avv	mu	4
 沓	0	aoii	ta	3	da	4
@@ -3421,7 +3421,7 @@
 沨	0	auau	feng	4
 沩	0	aoua	wei	4
 沪	0	aoav	hu	4
-沫	0	avvi	mo	4
+沫	0	avvi	mo	4	me	0
 沭	1	avoo	shu	5
 沮	0	aiav	jv	4
 沱	0	aooa	tuo	4
@@ -3851,7 +3851,7 @@
 炌	0	ouiu	kai	4
 炎	1	ouou	yan	5
 炒	0	ouiu	chao	3
-炔	0	ouav	que	4
+炔	0	ouav	que	4	gui	4
 炕	0	ouov	kang	5
 炖	0	ouva	dun	4
 炘	0	ouuu	xin	4
@@ -3955,7 +3955,7 @@
 熟	1	ovoo	shu	3	shou	5
 熠	0	ouao	yi	5
 熥	0	ouao	teng	5
-熨	0	avou	yun	4
+熨	0	avou	yun	4	yv	0
 熬	0	vvoo	~ao	3
 熰	0	ouvo	~ou	6
 熳	0	ouoi	man	4
@@ -5111,7 +5111,7 @@
 纛	0	vvia	dao	3
 纠	0	aaai	jiu	4
 纡	0	aavv	yv	5
-红	0	aavi	hong	2
+红	0	aavi	hong	2	gong	4
 纣	0	aavi	zhou	5
 纤	0	aauv	qian	4	xian	4
 纥	0	aauv	ge	4	he	4
@@ -5592,7 +5592,7 @@
 舨	0	uuuu	ban	5
 航	0	uuov	hang	3
 舫	1	uuov	fang	4
-般	0	uuua	ban	4
+般	0	uuua	ban	4	bo	0
 舭	0	uuva	bi	5
 舯	0	uuia	zhong	4
 舰	0	uuia	jian	4
@@ -5696,7 +5696,7 @@
 苡	0	iiao	yi	5
 苣	0	iiva	jv	5	qv	5
 苤	0	iivu	pie	3
-若	0	iivu	ruo	2
+若	0	iivu	ruo	2	re	0
 苦	0	iiuo	ku	3
 苧	0	iioo	zhu	6
 苫	0	iiiv	shan	4
@@ -6213,7 +6213,7 @@
 衃	0	uivu	pei	4
 衄	0	uiai	nv	3
 衅	0	uiou	xin	4
-行	0	uuvv	xing	2	hang	2
+行	0	uuvv	xing	2	hang	2	heng	5
 衍	0	uuav	yan	4
 衎	0	uivv	kan	3
 衒	0	uuov	xuan	3
@@ -6725,7 +6725,7 @@
 蹯	0	oiuo	fan	4
 蹰	0	oivu	chu	5
 蹲	0	oiou	cun	4	dun	4	zun	4
-蹴	0	oiov	zu	4	cu	3
+蹴	0	oiov	zu	4	cu	3	jiu	5
 蹶	0	oivu	jue	4
 蹼	0	oiii	pu	4
 蹽	0	oivu	liao	4
@@ -7389,7 +7389,7 @@
 阻	0	aiia	zu	3
 阼	0	aiuv	zuo	3
 阽	0	aiiv	dian	4
-阿	0	aivo	~a	3	~e	3
+阿	0	aivo	~a	3	~e	3	
 陀	0	aioo	tuo	4
 陂	0	aiau	po	4	pi	5	bei	4
 附	0	aiiv	fu	4
@@ -7692,7 +7692,7 @@
 驽	0	auaa	nu	6
 驾	0	auaa	jia	4
 驿	1	aaao	yi	5
-骀	0	aaao	tai	4
+骀	0	aaao	tai	4	dai	5
 骁	0	aava	xiao	4
 骂	0	ooaa	ma	4
 骃	0	aaia	yin	4
@@ -7709,7 +7709,7 @@
 骎	0	aaav	qin	4
 骏	0	aaao	jun	4
 骐	0	aavi	qi	6
-骑	1	aavu	qi	4
+骑	1	aavu	qi	4	ji	6
 骒	0	aaia	ke	5
 骓	0	aaio	zhui	5
 骕	0	aaav	su	4
@@ -8020,7 +8020,7 @@
 黼	1	iivi	fu	6
 黾	0	oiav	min	5	mian	3	meng	4
 鼋	0	vvoi	yuan	5
-鼍	0	oioi	tuo	5
+鼍	0	oooi	tuo	4
 鼎	0	iaav	ding	4
 鼐	0	auia	nai	4
 鼒	0	viia	zi	5

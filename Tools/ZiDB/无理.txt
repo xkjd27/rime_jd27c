@@ -1,14 +1,14 @@
-瓩	0	vauv	qian	6	wa	6	多音节字，移至词组
+瓩	0	vauv	qian	6	wa	6	多音节字
 屮	0	aiii	cao	6	che	6	网络用语/非常用
 艸	0	aiai	cao	6	网络用语/非常用
 芔	0	aiai	cao	6	hui	6	网络用语/错误用法/非常用
 茻	0	aiai	cao	6	mang	6	网络用语/错误用法/非常用
 遯	0	uoao	dun	6	异体字(遁)
 肬	0	uvua	you	6	异体字(疣)
-醲	0	viia	you	6	异体字(脓)
+醲	0	viia	nong	6	异体字(脓)
 嘸	0	ouvv	fu	6	繁体/方言/专有名词
 蝦	0	iaav	xia	6	繁体/方言/专有名词
-昚	0	vuoi	shun	6	异体字(慎)
+昚	0	vuoi	shen	6	异体字(慎)
 碁	0	viiv	qi	6	异体字(棋)/专有名词
 䦆	0	iooi	jue	6	方言
 吰	0	ovua	hong	6	异体字(宏)

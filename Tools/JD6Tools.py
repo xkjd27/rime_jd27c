@@ -338,13 +338,22 @@ def clear_danzi_codes():
 
 def word_pinyin2codes(pys):
     """词拼音转声码"""
+    # TODO: 稳定飞键
     if len(pys) <= 2:
         # 二字词
+        # 飞键：最多允许四飞
+        #   例：zhuang/zhuang
+        #       生成：fmfm,qmqm,fxfx,qxqx
+        #       忽略：fmfx,fmqm,fmqx,fxfm,fxqm,fxqx,qmfm,qmfx,qmqx,qxfm,qxfx,qxqm
         codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2sy(py) for py in pys]))
     else:
         # 多字词
+        # 飞键：最多允许双飞
+        #   例：zhe/zhe/zhe
+        #       生成：fff,qqq
+        #       忽略：ffq,fqf,fqq,qff,qfq,qqf
         codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2s(py) for py in pys]))
-    
+
     return codes
 
 def ci2codes(ci, short = True, full = False):

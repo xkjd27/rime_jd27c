@@ -1,4 +1,5 @@
 import sys
+import os
 import ZiDB
 import CiDB
 import itertools
@@ -359,13 +360,14 @@ def ci2codes(ci, short = True, full = False):
         else:
             shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0]
         
-        for code in word_pinyin2codes(pinyin):
+        s_codes = word_pinyin2codes(pinyin)
+        for code in s_codes:
             full_code = code + shape
             if (full):
-                codes.add((ci.word(), full_code, rank))
+                codes.add((ci.word(), full_code, len(s_codes), rank))
             if (short):
                 short_code = full_code[:shortcode_len]
-                codes.add((ci.word(), short_code, rank))
+                codes.add((ci.word(), short_code, len(s_codes), rank))
             
     return codes
 
@@ -473,11 +475,9 @@ def traverse_danzi(build = False):
     else:
         print('检查完毕')
 
-def traverse_cizu(which, build = False):
+def traverse_cizu(which, build = False, report = True):
     """遍历词组码表"""
-    last_code = ''
-    last_word = ''
-
+    dup_code_check = {}
     entries = []
 
     words = CiDB.all(which)
@@ -498,15 +498,50 @@ def traverse_cizu(which, build = False):
         f = None
 
     for entry in entries:
-        word, code, rank = entry
+        word, code, fly, rank = entry
         if f is not None:
             f.write(word+'\t'+code+'\n')
-
-        last_code = code
-        last_word = word
+        
+        if code in dup_code_check:
+            dup_code_check[code].append((word, rank, fly))
+        else:
+            dup_code_check[code] = [(word, rank, fly)]
 
     if (f is not None):
         f.close()
+
+    dup_count = 0
+    dup_word_count = 0
+    for code in dup_code_check:
+        if len(dup_code_check[code]) > 1:
+            dup_count += 1
+            dup_word_count += len(dup_code_check[code])
+
+    if report:
+        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/cizu.txt')
+        report = open(report_path, mode='w', encoding='utf-8', newline='\n')
+        report.write('总码量：%d\n' % len(dup_code_check))
+        report.write('重码量：%d\n' % dup_count)
+        report.write('重码词数：%d\n' % dup_word_count)
+        report.write('重码率：%.2f%%\n' % ((dup_count / len(dup_code_check)) * 100))
+        report.write('---\n')
+
+        FLY_NAME = '零单双三四'
+
+        records = list(dup_code_check.items())
+        records.sort(key=lambda e: e[0])
+        
+        for record in records:
+            code = record[0]
+            dups = record[1]
+            if len(dups) <= 1:
+                continue
+                
+            report.write('%s\n' % code)
+            for word in dups:
+                report.write('\t%d\t%s\t%s\n' % (word[1], FLY_NAME[word[2]], word[0]))
+        
+            report.write('\n')
 
 if __name__ == "__main__":
     action = sys.argv[1] if len(sys.argv) > 1 else None
@@ -522,4 +557,4 @@ if __name__ == "__main__":
     # ZiDB.commit()
     # print(ci2codes(CiDB.get('飒爽'), short = True, full = False))
     # CiDB.commit()
-    traverse_cizu(CiDB.GENERAL, True)
+    traverse_cizu(CiDB.GENERAL, False, True)

@@ -1,5 +1,5 @@
 ---
-name: 其他
+name: 其他请求
 about: 可以提交请求，提问
 title: [请提供请求标题]
 labels: ''

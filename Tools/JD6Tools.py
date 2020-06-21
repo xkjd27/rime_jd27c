@@ -529,7 +529,7 @@ def traverse_cizu(which, build = False, report = True):
         FLY_NAME = '零单双三四'
 
         records = list(dup_code_check.items())
-        records.sort(key=lambda e: e[0])
+        records.sort(key=lambda e: (len(e[0]), e[0]))
         
         for record in records:
             code = record[0]

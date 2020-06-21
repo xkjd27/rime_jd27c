@@ -188,10 +188,10 @@ def pinyin2sy(py):
     if (shengmu in JD6_SFLY):
         # 一类
         if yunmu in JD6_SFLY[shengmu][0]:
-            s.append(JD6_S2K[shengmu][0])
+            s.append(JD6_S2K[shengmu][0].upper())
         # 二类
         if yunmu in JD6_SFLY[shengmu][1]:
-            s.append(JD6_S2K[shengmu][1])
+            s.append(JD6_S2K[shengmu][1].upper())
     else:
         s = JD6_S2K[shengmu]
 
@@ -212,10 +212,10 @@ def pinyin2s(py):
     if (shengmu in JD6_SFLY):
         # 一类
         if yunmu in JD6_SFLY[shengmu][0]:
-            s.append(JD6_S2K[shengmu][0])
+            s.append(JD6_S2K[shengmu][0].upper())
         # 二类
         if yunmu in JD6_SFLY[shengmu][1]:
-            s.append(JD6_S2K[shengmu][1])
+            s.append(JD6_S2K[shengmu][1].upper())
     else:
         s = JD6_S2K[shengmu]
 
@@ -338,23 +338,67 @@ def clear_danzi_codes():
 
 def word_pinyin2codes(pys):
     """词拼音转声码"""
-    # TODO: 稳定飞键
+
+    # 飞键：通常最多允许双飞
+    #   例：zhe/zhuang
+    #       生成：fefm,fefx
+    #       忽略：qefx,qefm
+    #   例：zhuang/zhuang
+    #       生成：fmfm,fxfx
+    #       忽略：fmfx,fxfm
+    #   例：zhe/zhe/zhe
+    #       生成：fff,qqq
+    #       忽略：ffq,fqf,fqq,qff,qfq,qqf
+    # 四飞特例:
+    #   例: che/che/chao
+    #       生成：jjq,wwf,jjf,wwq
+
     if len(pys) <= 2:
         # 二字词
-        # 飞键：最多允许四飞
-        #   例：zhuang/zhuang
-        #       生成：fmfm,qmqm,fxfx,qxqx
-        #       忽略：fmfx,fmqm,fmqx,fxfm,fxqm,fxqx,qmfm,qmfx,qmqx,qxfm,qxfx,qxqm
         codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2sy(py) for py in pys]))
+
+        if len(codes) > 2:
+            og_codes = codes
+            codes = set()
+
+            for code in og_codes:
+                zh = [s.upper() for s in JD6_S2K['zh']]
+                if ((code[0] == zh[0] and code[2] == zh[1]) or (code[0] == zh[1] and code[2] == zh[0])):
+                    continue
+                ch = [s.upper() for s in JD6_S2K['ch']]
+                if ((code[0] == ch[0] and code[2] == ch[1]) or (code[0] == ch[1] and code[2] == ch[0])):
+                    continue
+                uang = JD6_Y2K['uang']
+                if ((code[1] == uang[0] and code[3] == uang[1]) or (code[1] == uang[1] and code[3] == uang[0])):
+                    continue
+                codes.add(code)
+
+            if (len(codes) < 2):
+                print(og_codes)
+                print(codes)
     else:
         # 多字词
-        # 飞键：最多允许双飞
-        #   例：zhe/zhe/zhe
-        #       生成：fff,qqq
-        #       忽略：ffq,fqf,fqq,qff,qfq,qqf
         codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2s(py) for py in pys]))
 
-    return codes
+        if len(codes) > 2:
+            og_codes = codes
+            codes = set()
+
+            for code in og_codes:
+                zh = [s.upper() for s in JD6_S2K['zh']]
+                if (zh[0] in code and zh[1] in code):
+                    continue
+                ch = [s.upper() for s in JD6_S2K['ch']]
+                if (ch[0] in code and ch[1] in code):
+                    continue
+
+                codes.add(code)
+    
+            if (len(codes) < 2):
+                print(og_codes)
+                print(codes)
+    
+    return set(code.lower() for code in codes)
 
 def ci2codes(ci, short = True, full = False):
     """生成词6码"""
@@ -487,6 +531,7 @@ def traverse_danzi(build = False):
 def traverse_cizu(which, build = False, report = True):
     """遍历词组码表"""
     dup_code_check = {}
+    last_rank = -1
     entries = []
 
     words = CiDB.all(which)
@@ -519,23 +564,32 @@ def traverse_cizu(which, build = False, report = True):
     if (f is not None):
         f.close()
 
-    dup_count = 0
+    dup_count = [0,0,0,0]
     dup_word_count = 0
     for code in dup_code_check:
         if len(dup_code_check[code]) > 1:
-            dup_count += 1
+            dup_count[len(code) - 3] += 1
             dup_word_count += len(dup_code_check[code])
 
     if report:
-        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/cizu.txt')
-        report = open(report_path, mode='w', encoding='utf-8', newline='\n')
-        report.write('总码量：%d\n' % len(dup_code_check))
-        report.write('重码量：%d\n' % dup_count)
-        report.write('重码词数：%d\n' % dup_word_count)
-        report.write('重码率：%.2f%%\n' % ((dup_count / len(dup_code_check)) * 100))
-        report.write('---\n')
+        if which == CiDB.GENERAL:
+            filename = 'Report/cizu.txt'
+        else:
+            filename = 'Report/chaojici.txt'
 
-        FLY_NAME = '零单双三四'
+        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+        report = open(report_path, mode='w', encoding='utf-8', newline='\n')
+        code_total = len(dup_code_check)
+        dup_total = sum(dup_count)
+        report.write('总码量：%d\n' % code_total)
+        report.write('重码量：%d\n' % dup_total)
+        report.write('三码重码：%d\n' % dup_count[0])
+        report.write('四码重码：%d\n' % dup_count[1])
+        report.write('五码重码：%d\n' % dup_count[2])
+        report.write('六码重码：%d\n' % dup_count[3])
+        report.write('重码词数：%d\n' % dup_word_count)
+        report.write('重码率：%.2f%%\n' % ((dup_total / code_total) * 100))
+        report.write('---\n')
 
         records = list(dup_code_check.items())
         records.sort(key=lambda e: (len(e[0]), e[0]))
@@ -548,7 +602,12 @@ def traverse_cizu(which, build = False, report = True):
                 
             report.write('%s\n' % code)
             for word in dups:
-                report.write('\t%d\t%s\t%s\n' % (word[1], FLY_NAME[word[2]], word[0]))
+                fly_name = '错'
+                if word[2] == 2:
+                    fly_name = '飞'
+                elif word[2] == 1:
+                    fly_name = '　'
+                report.write('\t%d\t%s\t%s\n' % (word[1], fly_name, word[0]))
         
             report.write('\n')
 
@@ -564,6 +623,14 @@ if __name__ == "__main__":
 
     # traverse_danzi(True)
     # ZiDB.commit()
-    # print(ci2codes(CiDB.get('飒爽'), short = True, full = False))
+    # print(ci2codes(CiDB.get('这桩'), short = False, full = True))
+    # print(ci2codes(CiDB.get('这这这'), short = False, full = True))
+    # print(ci2codes(CiDB.get('骑着'), short = False, full = True))
+    # print(ci2codes(CiDB.get('服装'), short = False, full = True))
+    # print(ci2codes(CiDB.get('装装'), short = False, full = True))
+    # print(ci2codes(CiDB.get('江面'), short = False, full = True))
+    # print(ci2codes(CiDB.get('去装'), short = False, full = True))
+    # print(ci2codes(CiDB.get('车车昭'), short = False, full = True))
+    # print(ci2codes(CiDB.get('曲曲折折'), short = False, full = True))
     # CiDB.commit()
-    traverse_cizu(CiDB.GENERAL, False, True)
+    # traverse_cizu(CiDB.GENERAL, True, True)

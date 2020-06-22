@@ -393,25 +393,38 @@ def word_pinyin2codes(pys):
 
 def ci2codes(ci, short = True, full = False):
     """生成词6码"""
-    weights = ci.weights()
     sound_chars = ci.sound_chars()
-    codes = set()
+
+    if len(sound_chars) == 1: # 一字词（非法）无视
+        return None
+
+    py_codes = {}
+    weights = ci.weights()
+
+    shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0]
+    if len(sound_chars) == 3: # 三字词需三码
+        shape += ZiDB.get(sound_chars[2]).shape()[0]
+        
+
     for data in weights:
         pinyin, shortcode_len, rank = data
-        if len(pinyin) == 3:
-            # 三字词需三码
-            shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0] + ZiDB.get(sound_chars[2]).shape()[0]
-        else:
-            shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0]
-        
         s_codes = word_pinyin2codes(pinyin)
+
         for code in s_codes:
-            full_code = code + shape
-            if (full):
-                codes.add((ci.word(), full_code, rank, len(s_codes)))
-            if (short):
-                short_code = full_code[:shortcode_len]
-                codes.add((ci.word(), short_code, rank, len(s_codes)))
+            if code in py_codes:
+                py_codes[code] = (min(shortcode_len, py_codes[code][0]), rank, len(s_codes))
+            else:
+                py_codes[code] = (shortcode_len, rank, len(s_codes))
+            
+    codes = set()
+    for code in py_codes:
+        full_code = code + shape
+        shortcode_len, rank, fly = py_codes[code]
+        if (full):
+            codes.add((ci.word(), full_code, rank, fly))
+        if (short):
+            short_code = full_code[:shortcode_len]
+            codes.add((ci.word(), short_code, rank, fly))
             
     return codes
 
@@ -530,7 +543,8 @@ def traverse_cizu(build = False, report = True):
     words = CiDB.all(CiDB.GENERAL)
     for ci in words:
         codes = ci2codes(ci, True, False)
-        entries += codes
+        if (codes is not None):
+            entries += codes
 
     extra = 100
     for entry in CiDB.fixed(CiDB.GENERAL):
@@ -675,7 +689,8 @@ def build_chaoji():
     words = CiDB.all(CiDB.SUPER)
     for ci in words:
         codes = ci2codes(ci, True, False)
-        chaoji += codes
+        if (codes is not None):
+            chaoji += codes
 
     extra = 100
     for entry in CiDB.fixed(CiDB.SUPER):
@@ -732,7 +747,7 @@ def build_chaoji():
 # print(ci2codes(CiDB.get('江面'), short = False, full = True))
 # print(ci2codes(CiDB.get('去装'), short = False, full = True))
 # print(ci2codes(CiDB.get('车车昭'), short = False, full = True))
-# print(ci2codes(CiDB.get('曲曲折折'), short = False, fujll = True))
+# print(ci2codes(CiDB.get('曲曲折折'), short = False, full = True))
 # print(ci2codes(CiDB.get('转折处'), short = False, full = True))
 
 # ZiDB.get('折').add_pinyins([("zheng", 5)])
@@ -744,6 +759,8 @@ def build_chaoji():
 # ZiDB.commit()
 # CiDB.commit()
 
-traverse_danzi(True)
-traverse_cizu(True, True)
-build_chaoji()
+# traverse_danzi(True)
+# traverse_cizu(True, True)
+# build_chaoji()
+
+# print(ci2codes(CiDB.get('不要这样'), short = True, full = False))

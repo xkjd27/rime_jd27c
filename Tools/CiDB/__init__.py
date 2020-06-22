@@ -172,14 +172,12 @@ def _loadDB():
         return
     
     with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:
-        lines = f.readlines()
-        for line in lines:
+        for line in f:
             word = Ci.fromLine(line.strip(), GENERAL)
             _db_general[word._word] = word
 
     with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
-        lines = f.readlines()
-        for line in lines:
+        for line in f:
             word = Ci.fromLine(line.strip(), SUPER)
 
             if (word._word in _db_general):
@@ -285,7 +283,7 @@ def fixed(which):
         if _fixed_general is None:
             _fixed_general = []
             with open(os.path.join(_path, '通常特定.txt'), mode='r', encoding='utf-8') as f:
-                for entry in f.readlines():
+                for entry in f:
                     line = entry.strip()
                     if (len(line) <= 0 or line.startswith('#')):
                         continue
@@ -298,7 +296,7 @@ def fixed(which):
         if _fixed_super is None:
             _fixed_super = []
             with open(os.path.join(_path, '超级特定.txt'), mode='r', encoding='utf-8') as f:
-                for entry in f.readlines():
+                for entry in f:
                     line = entry.strip()
                     if (len(line) <= 0 or line.startswith('#')):
                         continue

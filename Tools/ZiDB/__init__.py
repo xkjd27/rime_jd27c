@@ -172,14 +172,12 @@ _fixed = []
 _path = os.path.dirname(os.path.abspath(__file__))
 
 with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:
-    lines = f.readlines()
-    for line in lines:
+    for line in f:
         char = Zi(line.strip(), GENERAL)
         _db[char._char] = char
 
 with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
-    lines = f.readlines()
-    for line in lines:
+    for line in f:
         char = Zi(line.strip(), SUPER)
         if (char._char in _db):
             print('警告，通常字和超级字重复：', char.char())
@@ -187,8 +185,7 @@ with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
             _db[char._char] = char
 
 with open(os.path.join(_path, '无理.txt'), mode='r', encoding='utf-8') as f:
-    lines = f.readlines()
-    for line in lines:
+    for line in f:
         char = Zi(line.strip(), HIDDEN)
         if (char._char in _db):
             print('警告，通常字和无理字重复：', char.char())
@@ -196,7 +193,7 @@ with open(os.path.join(_path, '无理.txt'), mode='r', encoding='utf-8') as f:
             _db[char._char] = char
 
 with open(os.path.join(_path, '通常特定.txt'), mode='r', encoding='utf-8') as f:
-    for entry in f.readlines():
+    for entry in f:
         line = entry.strip()
         if (len(line) <= 0 or line.startswith('#')):
             continue
@@ -205,7 +202,7 @@ with open(os.path.join(_path, '通常特定.txt'), mode='r', encoding='utf-8') a
         _fixed.append((data[0], data[1], GENERAL))
 
 with open(os.path.join(_path, '超级特定.txt'), mode='r', encoding='utf-8') as f:
-    for entry in f.readlines():
+    for entry in f:
         line = entry.strip()
         if (len(line) <= 0 or line.startswith('#')):
             continue

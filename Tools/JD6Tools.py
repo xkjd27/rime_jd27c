@@ -155,9 +155,17 @@ PY_TRANSFORM = {
     'er': '~er',
     'o': '~o',
     'ou': '~ou',
+    'qve': 'que',
+    'lve': 'lue',
+    'jve': 'jue',
+    'xve': 'xue',
+    'yve': 'yue',
     'ju': 'jv',
     'qu': 'qv',
-    'xu': 'xv'
+    'xu': 'xv',
+    'yu': 'yv',
+    'ng': '~eng',
+    'm': '~en',
 }
 
 # ---------------------------------
@@ -412,7 +420,7 @@ def ci2codes(ci, short = True, full = False):
 
         for code in s_codes:
             if code in py_codes:
-                py_codes[code] = (min(shortcode_len, py_codes[code][0]), rank, len(s_codes))
+                py_codes[code] = (min(shortcode_len, py_codes[code][0]), max(rank, py_codes[code][1]), len(s_codes))
             else:
                 py_codes[code] = (shortcode_len, rank, len(s_codes))
             
@@ -715,29 +723,165 @@ def build_chaoji():
 #               指令
 # ---------------------------------
 #
-#   Human Commands - Process Order
+#   Human Commands
 #       添加        通常/超级   字/词    全拼   编码
 #       修改        通常/超级   字/词    全拼   编码
 #       删除        通常/超级   字/词    全拼   编码
 #       排序        通常/超级   字/词    全拼   编码
 #
 #   Detailed Commands
-#       add_char                        char    pinyin  length  weight  which
+#       add_char                        char    shape   pinyin  length  weight  which
 #       add_char_pinyin                 char    pinyin  length
-#       remove_char_pinyin              char    pinyin
+#       remove_char_pinyin              char    set(pinyin)
 #       change_char_shape               char    shape
-#       change_char_shortcode_len       char    pinyin  length
+#       change_char_shortcode_len       char    set(pinyin)  length
 #       change_char_fullcode_weight     char    weight
 #       add_word                        word    pinyin  length  weight  which
 #       add_word_pinyin                 word    pinyin  length  weight
-#       remove_word_pinyin              word    pinyin
-#       change_word_shortcode_len       word    pinyin  length
-#       change_word_shortcode_weight    word    pinyin  weight
+#       remove_word_pinyin              word    set(pinyin)
+#       change_word_shortcode_len       word    set(pinyin)  length
+#       change_word_shortcode_weight    word    set(pinyin)  weight
+#       gen_char                        char    short   full
+#       gen_word                        word    short   full
 #
 # ---------------------------------
 
-# TODO: add commands
+def solve_char_pinyin(char, pinyin):
+    zi = ZiDB.get(char)
+    if zi is None:
+        return set()
 
+    sy = pinyin2sy(transform_py(pinyin))
+
+    solved = set()
+
+    pinyins = zi.pinyins()
+    for py in pinyins:
+        sy2 = pinyin2sy(py)
+        if sy2 == sy:
+            solved.add(py)
+    
+    return solved
+
+def solve_word_pinyin(word, pinyin):
+    ci = CiDB.get(word)
+    if ci is None:
+        return set()
+
+    code = word_pinyin2codes(tuple(transform_py(py) for py in pinyin.split(' ')))
+
+    solved = set()
+
+    pinyins = ci.pinyins()
+    for py in pinyins:
+        code2 = word_pinyin2codes(py)
+        if code2 == code:
+            solved.add(py)
+    
+    return solved
+
+def add_char(char, shape, pinyin, length, weight, which):
+    py = transform_py(pinyin)
+    ZiDB.add(char, shape, [(py, length)], weight, which)
+
+def add_char_pinyin(char, pinyin, length):
+    zi = ZiDB.get(char)
+    py = transform_py(pinyin)
+    assert zi is not None, '"%s" 字不存在' % char
+    zi.add_pinyins([(pinyin, length)])
+
+def remove_char_pinyin(char, pinyins):
+    zi = ZiDB.get(char)
+    if zi is None:
+        return
+    pys = set(transform_py(py) for py in pinyins)
+    ZiDB.remove(char, pys)
+
+def change_char_shape(char, shape):
+    zi = ZiDB.get(char)
+    assert zi is not None, '"%s" 字不存在' % char
+    zi.change_shape(shape)
+
+def change_char_shortcode_len(char, pinyins, length):
+    zi = ZiDB.get(char)
+    assert zi is not None, '"%s" 字不存在' % char
+    pys = set(transform_py(py) for py in pinyins)
+    zi.change_code_length(pys, length)
+
+def change_char_fullcode_weight(char, weight):
+    zi = ZiDB.get(char)
+    assert zi is not None, '"%s" 字不存在' % char
+    zi.change_rank(weight)
+
+def check_word(word, pinyin):
+    problems = []
+    
+    pys = tuple(transform_py(py) for py in pinyin.split(' '))
+    sound = CiDB.sound_chars(word)
+    if len(sound) != len(pys):
+        problems.append('"%s" 词拼音 "%s" 不合法（长度不符）' % (word, " ".join(pinyin[0])))
+        return problems, pys
+
+    # check each char
+    for char, pinyin in zip(word, pys):
+        zi = ZiDB.get(char)
+        if (zi is None):
+            problems.append('"%s" 词中 "%s" 字不在字库中（请检查字型或考虑先添加此字）' % (word, char))
+            continue
+            
+        if (pinyin not in zi.pinyins()):
+            problems.append('"%s" 词中 "%s" 字没有 "%s" 音（请检查全拼或考虑先添加此音）' % (word, char, pinyin))
+            continue
+       
+    return problems, pys
+
+def add_word(word, pinyin, length, weight, which):
+    problems, pys = check_word(word, pinyin)
+    assert len(problems) == 0, "\n".join(problems)
+
+    CiDB.add(word, [(pys, length, weight)], which)
+
+def add_word_pinyin(word, pinyin, length, weight):
+    ci = CiDB.get(word)
+    assert ci is not None, '"%s" 词不存在' % word
+
+    problems, pys = check_word(word, pinyin)
+    assert len(problems) == 0, "\n".join(problems)
+
+    ci.add_pinyins([(pys, length, weight)])
+
+def remove_word_pinyin(word, pinyins):
+    ci = CiDB.get(word)
+    if ci is None:
+        return
+    pys = set(tuple(transform_py(py) for py in qpy.split(' ')) for qpy in pinyins)
+    CiDB.remove(word, pys)
+
+def change_word_shortcode_len(word, pinyins, length):
+    ci = CiDB.get(word)
+    assert ci is not None, '"%s" 词不存在' % word
+    pys = set(tuple(transform_py(py) for py in qpy.split(' ')) for qpy in pinyins)
+    ci.change_code_length(pys, length)
+
+def change_word_shortcode_weight(word, pinyins, weight):
+    ci = CiDB.get(word)
+    assert ci is not None, '"%s" 词不存在' % word
+    pys = set(tuple(transform_py(py) for py in qpy.split(' ')) for qpy in pinyins)
+    ci.change_code_rank(pys, weight)
+
+def gen_char(char, short, full):
+    zi = ZiDB.get(char)
+    if zi is None:
+        return set()
+    
+    return zi2codes(zi, short, full)
+
+def gen_word(word, short, full):
+    ci = CiDB.get(word)
+    if ci is None:
+        return set()
+    
+    return ci2codes(ci, short, full)
 
 # print(ci2codes(CiDB.get('这桩'), short = False, full = True))
 # print(ci2codes(CiDB.get('这这这'), short = False, full = True))
@@ -764,3 +908,5 @@ def build_chaoji():
 # build_chaoji()
 
 # print(ci2codes(CiDB.get('不要这样'), short = True, full = False))
+# remove_word_pinyin('不要这样', {'bu yao zhe yang'})
+# print(CiDB.get('不要这样'))

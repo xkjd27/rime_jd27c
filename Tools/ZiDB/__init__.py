@@ -1,5 +1,6 @@
 import os
 import re
+from PinyinConsts import VALID_PY
 
 UNDEFINED = 0       # 未定义
 GENERAL = 1         # 通常
@@ -245,11 +246,11 @@ def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
     assert len(pinyins) != 0, '"%s" 字没有提供拼音' % char
 
     for pinyin in pinyins:
-        assert pinyin in VALID_PY, '"%s" 字拼音 "%s" 不合法' % (char, pinyin)
+        assert pinyin[0] in VALID_PY, '"%s" 字拼音 "%s" 不合法' % (char, pinyin[0])
 
     line = '%s\t%d\t%s' % (char, rank, shape)
     for pinyin in pinyins:
-        line += '\t%s\t6' % pinyin
+        line += '\t%s\t%d' % pinyin
     if comment is not None:
         line += '\t%s' % comment
     _db[char] = Zi(line, which)

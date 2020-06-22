@@ -1,4 +1,5 @@
 import os
+from PinyinConsts import VALID_PY
 
 _fixed_general = None
 _fixed_super = None
@@ -8,52 +9,6 @@ _db_super = None
 UNDEFINED = 0       # 未定义
 GENERAL = 1         # 通常
 SUPER = 2           # 超级
-
-# 拼音表
-VALID_PY = {
-    '~a', '~ai', '~an', '~ang', '~ao', 'ba', 'bai', 'ban', 'bang', 'bao',
-    'bei', 'ben', 'beng', 'bi', 'bian', 'biao', 'bie', 'bin', 'bing', 'bo',
-    'bu', 'ca', 'cai', 'can', 'cang', 'cao', 'ce', 'cen', 'ceng', 'cha',
-    'chai', 'chan', 'chang', 'chao', 'che', 'chen', 'cheng', 'chi', 'chong',
-    'chou', 'chu', 'chua', 'chuai', 'chuan', 'chuang', 'chui', 'chun', 'chuo',
-    'ci', 'cong', 'cou', 'cu', 'cuan', 'cui', 'cun', 'cuo', 'da', 'dai',
-    'dan', 'dang', 'dao', 'de', 'dei', 'den', 'deng', 'di', 'dia', 'dian',
-    'diao', 'die', 'ding', 'diu', 'dong', 'dou', 'du', 'duan', 'dui', 'dun',
-    'duo', '~e', '~ei', '~en', '~eng', '~er', 'fa', 'fan', 'fang', 'fei',
-    'fen', 'feng', 'fiao', 'fo', 'fou', 'fu', 'ga', 'gai', 'gan', 'gang',
-    'gao', 'ge', 'gei', 'gen', 'geng', 'gong', 'gou', 'gu', 'gua', 'guai',
-    'guan', 'guang', 'gui', 'gun', 'guo', 'ha', 'hai', 'han', 'hang', 'hao',
-    'he', 'hei', 'hen', 'heng', 'hong', 'hou', 'hu', 'hua', 'huai', 'huan',
-    'huang', 'hui', 'hun', 'huo', 'ji', 'jia', 'jian', 'jiang', 'jiao', 'jie',
-    'jin', 'jing', 'jiong', 'jiu', 'jv', 'juan', 'jue', 'jun', 'ka', 'kai',
-    'kan', 'kang', 'kao', 'ke', 'kei', 'ken', 'keng', 'kong', 'kou', 'ku',
-    'kua', 'kuai', 'kuan', 'kuang', 'kui', 'kun', 'kuo', 'la', 'lai', 'lan',
-    'lang', 'lao', 'le', 'lei', 'leng', 'li', 'lia', 'lian', 'liang', 'liao',
-    'lie', 'lin', 'ling', 'liu', 'lo', 'long', 'lou', 'lu', 'luan', 'lun',
-    'luo', 'lv', 'lue', 'ma', 'mai', 'man', 'mang', 'mao', 'me', 'mei', 'men',
-    'meng', 'mi', 'mian', 'miao', 'mie', 'min', 'ming', 'miu', 'mo', 'mou',
-    'mu', 'na', 'nai', 'nan', 'nang', 'nao', 'ne', 'nei', 'nen', 'neng', 'ni',
-    'nian', 'niang', 'niao', 'nie', 'nin', 'ning', 'niu', 'nong', 'nou', 'nu',
-    'nuan', 'nuo', 'nun', 'nv', 'nue', '~o', '~ou', 'pa', 'pai', 'pan',
-    'pang', 'pao', 'pei', 'pen', 'peng', 'pi', 'pian', 'piao', 'pie', 'pin',
-    'ping', 'po', 'pou', 'pu', 'qi', 'qia', 'qian', 'qiang', 'qiao', 'qie', 'qin',
-    'qing', 'qiong', 'qiu', 'qv', 'quan', 'que', 'qun', 'ran', 'rang', 'rao',
-    're', 'ren', 'reng', 'ri', 'rong', 'rou', 'ru', 'rua', 'ruan', 'rui', 'run', 'ruo',
-    'sa', 'sai', 'san', 'sang', 'sao', 'se', 'sen', 'seng', 'sha', 'shai',
-    'shan', 'shang', 'shao', 'she', 'shei', 'shen', 'sheng', 'shi', 'shou',
-    'shu', 'shua', 'shuai', 'shuan', 'shuang', 'shui', 'shun', 'shuo', 'si',
-    'song', 'sou', 'su', 'suan', 'sui', 'sun', 'suo', 'ta', 'tai', 'tan',
-    'tang', 'tao', 'te', 'teng', 'ti', 'tian', 'tiao', 'tie', 'ting',
-    'tong', 'tou', 'tu', 'tuan', 'tui', 'tun', 'tuo', 'wa', 'wai', 'wan',
-    'wang', 'wei', 'wen', 'weng', 'wo', 'wu', 'xi', 'xia', 'xian', 'xiang',
-    'xiao', 'xie', 'xin', 'xing', 'xiong', 'xiu', 'xv', 'xuan', 'xue', 'xun',
-    'ya', 'yan', 'yang', 'yao', 'ye', 'yi', 'yin', 'ying', 'yo', 'yong',
-    'you', 'yv', 'yuan', 'yue', 'yun', 'za', 'zai', 'zan', 'zang', 'zao', 'ze',
-    'zei', 'zen', 'zeng', 'zha', 'zhai', 'zhan', 'zhang', 'zhao', 'zhe', 'zhei',
-    'zhen', 'zheng', 'zhi', 'zhong', 'zhou', 'zhu', 'zhua', 'zhuai', 'zhuan',
-    'zhuang', 'zhui', 'zhun', 'zhuo', 'zi', 'zong', 'zou', 'zu', 'zuan', 'zui',
-    'zun', 'zuo'
-}
 
 class Ci:
     def __init__(self, word, pinyins, which=UNDEFINED):
@@ -102,32 +57,32 @@ class Ci:
         """
         self._which = which
 
-    def change_code_length(self, pinyin, length):
+    def change_code_length(self, pinyins, length):
         """
         更换词组简码长度
         ----------
-        pinyin: tuple(str)
+        pinyins: set(tuple(str))
             需要修改的拼音
         length: int
             码长
         """
         for i in range(len(self._pinyins)):
             weight = self._pinyins[i]
-            if weight[0] == pinyin:
+            if weight[0] in pinyins:
                 self._pinyins[i] = (weight[0], length, weight[2])
 
-    def change_code_rank(self, pinyin, rank):
+    def change_code_rank(self, pinyins, rank):
         """
         更换词组简码权值
         ----------
-        pinyin: tuple(str)
+        pinyins: set(tuple(str))
             需要修改的拼音
         rank: int
             权值
         """
         for i in range(len(self._pinyins)):
             weight = self._pinyins[i]
-            if weight[0] == pinyin:
+            if weight[0] in pinyins:
                 self._pinyins[i] = (weight[0], weight[1], rank)
 
     def add_pinyins(self, pinyins):
@@ -235,7 +190,7 @@ def add(word, pinyins, which = GENERAL):
     _loadDB()
     
     assert len(word) != 1, '"%s" 不是词组' % word
-    assert word not in _db, '"%s" 词已存在' % word
+    assert word not in _db_general and word not in _db_super, '"%s" 词已存在' % word
     assert len(pinyins) != 0, '"%s" 词没有提供拼音' % word
 
     sound = sound_chars(word)
@@ -245,7 +200,11 @@ def add(word, pinyins, which = GENERAL):
         for py in pinyin[0]:
             assert py in VALID_PY, '"%s" 词拼音 "%s" 不合法（非法拼音）' % (word, " ".join(pinyin[0]))
     
-    _db[word] = Ci(word, pinyins, which)
+    if (which == GENERAL):
+        _db_general[word] = Ci(word, pinyins, which)
+    else:
+        _db_super[word] = Ci(word, pinyins, which)
+
 
 def remove(word, pinyins):
     """
@@ -253,15 +212,23 @@ def remove(word, pinyins):
     ----------
     word : str
         目标词组
-    pinyins: set(str)
+    pinyins: set(tuple(str))
         需要删除的拼音
     """
 
-    assert word in _db, '"%s" 词不存在' % word
-    _db[word].remove_pinyins(pinyins)
+    _loadDB()
+    db = None
+    if word in _db_general:
+        db = _db_general
+    elif word in _db_super:
+        db = _db_super
 
-    if len(_db[word].pinyins()) <= 0:
-        del _db[word]
+    assert db is not None, '"%s" 词已存在' % word
+
+    db[word].remove_pinyins(pinyins)
+
+    if len(db[word].pinyins()) <= 0:
+        del db[word]
 
 def commit():
     _loadDB()

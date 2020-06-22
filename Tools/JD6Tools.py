@@ -532,6 +532,12 @@ def traverse_cizu(build = False, report = True):
         codes = ci2codes(ci, True, False)
         entries += codes
 
+    extra = 100
+    for entry in CiDB.fixed(CiDB.GENERAL):
+        code = (entry[0], entry[1], extra, 1)
+        entries.append(code)
+        extra += 1
+
     entries.sort(key=lambda e: (e[1], e[2]))
 
     if build:
@@ -578,7 +584,7 @@ def traverse_cizu(build = False, report = True):
         # 如果只有二重
         if code_dups == 2:
             # 如果强制允许了重码
-            if dup_code_check[code][0][1] < 10 and dup_code_check[code][1][1] >= 10:
+            if dup_code_check[code][1][1] >= 10 and dup_code_check[code][0][1] != dup_code_check[code][1][1]:
                 code_dup_lose_flag.add(code)
             # 如果已经设置好了权值
             elif dup_code_check[code][0][1] != dup_code_check[code][1][1]:
@@ -671,6 +677,12 @@ def build_chaoji():
         codes = ci2codes(ci, True, False)
         chaoji += codes
 
+    extra = 100
+    for entry in CiDB.fixed(CiDB.SUPER):
+        code = (entry[0], entry[1], extra, 1)
+        chaoji.append(code)
+        extra += 1
+
     chaoji.sort(key=lambda e: (e[1], e[2]))
 
     f = open('rime/xkjd6.chaojizici.yaml', mode='w', encoding='utf-8', newline='\n')
@@ -733,5 +745,5 @@ def build_chaoji():
 # CiDB.commit()
 
 traverse_danzi(True)
-# traverse_cizu(True, True)
+traverse_cizu(True, True)
 build_chaoji()

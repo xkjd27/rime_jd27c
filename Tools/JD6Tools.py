@@ -308,6 +308,8 @@ def get_danzi_codes():
     if (_entries == None or _entries_r == None):
         _entries = []
         _entries_r = {}
+    else:
+        return _entries, _entries_r
 
     chars = ZiDB.all()
     for zi in chars:
@@ -730,6 +732,6 @@ def build_chaoji():
 # ZiDB.commit()
 # CiDB.commit()
 
-# traverse_danzi(True)
+traverse_danzi(True)
 # traverse_cizu(True, True)
-# build_chaoji()
+build_chaoji()

@@ -93,12 +93,69 @@ class Ci:
     def weights(self):
         return self._pinyins
 
+    def change_which(self, which):
+        """
+        更换词组隶属码表
+        ----------
+        which: CiDB.GENERAL | CiDB.SUPER
+            通常表 | 超级表
+        """
+        self._which = which
+
+    def change_code_length(self, pinyin, length):
+        """
+        更换词组简码长度
+        ----------
+        pinyin: tuple(str)
+            需要修改的拼音
+        length: int
+            码长
+        """
+        for i in range(len(self._pinyins)):
+            weight = self._pinyins[i]
+            if weight[0] == pinyin:
+                self._pinyins[i] = (weight[0], length, weight[2])
+
+    def change_code_rank(self, pinyin, rank):
+        """
+        更换词组简码权值
+        ----------
+        pinyin: tuple(str)
+            需要修改的拼音
+        rank: int
+            权值
+        """
+        for i in range(len(self._pinyins)):
+            weight = self._pinyins[i]
+            if weight[0] == pinyin:
+                self._pinyins[i] = (weight[0], weight[1], rank)
+
     def add_pinyins(self, pinyins):
+        """
+        为词组添加拼音
+        ----------
+        pinyins: list[tuple(py: tuple(str), len: int, rank: int)]
+            list[tuple(拼音, 码长, 码序权值)]
+        """
+        sound = sound_chars(self._word)
+
         existing = self.pinyins()
         for pinyin in pinyins:
             pyt = tuple(pinyin[0])
+            assert len(pyt) == len(sound), '"%s" 词拼音 "%s" 不合法（长度不符）' % (self._word, " ".join(pyt))
+            for py in pyt:
+                assert py in VALID_PY, '"%s" 词拼音 "%s" 不合法（非法拼音）' % (self._word, " ".join(pyt))
+        
             if pyt not in existing:
                 self._pinyins.append((pyt, pinyin[1], pinyin[2]))
+
+    def remove_pinyins(self, pinyins):
+        og_pinyins = self._pinyins
+        self._pinyins = []
+
+        for pinyin in og_pinyins:
+            if pinyin[0] not in pinyins:
+                self._pinyins.append(pinyin)
 
     def sound_chars(self):
         return sound_chars(self._word)
@@ -149,7 +206,7 @@ def sound_chars(words):
 
     return "".join(sanitized)
 
-def get(word):
+def get(word) -> Ci:
     _loadDB()
     
     if word not in _db_general:
@@ -166,21 +223,47 @@ def all(which):
         return _db_super.values()
 
 def add(word, pinyins, which = GENERAL):
-    _loadDB()
+    """
+    添加词组到词库
+    ----------
+    word : str
+        需要添加的词组
+    pinyins: list[tuple(py: tuple(str), len: int, rank: int)]
+        list[tuple(拼音, 码长, 码序权值)]
+    which: CiDB.GENERAL | CiDB.SUPER
+        通常表 | 超级表
+    """
 
+    _loadDB()
+    
+    assert len(word) != 1, '"%s" 不是词组' % word
+    assert word not in _db, '"%s" 词已存在' % word
     assert len(pinyins) != 0, '"%s" 词没有提供拼音' % word
 
     sound = sound_chars(word)
 
     for pinyin in pinyins:
-        assert len(pinyin[0]) == len(sound), '"%s" 词拼音 "%s" 不合法' % (word, " ".join(pinyin[0]))
+        assert len(pinyin[0]) == len(sound), '"%s" 词拼音 "%s" 不合法（长度不符）' % (word, " ".join(pinyin[0]))
         for py in pinyin[0]:
-            assert py in VALID_PY, '"%s" 词拼音 "%s" 不合法' % (word, " ".join(pinyin[0]))
+            assert py in VALID_PY, '"%s" 词拼音 "%s" 不合法（非法拼音）' % (word, " ".join(pinyin[0]))
     
-    if (word not in _db):
-        _db[word] = Ci(word, pinyins, which)
-    else:
-        _db[word].add_pinyins(pinyins)
+    _db[word] = Ci(word, pinyins, which)
+
+def remove(word, pinyins):
+    """
+    删除词组拼音，如果空音则彻底删除
+    ----------
+    word : str
+        目标词组
+    pinyins: set(str)
+        需要删除的拼音
+    """
+
+    assert word in _db, '"%s" 词不存在' % word
+    _db[word].remove_pinyins(pinyins)
+
+    if len(_db[word].pinyins()) <= 0:
+        del _db[word]
 
 def commit():
     _loadDB()

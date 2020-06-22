@@ -101,6 +101,70 @@ class Zi:
             line += '\t%s' % self._comment
         return line
 
+    def add_pinyins(self, pinyins):
+        """
+        为单字添加拼音
+        ----------
+        pinyins: list[tuple(py: str, len: int)]
+            需要添加的拼音
+        """
+        existing = self.pinyins()
+        for pinyin in pinyins:
+            py = pinyin[0]
+            assert py in VALID_PY, '"%s" 字拼音 "%s" 不合法' % (self._char, pinyin)
+            if py not in existing:
+                self._pinyins.append(pinyin)
+    
+    def change_shape(self, shape):
+        """
+        更换单字形码
+        ----------
+        shape: str
+            形码
+        """
+        assert re.search("^[aiouv]{3,4}$", shape), '"%s" 字形码不合法: %s' % (self._char, shape)
+        self._shape = shape
+
+    def change_rank(self, rank):
+        """
+        更换单字全码排序
+        ----------
+        rank: int
+            全码权值
+        """
+        self._rank = rank
+
+    def change_which(self, which):
+        """
+        更换单字隶属码表
+        ----------
+        which: ZiDB.GENERAL | ZiDB.SUPER
+            通常表 | 超级表
+        """
+        self._which = which
+
+    def change_code_length(self, pinyins, length):
+        """
+        更换单字简码长度
+        ----------
+        pinyins: set(str)
+            需要修改的拼音
+        length: int
+            码长
+        """
+        
+        for i in range(len(self._pinyins)):
+            weight = self._pinyins[i]
+            if weight[0] in pinyins:
+                self._pinyins[i] = (weight[0], length)
+
+    def remove_pinyins(self, pinyins):
+        og_pinyins = self._pinyins
+        self._pinyins = []
+
+        for pinyin in og_pinyins:
+            if pinyin[0] not in pinyins:
+                self._pinyins.append(pinyin)
 
 _db = {}
 _fixed = []
@@ -161,6 +225,24 @@ def fixed():
     return _fixed
 
 def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
+    """
+    添加单字到字库
+    ----------
+    char : str
+        需要添加的单字
+    shape: str
+        形码
+    pinyins: list[tuple(py: str, len: int)]
+        拼音
+    rank: int
+        全码权值
+    which: ZiDB.GENERAL | ZiDB.SUPER
+        通常表 | 超级表
+    comment: str
+        注释
+    """
+
+    assert len(char) == 1, '"%s" 不是单字' % char
     assert re.search("^[aiouv]{3,4}$", shape), '"%s" 字形码不合法: %s' % (char, shape)
     assert char not in _db, '"%s" 字已存在' % char
     assert len(pinyins) != 0, '"%s" 字没有提供拼音' % char
@@ -174,6 +256,23 @@ def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
     if comment is not None:
         line += '\t%s' % comment
     _db[char] = Zi(line, which)
+
+
+def remove(char, pinyins):
+    """
+    删除单字拼音，如果空音则彻底删除
+    ----------
+    char : str
+        目标单字
+    pinyins: set(str)
+        需要删除的拼音
+    """
+
+    assert char in _db, '"%s" 字不存在' % char
+    _db[char].remove_pinyins(pinyins)
+
+    if len(_db[char].pinyins()) <= 0:
+        del _db[char]
 
 def commit():
     all_char = sorted(all(), key=lambda x: x._char)

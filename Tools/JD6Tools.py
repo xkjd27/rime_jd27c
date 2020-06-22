@@ -406,15 +406,15 @@ def ci2codes(ci, short = True, full = False):
         for code in s_codes:
             full_code = code + shape
             if (full):
-                codes.add((ci.word(), full_code, len(s_codes), rank))
+                codes.add((ci.word(), full_code, rank, len(s_codes)))
             if (short):
                 short_code = full_code[:shortcode_len]
-                codes.add((ci.word(), short_code, len(s_codes), rank))
+                codes.add((ci.word(), short_code, rank, len(s_codes)))
             
     return codes
 
 # ---------------------------------
-#              主行为
+#             码表生成
 # ---------------------------------
 def traverse_danzi(build = False, report = True):
     """遍历单字码表"""
@@ -437,6 +437,12 @@ def traverse_danzi(build = False, report = True):
     else:
         danzi = None
 
+    if report:
+        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/单字健康报告.txt')
+        report = open(report_path, mode='w', encoding='utf-8', newline='\n')
+    else:
+        report = None
+
     for entry in entries:
         char, code, rank, which, full_code = entry
 
@@ -454,15 +460,15 @@ def traverse_danzi(build = False, report = True):
                 dups.append(char)
             else:
                 if (len(dups) > 1):
-                    print('重码：%6s %s' % (last_code, str(dups)))
+                    report.write('重码：%6s %s\n' % (last_code, str(dups)))
                 dups = [char]
         else:
             if (len(dups) > 1):
-                print('重码：%6s %s' % (last_code, str(dups)))
+                report.write('重码：%6s %s\n' % (last_code, str(dups)))
             dups.clear()
 
         if (len(code) == 6 and rank_check[which][0] == code and rank_check[which][2] == rank):
-            print('全码序冲突：%6s %s %s [%d] (%s)' % (code, char, rank_check[which][1], rank, ('通常' if which == ZiDB.GENERAL else '超级')))
+            report.write('全码序冲突：%6s %s %s [%d] (%s)\n' % (code, char, rank_check[which][1], rank, ('通常' if which == ZiDB.GENERAL else '超级')))
 
         # 简码空间检查
         if (full_code and not full_code[0]):
@@ -487,9 +493,9 @@ def traverse_danzi(build = False, report = True):
                 if not short_avaliable:
                     if (avaliable_short is not None):
                         if (substitute is not None):
-                            print('可替换："%s" %6s -> %6s (替换超级字 "%s")' % (char, code, avaliable_short, substitute))
+                            report.write('可替换："%s" %6s -> %6s (替换超级字 "%s")\n' % (char, code, avaliable_short, substitute))
                         else:
-                            print('可缩码："%s" %6s -> %6s (%s)' % (char, code, avaliable_short, ('通常' if which == ZiDB.GENERAL else '超级')))
+                            report.write('可缩码："%s" %6s -> %6s (%s)\n' % (char, code, avaliable_short, ('通常' if which == ZiDB.GENERAL else '超级')))
                     break
 
                 avaliable_short = tmp_codes[0]
@@ -503,15 +509,15 @@ def traverse_danzi(build = False, report = True):
             f.write(char+'\t'+code+'\n')
     
     if (len(dups) > 1):
-        print('重码：%6s %s' % (last_code, str(dups)))
+        report.write('重码：%6s %s\n' % (last_code, str(dups)))
 
     if (danzi is not None):
         danzi.close()
 
-    if build:
-        print('码表已保存')
+    if report:
+        report.write('检查完毕\n')
     else:
-        print('检查完毕')
+        report.close()
 
 def traverse_cizu(build = False, report = True):
     """遍历词组码表"""
@@ -524,7 +530,7 @@ def traverse_cizu(build = False, report = True):
         codes = ci2codes(ci, True, False)
         entries += codes
 
-    entries.sort(key=lambda e: (e[1], e[3]))
+    entries.sort(key=lambda e: (e[1], e[2]))
 
     if build:
         f = open('rime/xkjd6.cizu.yaml', mode='w', encoding='utf-8', newline='\n')
@@ -533,7 +539,7 @@ def traverse_cizu(build = False, report = True):
         f = None
 
     for entry in entries:
-        word, code, fly, rank = entry
+        word, code, rank, fly = entry
         if f is not None:
             f.write(word+'\t'+code+'\n')
         
@@ -653,32 +659,77 @@ def traverse_cizu(build = False, report = True):
         report_allowed.close()
 
 
-def traverse_chaoji():
+def build_chaoji():
+    entries, _ = get_danzi_codes()
+    
+    chaoji = list(filter(lambda e: e[3] == ZiDB.SUPER, entries))
+
+    words = CiDB.all(CiDB.SUPER)
+    for ci in words:
+        codes = ci2codes(ci, True, False)
+        chaoji += codes
+
+    chaoji.sort(key=lambda e: (e[1], e[2]))
+
+    f = open('rime/xkjd6.chaojizici.yaml', mode='w', encoding='utf-8', newline='\n')
+    f.write(RIME_HEADER % 'chaojizici')
+
+    for entry in chaoji:
+        word, code, rank = entry[:3]
+        if f is not None:
+            f.write(word+'\t'+code+'\n')
+
+    f.close()
 
 
-# if __name__ == "__main__":
-#     action = sys.argv[1] if len(sys.argv) > 1 else None
+# ---------------------------------
+#               指令
+# ---------------------------------
+#
+#   Human Commands - Process Order
+#       添加        通常/超级   字/词    全拼   编码
+#       修改        通常/超级   字/词    全拼   编码
+#       删除        通常/超级   字/词    全拼   编码
+#       排序        通常/超级   字/词    全拼   编码
+#
+#   Detailed Commands
+#       add_char                        char    pinyin  length  weight  which
+#       add_char_pinyin                 char    pinyin  length
+#       remove_char_pinyin              char    pinyin
+#       change_char_shape               char    shape
+#       change_char_shortcode_len       char    pinyin  length
+#       change_char_fullcode_weight     char    weight
+#       add_word                        word    pinyin  length  weight  which
+#       add_word_pinyin                 word    pinyin  length  weight
+#       remove_word_pinyin              word    pinyin
+#       change_word_shortcode_len       word    pinyin  length
+#       change_word_shortcode_weight    word    pinyin  weight
+#
+# ---------------------------------
 
-#     if action == "build_danzi":
-#         traverse_danzi(True)
-#     elif action == "danzi_change":
-#         pass
-#     elif action == "full_cizu_check":
-#         build_cizu()
+# TODO: add commands
 
-#     # traverse_danzi(True)
-#     # ZiDB.commit()
-#     # print(ci2codes(CiDB.get('这桩'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('这这这'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('骑着'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('服装'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('装装'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('江面'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('去装'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('车车昭'), short = False, full = True))
-#     # print(ci2codes(CiDB.get('曲曲折折'), short = False, full = True))
-#     # CiDB.commit()
-traverse_danzi(True)
-traverse_cizu(True, True)
-traverse_chaoji()
+
+# print(ci2codes(CiDB.get('这桩'), short = False, full = True))
+# print(ci2codes(CiDB.get('这这这'), short = False, full = True))
+# print(ci2codes(CiDB.get('骑着'), short = False, full = True))
+# print(ci2codes(CiDB.get('服装'), short = False, full = True))
+# print(ci2codes(CiDB.get('装装'), short = False, full = True))
+# print(ci2codes(CiDB.get('江面'), short = False, full = True))
+# print(ci2codes(CiDB.get('去装'), short = False, full = True))
+# print(ci2codes(CiDB.get('车车昭'), short = False, full = True))
+# print(ci2codes(CiDB.get('曲曲折折'), short = False, fujll = True))
 # print(ci2codes(CiDB.get('转折处'), short = False, full = True))
+
+# ZiDB.get('折').add_pinyins([("zheng", 5)])
+# ZiDB.get('折').add_pinyins([("zhe", 5)])
+# CiDB.get('曲曲折折').add_pinyins([(("qv","qv","she","zhe"), 100, 100)])
+# print(CiDB.get('曲曲折折').weights())
+# print(ZiDB.get('折').weights())
+
+# ZiDB.commit()
+# CiDB.commit()
+
+# traverse_danzi(True)
+# traverse_cizu(True, True)
+# build_chaoji()

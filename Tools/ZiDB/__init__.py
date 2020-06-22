@@ -131,10 +131,23 @@ with open(os.path.join(_path, '无理.txt'), mode='r', encoding='utf-8') as f:
         else:
             _db[char._char] = char
 
-with open(os.path.join(_path, '固定.txt'), mode='r', encoding='utf-8') as f:
+with open(os.path.join(_path, '通常特定.txt'), mode='r', encoding='utf-8') as f:
     for entry in f.readlines():
-        data = entry.strip().split('\t')
-        _fixed.append((data[0], data[1]))
+        line = entry.strip()
+        if (len(line) <= 0 or line.startswith('#')):
+            continue
+
+        data = line.split('\t')
+        _fixed.append((data[0], data[1], GENERAL))
+
+with open(os.path.join(_path, '超级特定.txt'), mode='r', encoding='utf-8') as f:
+    for entry in f.readlines():
+        line = entry.strip()
+        if (len(line) <= 0 or line.startswith('#')):
+            continue
+
+        data = line.split('\t')
+        _fixed.append((data[0], data[1], SUPER))
 
 def get(char):
     if char not in _db:

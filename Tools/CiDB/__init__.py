@@ -1,5 +1,7 @@
 import os
 
+_fixed_general = None
+_fixed_super = None
 _db_general = None
 _db_super = None
 
@@ -192,3 +194,32 @@ def commit():
         all_words = sorted(all(SUPER), key=lambda x: x._word)
         for ci in all_words:
             f.write(ci.line()+'\n')
+
+def fixed(which):
+    global _fixed_general
+    global _fixed_super
+    if (which == GENERAL):
+        if _fixed_general is None:
+            _fixed_general = []
+            with open(os.path.join(_path, '通常特定.txt'), mode='r', encoding='utf-8') as f:
+                for entry in f.readlines():
+                    line = entry.strip()
+                    if (len(line) <= 0 or line.startswith('#')):
+                        continue
+
+                    data = line.split('\t')
+                    _fixed_general.append((data[0], data[1]))
+        
+        return _fixed_general
+    else:
+        if _fixed_super is None:
+            _fixed_super = []
+            with open(os.path.join(_path, '超级特定.txt'), mode='r', encoding='utf-8') as f:
+                for entry in f.readlines():
+                    line = entry.strip()
+                    if (len(line) <= 0 or line.startswith('#')):
+                        continue
+
+                    data = line.split('\t')
+                    _fixed_super.append((data[0], data[1]))
+        return _fixed_super

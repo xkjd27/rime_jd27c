@@ -7588,7 +7588,7 @@
 颖	1	uavu	ying	4
 颗	0	iavu	ke	3
 题	0	oivu	ti	3
-颙	0	iavu	ying	5
+颙	0	iavu	yong	5
 颚	0	oovu	~e	5
 颛	0	iavu	zhuan	4
 颜	0	ovvu	yan	4

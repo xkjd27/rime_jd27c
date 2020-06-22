@@ -1,0 +1,32 @@
+name: Check Command Issues
+
+on:
+  issues:
+    types: [ opened, edited ]
+  repository_dispatch:
+    types: [ force_check ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # $GITHUB_WORKSPACE
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Setup Python
+      uses: actions/setup-python@v2
+    
+    - name: Python Dependency
+      run: |
+        pip install PyGithub
+        pip install gitpython
+    
+    - name: Check Issues
+      run: |
+        cd $GITHUB_WORKSPACE
+        python ./Tools/GithubActions.py
+    
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

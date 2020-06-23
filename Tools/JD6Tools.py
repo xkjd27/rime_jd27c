@@ -718,6 +718,7 @@ def traverse_cizu(build = False, report = True):
     if build:
         f = open('rime/xkjd6.cizu.dict.yaml', mode='w', encoding='utf-8', newline='\n')
         f.write(RIME_HEADER % 'cizu')
+        f2 = open('rime/opencc/WXWPromptFilters.txt', mode='w', encoding='utf-8', newline='\n')
     else:
         f = None
 
@@ -725,6 +726,7 @@ def traverse_cizu(build = False, report = True):
         word, code, rank, fly = entry
         if f is not None:
             f.write(word+'\t'+code+'\n')
+            f2.write(word+'\t'+code+'\n')
         
         # if code in dup_code_check:
         #     dup_code_check[code].append((word, rank, fly))
@@ -1133,6 +1135,9 @@ def find_weight_for_word(word, pinyin, length):
                 
     return weight
 
+def build_static():
+    pass
+
 def commit():
     """提交所有更改并生成新码表"""
     clear_danzi_codes()
@@ -1142,31 +1147,5 @@ def commit():
     traverse_danzi(True)
     traverse_cizu(True, True)
     build_chaoji()
+    build_static()
 
-# print(ci2codes(CiDB.get('这桩'), short = False, full = True))
-# print(ci2codes(CiDB.get('这这这'), short = False, full = True))
-# print(ci2codes(CiDB.get('骑着'), short = False, full = True))
-# print(ci2codes(CiDB.get('服装'), short = False, full = True))
-# print(ci2codes(CiDB.get('装装'), short = False, full = True))
-# print(ci2codes(CiDB.get('江面'), short = False, full = True))
-# print(ci2codes(CiDB.get('去装'), short = False, full = True))
-# print(ci2codes(CiDB.get('车车昭'), short = False, full = True))
-# print(ci2codes(CiDB.get('曲曲折折'), short = False, full = True))
-# print(ci2codes(CiDB.get('转折处'), short = False, full = True))
-
-# ZiDB.get('折').add_pinyins([("zheng", 5)])
-# ZiDB.get('折').add_pinyins([("zhe", 5)])
-# CiDB.get('曲曲折折').add_pinyins([(("qv","qv","she","zhe"), 100, 100)])
-# print(CiDB.get('曲曲折折').weights())
-# print(ZiDB.get('折').weights())
-
-# ZiDB.commit()
-# CiDB.commit()
-
-# traverse_danzi(True)
-# traverse_cizu(True, True)
-# build_chaoji()
-
-# print(ci2codes(CiDB.get('不要这样'), short = True, full = False))
-# remove_word_pinyin('不要这样', {'bu yao zhe yang'})
-# print(CiDB.get('不要这样'))

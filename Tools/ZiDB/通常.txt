@@ -495,7 +495,7 @@
 其	0	viuo	ji	6	qi	3
 具	0	iauo	jv	4
 典	0	iauo	dian	4
-兹	0	ouaa	ci	5	zi	4
+兹	0	ouaa	ci	5	zi	6
 养	0	ouui	yang	3
 兼	0	ouva	jian	4
 兽	0	ouvo	shou	4

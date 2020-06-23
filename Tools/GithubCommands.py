@@ -219,6 +219,7 @@ def command_rank_char(char, pinyin, code, rank):
     codes = set(c[1] for c in (JD6Tools.gen_char(char)))
     if (code not in codes):
         COMMAND_TRANSCRIPT.append('  * __`%s %s`码不存在__' % (char, code))
+        return
 
     target = JD6Tools.get_char(char)
     involved = JD6Tools.get_zi_of_code(code)
@@ -277,6 +278,7 @@ def command_rank_word(word, pinyin, code, rank):
     codes = set(c[1] for c in (JD6Tools.gen_word(word)))
     if (code not in codes):
         COMMAND_TRANSCRIPT.append('  * __`%s`码不存在__' % (word))
+        return
 
     all_pinyins = set(" ".join(py) for py in JD6Tools.solve_word_pinyin(word, pinyin))
     target = JD6Tools.get_word(word)
@@ -403,4 +405,6 @@ def process_commands(commands):
 
 # command_rank(1, ('找删', 'zhao shan', 'fzef#2'))
 # command_rank(1, ('初试', 'chu shi', 'jjekoo#1'))
+
+# process_commands([])
 # print(COMMAND_TRANSCRIPT)

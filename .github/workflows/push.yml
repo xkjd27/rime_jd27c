@@ -26,17 +26,17 @@ jobs:
   
     - name: Python Dependency
       run: |
-        pip install -r ./Tools/requirements.txt
+        pip install -r ./Tools/Lambda/requirements.txt
 
     - name: Build Dict
       run: |
         cd $GITHUB_WORKSPACE
-        python ./Tools/GithubBuild.py
+        python ./Tools/Lambda/GithubBuild.py
 
     - name: Re-check Issues
       run: |
         cd $GITHUB_WORKSPACE
-        python ./Tools/GithubIssues.py
+        python ./Tools/Lambda/GithubIssues.py
     
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1138,34 +1138,37 @@ def find_weight_for_word(word, pinyin, length):
     return weight
 
 def build_static():
+    tool_path = os.path.dirname(os.path.abspath(__file__))
+    
+
     wxw_check = []
-    f = open('Tools/Static/wxw.txt', mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'Static/wxw.txt'), mode='r', encoding='utf-8')
     wxw_check += f.readlines()
     f.close()
 
-    f = open('Tools/Static/笔码一简.txt', mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'Static/笔码一简.txt'), mode='r', encoding='utf-8')
     buchong = f.readlines()
     f.close()
 
-    f = open('Tools/Static/二简.txt', mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'Static/二简.txt'), mode='r', encoding='utf-8')
     second_short = f.readlines()
     buchong += second_short
     wxw_check += second_short
     f.close()
 
-    f = open('Tools/Static/二重.txt', mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'Static/二重.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
-    f = open('Tools/Static/syxb.txt', mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'Static/syxb.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
-    f = open('Tools/Static/补充词组.txt', mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'Static/补充词组.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
-    f = open('Tools/Static/部首偏旁.txt', mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'Static/部首偏旁.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
@@ -1190,6 +1193,18 @@ def build_static():
 
         for prompt in wxw_prompt:
             f.write("%s\t%s_%s\n" % prompt)
+
+    STAITC_MAP = {
+        'fuhao.txt': 'fuhao',
+        'lianjie.txt': 'lianjie',
+        'yingwen.txt': 'yingwen',
+    }
+
+    for static in STAITC_MAP:
+        with open("rime/xkjd6.%s.dict.yaml" % STAITC_MAP[static], mode='w', encoding='utf-8', newline='\n') as outfile:
+            outfile.write(RIME_HEADER % STAITC_MAP[static])
+            with open(os.path.join(tool_path, static), mode='r', encoding='utf-8') as infile:
+                outfile.write('\n'.join(line.strip() for line in infile.readlines()))
 
 def commit():
     """提交所有更改并生成新码表"""

@@ -31,9 +31,14 @@ def find_commands_issue(content, which):
     lines = match[1].split('\n')
     for line in lines:
         line = line.strip()
-        if (not line.startswith('#')) and '\t' in line:
-            command = tuple(['通常' if which == GENERAL else '超级'] + line.split('\t'))
-            if (len(command) > 2 and command[1] in allowed_commands):
+        if (not line.startswith('#')):
+            if ('\t' in line):
+                command = tuple(['通常' if which == GENERAL else '超级'] + [data.strip() for data in line.split('\t')])
+            elif ('|' in line):
+                command = tuple(['通常' if which == GENERAL else '超级'] + [data.strip() for data in line.split('|')])
+            else:
+                command = None
+            if (command is not None and len(command) > 2 and command[1] in allowed_commands):
                 commands.append(command)
 
     return sorted(commands, key=lambda c: (len(c[2]), allowed_commands[c[1]]))

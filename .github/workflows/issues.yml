@@ -27,12 +27,12 @@ jobs:
 
     - name: Python Dependency
       run: |
-        pip install -r ./Tools/requirements.txt
+        pip install -r ./Tools/Lambda/requirements.txt
     
     - name: Check Issues
       run: |
         cd $GITHUB_WORKSPACE
-        python ./Tools/GithubIssues.py
+        python ./Tools/Lambda/GithubIssues.py
     
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

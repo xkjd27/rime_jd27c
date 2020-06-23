@@ -1195,9 +1195,9 @@ def build_static():
             f.write("%s\t%s_%s\n" % prompt)
 
     STAITC_MAP = {
-        'fuhao.txt': 'fuhao',
-        'lianjie.txt': 'lianjie',
-        'yingwen.txt': 'yingwen',
+        'Static/fuhao.txt': 'fuhao',
+        'Static/lianjie.txt': 'lianjie',
+        'Static/yingwen.txt': 'yingwen',
     }
 
     for static in STAITC_MAP:

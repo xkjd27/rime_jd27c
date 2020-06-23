@@ -40,7 +40,7 @@ def find_commands_issue(content, which):
     
 def find_commands_pr(content):
     sanitized = content.replace('\r\n', '\n')
-    match = re.search('```(.*)```', sanitized, re.DOTALL)
+    match = re.search('```\n((?:[^`]*\n)+)```', sanitized)
 
     if match is None:
         return []
@@ -52,7 +52,7 @@ def find_commands_pr(content):
         line = line.strip()
         if (not line.startswith('#')) and '\t' in line:
             command = tuple(line.split('\t'))
-            if (len(command) > 1 and command[0] in allowed_commands):
+            if (len(command) > 1 and command[1] in allowed_commands):
                 commands.append(command)
 
     return commands
@@ -138,6 +138,11 @@ if current_branch == 'master':
     print('Wrong branch')
     exit(0)
 
+changes = repo.diff_index('HEAD' ,'--name-only').strip()
+if (len(changes) < 0):
+    print('No changes')
+    exit(0)
+
 print("Commiting branch %s" % current_branch)
 repo.add('-A')
 repo.commit(m="自动合并码表")
@@ -146,7 +151,7 @@ repo.push('-u', 'origin', current_branch, '--force')
 SHA = repo.rev_parse('HEAD').strip()
 
 PR_BODY = '''
-**该PR为自动生成，您的issue可能被自动关闭并合并至该PR。**
+**该PR为自动生成**
 
 全部指令：
 ```

@@ -14,6 +14,9 @@ repo = Repo(repo_path).git
 # repo.config('user.name', '小涵')
 # repo.config('user.email', 'octocat@github.com')
 
-repo.add('-A')
-repo.commit(m="自动更新码表")
-repo.push()
+try:
+    repo.add('-A')
+    repo.commit(m="自动更新码表")
+    repo.push()
+except Exception as e:
+    print(e) 

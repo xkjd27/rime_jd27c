@@ -620,7 +620,7 @@ def traverse_danzi(build = False, report = True):
     dups = []
 
     if build:
-        danzi = open('rime/xkjd6.danzi.yaml', mode='w', encoding='utf-8', newline='\n')
+        danzi = open('rime/xkjd6.danzi.dict.yaml', mode='w', encoding='utf-8', newline='\n')
         danzi.write(RIME_HEADER % 'danzi')
     else:
         danzi = None
@@ -716,7 +716,7 @@ def traverse_cizu(build = False, report = True):
     entries.sort(key=lambda e: (e[1], e[2]))
 
     if build:
-        f = open('rime/xkjd6.cizu.yaml', mode='w', encoding='utf-8', newline='\n')
+        f = open('rime/xkjd6.cizu.dict.yaml', mode='w', encoding='utf-8', newline='\n')
         f.write(RIME_HEADER % 'cizu')
     else:
         f = None
@@ -863,7 +863,7 @@ def build_chaoji():
 
     chaoji.sort(key=lambda e: (e[1], e[2]))
 
-    f = open('rime/xkjd6.chaojizici.yaml', mode='w', encoding='utf-8', newline='\n')
+    f = open('rime/xkjdc.chaojizici.dict.yaml', mode='w', encoding='utf-8', newline='\n')
     f.write(RIME_HEADER % 'chaojizici')
 
     for entry in chaoji:

@@ -129,6 +129,9 @@ current_branch = repo.rev_parse('--abbrev-ref', 'HEAD')
 if current_branch != 'bot':
     print('Wrong branch')
 
+repo.config('user.name "小涵"')
+repo.config('user.email "octocat@github.com"')
+
 repo.add('-A')
 repo.commit(m="自动合并码表")
 repo.push(' -u origin %s --force' % current_branch)

@@ -1,4 +1,6 @@
 import JD6Tools
+import os
+
 from git import Git
 
 # Commit Changes

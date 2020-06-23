@@ -212,7 +212,9 @@ def pinyin2sy(py):
     else:
         s = JD6_S2K[shengmu]
 
-    y = JD6_Y2K[yun(py)]
+    y = JD6_Y2K[yunmu]
+    if len(y) > 1:
+        y = [ym.upper() for ym in y]
     sy = []
     for ss in s:
         for yy in y:
@@ -501,7 +503,7 @@ def word_pinyin2codes(pys):
             ch = [s.upper() for s in JD6_S2K['ch']]
             if ((code[0] == ch[0] and code[2] == ch[1]) or (code[0] == ch[1] and code[2] == ch[0])):
                 continue
-            uang = JD6_Y2K['uang']
+            uang = [y.upper() for y in JD6_Y2K['uang']]
             if ((code[1] == uang[0] and code[3] == uang[1]) or (code[1] == uang[1] and code[3] == uang[0])):
                 continue
             codes.add(code)
@@ -1136,7 +1138,58 @@ def find_weight_for_word(word, pinyin, length):
     return weight
 
 def build_static():
-    pass
+    wxw_check = []
+    f = open('Tools/Static/wxw.txt', mode='r', encoding='utf-8')
+    wxw_check += f.readlines()
+    f.close()
+
+    f = open('Tools/Static/笔码一简.txt', mode='r', encoding='utf-8')
+    buchong = f.readlines()
+    f.close()
+
+    f = open('Tools/Static/二简.txt', mode='r', encoding='utf-8')
+    second_short = f.readlines()
+    buchong += second_short
+    wxw_check += second_short
+    f.close()
+
+    f = open('Tools/Static/二重.txt', mode='r', encoding='utf-8')
+    buchong += f.readlines()
+    f.close()
+
+    f = open('Tools/Static/syxb.txt', mode='r', encoding='utf-8')
+    buchong += f.readlines()
+    f.close()
+
+    f = open('Tools/Static/补充词组.txt', mode='r', encoding='utf-8')
+    buchong += f.readlines()
+    f.close()
+
+    f = open('Tools/Static/部首偏旁.txt', mode='r', encoding='utf-8')
+    buchong += f.readlines()
+    f.close()
+
+    with open('rime/xkjd6.buchong.dict.yaml', mode='w', encoding='utf-8', newline='\n') as f:
+        f.write(RIME_HEADER % "buchong")
+        for line in buchong:
+            f.write(line.strip())
+            f.write('\n')
+
+    wxw_prompt = []
+    with open('rime/opencc/WXWPrompt.txt', mode='w', encoding='utf-8', newline='\n') as f:
+        for line in wxw_check:
+            line = line.strip()
+            if line.startswith('#') or '\t' not in line:
+                continue
+
+            data = line.split('\t')
+            codes = [code[1] for code in gen_word(data[0])]
+            codes.sort()
+            if (len(codes) > 0):
+                wxw_prompt.append((data[0], codes[0], data[1]))
+
+        for prompt in wxw_prompt:
+            f.write("%s\t%s_%s\n" % prompt)
 
 def commit():
     """提交所有更改并生成新码表"""
@@ -1149,3 +1202,5 @@ def commit():
     build_chaoji()
     build_static()
 
+if __name__ == '__main__':
+    commit()

@@ -633,6 +633,7 @@
 不同	bjty_bt
 不行	bjxg_bx
 不要	bjyz_by
+从此	cyck_cc
 错过	clgl_cg
 聪明	cymg_cm
 采取	chql_cq
@@ -651,6 +652,7 @@
 光明	gmmg_gm
 花草	hqcz_hc
 很快	hnkg_hk
+后面	hdmm_hm
 快餐	kgcf_kc
 可靠	kekz_kk
 开门	khmn_km
@@ -666,6 +668,7 @@
 拼音	pbyb_py
 如此	rjck_rc
 人工	rngy_rg
+如何	rjhe_rh
 人们	rnmn_rm
 日期	rkqk_rq
 染色	rfse_rs
@@ -679,6 +682,7 @@
 提前	tkqm_tq
 同学	tyxh_tx
 为此	wwck_wc
+外面	whmm_wm
 完全	wfqt_wq
 因此	ybck_yc
 以及	ykjk_yj

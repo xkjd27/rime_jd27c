@@ -1,5 +1,5 @@
 from github import Github
-from git import Git
+from git import Repo
 
 import os
 import re

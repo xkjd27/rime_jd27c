@@ -1,7 +1,7 @@
 import JD6Tools
 import os
 
-from git import Git
+from git import Repo
 
 # Commit Changes
 JD6Tools.commit()

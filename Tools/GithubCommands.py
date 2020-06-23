@@ -161,7 +161,7 @@ def command_change_word(word, pinyin, code):
     plus = after.difference(before)
 
     if (len(plus) > 0 and code not in plus):
-        COMMAND_TRANSCRIPT.append('  * __提交的编码`%s`可能有误__' % short_code)
+        COMMAND_TRANSCRIPT.append('  * __提交的编码`%s`可能有误__' % code)
 
     plus = sorted(list(plus))
 

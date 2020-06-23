@@ -131,7 +131,7 @@ if current_branch != 'bot':
 
 repo.add('-A')
 repo.commit(m="自动合并码表")
-repo.push('--force')
+repo.push(' -u origin %s --force' % current_branch)
 
 SHA = repo.rev_parse('HEAD').strip()
 

@@ -140,7 +140,7 @@ if current_branch == 'master':
 print("Commiting branch %s" % current_branch)
 repo.add('-A')
 repo.commit(m="自动合并码表")
-repo.push('-u', 'origin', 'current_branch', '--force')
+repo.push('-u', 'origin', current_branch, '--force')
 
 SHA = repo.rev_parse('HEAD').strip()
 

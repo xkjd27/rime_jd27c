@@ -1,4 +1,4 @@
-name: Check Command Issues
+name: Update
 
 on:
   issues:

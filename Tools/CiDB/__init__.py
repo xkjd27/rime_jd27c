@@ -30,6 +30,9 @@ class Ci:
         
         return obj
 
+    def __hash__(self):
+        return hash(self._word)
+
     def line(self):
         line = '%s' % (self._word)
         for pinyin in self._pinyins:
@@ -84,6 +87,19 @@ class Ci:
             weight = self._pinyins[i]
             if weight[0] in pinyins:
                 self._pinyins[i] = (weight[0], weight[1], rank)
+    
+    def get_rank_of(self, pinyins):
+        """
+        查找词组简码权值
+        ----------
+        pinyins: set(tuple(str))
+            需要查找的拼音
+        """
+        result = 0
+        for weight in self._pinyins:
+            result = max(result, weight[2])
+        return result
+
 
     def add_pinyins(self, pinyins):
         """
@@ -97,9 +113,9 @@ class Ci:
         existing = self.pinyins()
         for pinyin in pinyins:
             pyt = tuple(pinyin[0])
-            assert len(pyt) == len(sound), '"%s" 词拼音 "%s" 不合法（长度不符）' % (self._word, " ".join(pyt))
+            assert len(pyt) == len(sound), '`%s`词拼音`%s`不合法(长度不符)' % (self._word, " ".join(pyt))
             for py in pyt:
-                assert py in VALID_PY, '"%s" 词拼音 "%s" 不合法（非法拼音）' % (self._word, " ".join(pyt))
+                assert py in VALID_PY, '`%s`词拼音`%s`不合法(%s)' % (self._word, " ".join(pyt), py)
         
             if pyt not in existing:
                 self._pinyins.append((pyt, pinyin[1], pinyin[2]))
@@ -189,22 +205,23 @@ def add(word, pinyins, which = GENERAL):
 
     _loadDB()
     
-    assert len(word) != 1, '"%s" 不是词组' % word
-    assert word not in _db_general and word not in _db_super, '"%s" 词已存在' % word
-    assert len(pinyins) != 0, '"%s" 词没有提供拼音' % word
+    assert len(word) != 1, '`%s`不是词组' % word
+    assert word not in _db_general and word not in _db_super, '`%s`词已存在' % word
+    assert len(pinyins) != 0, '`%s`词没有提供拼音' % word
 
     sound = sound_chars(word)
 
     for pinyin in pinyins:
-        assert len(pinyin[0]) == len(sound), '"%s" 词拼音 "%s" 不合法（长度不符）' % (word, " ".join(pinyin[0]))
+        assert len(pinyin[0]) == len(sound), '`%s`词拼音`%s`不合法(长度不符)' % (word, " ".join(pinyin[0]))
         for py in pinyin[0]:
-            assert py in VALID_PY, '"%s" 词拼音 "%s" 不合法（非法拼音）' % (word, " ".join(pinyin[0]))
+            assert py in VALID_PY, '`%s`词拼音`%s`不合法(%s)' % (word, " ".join(pinyin[0]), py)
     
     if (which == GENERAL):
         _db_general[word] = Ci(word, pinyins, which)
+        return _db_general[word]
     else:
         _db_super[word] = Ci(word, pinyins, which)
-
+        return _db_super[word]
 
 def remove(word, pinyins):
     """
@@ -223,7 +240,7 @@ def remove(word, pinyins):
     elif word in _db_super:
         db = _db_super
 
-    assert db is not None, '"%s" 词已存在' % word
+    assert db is not None, '`%s`词已存在' % word
 
     db[word].remove_pinyins(pinyins)
 

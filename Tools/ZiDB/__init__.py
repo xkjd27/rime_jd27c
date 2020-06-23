@@ -68,6 +68,9 @@ class Zi:
         if (len(data) % 2 == 0):
             self._comment = data[-1]
 
+    def __hash__(self):
+        return hash(self._char)
+
     def pinyins(self):
         result = set()
         for entry in self._pinyins:
@@ -112,7 +115,7 @@ class Zi:
         existing = self.pinyins()
         for pinyin in pinyins:
             py = pinyin[0]
-            assert py in VALID_PY, '"%s" 字拼音 "%s" 不合法' % (self._char, pinyin)
+            assert py in VALID_PY, '`%s`字拼音`%s`不合法' % (self._char, py)
             if py not in existing:
                 self._pinyins.append(pinyin)
     
@@ -123,7 +126,7 @@ class Zi:
         shape: str
             形码
         """
-        assert re.search("^[aiouv]{3,4}$", shape), '"%s" 字形码不合法: %s' % (self._char, shape)
+        assert re.search("^[aiouv]{3,4}$", shape), '`%s`字形码不合法`(%s)`' % (self._char, shape)
         self._shape = shape
 
     def change_rank(self, rank):
@@ -240,13 +243,13 @@ def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
         注释
     """
 
-    assert len(char) == 1, '"%s" 不是单字' % char
-    assert re.search("^[aiouv]{3,4}$", shape), '"%s" 字形码不合法: %s' % (char, shape)
-    assert char not in _db, '"%s" 字已存在' % char
-    assert len(pinyins) != 0, '"%s" 字没有提供拼音' % char
+    assert len(char) == 1, '`%s`不是单字' % char
+    assert re.search("^[aiouv]{3,4}$", shape), '`%s`字形码不合法`(%s)`' % (char, shape)
+    assert char not in _db, '`%s`字已存在' % char
+    assert len(pinyins) != 0, '`%s`字没有提供拼音' % char
 
     for pinyin in pinyins:
-        assert pinyin[0] in VALID_PY, '"%s" 字拼音 "%s" 不合法' % (char, pinyin[0])
+        assert pinyin[0] in VALID_PY, '`%s`字拼音`%s`不合法' % (char, pinyin[0])
 
     line = '%s\t%d\t%s' % (char, rank, shape)
     for pinyin in pinyins:
@@ -254,6 +257,7 @@ def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
     if comment is not None:
         line += '\t%s' % comment
     _db[char] = Zi(line, which)
+    return _db[char]
 
 
 def remove(char, pinyins):
@@ -266,7 +270,7 @@ def remove(char, pinyins):
         需要删除的拼音
     """
 
-    assert char in _db, '"%s" 字不存在' % char
+    assert char in _db, '`%s`字不存在' % char
     _db[char].remove_pinyins(pinyins)
 
     if len(_db[char].pinyins()) <= 0:

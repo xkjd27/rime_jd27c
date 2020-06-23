@@ -25,8 +25,8 @@ change_char_fullcode_weight('△', 6)
 assert ZiDB.get('△').rank() == 6
 
 p, _ = check_word('△▽', 'sha xia')
-assert p[1] == '"△▽" 词中 "▽" 字不在字库中（请检查字型或考虑先添加此字）'
-assert p[0] == '"△▽" 词中 "△" 字没有 "sha" 音（请检查全拼或考虑先添加此音）'
+assert p[1] == '`△▽`词中`▽`字不在字库中(请检查字型或考虑先添加此字)'
+assert p[0] == '`△▽`词中`△`字没有`sha`音(请检查全拼或考虑先添加此读音)'
 
 add_char('▽', 'vvvv', 'xia', 4, 5, ZiDB.GENERAL)
 add_char_pinyin('▽', 'sha', 4)

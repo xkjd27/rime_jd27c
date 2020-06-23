@@ -4,6 +4,9 @@ import ZiDB
 import CiDB
 import itertools
 
+_new_zi = {}
+_new_ci = {}
+
 # ---------------------------------
 #             布局定义
 # ---------------------------------
@@ -189,8 +192,14 @@ def yun(py):
 
 def pinyin2sy(py):
     """全拼转双拼"""
+    if len(py) < 1:
+        return []
+
     shengmu = sheng(py)
     yunmu = yun(py)
+
+    if (shengmu not in JD6_S2K or yunmu not in JD6_Y2K):
+        return []
 
     s = []
     if (shengmu in JD6_SFLY):
@@ -243,6 +252,25 @@ def isGBK(char):
         return True
     except:
         return False
+
+def char2codes(shape, pinyin, length, short = True, full = True):
+    sy = [code.lower() for code in pinyin2sy(transform_py(pinyin))]
+    if (len(sy) == 0):
+        return set()
+
+    codes = set()
+
+    for sound in sy:
+        full_code = sound+shape
+    
+        if (length < len(full_code)):
+            if (length > 1 and short):
+                codes.add(full_code[:length])
+        
+        if full:
+            codes.add(full_code)
+    
+    return codes
 
 def zi2codes(zi, short = True, full = True):
     codes = []
@@ -340,12 +368,109 @@ def get_danzi_codes():
     
     return _entries, _entries_r
 
+def get_cizu_codes():
+    """获取词组码表"""
+    
+    global _word_entries
+    global _word_entries_r
+
+    try:
+        _word_entries
+    except:
+        _word_entries = None
+
+    try:
+        _word_entries_r
+    except:
+        _word_entries_r = None
+
+    if (_word_entries == None or _word_entries_r == None):
+        _word_entries = []
+        _word_entries_r = {}
+    else:
+        return _word_entries, _word_entries_r
+
+    words = CiDB.all(CiDB.GENERAL)
+    for ci in words:
+        codes = ci2codes(ci, True, False)
+        if (codes is not None):
+            _word_entries += codes
+            for code in codes:
+                if (code[1] in _word_entries_r):
+                    _word_entries_r[code[1]].append(code)
+                    _word_entries_r[code[1]].sort(key=lambda e: (e[1], e[2]))
+                else:
+                    _word_entries_r[code[1]] = [code]
+        else:
+            CiDB.remove(ci.word(), ci.pinyins())
+
+    # 固定词组
+    extra = 500
+    for entry in CiDB.fixed(CiDB.GENERAL):
+        code = (entry[0], entry[1], extra, 1)
+        _word_entries.append(code)
+        if (code[1] in _word_entries_r):
+            _word_entries_r[code[1]].append(code)
+            _word_entries_r[code[1]].sort(key=lambda e: (e[1], e[2]))
+        else:
+            _word_entries_r[code[1]] = [code]
+
+        extra += 1
+
+    return _word_entries, _word_entries_r 
+
 def clear_danzi_codes():
     """Dirtify单字码表"""
     global _entries
     global _entries_r
-    _entries = None
-    _entries_r = None
+
+    try:
+        del _entries
+        _entries = None
+    except:
+        _entries = None
+
+    try:
+        del _entries_r
+        _entries_r = None
+    except:
+        _entries_r = None
+
+def clear_cizu_codes():
+    """Dirtify词组码表"""
+    global _word_entries
+    global _word_entries_r
+
+    try:
+        del _word_entries
+        _word_entries = None
+    except:
+        _word_entries = None
+
+    try:
+        del _word_entries_r
+        _word_entries_r = None
+    except:
+        _word_entries_r = None
+
+# def update_zi_to_r_cache(zi):
+#     global _entries_r
+
+#     try:
+#         _entries_r
+#     except:
+#         _entries_r = None
+
+#     if (_entries == None or _entries_r == None):
+#         return
+
+#     codes = zi2codes(zi)
+#     _entries += codes
+#     for code in codes:
+#         if (code[1] in _entries_r):
+#             _entries_r[code[1]].append(code)
+#         else:
+#             _entries_r[code[1]] = [code]
 
 def word_pinyin2codes(pys):
     """词拼音转声码"""
@@ -399,6 +524,38 @@ def word_pinyin2codes(pys):
     
     return set(code.lower() for code in codes)
 
+def word2codes(word, pinyin, length, short = True, full = False):
+    sound_chars = CiDB.sound_chars(word)
+
+    if len(sound_chars) < 2: # 一字词（非法）无视
+        return set()
+
+    py_codes = word_pinyin2codes(tuple(transform_py(py) for py in pinyin.split(' ')))
+
+    first_char = ZiDB.get(sound_chars[0])
+    second_char = ZiDB.get(sound_chars[1])
+
+    if (first_char is None or second_char is None):
+        return set()
+
+    shape = first_char.shape()[0] + second_char.shape()[0]
+    if len(sound_chars) == 3: # 三字词需三码
+        third_char = ZiDB.get(sound_chars[2])
+        if (third_char is None):
+            return set()
+        shape += third_char.shape()[0]
+            
+    codes = set()
+    for code in py_codes:
+        full_code = code + shape
+        if (full):
+            codes.add(full_code)
+        if (short):
+            short_code = full_code[:length]
+            codes.add(short_code)
+            
+    return codes
+
 def ci2codes(ci, short = True, full = False):
     """生成词6码"""
     sound_chars = ci.sound_chars()
@@ -409,10 +566,18 @@ def ci2codes(ci, short = True, full = False):
     py_codes = {}
     weights = ci.weights()
 
-    shape = ZiDB.get(sound_chars[0]).shape()[0] + ZiDB.get(sound_chars[1]).shape()[0]
+    first_char = ZiDB.get(sound_chars[0])
+    second_char = ZiDB.get(sound_chars[1])
+
+    if (first_char is None or second_char is None):
+        return None
+
+    shape = first_char.shape()[0] + second_char.shape()[0]
     if len(sound_chars) == 3: # 三字词需三码
-        shape += ZiDB.get(sound_chars[2]).shape()[0]
-        
+        third_char = ZiDB.get(sound_chars[2])
+        if (third_char is None):
+            return set()
+        shape += third_char.shape()[0]
 
     for data in weights:
         pinyin, shortcode_len, rank = data
@@ -544,21 +709,9 @@ def traverse_danzi(build = False, report = True):
 
 def traverse_cizu(build = False, report = True):
     """遍历词组码表"""
-    dup_code_check = {}
+    # dup_code_check = {}
     last_rank = -1
-    entries = []
-
-    words = CiDB.all(CiDB.GENERAL)
-    for ci in words:
-        codes = ci2codes(ci, True, False)
-        if (codes is not None):
-            entries += codes
-
-    extra = 100
-    for entry in CiDB.fixed(CiDB.GENERAL):
-        code = (entry[0], entry[1], extra, 1)
-        entries.append(code)
-        extra += 1
+    entries, dup_code_check = get_cizu_codes()
 
     entries.sort(key=lambda e: (e[1], e[2]))
 
@@ -573,10 +726,10 @@ def traverse_cizu(build = False, report = True):
         if f is not None:
             f.write(word+'\t'+code+'\n')
         
-        if code in dup_code_check:
-            dup_code_check[code].append((word, rank, fly))
-        else:
-            dup_code_check[code] = [(word, rank, fly)]
+        # if code in dup_code_check:
+        #     dup_code_check[code].append((word, rank, fly))
+        # else:
+        #     dup_code_check[code] = [(word, rank, fly)]
 
     if (f is not None):
         f.close()
@@ -606,16 +759,16 @@ def traverse_cizu(build = False, report = True):
         # 如果只有二重
         if code_dups == 2:
             # 如果强制允许了重码
-            if dup_code_check[code][1][1] >= 10 and dup_code_check[code][0][1] != dup_code_check[code][1][1]:
+            if dup_code_check[code][1][2] >= 100 and dup_code_check[code][0][2] != dup_code_check[code][1][2]:
                 code_dup_lose_flag.add(code)
             # 如果已经设置好了权值
-            elif dup_code_check[code][0][1] != dup_code_check[code][1][1]:
+            elif dup_code_check[code][0][2] != dup_code_check[code][1][2]:
                 fly_word = None
                 # 如果第一个词是飞键
-                if (dup_code_check[code][0][2] > 1):
+                if (dup_code_check[code][0][3] > 1):
                     fly_word = dup_code_check[code][0][0]
                 # 如果第二个词是飞键
-                elif (dup_code_check[code][1][2] > 1):
+                elif (dup_code_check[code][1][3] > 1):
                     fly_word = dup_code_check[code][1][0]
 
                 if (fly_word is not None):
@@ -674,7 +827,7 @@ def traverse_cizu(build = False, report = True):
             fly_name = "　双三四"
             
             for word in dups:
-                f.write('\t%d\t%s\t%s\n' % (word[1], fly_name[word[2]-1], word[0]))
+                f.write('\t%d\t%s\t%s\n' % (word[2], fly_name[word[3]-1], word[0]))
         
             f.write('\n')
 
@@ -699,8 +852,10 @@ def build_chaoji():
         codes = ci2codes(ci, True, False)
         if (codes is not None):
             chaoji += codes
+        else:
+            CiDB.remove(ci.word(), ci.pinyins())
 
-    extra = 100
+    extra = 500
     for entry in CiDB.fixed(CiDB.SUPER):
         code = (entry[0], entry[1], extra, 1)
         chaoji.append(code)
@@ -717,7 +872,6 @@ def build_chaoji():
             f.write(word+'\t'+code+'\n')
 
     f.close()
-
 
 # ---------------------------------
 #               指令
@@ -745,6 +899,53 @@ def build_chaoji():
 #       gen_word                        word    short   full
 #
 # ---------------------------------
+
+def exists_char(char):
+    return ZiDB.get(char) is not None
+
+def exists_word(word):
+    return CiDB.get(word) is not None
+
+def get_char_shape(char):
+    zi = ZiDB.get(char)
+    if zi is None:
+        return ""
+    
+    return ZiDB.get(char).shape()
+
+def get_char(char):
+    return ZiDB.get(char)
+
+def get_word(word):
+    return CiDB.get(word)
+
+def get_zi_of_code(code):
+    _, lookup = get_danzi_codes()
+    result = set()
+    if code in lookup:
+        for parts in lookup[code]:
+            zi = ZiDB.get(parts[0])
+            if (zi is not None):
+                result.add(zi)
+
+    if code in _new_zi:
+        result = result.union(_new_zi[code])
+        
+    return result
+
+def get_ci_of_code(code):
+    _, lookup = get_cizu_codes()
+    result = set()
+    if code in lookup:
+        for parts in lookup[code]:
+            ci = CiDB.get(parts[0])
+            if (ci is not None):
+                result.add(ci)
+
+    if code in _new_ci:
+        result = result.union(_new_ci[code])
+        
+    return result
 
 def solve_char_pinyin(char, pinyin):
     zi = ZiDB.get(char)
@@ -782,12 +983,21 @@ def solve_word_pinyin(word, pinyin):
 
 def add_char(char, shape, pinyin, length, weight, which):
     py = transform_py(pinyin)
-    ZiDB.add(char, shape, [(py, length)], weight, which)
+    zi = ZiDB.add(char, shape, [(py, length)], weight, which)
+
+    codes = gen_char(char)
+
+    for code in codes:
+        bm = code[1]
+        if bm in _new_zi:
+            _new_zi[bm].add(zi)
+        else:
+            _new_zi[bm] = { zi }
 
 def add_char_pinyin(char, pinyin, length):
     zi = ZiDB.get(char)
     py = transform_py(pinyin)
-    assert zi is not None, '"%s" 字不存在' % char
+    assert zi is not None, '`%s`字不存在' % char
     zi.add_pinyins([(pinyin, length)])
 
 def remove_char_pinyin(char, pinyins):
@@ -799,18 +1009,18 @@ def remove_char_pinyin(char, pinyins):
 
 def change_char_shape(char, shape):
     zi = ZiDB.get(char)
-    assert zi is not None, '"%s" 字不存在' % char
+    assert zi is not None, '`%s`字不存在' % char
     zi.change_shape(shape)
 
 def change_char_shortcode_len(char, pinyins, length):
     zi = ZiDB.get(char)
-    assert zi is not None, '"%s" 字不存在' % char
+    assert zi is not None, '`%s`字不存在' % char
     pys = set(transform_py(py) for py in pinyins)
     zi.change_code_length(pys, length)
 
 def change_char_fullcode_weight(char, weight):
     zi = ZiDB.get(char)
-    assert zi is not None, '"%s" 字不存在' % char
+    assert zi is not None, '`%s`字不存在' % char
     zi.change_rank(weight)
 
 def check_word(word, pinyin):
@@ -819,18 +1029,18 @@ def check_word(word, pinyin):
     pys = tuple(transform_py(py) for py in pinyin.split(' '))
     sound = CiDB.sound_chars(word)
     if len(sound) != len(pys):
-        problems.append('"%s" 词拼音 "%s" 不合法（长度不符）' % (word, " ".join(pinyin[0])))
+        problems.append('`%s`词拼音`%s`不合法(长度不符)' % (word, pinyin))
         return problems, pys
 
     # check each char
-    for char, pinyin in zip(word, pys):
+    for char, pinyin in zip(sound, pys):
         zi = ZiDB.get(char)
         if (zi is None):
-            problems.append('"%s" 词中 "%s" 字不在字库中（请检查字型或考虑先添加此字）' % (word, char))
+            problems.append('`%s`词中`%s`字不在字库中(请检查字型或考虑先添加此字)' % (word, char))
             continue
             
         if (pinyin not in zi.pinyins()):
-            problems.append('"%s" 词中 "%s" 字没有 "%s" 音（请检查全拼或考虑先添加此音）' % (word, char, pinyin))
+            problems.append('`%s`词中`%s`字没有`%s`音(请检查全拼或考虑先添加此读音)' % (word, char, pinyin))
             continue
        
     return problems, pys
@@ -839,11 +1049,20 @@ def add_word(word, pinyin, length, weight, which):
     problems, pys = check_word(word, pinyin)
     assert len(problems) == 0, "\n".join(problems)
 
-    CiDB.add(word, [(pys, length, weight)], which)
+    ci = CiDB.add(word, [(pys, length, weight)], which)
+
+    codes = gen_word(word)
+
+    for code in codes:
+        bm = code[1]
+        if bm in _new_ci:
+            _new_ci[bm].add(ci)
+        else:
+            _new_ci[bm] = { ci }
 
 def add_word_pinyin(word, pinyin, length, weight):
     ci = CiDB.get(word)
-    assert ci is not None, '"%s" 词不存在' % word
+    assert ci is not None, '`%s`词不存在' % word
 
     problems, pys = check_word(word, pinyin)
     assert len(problems) == 0, "\n".join(problems)
@@ -859,29 +1078,70 @@ def remove_word_pinyin(word, pinyins):
 
 def change_word_shortcode_len(word, pinyins, length):
     ci = CiDB.get(word)
-    assert ci is not None, '"%s" 词不存在' % word
+    assert ci is not None, '`%s`词不存在' % word
     pys = set(tuple(transform_py(py) for py in qpy.split(' ')) for qpy in pinyins)
     ci.change_code_length(pys, length)
 
 def change_word_shortcode_weight(word, pinyins, weight):
     ci = CiDB.get(word)
-    assert ci is not None, '"%s" 词不存在' % word
+    assert ci is not None, '`%s`词不存在' % word
     pys = set(tuple(transform_py(py) for py in qpy.split(' ')) for qpy in pinyins)
     ci.change_code_rank(pys, weight)
 
-def gen_char(char, short, full):
+def find_word_shortcode_weight(word, pinyins):
+    ci = CiDB.get(word)
+    assert ci is not None, '`%s`词不存在' % word
+    pys = set(tuple(transform_py(py) for py in qpy.split(' ')) for qpy in pinyins)
+    ci.change_code_rank(pys, weight)
+
+def gen_char(char, short = True, full = True):
     zi = ZiDB.get(char)
     if zi is None:
         return set()
     
     return zi2codes(zi, short, full)
 
-def gen_word(word, short, full):
+def gen_word(word, short = True, full = False):
     ci = CiDB.get(word)
     if ci is None:
         return set()
     
-    return ci2codes(ci, short, full)
+    result = ci2codes(ci, short, full)
+    if (result is None):
+        return set()
+    return result
+
+def find_weight_for_char(shape, pinyin):
+    codes = char2codes(shape, pinyin, 6, False, True)
+    _, lookup = get_danzi_codes()
+    weight = 0
+    for code in codes:
+        if code in lookup:
+            for char in lookup[code]:
+                weight = max(weight, char[2] + 1)
+
+    return weight
+
+def find_weight_for_word(word, pinyin, length):
+    codes = word2codes(word, pinyin, length, True, False)
+    _, lookup = get_cizu_codes()
+    weight = 0
+    for code in codes:
+        if code in lookup:
+            for word in lookup[code]:
+                weight = max(weight, word[2] + 1)
+                
+    return weight
+
+def commit():
+    """提交所有更改并生成新码表"""
+    clear_danzi_codes()
+    clear_cizu_codes()
+    ZiDB.commit()
+    CiDB.commit()
+    traverse_danzi(True)
+    traverse_cizu(True, True)
+    build_chaoji()
 
 # print(ci2codes(CiDB.get('这桩'), short = False, full = True))
 # print(ci2codes(CiDB.get('这这这'), short = False, full = True))

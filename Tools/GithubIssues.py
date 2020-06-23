@@ -77,8 +77,8 @@ repo_path = os.path.join(os.environ['GITHUB_WORKSPACE'])
 # GIT Repo
 print("Setting up Git")
 repo = Repo(repo_path).git
-repo.config('user.name "小涵"')
-repo.config('user.email "octocat@github.com"')
+repo.config('user.name', '小涵')
+repo.config('user.email', 'octocat@github.com')
 
 # GITHUB Find Current Active PR
 print("Finding Active PR")
@@ -140,7 +140,7 @@ if current_branch == 'master':
 print("Commiting branch %s" % current_branch)
 repo.add('-A')
 repo.commit(m="自动合并码表")
-repo.push(' -u origin %s --force' % current_branch)
+repo.push('-u', 'origin', 'current_branch', '--force')
 
 SHA = repo.rev_parse('HEAD').strip()
 

@@ -1,10 +1,9 @@
-name: AutoCommand
+name: Build
 
 on:
-  issues:
-    types: [ opened, edited ]
-  repository_dispatch:
-    types: [ force_check ]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -24,12 +23,17 @@ jobs:
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
-
+  
     - name: Python Dependency
       run: |
         pip install -r ./Tools/requirements.txt
-    
-    - name: Check Issues
+
+    - name: Build Dict
+      run: |
+        cd $GITHUB_WORKSPACE
+        python ./Tools/GithubBuild.py
+
+    - name: Re-check Issues
       run: |
         cd $GITHUB_WORKSPACE
         python ./Tools/GithubIssues.py

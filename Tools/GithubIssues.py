@@ -138,8 +138,8 @@ if current_branch == 'master':
     print('Wrong branch')
     exit(0)
 
-changes = repo.diff_index('HEAD' ,'--name-only').strip()
-if (len(changes) < 0):
+changes = repo.status('--porcelain').strip()
+if (len(changes) <= 0):
     print('No changes')
     exit(0)
 

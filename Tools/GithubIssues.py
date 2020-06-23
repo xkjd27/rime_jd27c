@@ -92,6 +92,7 @@ for pr in active_prs:
             active_pr = pr
             ALL_COMMANDS = find_commands_pr(active_pr.body)
             pr_comment = find_comments(active_pr.body).strip()
+            pr_comment += "\n"
             break
     
     if (active_pr is not None):

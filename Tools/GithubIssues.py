@@ -21,7 +21,7 @@ allowed_commands = {
 
 def find_commands_issue(content, which):
     sanitized = content.replace('\r\n', '\n')
-    match = re.search('%s\n```(.*)```' % '通常字词' if which == GENERAL else '超级字词', sanitized, re.DOTALL)
+    match = re.search('%s\n```\n((?:[^`]*\n)+)```' % ('通常字词' if which == GENERAL else '超级字词'), sanitized)
 
     if match is None:
         return []

@@ -159,7 +159,7 @@ PR_BODY = '''
 
 ---
 %s
-''' % ('\n'.join(['\t'.join(command) for command in all_commands]), os.environ['GITHUB_REPOSITORY'], SHA, "\n".join(GithubCommands.COMMAND_TRANSCRIPT), pr_comment)
+''' % ('\n'.join(['\t'.join(command) for command in ALL_COMMANDS]), os.environ['GITHUB_REPOSITORY'], SHA, "\n".join(GithubCommands.COMMAND_TRANSCRIPT), pr_comment)
 
 
 auto_label = github_repo.get_label('自动')

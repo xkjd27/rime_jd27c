@@ -161,15 +161,12 @@ PR_BODY = '''
 %s
 ''' % ('\n'.join(['\t'.join(command) for command in ALL_COMMANDS]), os.environ['GITHUB_REPOSITORY'], SHA, "\n".join(GithubCommands.COMMAND_TRANSCRIPT), pr_comment)
 
-
-auto_label = github_repo.get_label('自动')
-
 # GITHUB No PR yet, create one now
 if active_pr is None:
     print("Creating PR")
     active_pr = github_repo.create_pull(title='自动码表合并', body=PR_BODY, head=working_branch, base='master')
     # add auto_label
-    active_pr.as_issue().edit(labels=[auto_label])
+    active_pr.as_issue().add_to_labels(['自动'])
 else:
     print("Updating PR")
     active_pr.edit(body=PR_BODY)

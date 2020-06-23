@@ -836,7 +836,7 @@ def traverse_cizu(build = False, report = True):
 
         for word in word_dup_strict_flag:
             if word_dup_strict_flag[word] > 1:
-                f.write('\t%s\n' % (word))
+                report.write('\t%s\n' % (word))
 
         report.close()
         report_allowed.close()

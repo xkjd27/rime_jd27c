@@ -75,9 +75,13 @@ github_repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
 repo_path = os.path.join(os.environ['GITHUB_WORKSPACE'])
 
 # GIT Repo
+print("Setting up Git")
 repo = Repo(repo_path).git
+repo.config('user.name "小涵"')
+repo.config('user.email "octocat@github.com"')
 
 # GITHUB Find Current Active PR
+print("Finding Active PR")
 active_prs = github_repo.get_pulls(state='open', base='master', sort='created')
 active_pr = None
 pr_comment = ''
@@ -98,9 +102,11 @@ if active_pr is not None:
     working_branch = active_pr.head.ref
 
 # switch to bot branch
+print("Checking out working branch")
 repo.checkout(B=working_branch)
 
 # Check issues
+print("Reading issues")
 open_issues = github_repo.get_issues(state='open', labels=['自动'])
 for issue in open_issues:
 
@@ -123,15 +129,15 @@ if (len(ALL_COMMANDS) < 0):
     print('No Commands')
     exit(0)
 
+print("Start command processing")
 GithubCommands.process_commands(ALL_COMMANDS)
 
 current_branch = repo.rev_parse('--abbrev-ref', 'HEAD')
-if current_branch != 'bot':
+if current_branch == 'master':
     print('Wrong branch')
+    exit(0)
 
-repo.config('user.name "小涵"')
-repo.config('user.email "octocat@github.com"')
-
+print("Commiting branch %s" % current_branch)
 repo.add('-A')
 repo.commit(m="自动合并码表")
 repo.push(' -u origin %s --force' % current_branch)
@@ -160,10 +166,12 @@ auto_label = github_repo.get_label('自动')
 
 # GITHUB No PR yet, create one now
 if active_pr is None:
+    print("Creating PR")
     active_pr = github_repo.create_pull(title='自动码表合并', body=PR_BODY, head=working_branch, base='master')
     # add auto_label
     active_pr.as_issue().edit(labels=[auto_label])
 else:
+    print("Updating PR")
     active_pr.edit(body=PR_BODY)
     active_pr.update_branch()
 

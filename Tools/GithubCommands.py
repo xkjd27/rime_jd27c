@@ -356,6 +356,7 @@ def process_commands(commands):
         
         which = GENERAL if command[0] == '通常' else SUPER
         cmd_name = command[1]
+        print(" - Processing: %s" % str(command))
         try:
             if cmd_name == '添加':
                 command_add(which, command[2:])

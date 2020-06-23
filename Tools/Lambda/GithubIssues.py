@@ -163,7 +163,7 @@ PR_BODY = '''
 %s
 ```
 
-[查看报告文件](https://github.com/%s/blob/%s/Lambda/Tools/Report/)
+[查看报告文件](https://github.com/%s/blob/%s/Tools/Lambda/Report/)
 
 码表操作记录：
 %s

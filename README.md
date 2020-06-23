@@ -11,7 +11,6 @@
 | 路径 | 作用 |
 | :-------------|:-------------: |
 | [/Tools](./Tools) | 工具目录 |
-| [/Tools/BackDict](./Tools/BackDict) | 备份上次码表 |
 | [/Tools/Extended](./Tools/Extended) | 扩展码表 |
 | [/Tools/SystemTools](./Tools/SystemTools) | 各系统配置文件工具 |
 | [/Tools/Lambda](./Tools/Lambda) | 字词库与Github码表构建工具 |

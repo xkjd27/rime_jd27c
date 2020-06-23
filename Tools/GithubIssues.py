@@ -97,13 +97,8 @@ working_branch = 'bot'
 if active_pr is not None:
     working_branch = active_pr.head.ref
 
-current_branch = repo.rev_parse('--abbrev-ref', 'HEAD')
-print(current_branch == 'master')
-exit(0)
-
 # switch to bot branch
 repo.checkout(B=working_branch)
-
 
 # Check issues
 open_issues = github_repo.get_issues(state='open', labels=['自动'])
@@ -129,6 +124,10 @@ if (len(ALL_COMMANDS) < 0):
     exit(0)
 
 GithubCommands.process_commands(ALL_COMMANDS)
+
+current_branch = repo.rev_parse('--abbrev-ref', 'HEAD')
+if current_branch != 'bot':
+    print('Wrong branch')
 
 repo.add('-A')
 repo.commit(m="自动合并码表")

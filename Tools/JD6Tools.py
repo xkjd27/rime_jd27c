@@ -863,7 +863,7 @@ def build_chaoji():
 
     chaoji.sort(key=lambda e: (e[1], e[2]))
 
-    f = open('rime/xkjdc.chaojizici.dict.yaml', mode='w', encoding='utf-8', newline='\n')
+    f = open('rime/xkjd6.chaojizici.dict.yaml', mode='w', encoding='utf-8', newline='\n')
     f.write(RIME_HEADER % 'chaojizici')
 
     for entry in chaoji:

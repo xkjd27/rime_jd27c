@@ -11,31 +11,6 @@ _new_ci = {}
 #             布局定义
 # ---------------------------------
 
-# 键道6 键->声母
-JD6_K2S = {
-    'q': ['q', 'zh'],
-    'w': ['w', 'ch'],
-    'e': ['sh'],
-    'r': ['r'],
-    't': ['t'],
-    'y': ['y'],
-    'p': ['p'],
-    's': ['s'],
-    'd': ['d'],
-    'f': ['f', 'zh'],
-    'g': ['g'],
-    'h': ['h'],
-    'j': ['j', 'ch'],
-    'k': ['k'],
-    'l': ['l'],
-    'z': ['z'],
-    'x': ['x', '~'],
-    'c': ['c'],
-    'b': ['b'],
-    'n': ['n'],
-    'm': ['m'],
-}
-
 # 键道6 声母->键
 JD6_S2K = {
     'q': ['q'],
@@ -74,31 +49,6 @@ JD6_SFLY = {
         {'u', 'un', 'en', 'eng', 'an', 'ang', 'ao', 'e', 'ai', 'ao'},
         {'a', 'ao', 'e', 'i', 'ong', 'ou', 'ua', 'uai', 'uan', 'uang', 'ui', 'uo'}
     ]
-}
-
-# 键道6 键->韵母
-JD6_K2Y = {
-    'q': ['ua', 'iu'],
-    'w': ['ei', 'un'],
-    'e': ['e'],
-    'r': ['eng'],
-    't': ['uan'],
-    'y': ['ong', 'iong'],
-    'p': ['ang'],
-    's': ['a', 'ia'],
-    'd': ['ou', 'ie'],
-    'f': ['an'],
-    'g': ['uai', 'ing'],
-    'h': ['ai', 'ue'],
-    'j': ['u', 'er'],
-    'k': ['i'],
-    'l': ['uo', 'v', 'o'],
-    'z': ['ao'],
-    'x': ['iang', 'uang'],
-    'c': ['iao'],
-    'b': ['in', 'ui'],
-    'n': ['en'],
-    'm': ['ian', 'uang'],
 }
 
 # 键道6 韵母->键
@@ -142,7 +92,7 @@ JD6_Y2K = {
 #               常量
 # ---------------------------------
 
-RIME_HEADER = '---\nname: xkjd6.%s\nversion: "Q1"\nsort: original\n...\n'
+RIME_HEADER = '# 由键道：涵自动生成\n---\nname: %s\nversion: "Q1"\nsort: original\n...\n'
 
 # 拼音变体转换表
 PY_TRANSFORM = {
@@ -409,7 +359,7 @@ def get_cizu_codes():
     # 固定词组
     extra = 500
     for entry in CiDB.fixed(CiDB.GENERAL):
-        code = (entry[0], entry[1], extra, 1)
+        code = (entry[0], entry[1], extra, 1, None)
         _word_entries.append(code)
         if (code[1] in _word_entries_r):
             _word_entries_r[code[1]].append(code)
@@ -587,19 +537,19 @@ def ci2codes(ci, short = True, full = False):
 
         for code in s_codes:
             if code in py_codes:
-                py_codes[code] = (min(shortcode_len, py_codes[code][0]), max(rank, py_codes[code][1]), len(s_codes))
+                py_codes[code] = (min(shortcode_len, py_codes[code][0]), max(rank, py_codes[code][1]), len(s_codes), " ".join(pinyin))
             else:
-                py_codes[code] = (shortcode_len, rank, len(s_codes))
+                py_codes[code] = (shortcode_len, rank, len(s_codes), " ".join(pinyin))
             
     codes = set()
     for code in py_codes:
         full_code = code + shape
-        shortcode_len, rank, fly = py_codes[code]
+        shortcode_len, rank, fly, pinyin = py_codes[code]
         if (full):
-            codes.add((ci.word(), full_code, rank, fly))
+            codes.add((ci.word(), full_code, rank, fly, pinyin))
         if (short):
             short_code = full_code[:shortcode_len]
-            codes.add((ci.word(), short_code, rank, fly))
+            codes.add((ci.word(), short_code, rank, fly, pinyin))
             
     return codes
 
@@ -623,7 +573,11 @@ def traverse_danzi(build = False, report = True):
 
     if build:
         danzi = open('rime/xkjd6.danzi.dict.yaml', mode='w', encoding='utf-8', newline='\n')
-        danzi.write(RIME_HEADER % 'danzi')
+        danzi.write(RIME_HEADER % 'xkjd6.danzi')
+        cx = open('rime/xkjd6cx.dict.yaml', mode='w', encoding='utf-8', newline='\n')
+        cx.write(RIME_HEADER % 'xkjd6cx')
+        dz = open('rime/xkjd6dz.dict.yaml', mode='w', encoding='utf-8', newline='\n')
+        dz.write(RIME_HEADER % 'xkjd6dz')
     else:
         danzi = None
 
@@ -636,77 +590,74 @@ def traverse_danzi(build = False, report = True):
     for entry in entries:
         char, code, rank, which, full_code = entry
 
-        if which == ZiDB.GENERAL:
-            f = danzi
-        elif which == ZiDB.SUPER:
-            # 超级码依然进行重码判断
-            f = None
-        else:
+        if which != ZiDB.GENERAL and which != ZiDB.SUPER:
             continue
 
-        # 检查重码
-        if (len(code) < 6 and len(code) > 1):
-            if (code == last_code):
-                dups.append(char)
+        if report:
+            # 检查重码
+            if (len(code) < 6 and len(code) > 1):
+                if (code == last_code):
+                    dups.append(char)
+                else:
+                    if (len(dups) > 1):
+                        report.write('重码：%6s %s\n' % (last_code, str(dups)))
+                    dups = [char]
             else:
                 if (len(dups) > 1):
                     report.write('重码：%6s %s\n' % (last_code, str(dups)))
-                dups = [char]
-        else:
-            if (len(dups) > 1):
-                report.write('重码：%6s %s\n' % (last_code, str(dups)))
-            dups.clear()
+                dups.clear()
 
-        if (len(code) == 6 and rank_check[which][0] == code and rank_check[which][2] == rank):
-            report.write('全码序冲突：%6s %s %s [%d] (%s)\n' % (code, char, rank_check[which][1], rank, ('通常' if which == ZiDB.GENERAL else '超级')))
+            if (len(code) == 6 and rank_check[which][0] == code and rank_check[which][2] == rank):
+                report.write('全码序冲突：%6s %s %s [%d] (%s)\n' % (code, char, rank_check[which][1], rank, ('通常' if which == ZiDB.GENERAL else '超级')))
 
-        # 简码空间检查
-        if (full_code and not full_code[0]):
-            fly = full_code[1]
-            tmp_codes = [code[:-1]]
-            if (fly is not None):
-                tmp_codes.append(fly[:-1])
+            # 简码空间检查
+            if (full_code and not full_code[0]):
+                fly = full_code[1]
+                tmp_codes = [code[:-1]]
+                if (fly is not None):
+                    tmp_codes.append(fly[:-1])
 
-            avaliable_short = None
-            substitute = None
-            while True:
-                short_avaliable = True
-                for sc in tmp_codes:
-                    if sc in codes and len(codes[sc]) == 1:
-                        if (codes[sc][0][3] != ZiDB.SUPER or which != ZiDB.GENERAL):
-                            short_avaliable = False
+                avaliable_short = None
+                substitute = None
+                while True:
+                    short_avaliable = True
+                    for sc in tmp_codes:
+                        if sc in codes and len(codes[sc]) == 1:
+                            if (codes[sc][0][3] != ZiDB.SUPER or which != ZiDB.GENERAL):
+                                short_avaliable = False
+                            else:
+                                substitute = codes[sc][0][0]
                         else:
-                            substitute = codes[sc][0][0]
-                    else:
-                        substitute = None
-            
-                if not short_avaliable:
-                    if (avaliable_short is not None):
-                        if (substitute is not None):
-                            report.write('可替换："%s" %6s -> %6s (替换超级字 "%s")\n' % (char, code, avaliable_short, substitute))
-                        else:
-                            report.write('可缩码："%s" %6s -> %6s (%s)\n' % (char, code, avaliable_short, ('通常' if which == ZiDB.GENERAL else '超级')))
-                    break
+                            substitute = None
+                
+                    if not short_avaliable:
+                        if (avaliable_short is not None):
+                            if (substitute is not None):
+                                report.write('可替换："%s" %6s -> %6s (替换超级字 "%s")\n' % (char, code, avaliable_short, substitute))
+                            else:
+                                report.write('可缩码："%s" %6s -> %6s (%s)\n' % (char, code, avaliable_short, ('通常' if which == ZiDB.GENERAL else '超级')))
+                        break
 
-                avaliable_short = tmp_codes[0]
-                tmp_codes = [sc[:-1] for sc in tmp_codes]
+                    avaliable_short = tmp_codes[0]
+                    tmp_codes = [sc[:-1] for sc in tmp_codes]
 
         last_code = code
 
         rank_check[which] = (code, char, rank)
 
-        if f is not None:
-            f.write(char+'\t'+code+'\n')
+        if danzi is not None:
+            danzi.write(char+'\t'+code+'\n')
+            cx.write(char+'\t'+code+'\n')
+            dz.write(char+'\t'+code+'\n')
     
-    if (len(dups) > 1):
+    if (report and len(dups) > 1):
         report.write('重码：%6s %s\n' % (last_code, str(dups)))
 
     if (danzi is not None):
         danzi.close()
 
-    if report:
+    if report is not None:
         report.write('检查完毕\n')
-    else:
         report.close()
 
 def traverse_cizu(build = False, report = True):
@@ -719,24 +670,60 @@ def traverse_cizu(build = False, report = True):
 
     if build:
         f = open('rime/xkjd6.cizu.dict.yaml', mode='w', encoding='utf-8', newline='\n')
-        f.write(RIME_HEADER % 'cizu')
+        f.write(RIME_HEADER % 'xkjd6.cizu')
         f2 = open('rime/opencc/WXWPromptFilters.txt', mode='w', encoding='utf-8', newline='\n')
     else:
         f = None
 
+    if report:
+        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/词组优化报告.txt')
+        optimize = open(report_path, mode='w', encoding='utf-8', newline='\n')
+    else:
+        optimize = None
+
     for entry in entries:
-        word, code, rank, fly = entry
+        word, code, rank, fly, pinyin = entry
+        word_len = len(CiDB.sound_chars(word))
+
         if f is not None:
             f.write(word+'\t'+code+'\n')
             f2.write(word+'\t'+code+'\n')
-        
-        # if code in dup_code_check:
-        #     dup_code_check[code].append((word, rank, fly))
-        # else:
-        #     dup_code_check[code] = [(word, rank, fly)]
 
-    if (f is not None):
-        f.close()
+        # if (word == "这表明"):
+        #     print('hey')
+
+        if optimize:
+            # 简码空间检查
+            tmp_codes = [code[:-1]]
+            if (fly > 1):
+                tmp_codes = [code[1][:-1] for code in (gen_word(word))]
+
+            avaliable_short = None
+            while True:
+                continue_next = True
+                for sc in tmp_codes:
+                    if sc in dup_code_check:
+                        continue_next = False
+                        break
+                    elif word_len == 3 and len(sc) < 3:
+                        # 3字词不能短于3码
+                        continue_next = False
+                        break
+                    elif word_len != 3 and len(sc) < 4:
+                        # 其他词不能短于4码
+                        continue_next = False
+                        break
+            
+                if not continue_next:
+                    if (avaliable_short is not None):
+                        optimize.write('可缩码："%s" %6s -> %6s (%s)\n' % (word, code, avaliable_short, pinyin))
+                    break
+                
+                for c in tmp_codes:
+                    if code.startswith(c):
+                        avaliable_short = c
+                        break
+                tmp_codes = [sc[:-1] for sc in tmp_codes]
 
     # 所有重码数量
     dup_count = [0,0,0,0]
@@ -861,14 +848,14 @@ def build_chaoji():
 
     extra = 500
     for entry in CiDB.fixed(CiDB.SUPER):
-        code = (entry[0], entry[1], extra, 1)
+        code = (entry[0], entry[1], extra, 1, None)
         chaoji.append(code)
         extra += 1
 
     chaoji.sort(key=lambda e: (e[1], e[2]))
 
     f = open('rime/xkjd6.chaojizici.dict.yaml', mode='w', encoding='utf-8', newline='\n')
-    f.write(RIME_HEADER % 'chaojizici')
+    f.write(RIME_HEADER % 'xkjd6.chaojizici')
 
     for entry in chaoji:
         word, code, rank = entry[:3]
@@ -1144,6 +1131,11 @@ def build_static():
     wxw_check = []
     f = open(os.path.join(tool_path, 'Static/wxw.txt'), mode='r', encoding='utf-8')
     wxw_check += f.readlines()
+    with open('rime/xkjd6.wxw.dict.yaml', mode='w', encoding='utf-8', newline='\n') as f:
+        f.write(RIME_HEADER % 'xkjd6.wxw')
+        for line in wxw_check:
+            f.write(line.strip())
+            f.write('\n')
     f.close()
 
     f = open(os.path.join(tool_path, 'Static/笔码一简.txt'), mode='r', encoding='utf-8')
@@ -1173,7 +1165,7 @@ def build_static():
     f.close()
 
     with open('rime/xkjd6.buchong.dict.yaml', mode='w', encoding='utf-8', newline='\n') as f:
-        f.write(RIME_HEADER % "buchong")
+        f.write(RIME_HEADER % 'xkjd6.buchong')
         for line in buchong:
             f.write(line.strip())
             f.write('\n')
@@ -1195,13 +1187,13 @@ def build_static():
             f.write("%s\t%s_%s\n" % prompt)
 
     STAITC_MAP = {
-        'Static/fuhao.txt': 'fuhao',
-        'Static/lianjie.txt': 'lianjie',
-        'Static/yingwen.txt': 'yingwen',
+        'Static/fuhao.txt': 'xkjd6.fuhao',
+        'Static/lianjie.txt': 'xkjd6.lianjie',
+        'Static/yingwen.txt': 'xkjd6.yingwen',
     }
 
     for static in STAITC_MAP:
-        with open("rime/xkjd6.%s.dict.yaml" % STAITC_MAP[static], mode='w', encoding='utf-8', newline='\n') as outfile:
+        with open("rime/%s.dict.yaml" % STAITC_MAP[static], mode='w', encoding='utf-8', newline='\n') as outfile:
             outfile.write(RIME_HEADER % STAITC_MAP[static])
             with open(os.path.join(tool_path, static), mode='r', encoding='utf-8') as infile:
                 outfile.write('\n'.join(line.strip() for line in infile.readlines()))
@@ -1212,7 +1204,7 @@ def commit():
     clear_cizu_codes()
     ZiDB.commit()
     CiDB.commit()
-    traverse_danzi(True)
+    traverse_danzi(True, True)
     traverse_cizu(True, True)
     build_chaoji()
     build_static()

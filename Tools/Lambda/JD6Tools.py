@@ -124,6 +124,12 @@ PY_TRANSFORM = {
 # ---------------------------------
 #             辅助函数
 # ---------------------------------
+def markfly(s):
+    return s.upper()
+
+def unmarkfly(s):
+    return s.lower()
+
 def sheng(py):
     """取全拼声母"""
     if py.startswith('zh'):
@@ -153,12 +159,16 @@ def pinyin2sy(py):
 
     s = []
     if (shengmu in JD6_SFLY):
+        # 飞键
+        if yunmu in JD6_SFLY[shengmu][0] and yunmu in JD6_SFLY[shengmu][1]:
+            s.append(markfly(JD6_S2K[shengmu][0]))
+            s.append(markfly(JD6_S2K[shengmu][1]))
         # 一类
-        if yunmu in JD6_SFLY[shengmu][0]:
-            s.append(JD6_S2K[shengmu][0].upper())
+        elif yunmu in JD6_SFLY[shengmu][0]:
+            s.append(JD6_S2K[shengmu][0])
         # 二类
-        if yunmu in JD6_SFLY[shengmu][1]:
-            s.append(JD6_S2K[shengmu][1].upper())
+        elif yunmu in JD6_SFLY[shengmu][1]:
+            s.append(JD6_S2K[shengmu][1])
     else:
         s = JD6_S2K[shengmu]
 
@@ -179,12 +189,16 @@ def pinyin2s(py):
 
     s = []
     if (shengmu in JD6_SFLY):
+        # 飞键
+        if yunmu in JD6_SFLY[shengmu][0] and yunmu in JD6_SFLY[shengmu][1]:
+            s.append(markfly(JD6_S2K[shengmu][0]))
+            s.append(markfly(JD6_S2K[shengmu][1]))
         # 一类
-        if yunmu in JD6_SFLY[shengmu][0]:
-            s.append(JD6_S2K[shengmu][0].upper())
+        elif yunmu in JD6_SFLY[shengmu][0]:
+            s.append(JD6_S2K[shengmu][0])
         # 二类
-        if yunmu in JD6_SFLY[shengmu][1]:
-            s.append(JD6_S2K[shengmu][1].upper())
+        elif yunmu in JD6_SFLY[shengmu][1]:
+            s.append(JD6_S2K[shengmu][1])
     else:
         s = JD6_S2K[shengmu]
 
@@ -206,7 +220,7 @@ def isGBK(char):
         return False
 
 def char2codes(shape, pinyin, length, short = True, full = True):
-    sy = [code.lower() for code in pinyin2sy(transform_py(pinyin))]
+    sy = [unmarkfly(code) for code in pinyin2sy(transform_py(pinyin))]
     if (len(sy) == 0):
         return set()
 
@@ -230,7 +244,7 @@ def zi2codes(zi, short = True, full = True):
 
     weights = zi.weights()
     for w in weights:
-        sy = [code.lower() for code in pinyin2sy(w[0])]
+        sy = [unmarkfly(code) for code in pinyin2sy(w[0])]
         if (len(sy) == 0):
             continue
 
@@ -238,20 +252,20 @@ def zi2codes(zi, short = True, full = True):
         is_fly = len(sy) > 1
         if (is_fly):
             if sy[0] in sy_codes:
-                sy_codes[sy[0]] = (min(sy_codes[sy[0]][0], w[1]), sy[1])
+                sy_codes[sy[0]] = (min(sy_codes[sy[0]][0], w[1]), sy[1], w[0])
             else:
-                sy_codes[sy[0]] = (w[1], sy[1])
+                sy_codes[sy[0]] = (w[1], sy[1], w[0])
 
             if sy[1] in sy_codes:
-                sy_codes[sy[1]] = (min(sy_codes[sy[1]][0], w[1]), sy[0])
+                sy_codes[sy[1]] = (min(sy_codes[sy[1]][0], w[1]), sy[0], w[0])
             else:
-                sy_codes[sy[1]] = (w[1], sy[0])
+                sy_codes[sy[1]] = (w[1], sy[0], w[0])
         else:
             sy = sy[0]
             if sy in sy_codes:
-                sy_codes[sy] = (min(sy_codes[sy][0], w[1]), sy_codes[sy][1])
+                sy_codes[sy] = (min(sy_codes[sy][0], w[1]), sy_codes[sy][1], w[0])
             else:
-                sy_codes[sy] = (w[1], None)
+                sy_codes[sy] = (w[1], None, w[0])
 
     b = zi.shape()
     char = zi.char()
@@ -259,7 +273,7 @@ def zi2codes(zi, short = True, full = True):
     which = zi.which()
 
     for sy in sy_codes:
-        w, fly = sy_codes[sy]
+        w, fly, pinyin = sy_codes[sy]
         full_code = sy+b
 
         if (w <= 0):  # 忽略无理读音
@@ -268,12 +282,12 @@ def zi2codes(zi, short = True, full = True):
         if (w < len(full_code)):
             has_short = True
             if (w > 1 and short):   # 不自动生成一简
-                codes.append((char, full_code[:w], rank, which, None))
+                codes.append((char, full_code[:w], rank, which, None, pinyin))
         else:
             has_short = False
         
         if full:
-            codes.append((char, full_code, rank, which, (has_short, fly + full_code[2:] if fly is not None else None)))
+            codes.append((char, full_code, rank, which, (has_short, fly + full_code[2:] if fly is not None else None), pinyin))
     
     return codes
 
@@ -311,7 +325,7 @@ def get_danzi_codes():
 
 
     for entry in ZiDB.fixed():
-        code = (entry[0], entry[1], -1, entry[2], None)
+        code = (entry[0], entry[1], -1, entry[2], None, '')
         _entries.append(code)
         if (code[1] in _entries_r):
             _entries_r[code[1]].append(code)
@@ -359,7 +373,7 @@ def get_cizu_codes():
     # 固定词组
     extra = 500
     for entry in CiDB.fixed(CiDB.GENERAL):
-        code = (entry[0], entry[1], extra, 1, None)
+        code = (entry[0], entry[1], extra, 1, '')
         _word_entries.append(code)
         if (code[1] in _word_entries_r):
             _word_entries_r[code[1]].append(code)
@@ -474,7 +488,7 @@ def word_pinyin2codes(pys):
             codes.add(code)
     
     
-    return set(code.lower() for code in codes)
+    return set(unmarkfly(code) for code in codes)
 
 def word2codes(word, pinyin, length, short = True, full = False):
     sound_chars = CiDB.sound_chars(word)
@@ -588,7 +602,7 @@ def traverse_danzi(build = False, report = True):
         report = None
 
     for entry in entries:
-        char, code, rank, which, full_code = entry
+        char, code, rank, which, full_code, pinyin = entry
 
         if which != ZiDB.GENERAL and which != ZiDB.SUPER:
             continue
@@ -645,7 +659,7 @@ def traverse_danzi(build = False, report = True):
 
         rank_check[which] = (code, char, rank)
 
-        if danzi is not None:
+        if danzi is not None and which == ZiDB.GENERAL:
             danzi.write(char+'\t'+code+'\n')
             cx.write(char+'\t'+code+'\n')
             dz.write(char+'\t'+code+'\n')
@@ -692,7 +706,7 @@ def traverse_cizu(build = False, report = True):
         # if (word == "这表明"):
         #     print('hey')
 
-        if optimize:
+        if report:
             # 简码空间检查
             tmp_codes = [code[:-1]]
             if (fly > 1):
@@ -848,7 +862,7 @@ def build_chaoji():
 
     extra = 500
     for entry in CiDB.fixed(CiDB.SUPER):
-        code = (entry[0], entry[1], extra, 1, None)
+        code = (entry[0], entry[1], extra, 1, '')
         chaoji.append(code)
         extra += 1
 
@@ -937,6 +951,18 @@ def get_ci_of_code(code):
         result = result.union(_new_ci[code])
         
     return result
+
+def get_current_danzi_codes():
+    clear_danzi_codes()
+    entries, lookup = get_danzi_codes()
+    entries.sort(key=lambda e: (e[1], e[2]))
+    return entries, lookup
+
+def get_current_cizu_codes():
+    clear_cizu_codes()
+    entries, lookup = get_cizu_codes()
+    entries.sort(key=lambda e: (e[1], e[2]))
+    return entries, lookup
 
 def solve_char_pinyin(char, pinyin):
     zi = ZiDB.get(char)
@@ -1124,6 +1150,60 @@ def find_weight_for_word(word, pinyin, length):
                 
     return weight
 
+def find_space_for_word(word, pinyin):
+    codes = list(word2codes(word, pinyin, 6, False, True))
+    if len(codes) == 0:
+        return None
+    
+    short = [code[:-1] for code in codes]
+    _, lookup = get_current_cizu_codes()
+
+    full_dup = 0
+    for code in codes:
+        full_dup = max(len(lookup[code]) if code in lookup else 0, full_dup)
+
+    avaliable_spaces = [6]
+    for i in range(5, 2, -1):
+        avaliable = True
+        for code in short:
+            if code in lookup:
+                avaliable = False
+                break
+        
+        if (avaliable):
+            avaliable_spaces.append(i)
+        short = [code[:-1] for code in short]
+
+    return (codes, avaliable_spaces, full_dup)
+
+def find_space_for_char(shape, pinyin):
+    codes = list(char2codes(shape, pinyin, 6, False, True))
+    if len(codes) == 0:
+        return None
+
+    full_code_len = max(len(codes[0]), 6)
+    
+    short = [code[:-1] for code in codes]
+    _, lookup = get_current_danzi_codes()
+
+    full_dup = 0
+    for code in codes:
+        full_dup = max(len(lookup[code]) if code in lookup else 0, full_dup)
+
+    avaliable_spaces = [full_code_len]
+    for i in range(full_code_len-1, 1, -1):
+        avaliable = True
+        for code in short:
+            if code in lookup:
+                avaliable = False
+                break
+        
+        if (avaliable):
+            avaliable_spaces.append(i)
+        short = [code[:-1] for code in short]
+
+    return (codes, avaliable_spaces, full_dup)
+
 def build_static():
     tool_path = os.path.dirname(os.path.abspath(__file__))
     
@@ -1208,6 +1288,17 @@ def commit():
     traverse_cizu(True, True)
     build_chaoji()
     build_static()
+
+def reset():
+    global _new_zi
+    _new_zi = {}
+    global _new_ci
+    _new_ci = {}
+    
+    ZiDB.reset()
+    CiDB.reset()
+    clear_danzi_codes()
+    clear_cizu_codes()
 
 if __name__ == '__main__':
     commit()

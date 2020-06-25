@@ -1,3 +1,4 @@
+# 由键道：涵自动生成
 ---
 name: xkjd6.danzi
 version: "Q1"
@@ -88,6 +89,9 @@ sort: original
 杓	bcvua
 杓	bcvuao
 飙	bcvuua
+猋	bcvuv
+嫑	bcvuvi
+猋	bcvuvu
 表	bcvvua
 标	bcvvvi
 别	bd
@@ -202,6 +206,7 @@ sort: original
 拜	bhiuvv
 佰	bhiv
 佰	bhivui
+兡	bhkeuo
 呗	bho
 呗	bhoaoo
 稗	bhu
@@ -237,6 +242,7 @@ sort: original
 哺	bjovia
 瓿	bjovv
 瓿	bjovva
+誧	bjovvi
 簿	bju
 簿	bjuvav
 布	bjv
@@ -244,6 +250,8 @@ sort: original
 醭	bjvii
 醭	bjviii
 逋	bjvioa
+𬷕	bjviu
+𬷕	bjviua
 埠	bjvo
 埗	bjvoi
 埗	bjvoiv
@@ -384,7 +392,9 @@ sort: original
 皕	bkvu
 觱	bkvuu
 觱	bkvuua
+夶	bkvuv
 皕	bkvuvu
+夶	bkvuvu
 碧	bkvv
 珌	bkvvo
 珌	bkvvoa
@@ -415,6 +425,8 @@ sort: original
 蕃	bliiu
 蕃	bliiuo
 钵	blio
+𬭛	blioa
+𬭛	blioaa
 卜	blioo
 铂	bliou
 铂	blioui
@@ -971,7 +983,9 @@ sort: original
 佽	ckiovu
 雌	ckiv
 雌	ckivio
+𫚖	ckivu
 此	ckivua
+𫚖	ckivua
 词	cko
 祠	ckoa
 祠	ckoaav
@@ -1139,6 +1153,7 @@ sort: original
 琮	cyvvoo
 璁	cyvvu
 璁	cyvvui
+瑽	cyvvuu
 草	cz
 漕	cza
 漕	czavia
@@ -1193,6 +1208,8 @@ sort: original
 汈	dcaa
 汈	dcaavv
 屌	dcav
+弔	dcava
+弔	dcavai
 屌	dcavoi
 刁	dcavv
 钓	dci
@@ -1234,7 +1251,9 @@ sort: original
 蚪	ddiao
 蚪	ddiaoo
 螲	ddiaoo
+𫶇	ddiav
 蝶	ddiavi
+𫶇	ddiavi
 蔸	ddii
 蔸	ddiiui
 钭	ddio
@@ -1307,6 +1326,8 @@ sort: original
 地	devoai
 但	df
 弹	dfa
+𬘘	dfaa
+𬘘	dfaaoa
 蛋	dfai
 蛋	dfaiia
 疍	dfaio
@@ -1323,7 +1344,9 @@ sort: original
 眈	dfiaoa
 萏	dfii
 萏	dfiiua
+𫢸	dfio
 但	dfioiv
+𫢸	dfioui
 掸	dfiu
 儋	dfiua
 儋	dfiuav
@@ -1335,6 +1358,8 @@ sort: original
 旦	dfoi
 旦	dfoivv
 惮	dfoo
+呾	dfooi
+呾	dfooiv
 惮	dfooou
 啖	dfoou
 憺	dfooua
@@ -1342,6 +1367,8 @@ sort: original
 郸	dfou
 郸	dfouai
 单	dfouia
+𬊤	dfouo
+𬊤	dfouou
 疸	dfov
 亶	dfovi
 亶	dfovia
@@ -1479,6 +1506,8 @@ sort: original
 芏	djiivo
 镀	djio
 镀	djioov
+𬭊	djiov
+𬭊	djiovv
 督	djivia
 度	djo
 读	djoauo
@@ -1531,6 +1560,7 @@ sort: original
 骶	dkiaua
 䗖	dkiav
 䗖	dkiavi
+𬱖	dkiavu
 蒂	dkii
 蒂	dkiiov
 荻	dkiiu
@@ -1548,6 +1578,7 @@ sort: original
 底	dko
 谛	dkoa
 禘	dkoao
+𬤊	dkoaoi
 禘	dkoaov
 谛	dkoaov
 诋	dkoau
@@ -1727,7 +1758,9 @@ sort: original
 扽	dniuva
 当	dp
 凼	dpa
+𬍡	dpaa
 凼	dpaaii
+𬍡	dpaavv
 党	dpi
 蟷	dpia
 蟷	dpiaio
@@ -1807,6 +1840,8 @@ sort: original
 荙	dsiivu
 𨱏	dsio
 𨱏	dsioii
+𫟼	dsiov
+𫟼	dsiovu
 搭	dsiu
 搭	dsiuii
 打	dsiuvi
@@ -1818,6 +1853,8 @@ sort: original
 跶	dsoiv
 跶	dsoivu
 怛	dsoo
+呾	dsooi
+呾	dsooiv
 惮	dsooo
 怛	dsoooi
 惮	dsooou
@@ -1842,7 +1879,9 @@ sort: original
 耷	dsvu
 达	dsvuoa
 大	dsvuoo
+	dsvuv
 耷	dsvuvi
+	dsvuvu
 短	dt
 缎	dta
 缎	dtaaui
@@ -1915,6 +1954,7 @@ sort: original
 峒	dyiaia
 岽	dyiav
 岽	dyiava
+𬟽	dyiava
 侗	dyii
 侗	dyiiav
 董	dyiiuv
@@ -2038,6 +2078,8 @@ sort: original
 舍	eei
 蛇	eeia
 蛇	eeiaoo
+𪨶	eeiav
+𪨶	eeiavu
 摄	eeiu
 拾	eeiui
 拾	eeiuiv
@@ -2152,6 +2194,7 @@ sort: original
 埏	efvo
 墡	efvoo
 墡	efvoou
+𫮃	efvoou
 埏	efvoui
 杉	efvu
 栅	efvua
@@ -2220,6 +2263,8 @@ sort: original
 竖	ejiiov
 倏	ejiiu
 倏	ejiiua
+𬬸	ejio
+𬬸	ejiovo
 抒	ejiu
 抒	ejiuao
 摅	ejiui
@@ -2327,11 +2372,13 @@ sort: original
 侍	ekivo
 仕	ekivoo
 侍	ekivov
+兙	ekkeuo
 试	eko
 诗	ekoa
 视	ekoai
 视	ekoaia
 识	ekoao
+𬤊	ekoaoi
 谥	ekoaou
 识	ekoaou
 祏	ekoav
@@ -2368,6 +2415,7 @@ sort: original
 蚀	ekuai
 蚀	ekuaia
 狮	ekuaiu
+𫚕	ekuaiu
 鲥	ekuao
 鲥	ekuaoi
 饰	ekuau
@@ -2469,6 +2517,8 @@ sort: original
 绅	enaai
 绅	enaaia
 渗	enaaov
+𬳽	enaau
+𬳽	enaauv
 沈	enao
 沈	enaoau
 深	enaoau
@@ -2494,6 +2544,8 @@ sort: original
 肾	eniiuu
 葚	eniiv
 葚	eniivi
+𬬹	enio
+𬬹	enioia
 什	eniu
 什	eniuoo
 侁	eniuv
@@ -2891,7 +2943,9 @@ sort: original
 蕃	ffiiuo
 蘩	ffiiuv
 钒	ffio
+𫔍	ffiou
 钒	ffioua
+𫔍	ffiouo
 烦	ffo
 蹯	ffoi
 蹯	ffoiuo
@@ -2908,6 +2962,8 @@ sort: original
 翻	ffuoao
 番	ffuoi
 番	ffuoia
+𬸪	ffuou
+𬸪	ffuoua
 返	ffuu
 反	ffuuao
 返	ffuuoa
@@ -2987,6 +3043,7 @@ sort: original
 幞	fjiai
 幞	fjiaii
 蝮	fjiau
+𮔅	fjiaua
 蜉	fjiauo
 蝮	fjiauv
 佛	fjiav
@@ -3013,7 +3070,9 @@ sort: original
 黻	fjiivu
 芙	fjiivv
 俯	fjio
+𫓧	fjiov
 俯	fjiovu
+𫓧	fjiovv
 扶	fjiu
 拂	fjiua
 拂	fjiuav
@@ -3082,6 +3141,7 @@ sort: original
 斧	fjuouu
 腑	fjuov
 腑	fjuovu
+𫖯	fjuovu
 釜	fjuovv
 腹	fjuu
 腹	fjuuvo
@@ -3138,6 +3198,7 @@ sort: original
 织	fkaaou
 彘	fkaau
 纸	fkaaua
+𫄨	fkaauo
 彘	fkaauv
 陟	fkai
 骘	fkaia
@@ -3219,6 +3280,7 @@ sort: original
 踯	fkoio
 踯	fkoiou
 蹢	fkoiov
+蹠	fkoiov
 踬	fkoiu
 踬	fkoiuu
 跖	fkoiv
@@ -3244,6 +3306,8 @@ sort: original
 旨	fkuaoi
 觯	fkuaou
 炙	fkuaou
+㩼	fkuau
+㩼	fkuauo
 氏	fkuav
 氏	fkuava
 直	fkuo
@@ -3308,6 +3372,7 @@ sort: original
 榰	fkvuov
 殖	fkvuu
 殖	fkvuuo
+𬃊	fkvuuu
 栀	fkvuuv
 桎	fkvv
 桎	fkvvao
@@ -3366,7 +3431,9 @@ sort: original
 焯	flouiv
 灼	flouua
 啄	flov
+𬸦	flovu
 啄	flovua
+𬸦	flovua
 酌	flv
 棹	flvi
 酌	flviua
@@ -3440,6 +3507,8 @@ sort: original
 忿	fnuooa
 氛	fnuvuo
 奋	fnv
+𮝷	fnva
+𮝷	fnvauo
 酚	fnvi
 酚	fnviuo
 坟	fnvo
@@ -3568,6 +3637,8 @@ sort: original
 蚱	fsiau
 眨	fsiauo
 蚱	fsiauv
+甴	fsiav
+甴	fsiavi
 铡	fsio
 铡	fsioao
 扎	fsiu
@@ -3673,6 +3744,7 @@ sort: original
 沸	fwaa
 绯	fwaai
 绯	fwaaiv
+	fwaaiv
 沸	fwaava
 妃	fwau
 淝	fwaua
@@ -3806,6 +3878,8 @@ sort: original
 䓬	fzii
 䓬	fziiiv
 钊	fzio
+𬬿	fzioa
+𬬿	fzioau
 钊	fzioii
 招	fziuau
 找	fziuva
@@ -3828,6 +3902,8 @@ sort: original
 旐	fzov
 旐	fzovuv
 朝	fzu
+𬶐	fzua
+𬶐	fzuauo
 兆	fzuo
 兆	fzuoau
 朝	fzuouu
@@ -3989,6 +4065,8 @@ sort: original
 虼	geiauv
 个	geiii
 葛	geiioi
+佮	geiiv
+佮	geiivo
 铬	geio
 铬	geioua
 镉	geiov
@@ -4077,6 +4155,7 @@ sort: original
 竿	gfuv
 秆	gfuvv
 肝	gfuvvi
+𬕂	gfuvvi
 秆	gfuvvv
 竿	gfuvvv
 感	gfv
@@ -4119,6 +4198,8 @@ sort: original
 溉	ghaa
 溉	ghaavv
 陔	ghai
+𬮿	ghaii
+𬮿	ghaiia
 陔	ghaiov
 赅	ghao
 赅	ghaoov
@@ -4223,6 +4304,8 @@ sort: original
 贾	gjviao
 酤	gjviu
 酤	gjviuo
+巭	gjviv
+巭	gjvivv
 鼓	gjvo
 瞽	gjvoi
 堌	gjvoia
@@ -4235,6 +4318,8 @@ sort: original
 顾	gjvuvu
 过	gl
 涡	gla
+𬇹	glai
+𬇹	glaiav
 涡	glaoia
 国	gli
 果	glia
@@ -4246,6 +4331,8 @@ sort: original
 崞	gliaov
 国	gliavv
 果	gliavv
+菓	glii
+菓	gliiia
 锅	glio
 锅	gliooi
 掴	gliu
@@ -4342,6 +4429,8 @@ sort: original
 㭎	gpviau
 堽	gpvo
 堽	gpvoia
+	gpvou
+	gpvoua
 矼	gpvu
 矼	gpvuvi
 杠	gpvviv
@@ -4391,13 +4480,17 @@ sort: original
 鹒	grovu
 鹒	grovua
 鲠	gru
+㹴	grua
 鲠	gruavi
+㹴	gruavi
 耕	grv
 耿	grvi
 更	grviav
 耿	grviou
 埂	grvo
 埂	grvovi
+𬒔	grvu
+𬒔	grvuiv
 梗	grvv
 梗	grvvia
 耕	grvvvv
@@ -4527,6 +4620,7 @@ sort: original
 红	gyaa
 红	gyaavi
 弓	gyavaa
+兝	gyfnuo
 供	gyi
 蚣	gyia
 蚣	gyiauo
@@ -4545,6 +4639,8 @@ sort: original
 公	gyuoao
 肱	gyuv
 肱	gyuvua
+𬕂	gyuvv
+𬕂	gyuvvi
 工	gyv
 功	gyvi
 贡	gyvia
@@ -4652,6 +4748,7 @@ sort: original
 诲	hboau
 诲	hboauv
 诙	hboav
+𬤝	hboavi
 诙	hboavu
 袆	hboavv
 讳	hboavv
@@ -4703,6 +4800,8 @@ sort: original
 骺	hdiauu
 侯	hdiavu
 候	hdiiav
+𬭤	hdio
+𬭤	hdioia
 喉	hdo
 吼	hdoa
 吼	hdoaiv
@@ -4800,6 +4899,8 @@ sort: original
 禾	heuviu
 和	heuvoo
 核	hev
+𬌗	heva
+𬌗	hevaiv
 鞨	hevi
 鞨	hevioi
 赫	hevo
@@ -5037,6 +5138,8 @@ sort: original
 瑚	hjvvuo
 或	hl
 活	hla
+𬴃	hlaa
+𬴃	hlaavv
 濩	hlai
 濩	hlaiii
 漷	hlao
@@ -5156,6 +5259,8 @@ sort: original
 很	hn
 恨	hno
 哏	hnoa
+𬣳	hnoaa
+𬣳	hnoaav
 哏	hnoavv
 恨	hnooav
 痕	hnov
@@ -5211,6 +5316,8 @@ sort: original
 划	hqvaii
 画	hqvi
 画	hqviav
+椛	hqvii
+椛	hqviii
 桦	hqviu
 桦	hqviua
 砉	hqvv
@@ -5253,6 +5360,8 @@ sort: original
 幻	htaaaa
 缳	htaai
 缳	htaaia
+𬘫	htaao
+𬘫	htaaoo
 缓	htaauo
 漶	htai
 澴	htaia
@@ -5339,6 +5448,8 @@ sort: original
 荤	hwi
 黑	hwiaoo
 荤	hwiiva
+𬭶	hwio
+𬭶	hwioia
 嘿	hwo
 诨	hwoa
 诨	hwoaoa
@@ -5443,6 +5554,10 @@ sort: original
 蕻	hyiiv
 蕻	hyiivi
 薨	hyiivu
+𫟹	hyio
+𬭎	hyioo
+𬭎	hyiooo
+𫟹	hyiovi
 宏	hyo
 讧	hyoa
 讧	hyoavi
@@ -5490,6 +5605,7 @@ sort: original
 镐	hzioov
 侴	hziv
 侴	hzivav
+兞	hzkeuo
 号	hzo
 昊	hzoi
 嚆	hzoii
@@ -5513,7 +5629,9 @@ sort: original
 皞	hzuiui
 皓	hzuiuv
 貉	hzuo
+䜰	hzuou
 貉	hzuoua
+䜰	hzuoui
 耗	hzv
 郝	hzvo
 郝	hzvoai
@@ -5556,6 +5674,7 @@ sort: original
 金	jbioo
 锦	jbiou
 锦	jbioui
+𬬱	jbiouu
 搢	jbiu
 搢	jbiuvi
 谨	jbo
@@ -5857,6 +5976,8 @@ sort: original
 巉	jfiaua
 蟾	jfiaua
 蒇	jfii
+苂	jfiio
+苂	jfiiou
 蒇	jfiivu
 铲	jfio
 儳	jfioa
@@ -5891,6 +6012,8 @@ sort: original
 冁	jfoua
 冁	jfouav
 单	jfouia
+𬊤	jfouo
+𬊤	jfouou
 廛	jfov
 廛	jfovia
 产	jfovou
@@ -5995,12 +6118,15 @@ sort: original
 璥	jgvvii
 璟	jgvvo
 璟	jgvvoi
+丼	jgvvoo
 䴖	jgvvu
 静	jgvvua
 䴖	jgvvua
 井	jgvvui
 决	jh
 绝	jha
+𫘝	jhaa
+𫘝	jhaaav
 绝	jhaaua
 孓	jhai
 孓	jhaioo
@@ -6021,6 +6147,7 @@ sort: original
 钗	jhio
 傕	jhioa
 鐍	jhioao
+𫔎	jhioao
 钗	jhioao
 傕	jhioau
 镢	jhiov
@@ -6114,6 +6241,8 @@ sort: original
 搐	jjiuov
 摴	jjiuv
 摴	jjiuvo
+𬺓	jjiv
+𬺓	jjivvv
 初	jjo
 褚	jjoa
 初	jjoaau
@@ -6181,6 +6310,8 @@ sort: original
 瀱	jkaiai
 亟	jkaii
 亟	jkaiia
+𬯀	jkaio
+𬯀	jkaiov
 际	jkaivv
 济	jkao
 鸡	jkaou
@@ -6207,6 +6338,7 @@ sort: original
 忌	jkavoa
 暨	jkavoi
 屐	jkavu
+𬶨	jkavua
 屐	jkavuu
 彐	jkavv
 既	jkavva
@@ -6240,6 +6372,9 @@ sort: original
 集	jkio
 偈	jkioi
 偈	jkioiu
+𫓯	jkiov
+𫓹	jkiovi
+𫓯	jkiovo
 集	jkiovv
 挤	jkiu
 伋	jkiua
@@ -6256,6 +6391,8 @@ sort: original
 冀	jkivia
 佶	jkivo
 佶	jkivoo
+𫚖	jkivu
+𫚖	jkivua
 记	jko
 计	jkoa
 记	jkoaav
@@ -6265,6 +6402,7 @@ sort: original
 诘	jkoav
 诘	jkoavo
 唧	jkoavv
+𫌀	jkoavv
 跻	jkoi
 跽	jkoia
 跽	jkoiav
@@ -6308,6 +6446,7 @@ sort: original
 鲚	jkuaov
 饥	jkuau
 饥	jkuaua
+𬶭	jkuaua
 祭	jkuav
 觭	jkuavu
 祭	jkuavv
@@ -6339,6 +6478,8 @@ sort: original
 籍	jkuvvv
 机	jkv
 辑	jkva
+檵	jkvaa
+檵	jkvaao
 辑	jkvaov
 基	jkvi
 惎	jkvio
@@ -6373,6 +6514,8 @@ sort: original
 奇	jkvuv
 奇	jkvuvo
 击	jkvv
+𪟝	jkvva
+𪟝	jkvvau
 击	jkvvia
 玑	jkvvu
 玑	jkvvua
@@ -6468,6 +6611,8 @@ sort: original
 狙	jluaia
 飓	jluaia
 句	jluaoo
+𬶋	jluau
+𬶋	jluaua
 腒	jluav
 腒	jluavu
 矩	jluv
@@ -6576,6 +6721,7 @@ sort: original
 肩	jmoauu
 谏	jmoav
 谏	jmoavi
+𬣡	jmoavv
 践	jmoi
 踺	jmoia
 踺	jmoiav
@@ -6646,6 +6792,8 @@ sort: original
 戋	jmvvau
 陈	jn
 沉	jna
+𬘭	jnaa
+𬘭	jnaavv
 陈	jnaiva
 沉	jnaoau
 尘	jni
@@ -6720,6 +6868,7 @@ sort: original
 裳	jpioov
 敞	jpiou
 氅	jpiouv
+𬬮	jpiouv
 敞	jpiouv
 尝	jpiovv
 伥	jpiu
@@ -6936,6 +7085,7 @@ sort: original
 挟	jsiuvo
 佳	jsiv
 佳	jsivov
+嗧	jslwau
 家	jso
 咖	jsoa
 袷	jsoai
@@ -6977,6 +7127,7 @@ sort: original
 槚	jsvvia
 恝	jsvvo
 恝	jsvvoa
+𬂩	jsvvou
 卷	jt
 绢	jta
 绢	jtaaou
@@ -6994,6 +7145,7 @@ sort: original
 镌	jtioio
 锩	jtioo
 锩	jtioou
+𫓶	jtioou
 倦	jtiouv
 捐	jtiuou
 眷	jtou
@@ -7024,6 +7176,8 @@ sort: original
 郡	jwava
 郡	jwavai
 君	jwavoo
+𫖳	jwavv
+𫖳	jwavvu
 俊	jwi
 峻	jwia
 畯	jwiaa
@@ -7042,6 +7196,8 @@ sort: original
 钧	jwio
 隽	jwioa
 隽	jwioau
+𬭚	jwioo
+𬭚	jwioov
 钧	jwioua
 捃	jwiu
 捃	jwiuav
@@ -7137,7 +7293,9 @@ sort: original
 囧	jy
 泂	jya
 䌹	jyaa
+𬳶	jyaai
 䌹	jyaaia
+𬳶	jyaaia
 泂	jyaiao
 迥	jyi
 冏	jyia
@@ -7238,6 +7396,8 @@ sort: original
 馗	kbuao
 馗	kbuaou
 魁	kbuioo
+𫠆	kbuo
+𫠆	kbuovu
 篑	kbuv
 篑	kbuvia
 奎	kbv
@@ -7254,6 +7414,8 @@ sort: original
 奎	kbvuvo
 亏	kbvvaa
 口	kd
+𫸩	kda
+𫸩	kdavvu
 扣	kdi
 眍	kdia
 眍	kdiavu
@@ -7502,6 +7664,8 @@ sort: original
 哐	kmovv
 哐	kmovvv
 狂	kmu
+𫛭	kmua
+𫛭	kmuaua
 狂	kmuavv
 筐	kmuv
 筐	kmuvvv
@@ -7650,6 +7814,8 @@ sort: original
 哐	kxovv
 哐	kxovvv
 狂	kxu
+𫛭	kxua
+𫛭	kxuaua
 狂	kxuavv
 筐	kxuv
 筐	kxuvvv
@@ -7704,6 +7870,10 @@ sort: original
 了	l
 林	lb
 淋	lba
+𬘭	lbaa
+𬴊	lbaao
+𬴊	lbaaou
+𬘭	lbaavv
 潾	lbao
 潾	lbaouv
 淋	lbavvv
@@ -7717,6 +7887,8 @@ sort: original
 临	lbiiuv
 邻	lbio
 邻	lbioai
+𬭸	lbioo
+𬭸	lbioou
 拎	lbiu
 赁	lbiua
 赁	lbiuao
@@ -7811,6 +7983,8 @@ sort: original
 簝	lcuvvu
 尥	lcv
 聊	lcviua
+𪤗	lcvo
+𪤗	lcvoao
 鹩	lcvu
 尥	lcvuua
 鹩	lcvuua
@@ -7856,6 +8030,8 @@ sort: original
 咧	ldovua
 冽	ldovvu
 猎	ldu
+𫚭	ldua
+𫚭	lduaaa
 猎	lduavi
 脟	lduu
 脟	lduuoo
@@ -7867,7 +8043,9 @@ sort: original
 露	ldvo
 剅	ldvoi
 剅	ldvoii
+𪣻	ldvoo
 露	ldvooi
+𪣻	ldvoou
 埒	ldvou
 埒	ldvouo
 楼	ldvouv
@@ -7950,6 +8128,8 @@ sort: original
 榄	lfvi
 榄	lfviiu
 栏	lfvouv
+𬒗	lfvu
+𬒗	lfvuii
 婪	lfvv
 婪	lfvvau
 领	lg
@@ -8039,6 +8219,7 @@ sort: original
 崃	lhiav
 崃	lhiavo
 睐	lhiavo
+𫵷	lhiavu
 莱	lhii
 莱	lhiivo
 锊	lhio
@@ -8067,7 +8248,9 @@ sort: original
 路	lj
 陆	lja
 绿	ljaa
+𫘧	ljaaa
 绿	ljaaav
+𫘧	ljaaav
 渌	ljaav
 渌	ljaavv
 泸	ljai
@@ -8099,6 +8282,8 @@ sort: original
 芦	ljiioa
 蕗	ljiioi
 镥	ljio
+𬬻	ljioi
+𬬻	ljioiv
 镥	ljioua
 撸	ljiu
 掳	ljiui
@@ -8202,6 +8387,7 @@ sort: original
 蜊	lkiauv
 蛎	lkiav
 峛	lkiavu
+𫵷	lkiavu
 蛎	lkiavu
 里	lkiavv
 莉	lkii
@@ -8226,6 +8412,8 @@ sort: original
 俪	lkivia
 傈	lkivia
 例	lkivua
+兣	lkkeuo
+糎	lkmkou
 立	lko
 礼	lkoa
 礼	lkoaaa
@@ -8323,6 +8511,7 @@ sort: original
 璃	lkvvov
 枥	lkvvu
 枥	lkvvua
+𬍛	lkvvua
 嫠	lkvvv
 釐	lkvvvu
 嫠	lkvvvu
@@ -8473,7 +8662,9 @@ sort: original
 廉	lmovou
 脸	lmu
 鲢	lmua
+𬶠	lmuav
 鲢	lmuava
+𬶠	lmuavi
 脸	lmuivo
 臁	lmuo
 臁	lmuovu
@@ -8595,6 +8786,7 @@ sort: original
 琉	lqvvov
 珋	lqvvu
 珋	lqvvua
+瑠	lqvvua
 冷	lr
 愣	lro
 愣	lrooia
@@ -8632,6 +8824,8 @@ sort: original
 瘌	lsovvi
 辣	lsovvi
 腊	lsu
+𬶟	lsua
+𬶟	lsuavi
 腊	lsuvii
 垃	lsv
 剌	lsvi
@@ -8691,6 +8885,8 @@ sort: original
 蕾	lwiiv
 蕾	lwiivo
 镭	lwio
+𬬭	lwioi
+𬬭	lwioiu
 镭	lwiovo
 仑	lwiu
 仑	lwiuaa
@@ -8718,7 +8914,9 @@ sort: original
 酹	lwviu
 酹	lwviuo
 雷	lwvo
+𫭢	lwvoi
 雷	lwvoia
+𫭢	lwvoiu
 磊	lwvu
 礌	lwvuv
 礌	lwvuvo
@@ -8730,11 +8928,15 @@ sort: original
 两	lx
 梁	lxa
 粱	lxaa
+𫟅	lxaao
 粱	lxaaou
+𫟅	lxaaov
 梁	lxaavv
 俩	lxi
 莨	lxii
 莨	lxiioa
+𬜯	lxiiv
+𬜯	lxiivi
 俍	lxio
 俍	lxioav
 倞	lxiov
@@ -8799,6 +9001,8 @@ sort: original
 笼	lyu
 胧	lyuv
 胧	lyuvua
+𬕂	lyuvv
+𬕂	lyuvvi
 笼	lyuvvu
 垄	lyv
 垅	lyvo
@@ -8854,11 +9058,15 @@ sort: original
 痨	lzovii
 乐	lzu
 乐	lzuaiu
+䜮	lzuo
+䜮	lzuooo
 老	lzuoua
 酪	lzv
 醪	lzvi
 醪	lzviao
 酪	lzviua
+𫭼	lzvo
+𫭼	lzvoii
 栳	lzvu
 栳	lzvuov
 耢	lzvv
@@ -8979,6 +9187,8 @@ sort: original
 漫	mfaoii
 嫚	mfau
 嫚	mfauoi
+𬇕	mfav
+𬇕	mfavau
 瞒	mfi
 幔	mfia
 螨	mfiai
@@ -8986,7 +9196,9 @@ sort: original
 螨	mfiaii
 幔	mfiaoi
 蔓	mfii
+𬜬	mfiio
 蔓	mfiioi
+𬜬	mfiioi
 颟	mfiiv
 颟	mfiivu
 镘	mfio
@@ -9045,6 +9257,8 @@ sort: original
 买	mhaoov
 荬	mhi
 荬	mhiiao
+鿏	mhio
+鿏	mhiovv
 唛	mho
 唛	mhovvi
 卖	mhu
@@ -9089,6 +9303,8 @@ sort: original
 暮	mjiioi
 墓	mjiivo
 钼	mjio
+𬭁	mjioa
+𬭁	mjioaa
 钼	mjioia
 拇	mjiu
 仫	mjiua
@@ -9177,6 +9393,8 @@ sort: original
 醾	mkviov
 摸	ml
 漠	mla
+𬙊	mlaa
+𬙊	mlaaia
 陌	mlai
 漠	mlaiio
 陌	mlaivu
@@ -9314,6 +9532,8 @@ sort: original
 焖	mnouoi
 鞔	mnv
 鞔	mnviua
+𫞩	mnvv
+𫞩	mnvvii
 忙	mp
 漭	mpa
 漭	mpaiiv
@@ -9375,6 +9595,8 @@ sort: original
 锰	mrio
 锰	mrioai
 盟	mro
+𫑡	mroa
+𫑡	mroaii
 黾	mroi
 黾	mroiav
 盟	mroiia
@@ -9545,6 +9767,8 @@ sort: original
 懋	mzvaoa
 楙	mzvaoa
 髦	mzviuv
+冇	mzvu
+冇	mzvuia
 瑁	mzvv
 瑁	mzvvia
 你	n
@@ -9590,6 +9814,8 @@ sort: original
 摄	ndiuvi
 蹑	ndo
 啮	ndoi
+𫔶	ndoiu
+𫔶	ndoiui
 啮	ndoivi
 蹑	ndoivi
 嗫	ndov
@@ -9721,6 +9947,8 @@ sort: original
 你	nkiuai
 拟	nkiuao
 倪	nkiuiv
+𫠜	nkiv
+𫠜	nkivui
 呢	nko
 呢	nkoavu
 昵	nkoi
@@ -9742,6 +9970,8 @@ sort: original
 鲵	nkuaui
 腻	nkuvvi
 匿	nkv
+𫐐	nkva
+𫐐	nkvaui
 匿	nkviiv
 霓	nkvo
 坭	nkvoa
@@ -9791,6 +10021,8 @@ sort: original
 粘	nmouiv
 黏	nmu
 鲇	nmua
+鲶	nmuai
+鲶	nmuaio
 鲇	nmuaiv
 黏	nmuviv
 年	nmuvvi
@@ -9889,6 +10121,8 @@ sort: original
 浓	nyaoau
 侬	nyi
 侬	nyioau
+挊	nyiu
+挊	nyiuiv
 农	nyo
 农	nyoaua
 哝	nyoo
@@ -9897,6 +10131,8 @@ sort: original
 脓	nyuoau
 秾	nyuv
 秾	nyuvoa
+𬪩	nyvi
+𬪩	nyvioa
 弄	nyvvvu
 闹	nz
 淖	nza
@@ -9937,6 +10173,8 @@ sort: original
 嫔	pbauoo
 姘	pbauou
 拼	pbi
+𬞟	pbii
+𬞟	pbiiiv
 拚	pbiu
 拚	pbiuao
 拼	pbiuou
@@ -9988,6 +10226,8 @@ sort: original
 撇	pd
 苤	pdi
 苤	pdiivu
+𬭯	pdio
+𬭯	pdioou
 抔	pdiu
 掊	pdiuo
 撇	pdiuou
@@ -10179,7 +10419,9 @@ sort: original
 纰	pkaa
 澼	pkaau
 澼	pkaauo
+𬳵	pkaav
 纰	pkaava
+𬳵	pkaavu
 淠	pkai
 陂	pkaia
 陂	pkaiau
@@ -10472,7 +10714,9 @@ sort: original
 配	pw
 陪	pwa
 辔	pwaa
+𬇙	pwaao
 辔	pwaaoo
+𬇙	pwaaoo
 淠	pwai
 淠	pwaiav
 陪	pwaiov
@@ -10592,6 +10836,8 @@ sort: original
 峭	qciaio
 睄	qciaio
 瞧	qciaio
+骹	qciao
+骹	qciaov
 峤	qciau
 峤	qciauv
 俏	qcii
@@ -10767,7 +11013,9 @@ sort: original
 鳣	qfua
 飐	qfuai
 飐	qfuaiv
+𫗴	qfuao
 詹	qfuaov
+𫗴	qfuaov
 鳣	qfuaov
 毡	qfuv
 毡	qfuviv
@@ -10783,6 +11031,8 @@ sort: original
 栈	qfvvva
 请	qg
 清	qga
+𬘬	qgaa
+𬘬	qgaavv
 清	qgavvi
 倾	qgi
 蜻	qgia
@@ -10866,6 +11116,7 @@ sort: original
 宅	qhoouv
 窄	qhoouv
 寨	qhoov
+𬒈	qhoovu
 寨	qhoovv
 炔	qhou
 炔	qhouav
@@ -10878,6 +11129,8 @@ sort: original
 缺	qhu
 祭	qhua
 祭	qhuavv
+礐	qhui
+礐	qhuivu
 缺	qhuvav
 确	qhv
 鹊	qhvi
@@ -10944,6 +11197,8 @@ sort: original
 侏	qjiuvv
 祝	qjo
 诸	qjoa
+𬣞	qjoao
+𬣞	qjoaoo
 祝	qjoaou
 诛	qjoau
 褚	qjoauo
@@ -11012,7 +11267,9 @@ sort: original
 绮	qkaavu
 骑	qkaavu
 亟	qkai
+𬮿	qkaii
 亟	qkaiia
+𬮿	qkaiia
 泣	qkao
 泣	qkaovo
 汔	qkau
@@ -11122,6 +11379,10 @@ sort: original
 七	qkvaa
 郪	qkvaai
 妻	qkvaau
+炁	qkvao
+炁	qkvaoo
+𬨂	qkvau
+𬨂	qkvaua
 杞	qkvav
 杞	qkvava
 期	qkvi
@@ -11177,6 +11438,7 @@ sort: original
 黢	qliaao
 蛆	qliai
 蛐	qliaia
+𪨰	qliaia
 蠼	qliaia
 蛆	qliaia
 瞿	qliaio
@@ -11253,6 +11515,8 @@ sort: original
 缱	qmaai
 缱	qmaaia
 纤	qmaauv
+𬘬	qmaav
+𬘬	qmaavv
 阡	qmai
 阡	qmaiuv
 浅	qmav
@@ -11298,6 +11562,8 @@ sort: original
 佥	qmivoo
 虔	qmivov
 倩	qmivvi
+兛	qmkeuo
+粁	qmmkou
 谦	qmo
 谴	qmoa
 谴	qmoaia
@@ -11343,6 +11609,7 @@ sort: original
 杄	qmvu
 牵	qmvuuv
 杄	qmvuvi
+瓩	qmwsva
 真	qn
 阵	qna
 缜	qnaa
@@ -11536,6 +11803,8 @@ sort: original
 球	qqvvvi
 正	qr
 烝	qra
+𬘬	qraa
+𬘬	qraavv
 烝	qraioo
 挣	qri
 睁	qria
@@ -11649,6 +11918,8 @@ sort: original
 瑔	qtvvui
 群	qw
 逡	qwa
+𬘯	qwaa
+𬘯	qwaaov
 淳	qwao
 逡	qwaooa
 淳	qwaovo
@@ -11751,6 +12022,8 @@ sort: original
 䓬	qzii
 䓬	qziiiv
 钊	qzio
+𬬿	qzioa
+𬬿	qzioau
 钊	qzioii
 招	qziuau
 找	qziuva
@@ -11773,6 +12046,8 @@ sort: original
 旐	qzov
 旐	qzovuv
 朝	qzu
+𬶐	qzua
+𬶐	qzuauo
 兆	qzuo
 兆	qzuoau
 朝	qzuouu
@@ -11818,6 +12093,8 @@ sort: original
 糅	rdou
 糅	rdouao
 鞣	rdv
+𫐓	rdva
+𫐓	rdvaao
 鞣	rdviao
 热	re
 惹	rei
@@ -11892,6 +12169,8 @@ sort: original
 日	rkoii
 若	rl
 弱	rla
+叒	rlao
+叒	rlaoao
 婼	rlau
 婼	rlauii
 弱	rlavav
@@ -12060,6 +12339,8 @@ sort: original
 髓	sbiavu
 荽	sbii
 荽	sbiiuo
+𬭼	sbio
+𬭼	sbioou
 虽	sbo
 谇	sboa
 襚	sboao
@@ -12079,6 +12360,8 @@ sort: original
 穟	sbuvou
 穗	sbuvvi
 碎	sbv
+𫟦	sbva
+𫟦	sbvaou
 碎	sbvuov
 璲	sbvv
 璲	sbvvou
@@ -12206,6 +12489,7 @@ sort: original
 稣	sjuauv
 觫	sjuav
 觫	sjuavi
+𫗧	sjuavi
 夙	sjuavu
 簌	sjuv
 簌	sjuvvi
@@ -12298,6 +12582,8 @@ sort: original
 厮	skvuvi
 耜	skvv
 耜	skvvia
+亖	skvvv
+亖	skvvvv
 所	sl
 缩	sla
 缩	slaaoo
@@ -12319,6 +12605,8 @@ sort: original
 些	slivvv
 嗦	slo
 唆	sloa
+惢	sloao
+惢	sloaoa
 唆	sloaou
 唢	sloi
 唢	sloiou
@@ -12402,6 +12690,8 @@ sort: original
 淞	sya
 娀	syau
 娀	syauvv
+𪨊	syav
+𪨊	syavii
 淞	syavuo
 耸	syi
 嵩	syia
@@ -12462,6 +12752,8 @@ sort: original
 他	t
 推	tb
 退	tba
+𬯎	tbai
+𬯎	tbaiia
 退	tbavoa
 蜕	tbi
 蜕	tbiaou
@@ -12614,6 +12906,8 @@ sort: original
 璮	tfvvov
 听	tg
 汀	tga
+𬘩	tgaa
+𬘩	tgaauv
 渟	tgao
 渟	tgaovo
 婷	tgau
@@ -12695,12 +12989,16 @@ sort: original
 态	thv
 酞	thvi
 酞	thvivu
+𡘙	thvu
 态	thvuoa
 太	thvuoo
+𡘙	thvuvu
 泰	thvv
 泰	thvvaa
 图	tj
 涂	tja
+𬳿	tjaa
+𬳿	tjaaiv
 涂	tjaivv
 屠	tjav
 屠	tjavuo
@@ -12746,6 +13044,7 @@ sort: original
 缇	tkaa
 绨	tkaao
 缇	tkaaoi
+𫘨	tkaaoi
 绨	tkaaou
 涕	tkaoua
 媞	tkau
@@ -12754,6 +13053,8 @@ sort: original
 屉	tkavvi
 提	tki
 荑	tkii
+薙	tkiiu
+薙	tkiiuv
 荑	tkiiva
 锑	tkio
 锑	tkioou
@@ -12840,7 +13141,9 @@ sort: original
 庹	tlovav
 脱	tlu
 鸵	tlua
+𬶍	tluao
 鸵	tluaoo
+𬶍	tluaoo
 魄	tlui
 魄	tluiui
 妥	tluo
@@ -13006,6 +13309,8 @@ sort: original
 挞	tsiuvu
 它	tso
 褟	tsoa
+祂	tsoaa
+祂	tsoaai
 褟	tsoaoi
 踏	tsoi
 踏	tsoiao
@@ -13034,6 +13339,8 @@ sort: original
 榻	tsvoia
 塔	tsvoii
 塌	tsvooi
+	tsvu
+	tsvuvu
 团	tt
 湍	tta
 彖	ttaa
@@ -13112,6 +13419,8 @@ sort: original
 仝	tyiviv
 痛	tyo
 嗵	tyoa
+𫍣	tyoai
+𫍣	tyoaia
 嗵	tyoaoi
 哃	tyoi
 哃	tyoiav
@@ -13151,6 +13460,7 @@ sort: original
 绦	tzaa
 绹	tzaau
 绦	tzaaua
+𫘦	tzaaua
 绹	tzaaua
 陶	tzaiua
 滔	tzau
@@ -13270,9 +13580,13 @@ sort: original
 完	wf
 湾	wfa
 绾	wfaa
+𬘫	wfaao
 绾	wfaaoo
+𬘫	wfaaoo
 纨	wfaau
 纨	wfaaua
+卍	wfai
+卍	wfaivi
 涴	wfao
 涴	wfaooa
 湾	wfaovi
@@ -13282,6 +13596,10 @@ sort: original
 婠	wfauoo
 妧	wfauv
 妧	wfauvv
+𬇕	wfav
+𬇕	wfavau
+卐	wfavi
+卐	wfaviv
 挽	wfi
 蜿	wfia
 畹	wfiao
@@ -13345,6 +13663,8 @@ sort: original
 外	wh
 崴	whi
 崴	whiavu
+喎	who
+喎	whoiaa
 外	whuaio
 歪	whv
 歪	whvuvi
@@ -13486,6 +13806,8 @@ sort: original
 驰	wkaaa
 驰	wkaaai
 池	wkaaia
+𫄨	wkaau
+𫄨	wkaauo
 蚩	wkai
 蚩	wkaiia
 媸	wkau
@@ -13641,7 +13963,9 @@ sort: original
 问	wn
 温	wna
 纹	wnaa
+𫘜	wnaao
 纹	wnaaov
+𫘜	wnaaov
 汶	wnao
 温	wnaoii
 汶	wnaovu
@@ -13723,6 +14047,8 @@ sort: original
 蕹	wrii
 蕹	wriiov
 蓊	wriiuo
+𬭩	wrio
+𬭩	wriouo
 嗡	wro
 嗡	wrouoa
 瓮	wru
@@ -13909,6 +14235,8 @@ sort: original
 偎	wwiia
 蔚	wwiiav
 偎	wwiiav
+𫇭	wwiio
+𫇭	wwiiou
 薇	wwiiu
 薇	wwiiuu
 萎	wwiiuv
@@ -13917,7 +14245,9 @@ sort: original
 苇	wwiivv
 伪	wwio
 伪	wwioua
+𬭬	wwiov
 位	wwiovo
+𬭬	wwiovv
 㧑	wwiu
 㧑	wwiuou
 伟	wwiv
@@ -13933,6 +14263,7 @@ sort: original
 唯	wwoiov
 闱	wwoiv
 韪	wwoivv
+𬀩	wwoivv
 闱	wwoivv
 惟	wwoo
 惟	wwooio
@@ -13957,8 +14288,11 @@ sort: original
 猬	wwuaia
 鳂	wwuaia
 猥	wwuaia
+𬶏	wwuau
+𬶏	wwuaua
 鲔	wwuav
 鲔	wwuavu
+𬱟	wwuavu
 微	wwuu
 艉	wwuua
 艉	wwuuav
@@ -14106,6 +14440,8 @@ sort: original
 炘	xbou
 炘	xbouuu
 辛	xbov
+𫷷	xbovi
+𫷷	xbovio
 歆	xbovu
 歆	xbovua
 辛	xbovuo
@@ -14117,6 +14453,8 @@ sort: original
 囟	xbuiuo
 欣	xbuuua
 馨	xbv
+枔	xbvi
+枔	xbvioa
 馨	xbvouv
 小	xc
 消	xca
@@ -14154,6 +14492,8 @@ sort: original
 小	xciuoo
 效	xco
 啸	xcoa
+𫍲	xcoau
+𫍲	xcoaui
 啸	xcoavv
 晓	xcoi
 晓	xcoiva
@@ -14240,6 +14580,8 @@ sort: original
 揳	xdiuvv
 偕	xdiv
 偕	xdivau
+𬹼	xdivi
+𬹼	xdiviu
 斜	xdivoo
 偰	xdivv
 偰	xdivvi
@@ -14264,6 +14606,7 @@ sort: original
 叶	xdouoo
 吽	xdouv
 熰	xdouvo
+𬉼	xdouvu
 吽	xdouvv
 呕	xdov
 燮	xdova
@@ -14299,7 +14642,9 @@ sort: original
 鞋	xdvi
 鞋	xdvivo
 颉	xdvo
+𫭟	xdvov
 颉	xdvovu
+𫭟	xdvovu
 殴	xdvu
 榭	xdvui
 榭	xdvuia
@@ -14375,6 +14720,8 @@ sort: original
 额	xeoovu
 哦	xeou
 哦	xeouvi
+𫫇	xeovi
+𫫇	xeovii
 呃	xeovua
 饿	xeu
 鳄	xeua
@@ -14449,6 +14796,8 @@ sort: original
 陉	xgai
 陉	xgaiao
 婞	xgau
+𫰛	xgaua
+𫰛	xgauao
 姓	xgauuv
 婞	xgauvo
 省	xgi
@@ -14501,6 +14850,8 @@ sort: original
 型	xgvvvo
 学	xh
 隘	xha
+𬮿	xhai
+𬮿	xhaiia
 隘	xhaiou
 欸	xhao
 欸	xhaoua
@@ -14617,6 +14968,7 @@ sort: original
 细	xkaaia
 绤	xkaau
 绤	xkaauo
+𫘬	xkaauo
 隙	xkai
 隙	xkaiiu
 隰	xkaio
@@ -14670,6 +15022,8 @@ sort: original
 铣	xkio
 锡	xkiooi
 铣	xkiouv
+𬭳	xkiov
+𬭳	xkiovo
 傒	xkiu
 俙	xkiuo
 傒	xkiuoo
@@ -14738,6 +15092,7 @@ sort: original
 饩	xkuau
 饩	xkuauv
 玺	xkuav
+𬶮	xkuavo
 玺	xkuavv
 息	xkui
 息	xkuioa
@@ -14777,6 +15132,7 @@ sort: original
 西	xkviau
 觋	xkvii
 觋	xkviia
+卌	xkviii
 熙	xkvio
 昔	xkvioi
 熙	xkvioo
@@ -14841,7 +15197,9 @@ sort: original
 谞	xloaai
 诩	xloaao
 许	xloauv
+𬣙	xloav
 喔	xloavu
+𬣙	xloavv
 嘘	xloi
 煦	xloio
 煦	xloioo
@@ -14903,6 +15261,7 @@ sort: original
 纤	xmaa
 缐	xmaau
 缐	xmaaui
+𫄧	xmaaui
 纤	xmaauv
 线	xmaavv
 限	xmai
@@ -14925,6 +15284,7 @@ sort: original
 县	xmiaao
 蚬	xmiai
 岘	xmiaia
+𪾢	xmiaia
 蚬	xmiaia
 崄	xmiaiv
 见	xmiau
@@ -14956,10 +15316,13 @@ sort: original
 禒	xmoaaa
 诜	xmoauv
 祆	xmoav
+𫍯	xmoavu
 祆	xmoavv
 闲	xmoi
 㬎	xmoia
 㬎	xmoiaa
+𬀪	xmoii
+𬀪	xmoiia
 显	xmoiii
 暹	xmoio
 暹	xmoioa
@@ -14971,6 +15334,7 @@ sort: original
 宪	xmoo
 忺	xmoou
 忺	xmooua
+𬸣	xmooua
 宪	xmoouv
 羡	xmou
 籼	xmoui
@@ -15147,6 +15511,8 @@ sort: original
 选	xt
 渲	xta
 绚	xtaa
+𫠊	xtaao
+𫠊	xtaaov
 绚	xtaaua
 漩	xtao
 渲	xtaooa
@@ -15167,6 +15533,7 @@ sort: original
 萱	xtiioo
 铉	xtio
 镟	xtioo
+𫓶	xtioou
 铉	xtioov
 镟	xtioov
 揎	xtiu
@@ -15175,6 +15542,7 @@ sort: original
 谖	xtoa
 禤	xtoai
 禤	xtoaia
+𫍽	xtoaia
 谖	xtoauo
 暄	xtoi
 昡	xtoio
@@ -15200,6 +15568,8 @@ sort: original
 旋	xtov
 玄	xtova
 玄	xtovaa
+譞	xtovi
+譞	xtovia
 痃	xtovo
 咺	xtovoi
 痃	xtovov
@@ -15230,7 +15600,10 @@ sort: original
 浚	xwaao
 巡	xwaaoa
 浚	xwaaou
+𬘓	xwaau
 驯	xwaaui
+𬘓	xwaaui
+𫄸	xwaauv
 汛	xwaav
 汛	xwaavi
 浔	xwaavv
@@ -15241,6 +15614,8 @@ sort: original
 洵	xwau
 洵	xwauao
 迅	xwav
+𬩽	xwava
+𬩽	xwavai
 迅	xwavoa
 巽	xwavv
 寻	xwavvi
@@ -15272,6 +15647,8 @@ sort: original
 窨	xwooo
 窨	xwooov
 恂	xwooua
+𬊈	xwou
+𬊈	xwouav
 循	xwu
 旬	xwua
 鲟	xwuaa
@@ -15294,6 +15671,8 @@ sort: original
 栒	xwvuao
 殉	xwvuua
 珣	xwvv
+𬍤	xwvva
+𬍤	xwvvav
 珣	xwvvua
 想	xx
 乡	xxa
@@ -15301,6 +15680,7 @@ sort: original
 飨	xxaaio
 骧	xxaao
 骧	xxaaov
+𬙋	xxaaov
 乡	xxaauu
 缃	xxaav
 缃	xxaavi
@@ -15436,7 +15816,9 @@ sort: original
 因	yb
 引	yba
 骃	ybaa
+𬘡	ybaai
 骃	ybaaia
+𬘡	ybaaia
 阴	ybai
 洇	ybaia
 洇	ybaiav
@@ -15464,6 +15846,8 @@ sort: original
 荫	ybiiai
 茵	ybiii
 茵	ybiiia
+苂	ybiio
+苂	ybiiou
 茚	ybiiu
 茚	ybiiua
 铟	ybio
@@ -15480,10 +15864,13 @@ sort: original
 禋	yboav
 吲	yboava
 禋	yboavi
+𬤇	yboavi
 吟	yboi
 訚	yboio
 吟	yboioa
 訚	yboiov
+𬮱	yboiv
+𬮱	yboivi
 寅	yboo
 窨	ybooo
 愔	ybooov
@@ -15524,6 +15911,8 @@ sort: original
 堙	ybvovi
 珢	ybvv
 珢	ybvvav
+烎	ybvvo
+烎	ybvvou
 有	yd
 又	yda
 幼	ydaa
@@ -15549,6 +15938,7 @@ sort: original
 蝣	ydiaov
 囿	ydiav
 由	ydiavi
+甴	ydiavi
 囿	ydiavu
 悠	ydii
 莜	ydiii
@@ -15604,6 +15994,8 @@ sort: original
 繇	yduou
 繇	yduoua
 右	ydv
+𬨎	ydva
+𬨎	ydvaou
 酉	ydvi
 柚	ydvia
 酉	ydviau
@@ -15647,7 +16039,9 @@ sort: original
 吔	yeoaia
 谒	yeoaoi
 咽	yeoi
+嘢	yeoia
 咽	yeoiav
+嘢	yeoiav
 晔	yeoii
 晔	yeoiiu
 喝	yeoo
@@ -15661,6 +16055,8 @@ sort: original
 夜	yeoviu
 噎	yeovo
 噎	yeovoo
+鵺	yeovu
+鵺	yeovui
 爷	yeu
 馌	yeua
 馌	yeuavo
@@ -15684,7 +16080,10 @@ sort: original
 验	yfaa
 验	yfaaiv
 沇	yfaao
+𬙂	yfaaoo
 沇	yfaaou
+𫄧	yfaau
+𫄧	yfaaui
 渰	yfai
 渰	yfaivo
 演	yfao
@@ -15707,7 +16106,9 @@ sort: original
 觃	yfiaa
 觃	yfiaai
 眼	yfiaav
+𪩘	yfiau
 蜒	yfiaui
+𪩘	yfiauo
 罨	yfiav
 蝘	yfiavo
 崦	yfiavu
@@ -15741,10 +16142,13 @@ sort: original
 晏	yfoioo
 阎	yfoiu
 阎	yfoiua
+昖	yfoiuo
 阉	yfoiv
 阉	yfoivu
 闫	yfoivv
 宴	yfoo
+喦	yfooi
+喦	yfooia
 宴	yfoooi
 唁	yfoov
 戭	yfoova
@@ -15799,6 +16203,7 @@ sort: original
 棪	yfvoo
 棪	yfvoou
 埏	yfvou
+𬸘	yfvoua
 埏	yfvoui
 堰	yfvov
 墕	yfvovi
@@ -15910,6 +16315,8 @@ sort: original
 瀹	yhai
 瀹	yhaivo
 钥	yhi
+曱	yhia
+曱	yhiavv
 钺	yhio
 钥	yhiouu
 钺	yhiova
@@ -15929,7 +16336,9 @@ sort: original
 爚	yhou
 爚	yhouiv
 乐	yhu
+𬸚	yhua
 乐	yhuaiu
+𬸚	yhuaua
 岳	yhui
 刖	yhuii
 岳	yhuiia
@@ -15942,6 +16351,8 @@ sort: original
 越	yhv
 戉	yhva
 戉	yhvaau
+𫐄	yhvav
+𫐄	yhvavu
 越	yhvova
 栎	yhvu
 栎	yhvuai
@@ -15958,6 +16369,7 @@ sort: original
 缢	ykaao
 彝	ykaaou
 缢	ykaaou
+𫄷	ykaaov
 洢	ykai
 潩	ykaia
 洢	ykaiav
@@ -16007,6 +16419,7 @@ sort: original
 黟	ykiaua
 屹	ykiauv
 伊	ykiav
+𫖮	ykiavu
 伊	ykiavv
 艺	ykii
 苡	ykiia
@@ -16018,6 +16431,7 @@ sort: original
 艾	ykiiuo
 荑	ykiiv
 荑	ykiiva
+𬟁	ykiivo
 仪	ykio
 钇	ykioa
 钇	ykioaa
@@ -16028,6 +16442,7 @@ sort: original
 铱	ykioov
 仪	ykiouo
 㑊	ykiov
+𬬩	ykiova
 依	ykiovu
 㑊	ykiovu
 抑	ykiu
@@ -16041,6 +16456,8 @@ sort: original
 佚	ykiuvv
 倚	ykiv
 倚	ykivuo
+𬺈	ykivv
+𬺈	ykivvu
 亦	yko
 议	ykoa
 译	ykoaa
@@ -16485,6 +16902,8 @@ sort: original
 痖	ysovvi
 衙	ysu
 猰	ysua
+犽	ysuav
+犽	ysuava
 猰	ysuavv
 衙	ysuuvi
 氩	ysuv
@@ -16519,6 +16938,8 @@ sort: original
 院	yta
 缘	ytaa
 缘	ytaaaa
+𫘪	ytaav
+𫘪	ytaavu
 院	ytaioo
 贠	ytao
 贠	ytaoao
@@ -16538,6 +16959,7 @@ sort: original
 圆	ytia
 圜	ytiai
 圜	ytiaia
+円	ytiaiv
 蜎	ytiao
 圆	ytiaoa
 蜎	ytiaou
@@ -17131,7 +17553,9 @@ sort: original
 咱	zsouia
 咋	zsouvi
 咂	zsov
+囃	zsovi
 咂	zsovia
+囃	zsovii
 杂	zsu
 杂	zsuavv
 臜	zsuo
@@ -17202,6 +17626,8 @@ sort: original
 枞	zyviii
 鬃	zyvioo
 鬷	zyvo
+𭎂	zyvoi
+𭎂	zyvoii
 棕	zyvooa
 鬷	zyvouo
 早	zz

@@ -969,14 +969,14 @@ def solve_char_pinyin(char, pinyin):
     if zi is None:
         return set()
 
-    sy = pinyin2sy(transform_py(pinyin))
+    sy = set(pinyin2sy(transform_py(pinyin)))
 
     solved = set()
 
     pinyins = zi.pinyins()
     for py in pinyins:
-        sy2 = pinyin2sy(py)
-        if sy2 == sy:
+        sy2 = set(pinyin2sy(py))
+        if len(sy2.intersection(sy)) > 0:
             solved.add(py)
     
     return solved
@@ -993,7 +993,7 @@ def solve_word_pinyin(word, pinyin):
     pinyins = ci.pinyins()
     for py in pinyins:
         code2 = word_pinyin2codes(py)
-        if code2 == code:
+        if len(code2.intersection(code)) > 0:
             solved.add(py)
     
     return solved

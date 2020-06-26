@@ -1205,11 +1205,10 @@ def find_space_for_char(shape, pinyin):
     return (codes, avaliable_spaces, full_dup)
 
 def build_static():
-    tool_path = os.path.dirname(os.path.abspath(__file__))
-    
+    tool_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Static")
 
     wxw_check = []
-    f = open(os.path.join(tool_path, 'Static/wxw.txt'), mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'wxw.txt'), mode='r', encoding='utf-8')
     wxw_check += f.readlines()
     with open('rime/xkjd6.wxw.dict.yaml', mode='w', encoding='utf-8', newline='\n') as f:
         f.write(RIME_HEADER % 'xkjd6.wxw')
@@ -1218,29 +1217,29 @@ def build_static():
             f.write('\n')
     f.close()
 
-    f = open(os.path.join(tool_path, 'Static/笔码一简.txt'), mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, '笔码一简.txt'), mode='r', encoding='utf-8')
     buchong = f.readlines()
     f.close()
 
-    f = open(os.path.join(tool_path, 'Static/二简.txt'), mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, '二简.txt'), mode='r', encoding='utf-8')
     second_short = f.readlines()
     buchong += second_short
     wxw_check += second_short
     f.close()
 
-    f = open(os.path.join(tool_path, 'Static/二重.txt'), mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, '二重.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
-    f = open(os.path.join(tool_path, 'Static/syxb.txt'), mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, 'syxb.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
-    f = open(os.path.join(tool_path, 'Static/补充词组.txt'), mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, '补充词组.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
-    f = open(os.path.join(tool_path, 'Static/部首偏旁.txt'), mode='r', encoding='utf-8')
+    f = open(os.path.join(tool_path, '部首偏旁.txt'), mode='r', encoding='utf-8')
     buchong += f.readlines()
     f.close()
 
@@ -1267,9 +1266,9 @@ def build_static():
             f.write("%s\t%s_%s\n" % prompt)
 
     STAITC_MAP = {
-        'Static/fuhao.txt': 'xkjd6.fuhao',
-        'Static/lianjie.txt': 'xkjd6.lianjie',
-        'Static/yingwen.txt': 'xkjd6.yingwen',
+        'fuhao.txt': 'xkjd6.fuhao',
+        'lianjie.txt': 'xkjd6.lianjie',
+        'yingwen.txt': 'xkjd6.yingwen',
     }
 
     for static in STAITC_MAP:

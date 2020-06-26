@@ -27755,6 +27755,7 @@
 装潢	fmhm
 装好	fmhz
 发明奖	fmj
+这么长	fmj
 这么久	fmj
 发明家	fmja
 装进	fmjb
@@ -27766,6 +27767,7 @@
 壮景	fmjg
 芝麻酱	fmji
 装出	fmjj
+这么长时间	fmjjo
 撞击	fmjk
 装机	fmjko
 壮举	fmjl
@@ -27823,13 +27825,11 @@
 撞破	fmpl
 撞骗	fmpm
 装配	fmpw
-这么长	fmq
 发明权	fmqa
 发明者	fmqa
 庄桥	fmqc
 装着	fmqe
 庄主	fmqj
-这么长时间	fmqjo
 装起	fmqk
 装嵌	fmqm
 撞针	fmqn
@@ -46104,7 +46104,6 @@
 解下	jdxsu
 节选	jdxt
 脚底下	jdxu
-长点心	jdxui
 超大型	jdxv
 街巷	jdxx
 坚定信心	jdxxi
@@ -46451,6 +46450,7 @@
 超水平	jepv
 技术培训	jepx
 计时器	jeq
+长时期	jeq
 驾驶证	jeqa
 加湿器	jeqaa
 就是真的	jeqd
@@ -50778,6 +50778,7 @@
 倡导	jpdzi
 唱道	jpdzo
 肠道	jpdzu
+长刀	jpdzua
 长岛	jpdzuu
 产品税	jpe
 长寿	jped
@@ -50791,6 +50792,7 @@
 常识	jpeki
 常是	jpekio
 常事	jpekiv
+长时	jpeku
 长石	jpeku
 长诗	jpekuo
 常说	jpel
@@ -50902,6 +50904,7 @@
 长康	jpkp
 常夸	jpkq
 长宽	jpkt
+长款	jpktu
 常困	jpkw
 猖狂	jpkx
 厂矿	jpkxv
@@ -50917,6 +50920,7 @@
 长岭	jplg
 常来	jplh
 长芦	jplj
+长路	jplj
 精疲力竭	jpljo
 精疲力尽	jpljoo
 筋疲力尽	jplju
@@ -50926,6 +50930,7 @@
 昌黎	jplko
 常绿	jpll
 倡廉	jplm
+长脸	jplm
 长廊	jplp
 长流	jplq
 长留	jplqu
@@ -50941,6 +50946,7 @@
 常满	jpmf
 偿命	jpmg
 长命	jpmgu
+长鸣	jpmguo
 长埋	jpmh
 昌秘	jpmk
 常模	jpml
@@ -50989,6 +50995,7 @@
 常住	jpqji
 长期	jpqk
 唱起	jpqko
+长崎	jpqku
 常去	jpql
 长驱	jpqlu
 厂区	jpqlv
@@ -51024,6 +51031,7 @@
 长条	jptc
 畅谈	jptf
 长叹	jptfu
+长谈	jptfu
 常听	jptg
 长亭	jptgu
 长汀	jptgua
@@ -75371,6 +75379,7 @@
 且休	qdxq
 切下	qdxs
 长得像	qdxu
+长点心	qdxui
 且向	qdxx
 猪队友	qdy
 且因	qdyb
@@ -75671,7 +75680,6 @@
 这片	qepmo
 遮篷	qepr
 欺善怕恶	qepx
-长时期	qeq
 这桥	qeqc
 遮遮	qeqe
 这却	qeqh
@@ -78913,6 +78921,7 @@
 遣还	qmht
 浅黄	qmhx
 浅红	qmhy
+这么长	qmj
 这么久	qmj
 清明节	qmja
 前进	qmjb
@@ -78929,6 +78938,7 @@
 全面建设小康社会	qmjh
 迁出	qmjj
 前出	qmjjo
+这么长时间	qmjjo
 亲密接触	qmjjoo
 牵出	qmjjv
 前几	qmjk
@@ -79036,7 +79046,6 @@
 虔婆	qmpl
 千帕	qmps
 前炮	qmpz
-这么长	qmq
 前秦	qmqb
 前桥	qmqc
 前者	qmqe
@@ -79051,7 +79060,6 @@
 欠缺	qmqh
 欠债	qmqh
 签注	qmqj
-这么长时间	qmqjo
 牵住	qmqjv
 前期	qmqk
 前妻	qmqko
@@ -79666,6 +79674,7 @@
 长痘	qpddu
 正片叠底	qpddv
 长得	qpde
+长的	qpde
 涨得	qpdea
 账单	qpdf
 帐单	qpdfi
@@ -79680,7 +79689,6 @@
 倾盆大雨	qpdyi
 涨到	qpdz
 长到	qpdzu
-长刀	qpdzua
 长岛	qpdzuu
 枪炮声	qpe
 招牌式	qpe
@@ -79689,7 +79697,6 @@
 张数	qpeja
 樟树	qpejv
 涨势	qpek
-长时	qpeku
 长势	qpekui
 掌上	qpep
 掌声	qper
@@ -79765,16 +79772,15 @@
 张狂	qpkm
 账卡	qpks
 账款	qpkt
-长款	qpktu
 张狂	qpkx
 掌控	qpky
 七匹狼	qpl
 张楼	qpld
 涨了	qple
+长乐	qple
 长了	qpleu
 账龄	qplg
 前怕狼，后怕虎	qplh
-长路	qplj
 张力	qplk
 掌力	qplki
 张罗	qpll
@@ -79793,8 +79799,6 @@
 长满	qpmf
 胀满	qpmfu
 彰明	qpmg
-长命	qpmgu
-长鸣	qpmguo
 张卖	qpmh
 账目	qpmj
 张目	qpmja
@@ -79827,7 +79831,6 @@
 掌珠	qpqj
 胀气	qpqk
 账期	qpqka
-长崎	qpqku
 长气	qpqkuu
 涨钱	qpqm
 枪炮齐鸣	qpqmv
@@ -79846,7 +79849,6 @@
 张贴	qptd
 账头	qptda
 涨滩	qptf
-长谈	qptfu
 涨停	qptg
 掌厅	qptgi
 章台	qpth
@@ -79868,7 +79870,6 @@
 涨潮	qpwz
 起跑线	qpx
 掌心	qpxb
-长啸	qpxc
 掌鞋	qpxd
 嶂暗	qpxf
 障碍	qpxh
@@ -79888,7 +79889,6 @@
 张也	qpye
 张掖	qpyea
 张眼	qpyf
-长乐	qpyh
 仗义	qpyk
 章鱼	qpyl
 张宇	qpyla

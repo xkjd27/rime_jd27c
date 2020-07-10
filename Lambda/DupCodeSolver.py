@@ -23,19 +23,17 @@ with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encodin
             data = infile.readline().strip()
         
         if (len(dups) == 2):
-            if (dups[0][1] == '\u3000' and dups[1][1] == '\u3000'):
-                if (len(dups[0][2]) != len(dups[1][2])):
-                    dups.sort(key=lambda x: len(x[2]))
-                    word = dups[1][2]
-                    pinyin = set(JDTools.find_word_pinyin_of_code(word, code)).intersection(JDTools.get_word(word).pinyins())
-                    
-                    space = JDTools.find_space_for_word(word, list(pinyin)[0])
-                    min_space = 6
-                    for length in space[1]:
-                        if length > 4:
-                            min_space = min(min_space, length)
+            if (len(dups[0][1]) != len(dups[1][1])):
+                dups.sort(key=lambda x: len(x[1]))
+                word = dups[1][1]
+                pinyin = set(JDTools.find_word_pinyin_of_code(word, code)).intersection({' '.join(pinyin) for pinyin in JDTools.get_word(word).pinyins()})
+                space = JDTools.find_space_for_word(word, list(pinyin)[0])
+                min_space = 6
+                for length in space[1]:
+                    if length > 4:
+                        min_space = min(min_space, length)
 
-                    changes.append((word, pinyin, min_space))
+                changes.append((word, pinyin, min_space))
 
     for change in changes:
         JDTools.change_word_shortcode_len(*change)

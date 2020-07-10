@@ -259,6 +259,14 @@ eeeeo
 	1	执事
 	2	指事
 
+;krkio
+	0	执意
+	0	指日
+
+;krkoo
+	0	之义
+	0	之日
+
 ;krkuo
 	0	直译
 	1	旨意
@@ -267,18 +275,48 @@ eeeeo
 	0	之形
 	1	之幸
 
+;reovo
+	0	主要是
+	0	这样是
+
 ;rpmvu
 	0	正片
 	1	正篇
+
+;rrkvo
+	0	整日
+	0	正义
+
+;rrrvi
+	0	专业人员
+	0	珠圆玉润
 
 ;rxxvi
 	0	正像
 	0	职业学校
 
+;yrbii
+	0	中茵
+	0	中银
+
 ;yrkio
+	0	中意
+	0	中日
 	0	众议
 	1	钟意
 	2	忠义
+
+bdrvvi
+	0	不动摇
+	0	本地人
+
+bhrkuo
+	0	白日
+	0	白衣
+
+bhrkvi
+	0	百亿
+	0	百依
 
 bj;kvi
 	0	布置
@@ -309,6 +347,11 @@ bjrkva
 	0	不已
 	1	不以
 
+bjrkvo
+	0	不宜
+	0	不日
+	0	布衣
+
 bjx;vu
 	0	不教而诛
 	0	不须
@@ -329,6 +372,42 @@ bmrkio
 	0	便衣
 	1	便意
 
+bnrkvo
+	0	本义
+	0	本日
+
+br;vio
+	0	毕业证
+	1	毕业照
+
+brbrvi
+	0	不仁不义
+	0	不依不饶
+
+brevao
+	0	不也是
+	0	比如说
+
+brwooo
+	0	被誉为
+	0	被认为
+
+brxvao
+	0	不允许
+	0	不忍心
+
+brxvoo
+	0	不容许
+	0	不影响
+
+bzrkoo
+	0	宝日
+	0	爆衣
+
+derkuo
+	0	得益
+	0	德日
+
 dlr;uv
 	0	多雨
 	1	躲雨
@@ -337,6 +416,10 @@ dmjkiv
 	0	电击
 	1	电极
 
+dmrtia
+	0	电源
+	0	电院
+
 drdrvi
 	0	大仁大义
 	0	大眼瞪小眼
@@ -344,6 +427,10 @@ drdrvi
 drjkav
 	0	登机
 	1	登基
+
+drxuvv
+	0	第一项
+	0	等一下
 
 dsdsvv
 	0	达达
@@ -361,13 +448,31 @@ dsqkvo
 	0	大器
 	1	大旗
 
+dsrkvo
+	0	大义
+	0	大意
+	0	达日
+
 dtwwua
 	0	短尾
 	1	段尾
 
+ef;ruu
+	0	十分之一
+	0	十分重要
+	0	身负重任
+
 ej;mvi
 	0	世界知名
 	0	世界著名
+
+ejrroa
+	0	实际应用
+	0	实际意义
+
+ejryvi
+	0	世界遗产
+	0	殊荣
 
 ek;eiu
 	0	逝者
@@ -398,6 +503,18 @@ ekjmoa
 	0	施建
 	1	视奸
 
+ekrboo
+	0	试音
+	0	诗音
+
+ekrkoo
+	0	时宜
+	0	时日
+
+ekrkuo
+	0	失忆
+	0	释义
+
 ekwjuu
 	0	饰物
 	1	失物
@@ -410,6 +527,14 @@ ekzkva
 	0	石子
 	1	式子
 
+errdui
+	0	生业
+	0	生肉
+
+errkuo
+	0	生意
+	0	生日
+
 erxsii
 	0	睡眼惺忪
 	0	睡眼惺松
@@ -418,13 +543,30 @@ ffhquo
 	0	反话
 	1	番话
 
+ffrkuo
+	0	反日
+	0	反译
+	0	翻译
+
+fj;vau
+	0	副局长
+	0	封建制
+
 fjekuv
 	0	腹式
 	1	复式
 
+fjrtuv
+	0	复原
+	0	服软
+
 fpqkov
 	0	放起
 	1	房契
+
+frrwuv
+	0	风云
+	0	风云人物
 
 fsekav
 	0	发式
@@ -447,13 +589,45 @@ glfjiu
 	0	国父
 	1	果腹
 
+glt;uv
+	0	管理体制
+	0	管理台账
+
+greruo
+	0	公益事业
+	0	故意杀人
+
+grrtvv
+	0	更软
+	0	更远
+
 hbheiv
 	0	合不合适
 	1	会不会是
 
+hbrruv
+	0	很不一样
+	0	很不容易
+
+hdrkuo
+	0	后日
+	0	后裔
+
 hejkiv
 	0	合击
 	1	合辑
+
+herkia
+	0	何以
+	0	何异
+
+herkio
+	0	何日
+	0	合意
+
+hhrria
+	0	挥汗如雨
+	0	花好月圆
 
 hlekov
 	0	火石
@@ -463,9 +637,45 @@ hlhqov
 	0	晃来晃去
 	1	呼来喝去
 
+hnrtuv
+	0	很软
+	0	很远
+
+hqmrvv
+	0	魂牵梦绕
+	0	魂牵梦萦
+
+hr;qau
+	0	浩然之气
+	0	浩然正气
+
+hwrkio
+	0	黑日
+	0	黑衣
+
+hyrkao
+	0	红日
+	0	红衣
+
+hzrtav
+	0	好软
+	0	好远
+
 hzxxau
 	0	好象
 	1	好香
+
+j;;ouo
+	0	记者站
+	0	记者证
+
+j;giii
+	0	旧中国
+	0	金针菇
+
+j;houi
+	0	家长会
+	1	记者会
 
 jbbkiv
 	0	紧逼
@@ -474,6 +684,10 @@ jbbkiv
 jcedoi
 	0	交手
 	1	交售
+
+jd;zai
+	0	经典之作
+	0	经典著作
 
 jdekao
 	0	结识
@@ -487,9 +701,30 @@ jdj;ii
 	0	借据
 	0	监督机制
 
+jdrkio
+	0	介意
+	0	节日
+
+je;;oo
+	0	就是这种
+	0	精神支柱
+
+jebroo
+	0	精神病人
+	0	精神病院
+
+jerriv
+	0	技术人员
+	0	技术应用
+
 jgrkoo
+	0	竟日
 	0	精日
 	0	精益
+
+jh;aao
+	0	结婚证
+	1	结婚照
 
 jkdmvi
 	0	基点
@@ -511,6 +746,22 @@ jknmau
 	0	鸡年
 	1	纪年
 
+jkrkaa
+	0	即以
+	0	既已
+
+jkrkao
+	0	即日
+	0	忌日
+
+jkrkuo
+	0	几日
+	0	祭日
+
+jkrkvo
+	0	吉日
+	0	极易
+
 jm;kii
 	0	键值
 	1	剑指
@@ -527,17 +778,90 @@ jqekio
 	0	旧识
 	1	旧诗
 
+jrxooo
+	0	交易额
+	0	兼容性
+
+jsrkio
+	0	假意
+	0	假日
+
+jtryio
+	0	倦容
+	0	隽永
+
 jxr;ov
 	0	兼而有之
 	0	将与
+
+jxryov
+	0	姜戎
+	0	疾恶如仇
 
 kertua
 	0	科院
 	1	科源
 
+kprkio
+	0	抗日
+	0	抗议
+
+lhrkvo
+	0	来意
+	0	来日
+
+lj;iii
+	0	临界值
+	0	拉锯战
+
 lmjdva
 	0	连结
 	1	联结
+
+lmrkvo
+	0	联谊
+	0	连日
+
+lrjoii
+	0	路人甲
+	0	辣眼睛
+
+memrai
+	0	没什么人
+	0	没什么用
+
+mmrtav
+	0	绵软
+	0	绵远
+
+mr;uvu
+	0	每一周
+	0	每一种
+
+mrroii
+	0	慢悠悠
+	0	明眼人
+
+mwrkoo
+	0	美意
+	0	美日
+	0	美衣
+
+nd;iuo
+	0	拿得准
+	1	你等着
+
+nkrkia
+	0	你姨
+	0	你已
+
+nmr;uu
+	0	鲇鱼
+	0	鲶鱼
+
+psrtov
+	0	怕软
+	0	怕远
 
 q;jmvi
 	0	去捡
@@ -549,31 +873,177 @@ qgr;vo
 
 qgrkoo
 	0	情义
+	0	晴日
 	1	情意
 
 qkjkuv
 	0	气机
 	1	气极
 
+qkrkvo
+	0	七日
+	0	起义
+
 qkrkvv
 	0	七一
 	1	其一
+
+qkrtva
+	0	奇缘
+	0	起源
 
 qtyriv
 	0	全城
 	1	全成
 
+r;;vaa
+	0	一张纸
+	0	一阵阵
+
+r;rvui
+	0	一种人
+	0	有种人
+
+rb;kiu
+	0	睿智
+	0	银质
+
+rb;vvi
+	0	有帮助
+	0	远不止
+
+rbdevu
+	0	一般地说
+	0	瑞德
+
+rbjmai
+	0	引荐
+	0	引见
+
+rblkav
+	0	引理
+	0	阴历
+
+rbrdaa
+	0	阴柔
+	0	阴液
+
+rbrrav
+	0	也不一样
+	0	也不容易
+
+rbrvov
+	0	有别于
+	0	有必要
+
+rc;aio
+	0	如此之
+	1	隐藏着
+
 rclkia
 	0	人财两空
 	0	药力
+
+rcnava
+	0	也才能
+	0	如厕难
 
 rdbvvu
 	0	一大包
 	1	一大笔
 
+rdefii
+	0	肉山
+	0	野山
+
+rdejvo
+	0	一定时间
+	0	页数
+
+rdenoo
+	0	夜审
+	0	夜神
+
+rdgdiu
+	0	肉狗
+	0	野狗
+
+rdgeii
+	0	肉鸽
+	0	野鸽
+
+rdglii
+	0	肉果
+	0	野果
+
+rdheau
+	0	也和
+	0	柔和
+
+rdjkia
+	0	业绩
+	0	肉鸡
+
+rdjmoo
+	0	夜间
+	0	蹂践
+
+rdnqiu
+	0	肉牛
+	0	野牛
+
+rdqbii
+	0	肉禽
+	0	野禽
+
+rdqgao
+	0	也请
+	0	柔情
+
+rdrvov
+	0	一定有
+	0	一定要
+
+rdrxio
+	0	肉羊
+	0	野羊
+
+rdryvi
+	0	一搭一唱
+	0	椰蓉
+
+rejivo
+	0	人世间
+	0	艺术家
+
+remrvi
+	0	有什么人
+	0	有什么意义
+	0	有什么用
+
 rg;kvu
 	0	硬直
 	1	硬脂
+
+rg;rai
+	0	如果这样
+	0	阳光照耀
+
+rgbvio
+	0	一个半
+	0	软骨病
+
+rgrvii
+	0	一个人
+	0	有个人
+
+rhjuio
+	0	乳化剂
+	0	氧化剂
+
+rhrkuo
+	0	乐毅
+	0	月日
 
 rjekao
 	0	如是
@@ -582,6 +1052,18 @@ rjekao
 rjhvov
 	0	有计划
 	1	原计划
+
+rjrkao
+	0	如意
+	0	如日
+
+rjrlou
+	0	寓教于乐
+	0	日积月累
+
+rjrvii
+	0	软件业
+	0	软件园
 
 rk;kau
 	0	已知
@@ -592,37 +1074,249 @@ rk;kiv
 	1	遗志
 
 rk;kou
+	0	日制
 	0	译制
 	1	益智
 	2	义肢
+
+rk;kov
+	0	意志
+	0	日志
+
+rk;kvu
+	0	一支
+	0	一直
+
+rkbfov
+	0	日班
+	0	易班
+
+rkbfvu
+	0	一版
+	0	一般
+
+rkbzvi
+	0	一报
+	0	医保
+
+rkdhvi
+	0	一代
+	0	一袋
+
+rkejoo
+	0	义塾
+	0	日数
 
 rkekai
 	0	已逝
 	1	已使
 
+rkekoi
+	0	日食
+	0	易逝
+	0	衣食
+
+rkekoo
+	0	亦是
+	0	意识
+
+rkekov
+	0	日式
+	0	议事
+
 rkekvv
 	0	一世
 	1	轶事
+
+rkfjou
+	0	日服
+	0	衣服
+
+rkfsoa
+	0	日发
+	0	益发
+
+rkjdva
+	0	一届
+	0	一阶
+
+rkjgoa
+	0	日经
+	0	易经
+
+rkjkoo
+	0	日记
+	0	易记
+
+rkjmoi
+	0	意见
+	0	日见
 
 rkjmvu
 	0	一箭
 	1	一简
 
+rkjsoa
+	0	日加
+	0	衣架
+
+rkjwoo
+	0	义军
+	0	日军
+
+rklcoo
+	0	日料
+	0	衣料
+
+rklkov
+	0	义理
+	0	日历
+	0	易理
+
+rkq;ov
+	0	意趣
+	0	日区
+	0	日趋
+	0	疫区
+
+rkqkou
+	0	义气
+	0	意气
+
+rkqkov
+	0	弈棋
+	0	日期
+	0	日起
+
+rkr;oo
+	0	呓语
+	0	日语
+
+rkr;ov
+	0	易于
+	0	益于
+
 rkrdvo
 	0	一口咬定
 	0	一叶
+	0	一夜
+
+rkrkao
+	0	异议
+	0	翌日
+
+rkrkoo
+	0	奕奕
+	0	意义
+	0	日日
+	0	日益
+
+rkrkvo
+	0	一意
+	0	一日
+
+rkrtva
+	0	一院
+	0	医院
+
+rkryou
+	0	日用
+	0	易用
+
+rkshoo
+	0	义赛
+	0	日赛
 
 rktyva
 	0	一统
 	1	一通
 
+rkwfvv
+	0	一万
+	0	一碗
+	100	壹万
+
+rkwnoo
+	0	日文
+	0	易问
+
+rkwwao
+	0	以为
+	0	异味
+
+rkwwoi
+	0	日伪
+	0	易位
+
+rkxboi
+	0	宜信
+	0	日信
+	0	易信
+
+rkxboo
+	0	怡心
+	0	日新
+
+rkxbvo
+	0	一心
+	0	一新
+
+rkxfoo
+	0	日安
+	0	议案
+
+rkxkou
+	0	日息
+	0	日系
+
+rkxxov
+	0	意想
+	0	日相
+
+rkxxvu
+	0	一向
+	0	一箱
+
+rkyjoa
+	0	日出
+	0	译出
+
+rkyrou
+	0	日程
+	0	议程
+
+rkzhov
+	0	亦在
+	0	日在
+
+rlrjvv
+	0	有棱有角
+	0	有理有据
+
+rlrqav
+	0	游来游去
+	0	绕来绕去
+	0	缘来缘去
+
+rmrioi
+	0	虞美人
+	0	野蛮人
+
 rmrmvv
 	0	严严
 	1	奄奄
 
+rmrrvv
+	0	一模一样
+	0	有模有样
+
 rmxsvo
 	0	一门心思
 	0	盐啊
+
+rmxyvu
+	0	一脉相传
+	0	一脉相承
 
 rn;kia
 	0	人治
@@ -632,13 +1326,35 @@ rnqkiv
 	0	任其
 	1	人妻
 
+rnrkio
+	0	人意
+	0	人日
+	0	任意
+
 rnxgiv
 	0	人型
 	1	人形
 
+rpjvuv
+	0	硬盘机
+	0	软盘机
+
 rqdevv
 	0	一切都是
 	0	有趣的是
+
+rqrkvo
+	0	友谊
+	0	有意
+	0	有日
+
+rqrtav
+	0	又软
+	0	又远
+
+rqrtva
+	0	友缘
+	0	有缘
 
 rqwwvv
 	0	与其为伍
@@ -648,18 +1364,181 @@ rqxgvv
 	0	有型
 	1	有幸
 
+rr;xoo
+	0	养育之恩
+	0	语言障碍
+
+rrbeii
+	0	依依不舍
+	0	遇人不淑
+
 rrdrvv
 	0	远远大于
 	1	一一对应
+
+rrgrvv
+	0	有一个人
+	0	远远高于
+
+rrrvoo
+	0	有意义
+	0	越容易
+
+rrxrvv
+	0	有一些人
+	0	牙牙学语
+
+rt;kva
+	0	原汁
+	0	软纸
+
+rtdmvi
+	0	原电
+	0	软垫
+	0	远点
+
+rthevu
+	0	元和
+	0	软和
+
+rthqvi
+	0	袁花
+	0	软化
+
+rtjcvu
+	0	软胶
+	0	软脚
+
+rtjmvi
+	0	原件
+	0	软件
+	0	远见
+
+rtktvv
+	0	原款
+	0	软款
+
+rtleva
+	0	软了
+	0	远了
+
+rtmjvv
+	0	原木
+	0	软木
+
+rtmzvu
+	0	原貌
+	0	软毛
+
+rtpmvu
+	0	原片
+	0	软片
+
+rtqmvi
+	0	元钱
+	0	软铅
+
+rtrbvi
+	0	原因
+	0	软银
+
+rtrbvo
+	0	元音
+	0	原音
+
+rtrkvo
+	0	元日
+	0	愿意
+
+rtrtvv
+	0	软软
+	0	远远
+
+rttvvv
+	0	一天天
+	0	软塌塌
+
+rtwjvu
+	0	原物
+	0	软物
+
+rtwnvo
+	0	原文
+	0	软文
 
 rtwwvo
 	0	原味
 	1	原为
 	2	有头无尾
 
+rw;ooo
+	0	意味着
+	0	日文站
+
+rwrboo
+	0	闰音
+	0	韵音
+
+ryddao
+	0	勇斗
+	0	溶斗
+
+rydmui
+	0	用典
+	0	用电
+
+rykjao
+	0	泳裤
+	0	绒裤
+
+ryr;av
+	0	勇于
+	0	溶于
+
+rythov
+	0	容态
+	0	永泰
+
+rywjou
+	0	冗务
+	0	咏物
+
+rz;vaa
+	0	有组织
+	0	软组织
+
+sfrkvi
+	0	三亿
+	0	散佚
+
 skjkvo
 	0	死寂
 	1	死记
+
+sxreiv
+	0	思想意识
+	0	思想认识
+
+tbrtuv
+	0	腿软
+	0	颓垣
+
+thrtvv
+	0	太软
+	0	太远
+
+tmrkvo
+	0	天意
+	0	天日
+
+ttrrii
+	0	团团圆圆
+	0	推推嚷嚷
+
+tyrkio
+	0	同义
+	0	同意
+	0	同日
 
 wfekvv
 	0	万世
@@ -670,6 +1549,7 @@ wjlkvo
 	1	兀立
 
 wjrkvo
+	0	五日
 	0	无益
 	1	无义
 
@@ -677,6 +1557,18 @@ wjrkvv
 	0	五一
 	1	巫医
 	2	武夷
+
+wmrgui
+	0	我们如果
+	0	我们应该
+
+wmrwui
+	0	我们以为
+	0	我们认为
+
+wrwooo
+	0	文言文
+	0	误认为
 
 ww;koo
 	0	为之
@@ -690,6 +1582,10 @@ xbjkoo
 	0	心计
 	1	心悸
 
+xbrtov
+	0	心愿
+	0	心软
+
 xbxgoo
 	0	新星
 	1	心性
@@ -697,6 +1593,14 @@ xbxgoo
 xcheii
 	0	小荷
 	1	萧何
+
+xcrkoo
+	0	效益
+	0	晓日
+
+xd;rvi
+	0	现代主义
+	0	相当重要
 
 xddviu
 	0	喜当爹
@@ -715,6 +1619,27 @@ xhhzoo
 	1	哀号
 	2	哀嚎
 
+xhrkuo
+	0	爱意
+	0	爱日
+
+xhrloo
+	0	哎哟
+	0	心慌意乱
+
+xjrtvv
+	0	二元
+	0	耳软
+	100	贰元
+
+xlbrai
+	0	阿拉伯人
+	0	阿拉伯语
+
+xmroii
+	0	安眠药
+	0	席慕蓉
+
 xmxhuo
 	0	腺癌
 	1	衔哀
@@ -722,6 +1647,10 @@ xmxhuo
 xxwpvo
 	0	相忘
 	1	想望
+
+xyrbvi
+	0	夏虫语冰
+	0	雄蕊
 
 yjekoo
 	0	初识
@@ -731,9 +1660,37 @@ yjjgai
 	0	出镜
 	1	出警
 
+ypekuo
+	0	长时
+	0	长诗
+
+yptfuo
+	0	长叹
+	0	长谈
+
+yrjiav
+	0	抽油机
+	0	柴油机
+
 ysjbii
 	0	插紧
 	1	茶巾
+
+yzrkuo
+	0	朝日
+	0	朝邑
+
+zbrtov
+	0	嘴软
+	0	最远
+
+zdrtvv
+	0	走软
+	0	走远
+
+zeriuo
+	0	做生意
+	0	做生日
 
 zgjooo
 	0	总冠军
@@ -743,6 +1700,10 @@ zhekvo
 	0	再试
 	1	再是
 
+zhrkvo
+	0	在意
+	0	在日
+
 zkbzuo
 	0	自曝
 	1	自暴
@@ -750,4 +1711,12 @@ zkbzuo
 zlekio
 	0	坐视
 	1	作诗
+
+zrrkvo
+	0	增日
+	0	增益
+
+ztbruo
+	0	自叹不如
+	0	赞叹不已
 

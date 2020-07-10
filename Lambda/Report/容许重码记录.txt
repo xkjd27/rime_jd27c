@@ -687,18 +687,9 @@ rdenoo
 	0	夜审
 	0	夜神
 
-rdryvi
-	0	一搭一唱
-	0	椰蓉
-
-rejivo
-	0	人世间
-	0	艺术家
-
 remrvi
 	0	有什么人
 	0	有什么意义
-	0	有什么用
 
 rg;kvu
 	0	硬直
@@ -708,10 +699,6 @@ rg;rai
 	0	如果这样
 	0	阳光照耀
 
-rgbvio
-	0	一个半
-	0	软骨病
-
 rgrvii
 	0	一个人
 	0	有个人
@@ -720,10 +707,6 @@ rhjuio
 	0	乳化剂
 	0	氧化剂
 
-rhrkuo
-	0	乐毅
-	0	月日
-
 rjekao
 	0	如是
 	1	如诗
@@ -731,14 +714,6 @@ rjekao
 rjhvov
 	0	有计划
 	1	原计划
-
-rjrkao
-	0	如意
-	0	如日
-
-rjrlou
-	0	寓教于乐
-	0	日积月累
 
 rjrvii
 	0	软件业

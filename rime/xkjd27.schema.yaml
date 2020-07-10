@@ -1,0 +1,187 @@
+# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: xkjd27
+  name: 键道27
+  version: "q2"
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中, 西 ]
+  - name: full_shape
+    states: [ 半, 全 ]
+  - name: jffh
+    reset: 0
+    states: [ 简, 繁 ]
+  - name: sbb_hint
+    reset: 1
+    states: [ "关₆₆₀", "开₆₆₀" ]
+  - name: EN2en
+    reset: 1
+  - name: emoji_cn
+    reset: 0
+  
+punctuator:
+  full_shape:
+    ' ' : { commit: '　' }
+    ',' : { commit: ， }
+    '.' : { commit: 。 }
+    '<' : [ 《, 〈, «, ‹ ]
+    '>' : [ 》, 〉, », › ]
+    '?' : { commit: ？ }
+    '/' : { commit: ？ }
+    ':' : { commit: ： }
+    '''' : { pair: [ '‘', '’' ] }
+    '"' : { pair: [ '“', '”' ] }
+    '\' : [ 、, ＼ ]
+    '|' : [ ·, ｜, '§', '¦' ]
+    '`' : ｀
+    '~' : ～
+    '!' : { commit: ！ }
+    '@' : ＠
+    '#' : ＃
+    '%' : [ ％, '°', '℃' ]
+    '$' : [ ￥, '$', '€', '£', '¥', '¢', '¤' ]
+    '^' : { commit: …… }
+    '&' : ＆
+    '*' : [ ＊, ·, ・, ×, ※, ❂ ]
+    '(' : （
+    ')' : ）
+    '-' : '-'
+    '_' : ——
+    '+' : '+'
+    '=' : '='
+    '[' : [ 「, 【, 〔, ［ ]
+    ']' : [ 」, 】, 〕, ］ ]
+    '{' : [ 『, 〖, ｛ ]
+    '}' : [ 』, 〗, ｝ ]
+  half_shape:
+    ',' : { commit: ， }
+    '.' : { commit: 。 }
+    '<' : [ 《, 〈, «, ‹ ]
+    '>' : [ 》, 〉, », › ]
+    '?' : { commit: ？ }
+    '/' : { commit: ？ }
+    ':' : { commit: ： }
+    '''' : { pair: [ '‘', '’' ] }
+    '"' : { pair: [ '“', '”' ] }
+    '\' : [ 、, '\', ＼ ]
+    '|' : [ ·, '|', ｜, '§', '¦' ]
+    '`' : '`'
+    '~' : [ '~', ～ ]
+    '!' : { commit: ！ }
+    '@' : '@'
+    '#' : '#'
+    '%' : [ '%', ％, '°', '℃' ]
+    '$' : [ ￥, '$', '€', '£', '¥', '¢', '¤' ]
+    '^' : { commit: …… }
+    '&' : '&'
+    '*' : [ '*', ＊, ·, ・, ×, ※, ❂ ]
+    '(' : （
+    ')' : ）
+    '-' : '-'
+    '_' : ——
+    '+' : '+'
+    '=' : '='
+    '[' : [ 「, 【, 〔, ［ ]
+    ']' : [ 」, 】, 〕,  ］ ]
+    '{' : [ 『, 〖, ｛ ]
+    '}' : [ 』, 〗, ｝ ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - lua_translator@date_translator
+    - lua_translator@time_translator
+    - table_translator
+    - table_translator@danzi_lookup
+  filters:
+    - lua_filter@hint_filter
+    - simplifier@jffh
+    - simplifier@emoji_cn
+    - simplifier@EN2en
+    - uniquifier
+    - reverse_lookup_filter@danzi_lookup
+
+speller:
+  auto_select: true
+  alphabet: "abcdefghijklmnopqrstuvwxyz;`"
+  initials: "abcdefghijklmnopqrstuvwxyz;`"
+  algebra:
+    - derive/^[bcdfghjklmnpqrstuwxyz;]([bcdfghjklmnpqrstuwxyz;][aeiov].*)$/`$1/
+    - derive/^([bcdfghjklmnpqrstuwxyz;])[bcdfghjklmnpqrstuwxyz;]([aeiov].*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2})[aeiov](.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{2}).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{3}).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{4}).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{5}).$/$1`/
+
+translator:
+  dictionary: xkjd27.extended
+  enable_charset_filter: false
+  enable_completion: true
+  enable_encoder: false
+  enable_sentence: false
+  enable_user_dict: false
+  encode_commit_history: false
+  initial_quality: 1
+  max_phrase_length: 6
+
+jffh:
+  opencc_config: s2t.json
+  option_name: jffh
+
+EN2en:
+  opencc_config: EN2en.json
+  option_name: EN2en
+
+emoji_cn:
+  opencc_config: emoji.json
+  option_name: emoji_cn
+  tips: all
+
+danzi_lookup:
+  tags: [ danzi_lookup ] 
+  dictionary: xkjd27.extended
+  enable_charset_filter: false
+  enable_completion: false
+  enable_encoder: false
+  enable_sentence: false
+  enable_user_dict: false
+  encode_commit_history: false
+  overwrite_comment: true
+  initial_quality: 0
+  comment_format:
+    - xform/^/〔/
+    - xform/$/〕/
+    - xform/ /, /
+
+key_binder:
+  bindings:
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - { when: always, accept: F6, select: .next }
+    - { when: always, accept: F7, toggle: jffh }
+    - { when: has_menu, accept: "'", send: 2 }
+
+recognizer:
+  patterns:
+    danzi_lookup: "[a-z;`]*`+[a-z;`]*"

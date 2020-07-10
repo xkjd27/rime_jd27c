@@ -15,16 +15,16 @@ def solve_cizu():
             pinyin = match[4]
 
             if (short in short_space):
-                short_space[short].append((word, pinyin))
+                short_space[short].append((word, code, pinyin))
             else:
-                short_space[short] = [(word, pinyin)]
+                short_space[short] = [(word, code, pinyin)]
 
     for short in short_space:
         data = short_space[short]
         if len(data) == 1:
             if (JDTools.get_word(data[0][0]) is not None):
                 print('hit')
-                JDTools.change_word_shortcode_len(data[0][0], { data[0][1] }, len(short))
+                JDTools.change_word_shortcode_len(data[0][0], { data[0][2] }, len(short))
         # else:
         #     min_len = 99
         #     multi = True
@@ -40,19 +40,19 @@ def solve_cizu():
         #     if (not multi):
         #         print('hit 2')
         #         JDTools.change_word_shortcode_len(target[0], { target[1] }, len(short))
-        else:
-            print(short)
-            i = 1
-            for word in data:
-                print("%d. %s" % (i, word))
-                i += 1
+        # else:
+        #     print(short)
+        #     i = 1
+        #     for word in data:
+        #         print("%d. %s" % (i, word))
+        #         i += 1
 
-            sel = input("choose: ")
-            if (sel.isdigit() and int(sel) <= len(data) and int(sel) > 0):
-                sel = int(sel) - 1
-                JDTools.change_word_shortcode_len(data[sel][0], { data[sel][1] }, len(short))
-            else:
-                break
+        #     sel = input("choose: ")
+        #     if (sel.isdigit() and int(sel) <= len(data) and int(sel) > 0):
+        #         sel = int(sel) - 1
+        #         JDTools.change_word_shortcode_len(data[sel][0], { data[sel][2] }, len(short))
+        #     else:
+        #         break
 
 def solve_danzi():
     file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/单字健康报告.txt')

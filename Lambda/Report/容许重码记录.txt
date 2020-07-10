@@ -335,7 +335,6 @@ bjrkva
 	1	不以
 
 bjrkvo
-	0	不宜
 	0	不日
 	0	布衣
 
@@ -363,10 +362,6 @@ bnrkvo
 	0	本义
 	0	本日
 
-br;vio
-	0	毕业证
-	1	毕业照
-
 brbrvi
 	0	不仁不义
 	0	不依不饶
@@ -374,18 +369,6 @@ brbrvi
 brevao
 	0	不也是
 	0	比如说
-
-brwooo
-	0	被誉为
-	0	被认为
-
-brxvao
-	0	不允许
-	0	不忍心
-
-brxvoo
-	0	不容许
-	0	不影响
 
 bzrkoo
 	0	宝日
@@ -447,19 +430,6 @@ dtwwua
 ef;ruu
 	0	十分之一
 	0	十分重要
-	0	身负重任
-
-ej;mvi
-	0	世界知名
-	0	世界著名
-
-ejrroa
-	0	实际应用
-	0	实际意义
-
-ejryvi
-	0	世界遗产
-	0	殊荣
 
 ek;eiu
 	0	逝者
@@ -490,10 +460,6 @@ ekjmoa
 	0	施建
 	1	视奸
 
-ekrboo
-	0	试音
-	0	诗音
-
 ekrkoo
 	0	时宜
 	0	时日
@@ -514,14 +480,6 @@ ekzkva
 	0	石子
 	1	式子
 
-errdui
-	0	生业
-	0	生肉
-
-errkuo
-	0	生意
-	0	生日
-
 erxsii
 	0	睡眼惺忪
 	0	睡眼惺松
@@ -533,19 +491,10 @@ ffhquo
 ffrkuo
 	0	反日
 	0	反译
-	0	翻译
-
-fj;vau
-	0	副局长
-	0	封建制
 
 fjekuv
 	0	腹式
 	1	复式
-
-fjrtuv
-	0	复原
-	0	服软
 
 fpqkov
 	0	放起
@@ -564,10 +513,6 @@ gbevvi
 	0	根本上
 	1	赶不上
 
-ggjjvv
-	0	恭恭敬敬
-	1	规规矩矩
-
 glekii
 	0	国史
 	1	国师
@@ -575,18 +520,6 @@ glekii
 glfjiu
 	0	国父
 	1	果腹
-
-glt;uv
-	0	管理体制
-	0	管理台账
-
-greruo
-	0	公益事业
-	0	故意杀人
-
-grrtvv
-	0	更软
-	0	更远
 
 hbheiv
 	0	合不合适

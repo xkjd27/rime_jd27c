@@ -604,23 +604,18 @@ def traverse_cizu(build = False, report = True):
 
             avaliable_short = None
             while True:
-                continue_next = True
-                if sc in dup_code_check:
-                    continue_next = False
-                elif word_len == 3 and len(sc) < 3:
-                    # 3字词不能短于3码
-                    continue_next = False
+                if word_len == 3 and len(sc) < 3:
+                    break
                 elif word_len != 3 and len(sc) < 4:
-                    # 其他词不能短于4码
-                    continue_next = False
-            
-                if not continue_next:
-                    if (avaliable_short is not None):
-                        optimize.write('可缩码："%s" %6s -> %6s (%s)\n' % (word, code, avaliable_short, pinyin))
                     break
                 
-                avaliable_short = sc
+                if sc not in dup_code_check:
+                    avaliable_short = sc
+
                 sc = sc[:-1]
+
+            if (avaliable_short is not None):
+                optimize.write('可缩码："%s" %6s -> %6s (%s)\n' % (word, code, avaliable_short, pinyin))
 
     # 所有重码数量
     dup_count = [0,0,0,0]

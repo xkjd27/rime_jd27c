@@ -525,29 +525,13 @@ hbheiv
 	0	合不合适
 	1	会不会是
 
-hbrruv
-	0	很不一样
-	0	很不容易
-
-hdrkuo
-	0	后日
-	0	后裔
-
 hejkiv
 	0	合击
 	1	合辑
 
-herkia
-	0	何以
-	0	何异
-
 herkio
 	0	何日
 	0	合意
-
-hhrria
-	0	挥汗如雨
-	0	花好月圆
 
 hlekov
 	0	火石
@@ -557,45 +541,9 @@ hlhqov
 	0	晃来晃去
 	1	呼来喝去
 
-hnrtuv
-	0	很软
-	0	很远
-
-hqmrvv
-	0	魂牵梦绕
-	0	魂牵梦萦
-
-hr;qau
-	0	浩然之气
-	0	浩然正气
-
-hwrkio
-	0	黑日
-	0	黑衣
-
-hyrkao
-	0	红日
-	0	红衣
-
-hzrtav
-	0	好软
-	0	好远
-
 hzxxau
 	0	好象
 	1	好香
-
-j;;ouo
-	0	记者站
-	0	记者证
-
-j;giii
-	0	旧中国
-	0	金针菇
-
-j;houi
-	0	家长会
-	1	记者会
 
 jbbkiv
 	0	紧逼
@@ -604,10 +552,6 @@ jbbkiv
 jcedoi
 	0	交手
 	1	交售
-
-jd;zai
-	0	经典之作
-	0	经典著作
 
 jdekao
 	0	结识
@@ -621,30 +565,10 @@ jdj;ii
 	0	借据
 	0	监督机制
 
-jdrkio
-	0	介意
-	0	节日
-
-je;;oo
-	0	就是这种
-	0	精神支柱
-
-jebroo
-	0	精神病人
-	0	精神病院
-
-jerriv
-	0	技术人员
-	0	技术应用
-
 jgrkoo
 	0	竟日
 	0	精日
 	0	精益
-
-jh;aao
-	0	结婚证
-	1	结婚照
 
 jkdmvi
 	0	基点
@@ -670,10 +594,6 @@ jkrkaa
 	0	即以
 	0	既已
 
-jkrkao
-	0	即日
-	0	忌日
-
 jkrkuo
 	0	几日
 	0	祭日
@@ -698,41 +618,13 @@ jqekio
 	0	旧识
 	1	旧诗
 
-jrxooo
-	0	交易额
-	0	兼容性
-
-jsrkio
-	0	假意
-	0	假日
-
-jtryio
-	0	倦容
-	0	隽永
-
 jxr;ov
 	0	兼而有之
 	0	将与
 
-jxryov
-	0	姜戎
-	0	疾恶如仇
-
 kertua
 	0	科院
 	1	科源
-
-kprkio
-	0	抗日
-	0	抗议
-
-lhrkvo
-	0	来意
-	0	来日
-
-lj;iii
-	0	临界值
-	0	拉锯战
 
 lmjdva
 	0	连结
@@ -742,46 +634,9 @@ lmrkvo
 	0	联谊
 	0	连日
 
-lrjoii
-	0	路人甲
-	0	辣眼睛
-
-memrai
-	0	没什么人
-	0	没什么用
-
-mmrtav
-	0	绵软
-	0	绵远
-
-mr;uvu
-	0	每一周
-	0	每一种
-
-mrroii
-	0	慢悠悠
-	0	明眼人
-
 mwrkoo
-	0	美意
 	0	美日
 	0	美衣
-
-nd;iuo
-	0	拿得准
-	1	你等着
-
-nkrkia
-	0	你姨
-	0	你已
-
-nmr;uu
-	0	鲇鱼
-	0	鲶鱼
-
-psrtov
-	0	怕软
-	0	怕远
 
 q;jmvi
 	0	去捡
@@ -800,25 +655,13 @@ qkjkuv
 	0	气机
 	1	气极
 
-qkrkvo
-	0	七日
-	0	起义
-
 qkrkvv
 	0	七一
 	1	其一
 
-qkrtva
-	0	奇缘
-	0	起源
-
 qtyriv
 	0	全城
 	1	全成
-
-r;;vaa
-	0	一张纸
-	0	一阵阵
 
 r;rvui
 	0	一种人
@@ -828,105 +671,21 @@ rb;kiu
 	0	睿智
 	0	银质
 
-rb;vvi
-	0	有帮助
-	0	远不止
-
 rbdevu
 	0	一般地说
 	0	瑞德
-
-rbjmai
-	0	引荐
-	0	引见
-
-rblkav
-	0	引理
-	0	阴历
-
-rbrdaa
-	0	阴柔
-	0	阴液
-
-rbrrav
-	0	也不一样
-	0	也不容易
-
-rbrvov
-	0	有别于
-	0	有必要
-
-rc;aio
-	0	如此之
-	1	隐藏着
 
 rclkia
 	0	人财两空
 	0	药力
 
-rcnava
-	0	也才能
-	0	如厕难
-
 rdbvvu
 	0	一大包
 	1	一大笔
 
-rdefii
-	0	肉山
-	0	野山
-
-rdejvo
-	0	一定时间
-	0	页数
-
 rdenoo
 	0	夜审
 	0	夜神
-
-rdgdiu
-	0	肉狗
-	0	野狗
-
-rdgeii
-	0	肉鸽
-	0	野鸽
-
-rdglii
-	0	肉果
-	0	野果
-
-rdheau
-	0	也和
-	0	柔和
-
-rdjkia
-	0	业绩
-	0	肉鸡
-
-rdjmoo
-	0	夜间
-	0	蹂践
-
-rdnqiu
-	0	肉牛
-	0	野牛
-
-rdqbii
-	0	肉禽
-	0	野禽
-
-rdqgao
-	0	也请
-	0	柔情
-
-rdrvov
-	0	一定有
-	0	一定要
-
-rdrxio
-	0	肉羊
-	0	野羊
 
 rdryvi
 	0	一搭一唱

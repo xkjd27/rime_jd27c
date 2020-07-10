@@ -6,9 +6,7 @@ patch:
       - "Control+grave"
       - "F4"
   schema_list:
-    - schema: xkjd6
-    - schema: xkjd6dz
-    - schema: xkjd6_bj
+    - schema: xkjd27
 
   menu:
     page_size: 6

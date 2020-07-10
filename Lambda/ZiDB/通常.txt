@@ -2496,7 +2496,7 @@
 挲	0	aiiu	suo	5	sa	4
 挹	0	iuoa	yi	6
 挺	0	iuuv	ting	4
-挼	0	iuuo	ruo	4	rua	2
+挼	0	iuuo	ruo	4	rua	4
 挽	0	iuua	wan	3
 捂	0	iuvi	wu	5
 捃	0	iuav	jun	4

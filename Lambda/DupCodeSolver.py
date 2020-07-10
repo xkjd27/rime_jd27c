@@ -1,4 +1,4 @@
-import JD6Tools
+import JDTools
 import os
 import re
 
@@ -27,9 +27,9 @@ with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encodin
                 if (len(dups[0][2]) != len(dups[1][2])):
                     dups.sort(key=lambda x: len(x[2]))
                     word = dups[1][2]
-                    pinyin = set(JD6Tools.find_word_pinyin_of_code(word, code)).intersection(JD6Tools.get_word(word).pinyins())
+                    pinyin = set(JDTools.find_word_pinyin_of_code(word, code)).intersection(JDTools.get_word(word).pinyins())
                     
-                    space = JD6Tools.find_space_for_word(word, list(pinyin)[0])
+                    space = JDTools.find_space_for_word(word, list(pinyin)[0])
                     min_space = 6
                     for length in space[1]:
                         if length > 4:
@@ -38,6 +38,6 @@ with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encodin
                     changes.append((word, pinyin, min_space))
 
     for change in changes:
-        JD6Tools.change_word_shortcode_len(*change)
+        JDTools.change_word_shortcode_len(*change)
     
-JD6Tools.commit()
+JDTools.commit()

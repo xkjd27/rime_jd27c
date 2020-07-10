@@ -114,7 +114,7 @@ PY_YUN = {
     'yao': 'iao',
     'ye': 'ie',
     'yong': 'iong',
-    'you': 'yiu',
+    'you': 'iu',
     'ju': 'v',
     'qu': 'v',
     'xu': 'v',

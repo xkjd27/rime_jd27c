@@ -10,6 +10,7 @@ with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encodin
             break
 
     changes = []
+
     while True:
         line = infile.readline()
         if len(line.strip()) == 0 or line.strip() == '---':
@@ -34,6 +35,27 @@ with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encodin
                         min_space = min(min_space, length)
 
                 changes.append((word, pinyin, min_space))
+            else:
+                print(code)
+                i = 1
+                for word in dups:
+                    print("%d. %s" % (i, word[1]))
+                    i += 1
+
+                sel = input("choose: ")
+                if (sel.isdigit() and int(sel) <= len(dups) and int(sel) > 0):
+                    sel = int(sel) - 1
+                    word = dups[sel][1]
+                    pinyin = set(JDTools.find_word_pinyin_of_code(word, code)).intersection({' '.join(pinyin) for pinyin in JDTools.get_word(word).pinyins()})
+                    space = JDTools.find_space_for_word(word, list(pinyin)[0])
+                    min_space = 6
+                    for length in space[1]:
+                        if length > 4:
+                            min_space = min(min_space, length)
+
+                    changes.append((word, pinyin, min_space))
+                else:
+                    break
 
     for change in changes:
         JDTools.change_word_shortcode_len(*change)

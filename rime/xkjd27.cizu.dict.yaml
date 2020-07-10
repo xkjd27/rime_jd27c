@@ -15,16 +15,16 @@ sort: original
 专制主义	;;;r
 知之者	;;;u
 只争朝夕	;;;x
-政治部	;;b
 正准备	;;b
 这种办法	;;bf
 置之不理	;;bl
 忠贞不渝	;;br
 专转本	;;bv
+政治部	;;bva
 忠贞不二	;;bx
 惴惴不安	;;bx
 珍珠草	;;c
-竹枝词	;;c
+竹枝词	;;cuv
 转折点	;;d
 政治斗争	;;d;
 张之洞	;;da
@@ -101,9 +101,9 @@ sort: original
 置之脑后	;;nh
 执政能力	;;nl
 珍珠奶茶	;;ny
-主战派	;;p
 针织品	;;p
 只招聘	;;po
+主战派	;;poi
 住宅区	;;q
 郑重其事	;;qe
 这种情况	;;qk
@@ -263,8 +263,8 @@ sort: original
 章北海	;bho
 追还	;bht
 猪八戒	;bj
-织布机	;bj
 追剧	;bj;
+织布机	;bjav
 追缴	;bjc
 追截	;bjd
 这不就是	;bje
@@ -393,7 +393,7 @@ sort: original
 知错就改	;cjg
 注册会计师	;cke
 注册码	;cm
-招财猫	;cm
+招财猫	;cmia
 主裁判	;cp
 贮存器	;cq
 仲裁员	;cr
@@ -531,13 +531,13 @@ sort: original
 周口	;dkd
 周刊	;dkf
 真的可以	;dkr
-战斗力	;dl
 知道了	;dl
 周率	;dl;
 皱了	;dle
 周龄	;dlg
 周来	;dlh
 找到了	;dli
+战斗力	;dlio
 睁大了	;dliv
 妯娌	;dlk
 州立	;dlko
@@ -546,7 +546,6 @@ sort: original
 周郎	;dlp
 周六	;dlq
 周老	;dlz
-主动脉	;dm
 知道吗	;dm
 周某	;dmd
 州名	;dmg
@@ -558,6 +557,7 @@ sort: original
 周密	;dmk
 周末	;dml
 皱面	;dmm
+主动脉	;dmov
 昼盲	;dmp
 真的没有	;dmr
 咒骂	;dms
@@ -565,11 +565,11 @@ sort: original
 皱眉	;dmw
 战斗民族	;dmz
 值得你	;dn
-正当年	;dn
 周南	;dnf
 周宁	;dng
 周年	;dnm
 周纳	;dns
+正当年	;dnvi
 周内	;dnw
 皱皮	;dpk
 主动权	;dq
@@ -747,7 +747,6 @@ sort: original
 这层	;ecr
 这从	;ecy
 真是的	;ed
-这时的	;ed
 这对	;edb
 着调	;edc
 折叠	;edd
@@ -766,6 +765,7 @@ sort: original
 这点	;edm
 这是多么	;edmo
 掌上电脑	;edn
+这时的	;edoo
 遮挡	;edp
 这档	;edpo
 这等	;edr
@@ -823,7 +823,6 @@ sort: original
 这非	;efw
 知识分子	;efz
 只是个	;eg
-这首歌	;eg
 折桂	;egb
 这够	;egd
 这个	;ege
@@ -834,6 +833,7 @@ sort: original
 折过	;egl
 这根	;egn
 这是个	;ego
+这首歌	;egoo
 折嘎	;egs
 真是个	;egu
 真实感	;eguo
@@ -965,7 +965,6 @@ sort: original
 追上去	;equ
 这群	;eqw
 注射液	;er
-肇事人	;er
 这与	;er;
 这雨	;er;o
 只是一种	;er;oo
@@ -993,6 +992,7 @@ sort: original
 这人	;ern
 哲人	;erni
 这是一	;ero
+肇事人	;erov
 折让	;erp
 这让	;erpo
 这有	;erq
@@ -1028,7 +1028,6 @@ sort: original
 这团	;ett
 这桶	;ety
 这套	;etz
-至少我	;ew
 这是我	;ew
 这是我的	;ewd
 折弯	;ewf
@@ -1041,9 +1040,9 @@ sort: original
 哲文	;ewn
 这文	;ewno
 这娃	;ews
+至少我	;ewvi
 这位	;eww
 只剩下	;ex
-真实性	;ex
 真实写照	;ex;
 这些	;exd
 折行	;exg
@@ -1059,6 +1058,7 @@ sort: original
 这下	;exs
 遮瑕	;exso
 知识性	;exu
+真实性	;exuo
 这项	;exx
 遮丑	;eyd
 这车	;eye
@@ -1369,7 +1369,7 @@ sort: original
 珠光宝气	;gbq
 猪狗不如	;gbr
 中关村	;gc
-战国策	;gc
+战国策	;gcii
 致公党	;gd
 中国当代	;gdd
 枕戈待旦	;gddv
@@ -1435,10 +1435,10 @@ sort: original
 中国共产党人	;ggri
 中国国际广播电台	;ggt
 这个过程	;ggy
-中国画	;gh
 这个好	;gh
 中国化	;ghi
 中国话	;ghii
+中国画	;ghiiv
 正规化	;ghv
 这个孩子	;ghz
 只感觉	;gj
@@ -1488,7 +1488,6 @@ sort: original
 中国企业	;gqri
 趾高气昂	;gqx
 这个人	;gr
-重工业	;gr
 张国荣	;gra
 中国人的	;grd
 忠肝义胆	;grd
@@ -1507,6 +1506,7 @@ sort: original
 这个原因	;grro
 这个意思	;grs
 主观因素	;grso
+重工业	;gruv
 整个人	;grv
 植根于	;grv
 中国人民大学	;grx
@@ -1584,9 +1584,9 @@ sort: original
 斋饭	;hff
 窄幅	;hfj
 指挥官	;hg
-诸侯国	;hg
 摘桂	;hgb
 债国	;hgl
+诸侯国	;hgoi
 斋供	;hgy
 召唤回	;hh
 债户	;hhj
@@ -1740,7 +1740,6 @@ sort: original
 贮备	;jbw
 珠宝	;jbz
 中间层	;jc
-助记词	;jc
 珠翠	;jcb
 注册	;jce
 助残	;jcf
@@ -1748,6 +1747,7 @@ sort: original
 主裁	;jcho
 主菜	;jchoi
 煮菜	;jchu
+助记词	;jcio
 主次	;jck
 助词	;jcki
 祝词	;jcko
@@ -2188,7 +2188,6 @@ sort: original
 主创	;jyx
 蛀虫	;jyy
 筑巢	;jyz
-真君子	;jz
 照镜子	;jz
 住嘴	;jzb
 逐走	;jzd
@@ -2204,6 +2203,7 @@ sort: original
 柱子	;jzkv
 著作	;jzl
 猪杂	;jzs
+真君子	;jzua
 铸造	;jzz
 准考证	;k;
 直追	;k;b
@@ -2795,7 +2795,6 @@ sort: original
 至强	;kqx
 之强	;kqxo
 直强	;kqxu
-中科院	;kr
 睁开眼	;kr
 至于	;kr;
 治愈	;kr;a
@@ -2837,6 +2836,7 @@ sort: original
 指月	;krhi
 之约	;krho
 只可意会	;krhov
+中科院	;kriu
 植入	;krj
 张开眼睛	;krja
 置入	;krji
@@ -2947,7 +2947,6 @@ sort: original
 致通	;ktyva
 指套	;ktz
 真可谓	;kw
-重口味	;kw
 只玩	;kwf
 之外	;kwh
 植物	;kwj
@@ -2970,6 +2969,7 @@ sort: original
 智网	;kwpui
 直往	;kwpuu
 之蛙	;kws
+重口味	;kwuo
 职位	;kww
 执委	;kwwi
 指为	;kwwio
@@ -3155,7 +3155,6 @@ sort: original
 周立波	;lbu
 争论不休	;lbx
 这里错	;lc
-猪鹿蝶	;ld
 直流电	;ld
 中流砥柱	;ld;
 捉对	;ldb
@@ -3169,6 +3168,7 @@ sort: original
 着力点	;ldo
 之类的	;ldoo
 桌灯	;ldr
+猪鹿蝶	;lduo
 战略地位	;ldw
 捉到	;ldz
 捉刀	;ldzi
@@ -3193,7 +3193,7 @@ sort: original
 浊根	;lgn
 濯港	;lgp
 展览会	;lh
-纸老虎	;lh
+纸老虎	;lhau
 浊化	;lhq
 主力军	;lj
 桌巾	;ljb
@@ -3318,14 +3318,13 @@ sort: original
 殖民主义	;m;r
 这么重要	;m;ro
 殖民者	;m;v
-肿么办	;mb
 这么办	;mb
 捉摸不定	;mbd
 捉摸不透	;mbt
+肿么办	;mbuu
 执迷不悟	;mbw
-捉迷藏	;mc
 这么菜	;mc
-殖民地	;md
+捉迷藏	;mcio
 这么多	;md
 驻马店	;mda
 这么大的	;mdd
@@ -3339,22 +3338,23 @@ sort: original
 这么多人	;mdr
 知名度	;mdu
 专卖店	;mdv
+殖民地	;mdva
 指名道姓	;mdx
-詹姆士	;me
 这么说	;me
 这么说来	;mel
 证明书	;meo
+詹姆士	;meua
 致命伤	;mev
 找麻烦	;mf
 这么个	;mg
 芝麻官	;mgi
 中美关系	;mgx
-专门化	;mh
 这么好	;mh
 这么好的	;mhd
 这么回事	;mhe
 照猫画虎	;mhh
 芝麻糊	;mhi
+专门化	;mhvo
 这么久	;mj
 这么简单	;mjd
 芝麻酱	;mji
@@ -3367,11 +3367,10 @@ sort: original
 珠穆朗玛	;mlm
 肿么了	;mlu
 真面目	;mm
-装门面	;mm
+装门面	;mmoo
 丈母娘	;mn
-啄木鸟	;mn
 这么难	;mno
-证明人	;mr
+啄木鸟	;mnov
 这么样	;mr
 这么一种	;mr;
 织毛衣	;mra
@@ -3384,6 +3383,7 @@ sort: original
 致命一击	;mrj
 这么一来	;mrl
 这么一	;mro
+证明人	;mroo
 这么容易	;mrr
 詹姆斯	;ms
 抓苗头	;mt
@@ -3519,7 +3519,6 @@ sort: original
 针法	;nfsi
 诊费	;nfw
 只能够	;ng
-真能干	;ng
 珍贵	;ngb
 真贵	;ngbu
 真够	;ngd
@@ -3533,6 +3532,7 @@ sort: original
 真果	;ngl
 针管	;ngt
 贞观	;ngti
+真能干	;ngua
 真给	;ngw
 针工	;ngy
 真高	;ngz
@@ -3582,7 +3582,7 @@ sort: original
 真菌	;njw
 镇江	;njx
 真难看	;nk
-纸尿裤	;nk
+纸尿裤	;nkaa
 真渴	;nke
 真看	;nkf
 真快	;nkg
@@ -3669,7 +3669,6 @@ sort: original
 周年庆	;nqu
 真强	;nqx
 甄嬛	;nqy
-中年人	;nr
 只能用	;nr
 阵雨	;nr;
 振宇	;nr;i
@@ -3682,6 +3681,7 @@ sort: original
 针叶	;nrd
 枕叶	;nrdv
 阵营	;nrg
+中年人	;nriu
 真如	;nrj
 真意	;nrk
 镇日	;nrk
@@ -3854,9 +3854,9 @@ sort: original
 掌声	;per
 掌勺	;pez
 真佩服	;pf
-诈骗犯	;pf
 丈夫	;pfj
 涨幅	;pfja
+诈骗犯	;pfoa
 账房	;pfp
 长方	;pfpu
 涨风	;pfr
@@ -3926,7 +3926,6 @@ sort: original
 张良	;plxa
 长老	;plz
 主屏幕	;pm
-轴平面	;pm
 张敏	;pmb
 张某	;pmd
 长满	;pmf
@@ -3940,6 +3939,7 @@ sort: original
 掌门	;pmn
 张妈	;pms
 张码	;pmsa
+轴平面	;pmvv
 张茂	;pmz
 只怕你	;pn
 长女	;pn;
@@ -3964,7 +3964,6 @@ sort: original
 章丘	;pqq
 掌权	;pqt
 张强	;pqx
-制片人	;pr
 占便宜	;pr
 章鱼	;pr;
 张宇	;pr;a
@@ -3983,6 +3982,7 @@ sort: original
 只怕有心人	;prr
 长牙	;prs
 张元	;prt
+制片人	;pruu
 张扬	;prx
 张勇	;pry
 张三	;psf
@@ -4096,19 +4096,19 @@ sort: original
 整齐划一	;qhr
 抓好	;qhz
 中秋节	;qj
-这期间	;qj
 抓举	;qj;
 抓紧	;qjb
 中情局	;qji
 蒸汽机	;qji
 抓技	;qjk
 爪件	;qjm
+这期间	;qjov
 抓阄	;qjq
 证券交易	;qjr
 爪甲	;qjs
 证券交易所	;qjso
 真勤快	;qk
-种情况	;qk
+种情况	;qkuo
 抓狂	;qkx
 抓空	;qky
 站起来	;ql
@@ -4135,11 +4135,11 @@ sort: original
 抓起	;qqk
 抓钱	;qqm
 知其一	;qr
-债权人	;qr
 抓药	;qrc
 知情人士	;qre
 终其一生	;qre
 珍禽异兽	;qrev
+债权人	;qriv
 抓人	;qrn
 这群人	;qro
 知其然知其所以然	;qrr
@@ -4223,7 +4223,6 @@ sort: original
 征兆	;r;z
 证照	;r;zo
 专业版	;rb
-招议标	;rb
 重要保证	;rb;
 重要标志	;rb;u
 正表	;rbc
@@ -4237,6 +4236,7 @@ sort: original
 这样不好	;rbh
 直言不讳	;rbhu
 中译本	;rbi
+招议标	;rbio
 正步	;rbj
 整部	;rbjv
 正比	;rbk
@@ -4389,7 +4389,6 @@ sort: original
 政法	;rfsv
 正法	;rfsva
 正与反	;rfv
-主人公	;rg
 这一个	;rg
 职业高中	;rg;
 正规	;rgb
@@ -4405,6 +4404,7 @@ sort: original
 正果	;rgl
 蒸锅	;rgli
 郑国	;rglo
+主人公	;rgoi
 政纲	;rgp
 制药公司	;rgs
 征管	;rgt

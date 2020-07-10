@@ -394,21 +394,12 @@ def word_pinyin2codes(pys):
     """词拼音转声码"""
     if len(pys) <= 2:
         # 二字词
-        og_codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2sy(py) for py in pys]))
-        codes = set()
-
-        for code in og_codes:
-            codes.add(code)
+        codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2sy(py) for py in pys]))
     else:
         # 多字词
-        og_codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2s(py) for py in pys]))
-        codes = set()
-
-        for code in og_codes:
-            codes.add(code)
+        codes = set("".join(wordpy) for wordpy in itertools.product(*[pinyin2s(py) for py in pys]))
     
-    
-    return set(code for code in codes)
+    return codes
 
 def word2codes(word, pinyin, length, short = True, full = False):
     sound_chars = CiDB.sound_chars(word)
@@ -430,7 +421,7 @@ def word2codes(word, pinyin, length, short = True, full = False):
         if (third_char is None):
             return set()
         shape += third_char.shape()[0]
-            
+
     codes = set()
     for code in py_codes:
         full_code = code + shape

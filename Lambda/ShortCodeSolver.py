@@ -39,7 +39,7 @@ def solve_cizu():
 
         #     if (not multi):
         #         print('hit 2')
-        #         JDTools.change_word_shortcode_len(target[0], { target[1] }, len(short))
+        #         JDTools.change_word_shortcode_len(target[0], { target[2] }, len(short))
         else:
             print(short)
             i = 1

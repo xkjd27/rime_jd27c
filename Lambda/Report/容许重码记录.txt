@@ -234,10 +234,6 @@ xnwt
 	0	二万
 	100	贰万
 
-;fbria
-	0	执法不严
-	1	执法必严
-
 ;gurii
 	0	中国石油
 	1	中国社会科学院
@@ -255,14 +251,6 @@ xnwt
 	0	正片
 	1	正篇
 
-;rjrvi
-	0	职业技术学院
-	1	职业教育
-
-;rrrev
-	0	重要意义
-	1	重要原因
-
 ;yryeo
 	0	直译
 	1	旨意
@@ -275,14 +263,6 @@ xnwt
 ;yxdov
 	0	之形
 	1	之幸
-
-bh;uii
-	0	抱撼终生
-	1	抱撼终身
-
-bkrrvv
-	0	不可言喻
-	1	不可逾越
 
 bmryio
 	0	便衣
@@ -316,10 +296,6 @@ bnxsvo
 bnxxve
 	0	不香
 	1	不象
-
-brrwvv
-	0	不要以为
-	1	不要因为
 
 brwlvv
 	0	不远万里
@@ -394,10 +370,6 @@ guuyii
 	0	国史
 	1	国师
 
-gydrvo
-	0	共产党人
-	0	共产党员
-
 hbhuiv
 	0	合不合适
 	1	会不会是
@@ -442,10 +414,6 @@ jsuyao
 	0	结识
 	1	届时
 
-jullov
-	0	军事力量
-	1	军事理论
-
 jydmvi
 	0	基点
 	1	机电
@@ -477,14 +445,6 @@ kfrgea
 lmjsva
 	0	连结
 	1	联结
-
-mtfrav
-	0	漫天飞扬
-	1	马太福音
-
-nrzraa
-	0	那又怎样
-	1	那又怎么样
 
 q;jmvi
 	0	去捡
@@ -546,10 +506,6 @@ rkxdiv
 	0	人型
 	1	人形
 
-rlrjvv
-	0	有理有据
-	1	有棱有角
-
 rmrmvv
 	0	严严
 	1	奄奄
@@ -565,20 +521,10 @@ rqxdvv
 rrdrvv
 	0	远远大于
 	1	远远低于
-	2	一一对应
-
-rrjhvv
-	0	一有机会
-	1	有一句话
 
 rrxrvv
-	0	有一些人
 	0	有样学样
 	2	牙牙学语
-
-rsjuve
-	0	有所减少
-	1	有色金属
 
 rumrvi
 	0	有什么用
@@ -628,10 +574,6 @@ syjyvo
 ulrjia
 	0	睡了一觉
 	1	摔了一跤
-
-urrdov
-	0	是一样的
-	1	神一样的
 
 uy;fie
 	1	逝者
@@ -700,10 +642,6 @@ wnryvv
 	1	巫医
 	2	武夷
 
-wryuoi
-	0	为人处世
-	1	为人处事
-
 wtuyvv
 	0	万世
 	1	顽石
@@ -760,10 +698,6 @@ ynuyoo
 yrjbii
 	0	插紧
 	1	茶巾
-
-zgjooo
-	0	总冠军
-	1	最高奖
 
 zhuyvo
 	0	再试

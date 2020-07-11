@@ -263,6 +263,10 @@ xnwt
 	0	直译
 	1	旨意
 
+;yryoo
+	0	之义
+	0	之日
+
 ;yuyiv
 	0	芝士
 	1	执事
@@ -271,6 +275,14 @@ xnwt
 ;yxdov
 	0	之形
 	1	之幸
+
+bdrvvi
+	0	不动摇
+	0	本地人
+
+bkryvo
+	0	本义
+	0	本意
 
 bmryio
 	0	便衣
@@ -292,6 +304,10 @@ bnryva
 	0	不已
 	1	不以
 
+bnryvo
+	0	不日
+	0	布衣
+
 bnuyvo
 	0	不实
 	1	不时
@@ -312,6 +328,14 @@ brbrvi
 brwlvv
 	0	不远万里
 	1	不要我了
+
+bzryoo
+	0	宝日
+	0	爆衣
+
+dfryeo
+	0	得益
+	0	德日
 
 dgwwea
 	0	短尾
@@ -336,6 +360,10 @@ drdrvv
 drqyvo
 	0	大器
 	1	大旗
+
+drryvo
+	0	大义
+	0	达日
 
 drulii
 	0	打上
@@ -378,6 +406,10 @@ fthqeo
 ftrqev
 	0	犯有
 	0	风土人情
+
+ftryeo
+	0	反日
+	0	反译
 
 gbuvvi
 	0	根本上

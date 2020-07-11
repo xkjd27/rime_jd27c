@@ -234,6 +234,10 @@ xnwt
 	0	二万
 	100	贰万
 
+;;rroe
+	0	只重衣衫不重人
+	0	这种意义
+
 ;gurii
 	0	中国石油
 	1	中国社会科学院
@@ -297,6 +301,10 @@ bnxxve
 	0	不香
 	1	不象
 
+brbrvi
+	0	不仁不义
+	0	不依不饶
+
 brwlvv
 	0	不远万里
 	1	不要我了
@@ -335,7 +343,12 @@ druyvi
 
 dur;ev
 	0	多雨
+	0	独树一帜
 	1	躲雨
+
+dyr;vv
+	0	地域
+	0	达成一致
 
 flqyov
 	0	放起
@@ -357,6 +370,10 @@ fruyav
 fthqeo
 	0	反话
 	1	番话
+
+ftrqev
+	0	犯有
+	0	风土人情
 
 gbuvvi
 	0	根本上
@@ -394,6 +411,10 @@ jcusoi
 	0	交手
 	1	交售
 
+jduyov
+	0	京东商城
+	0	惊世
+
 jm;yii
 	0	键值
 	1	剑指
@@ -410,9 +431,17 @@ jquyio
 	0	旧识
 	1	旧诗
 
+jr;xoo
+	0	交易中心
+	0	家庄
+
 jsuyao
 	0	结识
 	1	届时
+
+jxr;ov
+	0	兼而有之
+	0	将与
 
 jydmvi
 	0	基点
@@ -442,9 +471,21 @@ kfrgea
 	0	科院
 	1	科源
 
+lduyiv
+	0	劳动生产
+	0	落到实处
+
 lmjsva
 	0	连结
 	1	联结
+
+mrrrav
+	0	没有原因
+	0	没有意义
+
+mumrai
+	0	没什么两样
+	0	没什么用
 
 q;jmvi
 	0	去捡
@@ -470,6 +511,10 @@ qyryvv
 	0	七一
 	1	其一
 
+rcuyiv
+	0	人才市场
+	0	药石
+
 rd;yve
 	0	硬直
 	1	硬脂
@@ -477,6 +522,14 @@ rd;yve
 rdbvve
 	0	一大包
 	1	一大笔
+
+rg;niv
+	0	人工智能
+	0	圆柱
+
+rgrqvi
+	0	一个月前
+	0	原由
 
 rgwwvo
 	0	原味
@@ -514,6 +567,10 @@ rnuyao
 	0	如是
 	1	如诗
 
+rqwwvv
+	0	与其为伍
+	0	有违
+
 rqxdvv
 	0	有型
 	1	有幸
@@ -543,6 +600,10 @@ ry;yoe
 	1	益智
 	2	义肢
 
+rydjav
+	0	已成定局
+	0	异动
+
 ryjmve
 	0	一箭
 	1	一简
@@ -554,6 +615,10 @@ ryjmvi
 ryjroa
 	0	衣架
 	0	语出惊人
+
+rymdoe
+	0	夜长梦多
+	0	易名
 
 rytjva
 	0	一统
@@ -575,6 +640,10 @@ ulrjia
 	0	睡了一觉
 	1	摔了一跤
 
+uumroi
+	0	是什么原因
+	0	是什么样
+
 uy;fie
 	1	逝者
 	2	侍者
@@ -594,6 +663,10 @@ uy;yoi
 uyjmoa
 	0	施建
 	1	视奸
+
+uyjreo
+	0	十家
+	0	生产经验
 
 uyjyoi
 	0	诗集
@@ -646,6 +719,10 @@ wtuyvv
 	0	万世
 	1	顽石
 
+wumroi
+	0	为什么不可以
+	0	为什么要
+
 ww;yoo
 	0	为之
 	1	谓之
@@ -653,6 +730,10 @@ ww;yoo
 wwfnov
 	0	为辅
 	1	为夫
+
+xbdyoi
+	0	安步当车
+	0	新低
 
 xbjyoo
 	0	心计
@@ -679,9 +760,25 @@ xhhzoo
 	1	哀号
 	2	哀嚎
 
+xlrtoa
+	0	吓了一大跳
+	0	吓了一跳
+
 xmxheo
 	0	腺癌
 	1	衔哀
+
+xr;uvv
+	0	需要指出的是
+	0	需要注意的是
+
+xr;yvv
+	0	夏至
+	0	需要指出
+
+xxuyoo
+	0	新兴市场
+	0	翔实
 
 xxwlvo
 	0	相忘
@@ -702,6 +799,10 @@ yrjbii
 zhuyvo
 	0	再试
 	1	再是
+
+zruyei
+	0	杂史
+	0	自由市场
 
 zulfie
 	0	作乐

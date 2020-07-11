@@ -104,10 +104,10 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - lua_translator@date_translator
-    - lua_translator@time_translator
     - table_translator
     - table_translator@danzi_lookup
+    - lua_translator@date_translator
+    - lua_translator@time_translator
   filters:
     - lua_filter@hint_filter
     - simplifier@jffh

@@ -3,81 +3,14 @@ import os
 import ZiDB
 import CiDB
 import itertools
-
-# ---------------------------------
-#             布局定义
-# ---------------------------------
-
-# 键道6 声母->键
-JD_S2K = {
-    'q': ['q'],
-    'w': ['w'],
-    'r': ['r'],
-    't': ['t'],
-    'y': ['r'],
-    'p': ['p'],
-    's': ['s'],
-    'd': ['d'],
-    'f': ['f'],
-    'g': ['g'],
-    'h': ['h'],
-    'j': ['j'],
-    'k': ['k'],
-    'l': ['l'],
-    'z': ['z'],
-    'x': ['x'],
-    'c': ['c'],
-    'b': ['b'],
-    'n': ['n'],
-    'm': ['m'],
-    'zh': [';'],
-    'ch': ['y'],
-    'sh': ['e'],
-    '~': ['x'],
-}
-
-# 键道6 韵母->键
-JD_Y2K = {
-    'ua': ['q'],
-    'iu': ['q'],
-    'ei': ['w'],
-    'un': ['w'],
-    'e': ['e'],
-    'eng': ['r'],
-    'uan': ['t'],
-    'ong': ['y'],
-    'iong': ['y'],
-    'ang': ['p'],
-    'a': ['s'],
-    'ia': ['s'],
-    'ou': ['d'],
-    'ie': ['d'],
-    'an': ['f'],
-    'uai': ['g'],
-    'ing': ['g'],
-    'ai': ['h'],
-    'ue': ['h'],
-    'u': ['j'],
-    'er': ['j'],
-    'i': ['k'],
-    'uo': ['l'],
-    'v': [';'],
-    'o': ['l'],
-    'ao': ['z'],
-    'iang': ['x'],
-    'uang': ['x'],
-    'iao': ['c'],
-    'in': ['b'],
-    'ui': ['b'],
-    'en': ['n'],
-    'ian': ['m'],
-}
+from Layout import *
 
 # ---------------------------------
 #               常量
 # ---------------------------------
 
-RIME_HEADER = '# 由键道：涵自动生成\n---\nname: %s\nversion: "q2"\nsort: original\n...\n'
+RIME_HEADER = '# 由键道：涵自动生成\n---\nname: %s\nversion: "q2"\nsort: original\n...\n' % (RIME_SCHEMA + ".%s")
+RIME_PATH = 'rime/%s' % (RIME_SCHEMA + ".%s.dict.yaml")
 
 # 拼音变体转换表
 PY_TRANSFORM = {
@@ -156,6 +89,14 @@ def yun(py):
     if py.startswith('zh') or py.startswith('ch') or py.startswith('sh'):
         return py[2:]
     return py[1:]
+
+def s(shape):
+    """拆分转形码"""
+    code = []
+    for stroke in shape:
+        if stroke in JD_B:
+            code.append(JD_B[stroke])
+    return ''.join(code)
 
 def pinyin2sy(py):
     """全拼转双拼"""
@@ -236,7 +177,7 @@ def zi2codes(zi, short = True, full = True):
         else:
             sy_codes[sy] = (w[1], w[0])
 
-    b = zi.shape()
+    b = s(zi.shape())
     char = zi.char()
     rank = zi.rank()
     which = zi.which()
@@ -415,12 +356,12 @@ def word2codes(word, pinyin, length, short = True, full = False):
     if (first_char is None or second_char is None):
         return set()
 
-    shape = first_char.shape()[0] + second_char.shape()[0]
+    shape = s(first_char.shape()[0]) + s(second_char.shape()[0])
     if len(sound_chars) == 3: # 三字词需三码
         third_char = ZiDB.get(sound_chars[2])
         if (third_char is None):
             return set()
-        shape += third_char.shape()[0]
+        shape += s(third_char.shape()[0])
 
     codes = set()
     for code in py_codes:
@@ -449,12 +390,12 @@ def ci2codes(ci, short = True, full = False):
     if (first_char is None or second_char is None):
         return None
 
-    shape = first_char.shape()[0] + second_char.shape()[0]
+    shape = s(first_char.shape()[0]) + s(second_char.shape()[0])
     if len(sound_chars) == 3: # 三字词需三码
         third_char = ZiDB.get(sound_chars[2])
         if (third_char is None):
             return set()
-        shape += third_char.shape()[0]
+        shape += s(third_char.shape()[0])
 
     for data in weights:
         pinyin, shortcode_len, rank = data
@@ -496,8 +437,8 @@ def traverse_danzi(build = False, report = True):
     dups = []
 
     if build:
-        danzi = open('rime/xkjd27.danzi.dict.yaml', mode='w', encoding='utf-8', newline='\n')
-        danzi.write(RIME_HEADER % 'xkjd27.danzi')
+        danzi = open(RIME_PATH % 'danzi', mode='w', encoding='utf-8', newline='\n')
+        danzi.write(RIME_HEADER % 'danzi')
     else:
         danzi = None
 
@@ -580,8 +521,8 @@ def traverse_cizu(build = False, report = True):
     entries, dup_code_check = get_cizu_codes()
 
     if build:
-        f = open('rime/xkjd27.cizu.dict.yaml', mode='w', encoding='utf-8', newline='\n')
-        f.write(RIME_HEADER % 'xkjd27.cizu')
+        f = open(RIME_PATH % 'cizu', mode='w', encoding='utf-8', newline='\n')
+        f.write(RIME_HEADER % 'cizu')
     else:
         f = None
 
@@ -717,8 +658,8 @@ def build_chaoji():
 
     chaoji.sort(key=lambda e: (e[1], e[2]))
 
-    f = open('rime/xkjd27.chaojizici.dict.yaml', mode='w', encoding='utf-8', newline='\n')
-    f.write(RIME_HEADER % 'xkjd27.chaojizici')
+    f = open(RIME_PATH % 'chaojizici', mode='w', encoding='utf-8', newline='\n')
+    f.write(RIME_HEADER % 'chaojizici')
 
     for entry in chaoji:
         word, code, rank = entry[:3]
@@ -765,7 +706,7 @@ def get_char_shape(char):
     if zi is None:
         return ""
     
-    return ZiDB.get(char).shape()
+    return s(ZiDB.get(char).shape())
 
 def get_char(char):
     return ZiDB.get(char)
@@ -1072,12 +1013,12 @@ def build_static():
     static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Static')
 
     STAITC_MAP = {
-        '声笔笔.txt': 'xkjd27.sbb',
-        '补充.txt': 'xkjd27.buchong',
+        '声笔笔.txt': 'sbb',
+        '补充.txt': 'buchong',
     }
 
     for static in STAITC_MAP:
-        with open("rime/%s.dict.yaml" % STAITC_MAP[static], mode='w', encoding='utf-8', newline='\n') as outfile:
+        with open(RIME_PATH % STAITC_MAP[static], mode='w', encoding='utf-8', newline='\n') as outfile:
             outfile.write(RIME_HEADER % STAITC_MAP[static])
             with open(os.path.join(static_path, static), mode='r', encoding='utf-8') as infile:
                 outfile.write('\n'.join(line.strip() for line in infile.readlines()))

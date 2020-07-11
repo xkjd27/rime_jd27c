@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: xkjd27
-  name: 键道27
+  schema_id: xkjd27c
+  name: 键道27C
   version: "q2"
 
 switches:
@@ -18,10 +18,6 @@ switches:
   - name: sbb_hint
     reset: 1
     states: [ "关₆₆₀", "开₆₆₀" ]
-  - name: EN2en
-    reset: 1
-  - name: emoji_cn
-    reset: 0
   
 punctuator:
   full_shape:

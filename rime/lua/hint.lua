@@ -9,8 +9,8 @@ local function hint(cand, input, reverse)
     end
     
     local lookup = " " .. reverse:lookup(cand.text) .. " "
-    local short = string.match(lookup, " ([bcdefghjklmnpqrstwxyz;][aiouv]+) ") or 
-                  string.match(lookup, " ([bcdefghjklmnpqrstwxyz;][bcdefghjklmnpqrstwxyz;]) ")
+    local short = string.match(lookup, " ([bcdfghjklmnpqrstuwxyz;][aeiov]+) ") or 
+                  string.match(lookup, " ([bcdfghjklmnpqrstuwxyz;][bcdfghjklmnpqrstuwxyz;]) ")
     if short and string.len(input) > 1 and not startswith(short, input) then
         cand:get_genuine().comment = cand.comment .. "〔" .. short .. "〕"
         return true
@@ -28,7 +28,7 @@ local function filter(input, env)
     local context = env.engine.context
     local is_on = context:get_option('sbb_hint')
     local input_text = context.input
-    local no_commit = string.len(input_text) < 4 and string.match(input_text, "^[bcdefghjklmnpqrstwxyz;]+$")
+    local no_commit = string.len(input_text) < 4 and string.match(input_text, "^[bcdfghjklmnpqrstuwxyz;]+$")
     for cand in input:iter() do
         if no_commit and cand.type == 'table' then
             commit_hint(cand, no_commit)
@@ -42,7 +42,7 @@ local function filter(input, env)
 end
 
 local function init(env)
-    env.reverse = ReverseDb("build/xkjd27.extended.reverse.bin")
+    env.reverse = ReverseDb("build/xkjd27c.extended.reverse.bin")
 end
 
 return { init = init, func = filter }

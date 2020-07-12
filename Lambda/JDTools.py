@@ -480,7 +480,11 @@ def traverse_danzi(build = False, report = True):
                 while True:
                     if (len(sc) < 1):
                         break
-                
+
+                    if sc in JD_RESERVED:
+                        sc = sc[:-1]
+                        continue
+                    
                     if sc in codes:
                         if (codes[sc][0][3] == ZiDB.SUPER and which == ZiDB.GENERAL):
                             substitute = codes[sc][0][0]
@@ -549,6 +553,10 @@ def traverse_cizu(build = False, report = True):
                     break
                 elif word_len != 3 and len(sc) < 4:
                     break
+
+                if sc in JD_RESERVED:
+                    sc = sc[:-1]
+                    continue
                 
                 if sc not in dup_code_check:
                     avaliable_short = sc

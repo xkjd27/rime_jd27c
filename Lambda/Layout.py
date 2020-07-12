@@ -70,3 +70,7 @@ JD_B = {
     '丶': 'o',
     '一': 'v',
 }
+
+JD_RESERVED = {
+    'dk', 'fc', 'nl', 'zt'
+}

@@ -376,6 +376,127 @@ def process_commands(commands):
     
     JDTools.commit()
 
+def safe_add_word(which, word, pinyin, code):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_add_word(which, word, pinyin, code)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+def safe_add_char(which, char, pinyin, code):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_add_char(which, char, pinyin, code)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+def safe_delete_word(word, pinyin):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_delete_word(word, pinyin)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+def safe_delete_char(char, pinyin):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_delete_char(char, pinyin)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+def safe_change_word(word, pinyin, code):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_change_word(word, pinyin, code)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+def safe_change_char(char, pinyin, code):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_change_char(char, pinyin, code)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+def safe_rank_word(word, pinyin, code, rank):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_rank_word(word, pinyin, code, rank)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+def safe_rank_char(char, pinyin, code, rank):
+    global COMMAND_TRANSCRIPT
+    og_transcript = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = []
+    try:
+        command_rank_char(char, pinyin, code, rank)
+    except AssertionError as e:
+        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
+    except:
+        COMMAND_TRANSCRIPT.append('  * __未知错误__')
+
+    result = COMMAND_TRANSCRIPT
+    COMMAND_TRANSCRIPT = og_transcript
+    return result
+
+
 # command_add(1, ('正', 'zheng', 'srimwov'))
 # command_add(1, ('正', 'zhe', 'srimwov'))
 # command_add(1, ('A', 'zheng', 'srooiv'))

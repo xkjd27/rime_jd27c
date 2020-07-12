@@ -1,2 +1,5 @@
 PyGithub
 gitpython
+python-telegram-bot
+python-dotenv
+onedrivesdk < 2

@@ -11,7 +11,7 @@ sort: original
 得	e
 一	v
 
-# 一简二重
+# 二重
 吧	b
 打	d
 实	u
@@ -29,7 +29,6 @@ sort: original
 咱	z
 重	y
 
-# 二简二重
 叭	br
 氏	uy
 视	uy
@@ -43,11 +42,12 @@ sort: original
 兮	xy
 哟	ru
 咦	ry
-噫	ry
 哇	wr
 啧	zf
 嘁	qy
 耶	rs
+
+噫	ryo
 
 # 二简
 真正	;;

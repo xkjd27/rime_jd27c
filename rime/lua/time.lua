@@ -13,12 +13,12 @@ end
 
 local function translator(input, seg)
    if (input == "o") then
-      yield(Candidate("date", seg.start, seg._end, os.date("%H:%M:%S"), "~ej"))
+      yield(Candidate("date", seg.start, seg._end, os.date("%H:%M:%S"), "~uj"))
    end
-   if (input == "oe") then
+   if (input == "ou") then
       yield(Candidate("date", seg.start, seg._end, os.date("%H:%M:%S"), "~j"))
    end
-   if (input == "oej") then
+   if (input == "ouj") then
       yield(Candidate("date", seg.start, seg._end, os.date("%H:%M:%S"), ""))
    end
    if (input == "o") then

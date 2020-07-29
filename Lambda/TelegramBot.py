@@ -800,7 +800,7 @@ def change_char(update, context):
                 REPLY(update, '%s 字不存在' % char)
                 context.user_data.clear()
                 return -1
-            REPLY(update, "请输入 %s 字笔码，当前：%s" % (char, s(zi.shape())))
+            REPLY(update, "请输入 %s 字笔码，当前：%s" % (char, JDTools.s(zi.shape())))
         elif (data == '码长'):
             zi = JDTools.get_char(char)
             if (zi is None):

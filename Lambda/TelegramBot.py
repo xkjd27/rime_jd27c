@@ -774,7 +774,7 @@ def change_char(update, context):
             context.user_data.clear()
             return -1
 
-        space_data = JDTools.find_space_for_char(s(zi.shape()), pinyin)
+        space_data = JDTools.find_space_for_char(JDTools.s(zi.shape()), pinyin)
         if space_data is None:
             REPLY(update, "无法添加")
             context.user_data.clear()

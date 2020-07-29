@@ -3062,6 +3062,7 @@ sort: original
 注水	;nub
 主帅	;nud
 注射	;nuf
+主摄	;nufo
 主审	;nuk
 诸神	;nuko
 住上	;nul
@@ -14329,6 +14330,8 @@ sort: original
 呲牙咧嘴	crlz
 曾用名	crm
 从入门	crmi
+从入门到放弃	crmq
+从入门到精通	crmt
 擦抹	crmu
 擦米	crmy
 凑热闹	crn
@@ -23974,6 +23977,7 @@ sort: original
 副帅	fnud
 辐射	fnuf
 附设	fnufa
+副摄	fnufv
 复审	fnuk
 附身	fnuka
 俯身	fnuki
@@ -36162,6 +36166,7 @@ sort: original
 海水不可斗量	hubla
 火把	hubr
 伙伴	hubt
+后手必胜	hubu
 或被	hubw
 货币	huby
 火爆	hubz
@@ -51027,6 +51032,7 @@ sort: original
 六套	lqtzo
 龙骑士	lqu
 流水	lqub
+六摄	lquf
 留神	lquk
 六神	lquko
 流觞	lqul
@@ -78879,18 +78885,18 @@ sort: original
 随从	sbcj
 随存	sbcw
 岁次	sbcy
-森巴迪	sbd
+搜不到	sbd
 随队	sbdb
 随调	sbdc
 遂定	sbdd
 算不得	sbde
 绥德	sbdf
 隋代	sbdh
-搜不到	sbdi
 隧洞	sbdj
 斯巴达克	sbdk
 岁多	sbdu
 斯巴达	sbdv
+森巴迪	sbdva
 三班倒	sbdvv
 随地	sbdy
 隧道	sbdz
@@ -80685,6 +80691,7 @@ sort: original
 三套	sttz
 所提升	stu
 散射	stuf
+三摄	stufv
 三审	stuk
 三上	stul
 三属	stun
@@ -81550,6 +81557,7 @@ sort: original
 似水	syubi
 四射	syuf
 私设	syufe
+四摄	syufi
 死神	syuk
 死伤	syul
 私塾	syun
@@ -95552,6 +95560,7 @@ sort: original
 雾水	wnubva
 五衰	wnud
 屋舍	wnuf
+五摄	wnufv
 无神	wnuk
 武神	wnukv
 误伤	wnul
@@ -103857,6 +103866,7 @@ sort: original
 心神不宁	xubn
 西双版纳	xubnv
 哦吧	xubr
+先手必胜	xubu
 现世报	xubv
 心神不安	xubx
 象声词	xuc
@@ -105925,7 +105935,8 @@ sort: original
 称得上	ydue
 传达室	ydui
 车到山前必有路	ydul
-吃独食	yduo
+差多少	yduo
+吃独食	yduoe
 传道授业	ydur
 揣手	ydus
 称得上是	yduu
@@ -109484,8 +109495,8 @@ sort: original
 吃掉	yydc
 吃定	yydd
 彻彻底底	yydde
-吃得	yydf
-吃的	yydfo
+吃的	yydf
+吃得	yydfo
 痴呆	yydh
 吃点	yydm
 迟点	yydma

@@ -242,6 +242,10 @@ xnwt
 	0	只重衣衫不重人
 	0	这种意义
 
+;b;ivi
+	0	抓不住
+	0	止不住
+
 ;gurii
 	0	中国石油
 	1	中国社会科学院
@@ -251,9 +255,14 @@ xnwt
 	1	转场
 
 ;jryio
+	0	中日
 	0	众议
 	1	钟意
 	2	忠义
+
+;nrsei
+	0	朱肉
+	0	猪肉
 
 ;ppmve
 	0	正片
@@ -262,6 +271,10 @@ xnwt
 ;yryeo
 	0	直译
 	1	旨意
+
+;yryio
+	0	执意
+	0	指日
 
 ;yryoo
 	0	之义
@@ -431,6 +444,10 @@ hfjyiv
 	0	合击
 	1	合辑
 
+hfryio
+	0	何日
+	0	合意
+
 huuyov
 	0	火石
 	1	祸事
@@ -446,6 +463,11 @@ jbbyiv
 jcusoi
 	0	交手
 	1	交售
+
+jdryoo
+	0	竟日
+	0	精日
+	0	精益
 
 jduyov
 	0	京东商城
@@ -491,6 +513,14 @@ jyr;ev
 	0	急于
 	1	及于
 
+jyryaa
+	0	即以
+	0	既已
+
+jyryeo
+	0	几日
+	0	祭日
+
 jyunoo
 	0	记数
 	1	记熟
@@ -523,12 +553,17 @@ mumrai
 	0	没什么两样
 	0	没什么用
 
+mwryoo
+	0	美日
+	0	美衣
+
 q;jmvi
 	0	去捡
 	1	取件
 
 qdryoo
 	0	情义
+	0	晴日
 	1	情意
 
 qgypiv
@@ -547,6 +582,10 @@ qyryvv
 	0	七一
 	1	其一
 
+rb;yie
+	0	睿智
+	0	银质
+
 rcuyiv
 	0	人才市场
 	0	药石
@@ -563,6 +602,26 @@ rg;niv
 	0	人工智能
 	0	圆柱
 
+rg;yva
+	0	原汁
+	0	软纸
+
+rgdmvi
+	0	原电
+	0	远点
+
+rghqvi
+	0	袁花
+	0	软化
+
+rgjcve
+	0	软胶
+	0	软脚
+
+rgjmvi
+	0	软件
+	0	远见
+
 rgrqvi
 	0	一个月前
 	0	原由
@@ -570,6 +629,14 @@ rgrqvi
 rgwwvo
 	0	原味
 	1	原为
+
+rgxdvo
+	0	有关系的
+	0	软性
+
+rjdmei
+	0	用典
+	0	用电
 
 rjhvov
 	0	有计划
@@ -584,6 +651,7 @@ rkqyiv
 	1	人妻
 
 rkryio
+	0	人日
 	0	仁义
 	1	人意
 
@@ -595,6 +663,10 @@ rkxdiv
 	0	人型
 	1	人形
 
+rlrqav
+	0	游来游去
+	0	缘来缘去
+
 rmrmvv
 	0	严严
 	1	奄奄
@@ -602,6 +674,14 @@ rmrmvv
 rnuyao
 	0	如是
 	1	如诗
+
+rqrgav
+	0	又软
+	0	又远
+
+rqryvo
+	0	有意
+	0	有日
 
 rqwwvv
 	0	与其为伍
@@ -611,17 +691,33 @@ rqxdvv
 	0	有型
 	1	有幸
 
+rrbuii
+	0	依依不舍
+	0	遇人不淑
+
 rrdrvv
 	0	远远大于
 	1	远远低于
+
+rrjroa
+	0	日以继夜
+	1	夜以继日
 
 rrxrvv
 	0	有样学样
 	2	牙牙学语
 
+rsukoo
+	0	夜审
+	0	夜神
+
 rumrvi
 	0	有什么用
 	1	有什么意义
+
+rurjiv
+	0	由奢入俭
+	0	由奢入简
 
 rwuyvv
 	0	一无是处
@@ -636,13 +732,26 @@ ry;yiv
 	1	遗志
 
 ry;yoe
+	0	日制
 	0	译制
 	1	益智
 	2	义肢
 
+rybtov
+	0	日班
+	0	易班
+
 rydjav
 	0	已成定局
 	0	异动
+
+ryfroa
+	0	日发
+	0	益发
+
+ryjdoa
+	0	日经
+	0	易经
 
 ryjmve
 	0	一箭
@@ -653,28 +762,87 @@ ryjmvi
 	1	一剑
 
 ryjroa
+	0	日加
 	0	衣架
 	0	语出惊人
+
+ryjyoo
+	0	日记
+	0	易记
+
+rylcoo
+	0	日料
+	0	衣料
 
 rymdoe
 	0	夜长梦多
 	0	易名
 
+ryq;ov
+	0	意趣
+	0	疫区
+
+ryqyov
+	0	弈棋
+	0	日期
+	0	日起
+
+ryr;ov
+	0	易于
+	0	益于
+
 rytjva
 	0	一统
 	1	一通
+
+ryunoo
+	0	义塾
+	0	日数
 
 ryuyai
 	0	已逝
 	1	已使
 
+ryuyoi
+	0	易逝
+	0	衣食
+
 ryuyvv
 	1	一世
 	2	轶事
 
+rywkoo
+	0	日文
+	0	易问
+
+rywwoi
+	0	日伪
+	0	易位
+
+ryxboi
+	0	宜信
+	0	日信
+	0	易信
+
+ryxxov
+	0	意想
+	0	日相
+
+ryynoa
+	0	日出
+	0	译出
+
+ryzhov
+	0	亦在
+	0	日在
+
 syjyvo
 	0	死寂
 	1	死记
+
+tjryio
+	0	同义
+	0	同日
 
 ulrjia
 	0	睡了一觉
@@ -717,6 +885,7 @@ uyq;ov
 	1	识趣
 
 uyryeo
+	0	失忆
 	0	释义
 	1	失意
 
@@ -747,6 +916,7 @@ wnlyvo
 	1	兀立
 
 wnryvo
+	0	五日
 	0	无益
 	1	无义
 
@@ -778,6 +948,10 @@ xbdyoi
 xbjyoo
 	0	心计
 	1	心悸
+
+xbrrvv
+	0	西班牙人
+	0	西班牙语
 
 xbxdoo
 	0	新星
@@ -843,6 +1017,10 @@ zhuyvo
 zruyei
 	0	杂史
 	0	自由市场
+
+zrzree
+	0	自怨自艾
+	0	自然资源
 
 zulfie
 	0	作乐

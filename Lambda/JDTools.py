@@ -592,6 +592,8 @@ def traverse_cizu(build = False, report = True):
                 code_dup_lose_flag.add(code)
             else:
                 lose_dup_count[len(code) - 3] += 1
+        elif code_dups >= 2:
+            lose_dup_count[len(code) - 3] += 1
 
         if code_dups > 1:
             dup_count[len(code) - 3] += 1

@@ -98,6 +98,16 @@ def s(shape):
             code.append(JD_B[stroke])
     return ''.join(code)
 
+JD_B_R = {value:key for key, value in JD_B.items()}
+
+def code2shape(code):
+    """形码转拆分"""
+    shape = []
+    for char in code:
+        if char in JD_B_R:
+            shape.append(JD_B_R[char])
+    return ''.join(shape)
+
 def pinyin2sy(py):
     """全拼转双拼"""
     if len(py) < 1:

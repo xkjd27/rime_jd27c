@@ -12035,6 +12035,7 @@
 俄白	e/bai	4	0
 俄罗斯	e/luo/si	3	0
 俄罗斯人	e/luo/si/ren	4	0
+俄罗斯方块	e/luo/si/kuai	4	0
 俄美	e/mei	6	0
 俄而	e/er	4	0
 俄语	e/yu	5	0

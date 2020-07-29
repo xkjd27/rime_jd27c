@@ -260,6 +260,21 @@ def commit():
         for ci in all_words:
             f.write(ci.line()+'\n')
 
+def reset():
+    '''Discard all changes and reload'''
+    global _db_general
+    global _db_super
+    global _fixed_general
+    global _fixed_super
+    del _fixed_general
+    del _fixed_super
+    del _db_general
+    del _db_super
+    _fixed_general = None
+    _fixed_super = None
+    _db_general = None
+    _db_super = None
+
 def fixed(which):
     global _fixed_general
     global _fixed_super

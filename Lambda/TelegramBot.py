@@ -2,13 +2,14 @@ from dotenv import load_dotenv
 import logging
 import os
 import JDTools
-import GithubCommands
+import Commands
 import re
 from bisect import bisect_left
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove, ChatAction, ParseMode)
 from telegram.ext import Updater, CommandHandler, ConversationHandler, MessageHandler, Filters
 from git import Repo
 import onedrivesdk
+import urllib.request
 
 load_dotenv()
 
@@ -52,24 +53,27 @@ def LOG(result = None):
 
     LOG_STATUS += result
 
+def CLEAN(text):
+    return (
+        text.replace('*', '')
+            .replace('__', '*')
+            .replace('~`', ' =|=')
+            .replace('`~', '=|= ')
+            .replace('~', '')
+            .replace('=|=', '~')
+            .replace('(', '\(')
+            .replace(')', '\)')
+            .replace('`', ' ')
+            .replace('-', '\-')
+            .replace('>', '\>')
+            .replace('<', '\<')
+            .replace('.', '\.')
+    )
+
 def MARK(result):
     res = []
     for line in result:
-        res.append(
-            line.replace('*', '')
-                .replace('__', '*')
-                .replace('~`', ' =|=')
-                .replace('`~', '=|= ')
-                .replace('~', '')
-                .replace('=|=', '~')
-                .replace('(', '\(')
-                .replace(')', '\)')
-                .replace('`', ' ')
-                .replace('-', '\-')
-                .replace('>', '\>')
-                .replace('<', '\<')
-                .replace('.', '\.')
-            )
+        res.append(CLEAN(line))
 
     return res
 
@@ -98,6 +102,7 @@ def start(update, context):
 /drop - 放弃当前的修改
 /pull - 从Github同步更新
 /push - 保存并上传
+/getjd - 获取键道6的新词
 """)
 
 # Fallback
@@ -241,9 +246,9 @@ def rank(update, context):
         TYPING(update)
 
         if (rank_type == 'word'):
-            result = MARK(GithubCommands.safe_rank_word(word, pinyin, code, 1))
+            result = MARK(Commands.safe_rank_word(word, pinyin, code, 1))
         else:
-            result = MARK(GithubCommands.safe_rank_char(word, pinyin, code, 1))
+            result = MARK(Commands.safe_rank_char(word, pinyin, code, 1))
 
         REPLY(update, "\n".join(result))
         context.user_data.clear()
@@ -332,9 +337,9 @@ def push(update, context):
 
     try:
         TYPING(update)
-        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjdc.cizu.dict.yaml'].upload('./rime/xkjdc.cizu.dict.yaml')
-        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjdc.danzi.dict.yaml'].upload('./rime/xkjdc.danzi.dict.yaml')
-        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjdc.chaojizici.dict.yaml'].upload('./rime/xkjdc.chaojizici.dict.yaml')
+        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.cizu.dict.yaml'].upload('./rime/xkjd27c.cizu.dict.yaml')
+        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.danzi.dict.yaml'].upload('./rime/xkjd27c.danzi.dict.yaml')
+        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.chaojizici.dict.yaml'].upload('./rime/xkjd27c.chaojizici.dict.yaml')
         REPLY(update, "OneDrive上传成功")
     except Exception as e:
         REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)
@@ -529,7 +534,7 @@ def add_word(update, context):
 
         TYPING(update)
 
-        result = MARK(GithubCommands.safe_add_word(which, word, pinyin, code))
+        result = MARK(Commands.safe_add_word(which, word, pinyin, code))
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -548,7 +553,7 @@ def add_char(update, context):
         return 2
 
     elif 'adding_char_shape' not in context.user_data:
-        context.user_data['adding_char_shape'] = data
+        context.user_data['adding_char_shape'] = JDTools.code2shape(data)
         REPLY(update, "请提供拼音")
 
     elif 'adding_char_pinyin' not in context.user_data:
@@ -557,7 +562,7 @@ def add_char(update, context):
         
         TYPING(update)
         
-        space_data = JDTools.find_space_for_char(shape, data)
+        space_data = JDTools.find_space_for_char(JDTools.s(shape), data)
         if space_data is None:
             REPLY(update, "无法添加")
             context.user_data.clear()
@@ -593,7 +598,7 @@ def add_char(update, context):
 
         TYPING(update)
 
-        result = MARK(GithubCommands.safe_add_char(which, char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
+        result = MARK(Commands.safe_add_char(which, char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -633,7 +638,7 @@ def delete_word(update, context):
 
         TYPING(update)
 
-        result = MARK(GithubCommands.safe_delete_word(word, pinyin))
+        result = MARK(Commands.safe_delete_word(word, pinyin))
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -673,7 +678,7 @@ def delete_char(update, context):
 
         TYPING(update)
 
-        result = MARK(GithubCommands.safe_delete_char(char, pinyin))
+        result = MARK(Commands.safe_delete_char(char, pinyin))
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -747,7 +752,7 @@ def change_word(update, context):
 
         TYPING(update)
 
-        result = MARK(GithubCommands.safe_change_word(word, pinyin, code))
+        result = MARK(Commands.safe_change_word(word, pinyin, code))
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -769,7 +774,7 @@ def change_char(update, context):
             context.user_data.clear()
             return -1
 
-        space_data = JDTools.find_space_for_char(zi.shape(), pinyin)
+        space_data = JDTools.find_space_for_char(s(zi.shape()), pinyin)
         if space_data is None:
             REPLY(update, "无法添加")
             context.user_data.clear()
@@ -795,7 +800,7 @@ def change_char(update, context):
                 REPLY(update, '%s 字不存在' % char)
                 context.user_data.clear()
                 return -1
-            REPLY(update, "请输入 %s 字笔码，当前：%s" % (char, zi.shape()))
+            REPLY(update, "请输入 %s 字笔码，当前：%s" % (char, s(zi.shape())))
         elif (data == '码长'):
             zi = JDTools.get_char(char)
             if (zi is None):
@@ -824,7 +829,7 @@ def change_char(update, context):
             return -1
     elif context.user_data['changing_char_type'] == '笔码':
         if 'changing_char_shape' not in context.user_data:
-            context.user_data['changing_char_shape'] = data
+            context.user_data['changing_char_shape'] = JDTools.code2shape(data)
             char = context.user_data['changing_char']
             zi = JDTools.get_char(char)
             if (zi is None):
@@ -840,7 +845,7 @@ def change_char(update, context):
                 context.user_data.clear()
                 return -1
             context.user_data['changing_char_code'] = codes[0]
-            REPLY(update, "变更 %s 字笔码 %s \-\> %s" % (context.user_data['changing_char'], zi.shape(), data))
+            REPLY(update, "变更 %s 字笔码 %s \-\> %s" % (context.user_data['changing_char'], JDTools.s(zi.shape()), data))
             CHOOSE(update, '确定要修改吗', ['是的'])
 
         else:
@@ -850,7 +855,7 @@ def change_char(update, context):
 
             TYPING(update)
 
-            result = MARK(GithubCommands.safe_change_char(char, pinyin, code))
+            result = MARK(Commands.safe_change_char(char, pinyin, code))
             REPLY(update, "\n".join(result))
             context.user_data.clear()
 
@@ -880,7 +885,7 @@ def change_char(update, context):
 
             TYPING(update)
 
-            result = MARK(GithubCommands.safe_change_char(char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
+            result = MARK(Commands.safe_change_char(char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
             REPLY(update, "\n".join(result))
             context.user_data.clear()
 
@@ -893,6 +898,41 @@ def change_char(update, context):
     
     return 8
 
+def getjd(update, context):
+    TYPING(update)
+
+    refuse_list = set()
+
+    static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'CiDB')
+    with open(os.path.join(static_path, "拒绝.txt"), mode='r', encoding='utf-8') as infile:
+        for line in infile:
+            refuse_list.add(line.strip())
+
+    jd6_words = set()
+    jdc_words = set(ci.word() for ci in JDTools.get_all_ci())
+
+    with urllib.request.urlopen('https://raw.githubusercontent.com/xkinput/Rime_JD/master/Tools/TermsTools/cizu.txt') as f:
+        data = f.read().decode('utf-8')
+        lines = data.split('\n')
+        for line in lines:
+            line = line.strip()
+            if '\t' in line:
+                word = line.split('\t')[0]
+                jd6_words.add(word)
+
+    jd6_diff = jd6_words.difference(jdc_words).difference(refuse_list)
+
+    REPLY(update, ("键道6新词：\n" + CLEAN("\n".join(sorted(jd6_diff)))) if len(jd6_diff) > 0 else "无新词")
+
+def default_message(update, context):
+    data = update.message.text
+
+    if (re.match('^[a-z;]{1,6}$', data)) or JDTools.get_char(data) is not None or JDTools.get_word(data) is not None:
+        update.message.text = "/list " + data
+        return list_command(update, context)
+    else:
+        update.message.text = "/add " + data
+        return add(update, context)
 
 add_convers = ConversationHandler(
     entry_points=[
@@ -902,7 +942,13 @@ add_convers = ConversationHandler(
         CommandHandler('rank', rank),
         CommandHandler('list', list_command),
         CommandHandler('drop', drop),
-        CommandHandler('push', push)
+        CommandHandler('push', push),
+        CommandHandler('status', status),
+        CommandHandler('pull', pull),
+        CommandHandler('getjd', getjd),
+        CommandHandler('start', start),
+        MessageHandler(Filters.command, cancel),
+        MessageHandler(Filters.all, default_message)
     ],
     states={
         0: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.regex('^.$'), add_char), MessageHandler(Filters.all, add_word)],
@@ -925,9 +971,6 @@ add_convers = ConversationHandler(
 
 # Add Handlers
 dispatcher.add_handler(add_convers)
-dispatcher.add_handler(CommandHandler('start', start))
-dispatcher.add_handler(CommandHandler('status', status))
-dispatcher.add_handler(CommandHandler('pull', pull))
 
 updater.start_polling()
 updater.idle()

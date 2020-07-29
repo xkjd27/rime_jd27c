@@ -26,7 +26,7 @@ def command_add_char(which, char, pinyin, code):
         shape = code[2:]
         COMMAND_TRANSCRIPT.append('* 添加新字`%s (%s, %s)`' % (char, pinyin, shape))
         weight = JDTools.find_weight_for_char(shape, pinyin)
-        JDTools.add_char(char, shape, pinyin, short_len, weight, which)
+        JDTools.add_char(char, JDTools.code2shape(shape), pinyin, short_len, weight, which)
 
     # log codes
     new_codes = set(c[1] for c in (JDTools.gen_char(char))).difference(before)
@@ -54,7 +54,6 @@ def command_add_word(which, word, pinyin, code):
             COMMAND_TRANSCRIPT.append('* 为`%s`词添加读音`%s`' % (word, pinyin))
             JDTools.add_word_pinyin(word, pinyin, short_len, weight)
     else:
-        shape = code[2:]
         COMMAND_TRANSCRIPT.append('* 添加新词`%s (%s)`' % (word, pinyin))
         JDTools.add_word(word, pinyin, short_len, weight, which)
 
@@ -119,7 +118,7 @@ def command_change_char(char, pinyin, code):
             COMMAND_TRANSCRIPT.append('* __无法判断`%s`字需要更改形码还是码长__' % (char))
             return
         COMMAND_TRANSCRIPT.append('* 修改`%s`字形码`(%s)`' % (char, shape))
-        JDTools.change_char_shape(char, shape)
+        JDTools.change_char_shape(char, JDTools.code2shape(shape))
     else:
         change_len = True
         all_pinyin = JDTools.solve_char_pinyin(char, pinyin)

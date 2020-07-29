@@ -30,6 +30,7 @@
 届	js
 急	jy
 呵	hf
+凉	lx
 屁	py
 噗	pn
 喂	ww
@@ -40,6 +41,7 @@
 啧	zf
 嘁	qy
 耶	rs
+愈	ry
 
 噫	ryo
 

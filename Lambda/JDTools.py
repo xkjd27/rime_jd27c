@@ -414,7 +414,7 @@ def ci2codes(ci, short = True, full = False):
         if (full):
             codes.add((ci.word(), full_code, rank, pinyin))
         if (short):
-            short_code = full_code[:shortcode_len]
+            short_code = full_code[:shortcode_len] + (shortcode_len - len(full_code)) * '-'
             codes.add((ci.word(), short_code, rank, pinyin))
             
     return codes
@@ -580,7 +580,8 @@ def traverse_cizu(build = False, report = True):
         code_dups = len(dup_code_check[code])
         
         if (len(code) == 6 and code_dups > 1):
-            dup_count[len(code) - 3] += 1
+            if (len(code) <= 6):
+                dup_count[len(code) - 3] += 1
             dup_word_count += len(dup_code_check[code])
             code_dup_lose_flag.add(code)
             continue
@@ -591,12 +592,15 @@ def traverse_cizu(build = False, report = True):
             if dup_code_check[code][1][2] >= 100 and dup_code_check[code][0][2] != dup_code_check[code][1][2]:
                 code_dup_lose_flag.add(code)
             else:
-                lose_dup_count[len(code) - 3] += 1
+                if (len(code) <= 6):
+                    lose_dup_count[len(code) - 3] += 1
         elif code_dups >= 2:
-            lose_dup_count[len(code) - 3] += 1
+            if (len(code) <= 6):
+                lose_dup_count[len(code) - 3] += 1
 
         if code_dups > 1:
-            dup_count[len(code) - 3] += 1
+            if (len(code) <= 6):
+                dup_count[len(code) - 3] += 1
             dup_word_count += len(dup_code_check[code])
 
     if report:

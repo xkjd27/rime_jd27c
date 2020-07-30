@@ -93890,6 +93890,7 @@
 被拐	bei/guai	4	0
 被拒	bei/ju	5	0
 被拖	bei/tuo	4	0
+被挤	bei/ji	5	0
 被捉	bei/zhuo	4	0
 被捕	bei/bu	5	0
 被控	bei/kong	4	0

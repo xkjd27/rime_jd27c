@@ -9221,6 +9221,7 @@
 从军	cong/jun	4	0
 从初	cong/chu	4	0
 从初次	cong/chu/ci	3	0
+从删库到跑路	cong/shan/ku/lu	4	0
 从前	cong/qian	4	0
 从北	cong/bei	4	0
 从北面	cong/bei/mian	3	0

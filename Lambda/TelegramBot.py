@@ -45,12 +45,8 @@ dispatcher = updater.dispatcher
 
 LOG_STATUS = []
 
-def LOG(result = None):
+def LOG(result):
     global LOG_STATUS
-
-    if result is None:
-        return "\n".join(LOG_STATUS)
-
     LOG_STATUS += result
 
 def CLEAN(text):
@@ -246,9 +242,9 @@ def rank(update, context):
         TYPING(update)
 
         if (rank_type == 'word'):
-            result = MARK(Commands.safe_rank_word(word, pinyin, code, 1))
+            result = Commands.safe_rank_word(word, pinyin, code, 1)
         else:
-            result = MARK(Commands.safe_rank_char(word, pinyin, code, 1))
+            result = Commands.safe_rank_char(word, pinyin, code, 1)
 
         REPLY(update, "\n".join(result))
         context.user_data.clear()
@@ -266,7 +262,7 @@ def status(update, context):
     if (len(LOG_STATUS) == 0):
         REPLY(update, "无变化")
         return -1
-    REPLY(update, "\n".join(LOG_STATUS))
+    REPLY(update, "\n".join(MARK(LOG_STATUS)))
     return -1
 
 def pull(update, context):
@@ -274,7 +270,7 @@ def pull(update, context):
         return -1
 
     if (len(LOG_STATUS) > 0):
-        REPLY(update, "\n".join(LOG_STATUS))
+        REPLY(update, "\n".join(MARK(LOG_STATUS)))
         REPLY(update, '有未提交修改，请先Push或Drop当前修改')
         return -1
 
@@ -295,19 +291,20 @@ def push(update, context):
         
         try:
             JDTools.commit()
-            LOG_STATUS.clear()
 
             repo = Repo('.').git
 
             changes = repo.status('--porcelain').strip()
             if (len(changes) > 0):
                 repo.add('-A')
-                repo.commit(m="自动更新码表")
+                repo.commit(m="更新码表\n%s" % "\n".join(LOG_STATUS))
                 repo.push()
 
                 REPLY(update, '构建完毕，Push成功')
             else:
                 REPLY(update, '构建完毕，码表无改动')
+
+            LOG_STATUS.clear()
         except Exception as e:
             REPLY(update, '构建失败')
             raise e
@@ -424,7 +421,7 @@ def drop(update, context):
             REPLY(update, "无变化")
             return -1
         
-        REPLY(update, "\n".join(LOG_STATUS))
+        REPLY(update, "\n".join(MARK(LOG_STATUS)))
 
         CHOOSE(update, "确定要放弃所有修改吗", ['是的'])
         return 11
@@ -534,7 +531,7 @@ def add_word(update, context):
 
         TYPING(update)
 
-        result = MARK(Commands.safe_add_word(which, word, pinyin, code))
+        result = Commands.safe_add_word(which, word, pinyin, code)
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -598,7 +595,7 @@ def add_char(update, context):
 
         TYPING(update)
 
-        result = MARK(Commands.safe_add_char(which, char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
+        result = Commands.safe_add_char(which, char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode)
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -638,7 +635,7 @@ def delete_word(update, context):
 
         TYPING(update)
 
-        result = MARK(Commands.safe_delete_word(word, pinyin))
+        result = Commands.safe_delete_word(word, pinyin)
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -678,7 +675,7 @@ def delete_char(update, context):
 
         TYPING(update)
 
-        result = MARK(Commands.safe_delete_char(char, pinyin))
+        result = Commands.safe_delete_char(char, pinyin)
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -752,7 +749,7 @@ def change_word(update, context):
 
         TYPING(update)
 
-        result = MARK(Commands.safe_change_word(word, pinyin, code))
+        result = Commands.safe_change_word(word, pinyin, code)
         REPLY(update, "\n".join(result))
         context.user_data.clear()
 
@@ -855,7 +852,7 @@ def change_char(update, context):
 
             TYPING(update)
 
-            result = MARK(Commands.safe_change_char(char, pinyin, code))
+            result = Commands.safe_change_char(char, pinyin, code)
             REPLY(update, "\n".join(result))
             context.user_data.clear()
 
@@ -885,7 +882,7 @@ def change_char(update, context):
 
             TYPING(update)
 
-            result = MARK(Commands.safe_change_char(char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
+            result = Commands.safe_change_char(char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode)
             REPLY(update, "\n".join(result))
             context.user_data.clear()
 

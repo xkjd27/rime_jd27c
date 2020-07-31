@@ -27,7 +27,7 @@ local function hint(cand, input, reverse)
     return 0
 end
 
-local function commit_hint(cand, no_commit)
+local function commit_hint(cand)
     -- 顶功提示
     cand:get_genuine().comment = '⛔️'
 end
@@ -40,7 +40,7 @@ local function filter(input, env)
 
     for cand in input:iter() do
         if no_commit and cand.type == 'table' then
-            commit_hint(cand, no_commit)
+            commit_hint(cand)
         end
 
         if is_on then

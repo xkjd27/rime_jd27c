@@ -89,6 +89,7 @@ engine:
     - ascii_composer
     - recognizer
     - key_binder
+    - lua_processor@topup_processor
     - speller
     - punctuator
     - selector
@@ -113,7 +114,7 @@ engine:
     - reverse_lookup_filter@danzi_lookup
 
 speller:
-  auto_select: true
+  auto_select: false
   alphabet: "abcdefghijklmnopqrstuvwxyz;`"
   initials: "abcdefghijklmnopqrstuvwxyz;`"
   algebra:
@@ -168,4 +169,11 @@ key_binder:
 recognizer:
   patterns:
     danzi_lookup: "[a-z;`]*`+[a-z;`]*"
-    retention: "(?(DEFINE)(?'s'[bcdfghjklmnpqrstuwxyz;]))(?(DEFINE)(?'b'[aeiov]))^(?:(?P>s){2}(?P>b){0,4}|(?P>s){4}(?P>b){0,2}|(?P>s){3}(?P>b){0,3}|(?P>s)(?P>b){0,2})$"
+    special: "^(?:orq?|ouj?)"
+
+topup:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;"
+  topup_with: "aeiov"
+  min_length: 4
+  max_length: 6
+  auto_clear: true

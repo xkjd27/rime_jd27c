@@ -1,0 +1,101 @@
+--[[
+
+    顶功处理器 by TsFreddie
+
+    ------------
+    Schema配置
+    ------------
+    1. 将topup.lua添加至rime.lua
+        topup_processor = require("topup")
+    
+    2. 将topup_processor挂接在speller之前
+        processors:
+          ...
+          - lua_processor@topup_processor
+          - speller
+          ...
+    
+    3. 配置顶功处理器
+        topup:
+            alphabet: "abcdefghijklmnopqrstuvwxyz;" # 键位码，可为speller/alphabet的子集
+            topup_with: "aeiov" # 顶功集合码，通常为形码
+            min_length: 4  # 无顶功码自动上屏的长度
+            max_length: 6  # 全码上屏的长度
+            auto_clear: true  # 顶功空码时是否清空输入
+]]
+
+local function startswith(str, start)
+    return string.sub(str, 1, string.len(start)) == start
+end
+
+local function string2set(str)
+    local t = {}
+    for i = 1, #str do
+        local c = str:sub(i,i)
+        t[c] = true
+    end
+    return t
+end
+
+local function topup(env)
+    if not env.engine.context:get_selected_candidate() and env.auto_clear then
+        env.engine.context:clear()
+    else
+        env.engine.context:commit()
+    end
+end
+
+local function processor(key_event, env)
+    local engine = env.engine
+    local schema = engine.schema
+    local context = engine.context
+
+    local input = context.input 
+    local input_len = #input
+
+    if key_event:release() or key_event:ctrl() or key_event:alt() then
+        return 2
+    end
+
+    local ch = key_event.keycode
+
+    if ch < 0x20 or ch >= 0x7f then
+        return 2
+    end
+
+    local key = string.char(ch)
+
+    local prev = string.sub(input, -1)
+
+    local is_speller = env.speller[key] or false
+    local is_alphabet = env.alphabet[key] or false
+    local is_topup = env.topup_set[key] or false
+    local is_prev_topup = env.topup_set[prev] or false
+
+    if not is_speller then
+        return 2
+    end
+
+    if is_prev_topup and not is_topup then
+        topup(env)
+    elseif not is_prev_topup and not is_topup and input_len >= env.topup_min then
+        topup(env)
+    elseif input_len >= env.topup_max then
+        topup(env)
+    end
+
+    return 2
+end
+
+local function init(env)
+    local config = env.engine.schema.config
+
+    env.alphabet = string2set(config:get_string("topup/alphabet") or "abcdefghijklmnopqrstuvwxyz;")
+    env.topup_set = string2set(config:get_string("topup/topup_with") or "")
+    env.speller = string2set(config:get_string("speller/alphabet") or "abcdefghijklmnopqrstuvwxyz;`")
+    env.topup_min = config:get_int("topup/min_length") or 32767
+    env.topup_max = config:get_int("topup/max_length") or 32767
+    env.auto_clear = config:get_bool("topup/auto_clear") or false
+end
+
+return { init = init, func = processor }

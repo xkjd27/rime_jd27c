@@ -246,7 +246,7 @@ def rank(update, context):
         else:
             result = Commands.safe_rank_char(word, pinyin, code, 1)
 
-        REPLY(update, "\n".join(result))
+        REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
         LOG(result)
@@ -365,7 +365,7 @@ def list_code(data, code, update):
                 result.append("\-\>" + data[i][1].ljust(8) + data[i][0])
             else:
                 result.append("  " + data[i][1].ljust(8) + data[i][0])
-        REPLY(update, "```\n%s\n```" % "\n".join(result))
+        REPLY(update, "```\n%s\n```" % "\n".join(MARK(result)))
         return True
     return False
 
@@ -532,7 +532,7 @@ def add_word(update, context):
         TYPING(update)
 
         result = Commands.safe_add_word(which, word, pinyin, code)
-        REPLY(update, "\n".join(result))
+        REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
         LOG(result)
@@ -596,7 +596,7 @@ def add_char(update, context):
         TYPING(update)
 
         result = Commands.safe_add_char(which, char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode)
-        REPLY(update, "\n".join(result))
+        REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
         LOG(result)
@@ -636,7 +636,7 @@ def delete_word(update, context):
         TYPING(update)
 
         result = Commands.safe_delete_word(word, pinyin)
-        REPLY(update, "\n".join(result))
+        REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
         LOG(result)
@@ -676,7 +676,7 @@ def delete_char(update, context):
         TYPING(update)
 
         result = Commands.safe_delete_char(char, pinyin)
-        REPLY(update, "\n".join(result))
+        REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
         LOG(result)
@@ -750,7 +750,7 @@ def change_word(update, context):
         TYPING(update)
 
         result = Commands.safe_change_word(word, pinyin, code)
-        REPLY(update, "\n".join(result))
+        REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
         LOG(result)
@@ -853,7 +853,7 @@ def change_char(update, context):
             TYPING(update)
 
             result = Commands.safe_change_char(char, pinyin, code)
-            REPLY(update, "\n".join(result))
+            REPLY(update, "\n".join(MARK(result)))
             context.user_data.clear()
 
             LOG(result)
@@ -883,7 +883,7 @@ def change_char(update, context):
             TYPING(update)
 
             result = Commands.safe_change_char(char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode)
-            REPLY(update, "\n".join(result))
+            REPLY(update, "\n".join(MARK(result)))
             context.user_data.clear()
 
             LOG(result)

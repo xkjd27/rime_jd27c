@@ -13,11 +13,9 @@ switches:
   - name: full_shape
     states: [ 半, 全 ]
   - name: jffh
-    reset: 0
     states: [ 简, 繁 ]
   - name: sbb_hint
-    reset: 1
-    states: [ "关₆₆₀", "开₆₆₀" ]
+    states: [ "开₆₆₀", "关₆₆₀" ]
   
 punctuator:
   full_shape:
@@ -170,3 +168,4 @@ key_binder:
 recognizer:
   patterns:
     danzi_lookup: "[a-z;`]*`+[a-z;`]*"
+    retention: "(?(DEFINE)(?'s'[bcdfghjklmnpqrstuwxyz;]))(?(DEFINE)(?'b'[aeiov]))^(?:(?P>s){2}(?P>b){0,4}|(?P>s){4}(?P>b){0,2}|(?P>s){3}(?P>b){0,3}|(?P>s)(?P>b){0,2})$"

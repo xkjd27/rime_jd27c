@@ -34,10 +34,9 @@ end
 
 local function filter(input, env)
     local context = env.engine.context
-    local is_on = context:get_option('sbb_hint')
+    local is_on = not context:get_option('sbb_hint')
     local input_text = context.input
     local no_commit = string.len(input_text) < 4 and string.match(input_text, "^[bcdfghjklmnpqrstuwxyz;]+$")
-    local has_hint = false
 
     for cand in input:iter() do
         if no_commit and cand.type == 'table' then
@@ -45,20 +44,10 @@ local function filter(input, env)
         end
 
         if is_on then
-            has_hint = hint(cand, input_text, env.reverse)
+            hint(cand, input_text, env.reverse)
         end
-
+        
         yield(cand)
-    end
-
-    if is_on then
-        if has_hint == 1 then
-            yield(Candidate("hint", 0, 0, "🉑", "声笔"))
-        end
-
-        if has_hint == 2 then
-            yield(Candidate("hint", 0, 0, "🉑", "简拼"))
-        end
     end
 end
 

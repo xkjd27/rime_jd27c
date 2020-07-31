@@ -365,7 +365,7 @@ def list_code(data, code, update):
                 result.append("\-\>" + data[i][1].ljust(8) + data[i][0])
             else:
                 result.append("  " + data[i][1].ljust(8) + data[i][0])
-        REPLY(update, "```\n%s\n```" % "\n".join(MARK(result)))
+        REPLY(update, "```\n%s\n```" % "\n".join(result))
         return True
     return False
 

@@ -169,7 +169,7 @@ key_binder:
 recognizer:
   patterns:
     danzi_lookup: "[a-z;`]*`+[a-z;`]*"
-    special: "^(?:orq?|ouj?)"
+    special: "^(?:orq?|ouj?|oxq?)"
 
 topup:
   alphabet: "abcdefghijklmnopqrstuvwxyz;"

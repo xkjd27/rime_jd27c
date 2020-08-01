@@ -172,7 +172,7 @@ recognizer:
     special: "^(?:orq?|ouj?|oxq?)"
 
 topup:
-  alphabet: "abcdefghijklmnopqrstuvwxyz;"
+  alphabet: "abcdefghijklmnopqrstuvwxyz"
   topup_with: "aeiov"
   min_length: 4
   max_length: 6

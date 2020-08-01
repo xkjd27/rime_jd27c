@@ -17,7 +17,6 @@
     
     3. 配置顶功处理器
         topup:
-            alphabet: "abcdefghijklmnopqrstuvwxyz;" # 键位码，可为speller/alphabet的子集
             topup_with: "aeiov" # 顶功集合码，通常为形码
             min_length: 4  # 无顶功码自动上屏的长度
             max_length: 6  # 全码上屏的长度
@@ -67,7 +66,6 @@ local function processor(key_event, env)
 
     local prev = string.sub(input, -1)
 
-    local is_speller = env.speller[key] or false
     local is_alphabet = env.alphabet[key] or false
     local is_topup = env.topup_set[key] or false
     local is_prev_topup = env.topup_set[prev] or false
@@ -79,7 +77,7 @@ local function processor(key_event, env)
         return 2
     end
 
-    if not is_speller then
+    if not is_alphabet then
         return 2
     end
     
@@ -97,9 +95,8 @@ end
 local function init(env)
     local config = env.engine.schema.config
 
-    env.alphabet = string2set(config:get_string("topup/alphabet") or "abcdefghijklmnopqrstuvwxyz;")
     env.topup_set = string2set(config:get_string("topup/topup_with") or "")
-    env.speller = string2set(config:get_string("speller/alphabet") or "abcdefghijklmnopqrstuvwxyz;`")
+    env.alphabet = string2set(config:get_string("speller/alphabet") or "abcdefghijklmnopqrstuvwxyz;`")
     env.topup_min = config:get_int("topup/min_length") or 32767
     env.topup_max = config:get_int("topup/max_length") or 32767
     env.auto_clear = config:get_bool("topup/auto_clear") or false

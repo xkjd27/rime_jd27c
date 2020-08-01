@@ -33,8 +33,8 @@ end
 
 local function filter(input, env)
     local context = env.engine.context
-    local is_hint_on = not context:get_option('sbb_hint')
-    local is_completion_on = not context:get_option('completion')
+    local is_hint_on = context:get_option('sbb_hint')
+    local is_completion_on = context:get_option('completion')
     local input_text = context.input
     local no_commit = string.len(input_text) < 4 and string.match(input_text, "^[bcdfghjklmnpqrstuwxyz;]+$")
     local has_table = false

@@ -15,9 +15,11 @@ switches:
   - name: jffh
     states: [ 简, 繁 ]
   - name: sbb_hint
-    states: [ "开₆₆₀", "关₆₆₀" ]
+    reset: 1
+    states: [ "关₆₆₀", "开₆₆₀" ]
   - name: completion
-    states: [ "补全", "匹配" ]
+    reset: 1
+    states: [ "匹配", "补全" ]
   
 punctuator:
   full_shape:

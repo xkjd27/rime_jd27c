@@ -2,14 +2,18 @@ local function startswith(str, start)
     return string.sub(str, 1, string.len(start)) == start
 end
 
-local function hint(cand, input, reverse)
+local function hint(cand, input, env)
     -- 简码提示
     if utf8.len(cand.text) <= 1 then
         return 0
     end
+    local reverse = env.reverse
+    local s = env.s
+    local b = env.b
+
     local lookup = " " .. reverse:lookup(cand.text) .. " "
-    local sbb = string.match(lookup, " ([bcdfghjklmnpqrstuwxyz;][aeiov]+) ")
-    local short = string.match(lookup, " ([bcdfghjklmnpqrstuwxyz;][bcdfghjklmnpqrstuwxyz;]) ")
+    local sbb = string.match(lookup, " (["..s.."]["..b.."]+) ")
+    local short = string.match(lookup, " (["..s.."]["..s.."]) ")
     
     if string.len(input) > 1 then
         if sbb and not startswith(sbb, input) then
@@ -36,7 +40,7 @@ local function filter(input, env)
     local is_hint_on = context:get_option('sbb_hint')
     local is_completion_on = context:get_option('completion')
     local input_text = context.input
-    local no_commit = string.len(input_text) < 4 and string.match(input_text, "^[bcdfghjklmnpqrstuwxyz;]+$")
+    local no_commit = string.len(input_text) < 4 and string.match(input_text, "^["..env.s.."]+$")
     local has_table = false
     local first = true
 
@@ -47,7 +51,7 @@ local function filter(input, env)
         first = false
         if cand.type == 'table' then
             if is_hint_on then
-                hint(cand, input_text, env.reverse)
+                hint(cand, input_text, env)
             end
 
             yield(cand)
@@ -68,7 +72,12 @@ local function filter(input, env)
 end
 
 local function init(env)
-    env.reverse = ReverseDb("build/xkjd27c.extended.reverse.bin")
+    local config = env.engine.schema.config
+    local dict_name = config:get_string("translator/dictionary")
+
+    env.b = config:get_string("topup/topup_with")
+    env.s = config:get_string("topup/topup_this")
+    env.reverse = ReverseDb("build/".. dict_name .. ".reverse.bin")
 end
 
 return { init = init, func = filter }

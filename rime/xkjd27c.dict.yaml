@@ -1,0 +1,14 @@
+# Rime dictionary
+# encoding: utf-8
+---
+name: xkjd27c
+version: "q2"
+sort: original 
+use_preset_vocabulary: false
+import_tables:
+  - xkjd27c.danzi
+  - xkjd27c.cizu
+  - xkjd27c.buchong
+  - xkjd27c.chaojizici
+  - xkjd27c.sbb
+  - xkjd27c.user

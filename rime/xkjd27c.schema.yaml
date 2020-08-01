@@ -6,6 +6,31 @@ schema:
   name: 键道27C
   version: "q2"
 
+# Layout config
+layout:
+  topup:
+    topup_this: "bcdfghjklmnpqrstuwxyz;"
+    topup_with: "aeiov"
+
+  algebra:
+    - derive/^[bcdfghjklmnpqrstuwxyz;]([bcdfghjklmnpqrstuwxyz;][aeiov].*)$/`$1/
+    - derive/^([bcdfghjklmnpqrstuwxyz;])[bcdfghjklmnpqrstuwxyz;]([aeiov].*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2})[aeiov](.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{2}).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{3}).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{4}).(.*)$/$1`$2/
+    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{5}).$/$1`/
+
+  input_code:
+    date: orq
+    time: ouj
+    week: oxq
+
+  patterns:
+    input_code: "^(?:orq?|ouj?|oxq?)"
+
+# Base config
 switches:
   - name: ascii_mode
     reset: 0
@@ -20,7 +45,35 @@ switches:
   - name: completion
     reset: 1
     states: [ "匹配", "补全" ]
-  
+    
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - lua_processor@topup_processor
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  filters:
+    - lua_filter@hint_filter
+    - simplifier@jffh
+    - uniquifier
+    - reverse_lookup_filter@danzi_lookup
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - table_translator@danzi_lookup
+    - lua_translator@input_translator
+    
 punctuator:
   full_shape:
     ' ' : { commit: '　' }
@@ -88,75 +141,38 @@ punctuator:
     '{' : [ 『, 〖, ｛ ]
     '}' : [ 』, 〗, ｝ ]
 
-engine:
-  processors:
-    - ascii_composer
-    - recognizer
-    - key_binder
-    - lua_processor@topup_processor
-    - speller
-    - punctuator
-    - selector
-    - navigator
-    - express_editor
-  segmentors:
-    - ascii_segmentor
-    - matcher
-    - abc_segmentor
-    - punct_segmentor
-    - fallback_segmentor
-  translators:
-    - punct_translator
-    - table_translator
-    - table_translator@danzi_lookup
-    - lua_translator@date_translator
-    - lua_translator@time_translator
-  filters:
-    - lua_filter@hint_filter
-    - simplifier@jffh
-    - uniquifier
-    - reverse_lookup_filter@danzi_lookup
-
 speller:
+  algebra:
+    __include: "layout/algebra"
   auto_select: false
   alphabet: "abcdefghijklmnopqrstuvwxyz;`"
   initials: "abcdefghijklmnopqrstuvwxyz;`"
-  algebra:
-    - derive/^[bcdfghjklmnpqrstuwxyz;]([bcdfghjklmnpqrstuwxyz;][aeiov].*)$/`$1/
-    - derive/^([bcdfghjklmnpqrstuwxyz;])[bcdfghjklmnpqrstuwxyz;]([aeiov].*)$/$1`$2/
-    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2})[aeiov](.*)$/$1`$2/
-    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]).(.*)$/$1`$2/
-    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{2}).(.*)$/$1`$2/
-    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{3}).(.*)$/$1`$2/
-    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{4}).(.*)$/$1`$2/
-    - derive/^([bcdfghjklmnpqrstuwxyz;`]{2}[aeiov`]{5}).$/$1`/
 
 translator:
-  dictionary: xkjd27c.extended
+  dictionary:
+    __include: "schema/schema_id"
   enable_charset_filter: false
   enable_completion: true
   enable_encoder: false
   enable_sentence: false
   enable_user_dict: false
   encode_commit_history: false
-  initial_quality: 1
-  max_phrase_length: 6
 
 jffh:
   opencc_config: s2t.json
   option_name: jffh
 
 danzi_lookup:
-  tags: [ danzi_lookup ] 
-  dictionary: xkjd27c.extended
+  dictionary:
+    __include: "schema/schema_id"
+  tags: [ danzi_lookup ]
+  overwrite_comment: true
   enable_charset_filter: false
-  enable_completion: false
+  enable_completion: true
   enable_encoder: false
   enable_sentence: false
   enable_user_dict: false
   encode_commit_history: false
-  overwrite_comment: true
-  initial_quality: 0
   comment_format:
     - xform/^/〔/
     - xform/$/〕/
@@ -172,11 +188,14 @@ key_binder:
 
 recognizer:
   patterns:
+    __include: "layout/patterns"
     danzi_lookup: "[a-z;`]*`+[a-z;`]*"
-    special: "^(?:orq?|ouj?|oxq?)"
-
+      
 topup:
-  topup_with: "aeiov"
+  __include: "layout/topup"
   min_length: 4
   max_length: 6
   auto_clear: true
+
+input_code:
+  __include: "layout/input_code"

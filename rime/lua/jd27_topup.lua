@@ -95,11 +95,11 @@ end
 local function init(env)
     local config = env.engine.schema.config
 
-    env.topup_set = string2set(config:get_string("topup/topup_with") or "")
-    env.alphabet = string2set(config:get_string("speller/alphabet") or "abcdefghijklmnopqrstuvwxyz;`")
-    env.topup_min = config:get_int("topup/min_length") or 32767
-    env.topup_max = config:get_int("topup/max_length") or 32767
-    env.auto_clear = config:get_bool("topup/auto_clear") or false
+    env.topup_set = string2set(config:get_string("topup/topup_with"))
+    env.alphabet = string2set(config:get_string("speller/alphabet"))
+    env.topup_min = config:get_int("topup/min_length")
+    env.topup_max = config:get_int("topup/max_length")
+    env.auto_clear = config:get_bool("topup/auto_clear")
     env.enabled = true
 end
 

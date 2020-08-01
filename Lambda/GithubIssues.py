@@ -82,8 +82,6 @@ repo_path = os.path.join(os.environ['GITHUB_WORKSPACE'])
 # GIT Repo
 print("Setting up Git")
 repo = Repo(repo_path).git
-repo.config('user.name', '小涵')
-repo.config('user.email', 'octocat@github.com')
 
 # GITHUB Find Current Active PR
 print("Finding Active PR")

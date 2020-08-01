@@ -24,10 +24,6 @@
             auto_clear: true  # 顶功空码时是否清空输入
 ]]
 
-local function startswith(str, start)
-    return string.sub(str, 1, string.len(start)) == start
-end
-
 local function string2set(str)
     local t = {}
     for i = 1, #str do
@@ -38,8 +34,12 @@ local function string2set(str)
 end
 
 local function topup(env)
-    if not env.engine.context:get_selected_candidate() and env.auto_clear then
-        env.engine.context:clear()
+    if not env.engine.context:get_selected_candidate() then
+        if env.auto_clear then
+            env.engine.context:clear()
+        else
+            env.enabled = false
+        end
     else
         env.engine.context:commit()
     end
@@ -72,10 +72,17 @@ local function processor(key_event, env)
     local is_topup = env.topup_set[key] or false
     local is_prev_topup = env.topup_set[prev] or false
 
-    if not is_speller then
+    if not env.enabled then
+        if context:get_selected_candidate() then
+            env.enabled = true
+        end
         return 2
     end
 
+    if not is_speller then
+        return 2
+    end
+    
     if is_prev_topup and not is_topup then
         topup(env)
     elseif not is_prev_topup and not is_topup and input_len >= env.topup_min then
@@ -96,6 +103,7 @@ local function init(env)
     env.topup_min = config:get_int("topup/min_length") or 32767
     env.topup_max = config:get_int("topup/max_length") or 32767
     env.auto_clear = config:get_bool("topup/auto_clear") or false
+    env.enabled = true
 end
 
 return { init = init, func = processor }

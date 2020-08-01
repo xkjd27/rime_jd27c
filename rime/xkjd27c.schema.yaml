@@ -16,6 +16,8 @@ switches:
     states: [ 简, 繁 ]
   - name: sbb_hint
     states: [ "开₆₆₀", "关₆₆₀" ]
+  - name: completion
+    states: [ "补全", "匹配" ]
   
 punctuator:
   full_shape:

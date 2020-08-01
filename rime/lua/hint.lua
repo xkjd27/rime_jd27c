@@ -4,10 +4,9 @@ end
 
 local function hint(cand, input, reverse)
     -- 简码提示
-    if utf8.len(cand.text) < 2 or cand.type ~= 'table' then
+    if utf8.len(cand.text) <= 1 then
         return 0
     end
-    
     local lookup = " " .. reverse:lookup(cand.text) .. " "
     local sbb = string.match(lookup, " ([bcdfghjklmnpqrstuwxyz;][aeiov]+) ")
     local short = string.match(lookup, " ([bcdfghjklmnpqrstuwxyz;][bcdfghjklmnpqrstuwxyz;]) ")
@@ -34,20 +33,36 @@ end
 
 local function filter(input, env)
     local context = env.engine.context
-    local is_on = not context:get_option('sbb_hint')
+    local is_hint_on = not context:get_option('sbb_hint')
+    local is_completion_on = not context:get_option('completion')
     local input_text = context.input
     local no_commit = string.len(input_text) < 4 and string.match(input_text, "^[bcdfghjklmnpqrstuwxyz;]+$")
+    local has_table = false
 
     for cand in input:iter() do
-        if no_commit and cand.type == 'table' then
-            commit_hint(cand)
-        end
+        if cand.type == 'table' then
+            if no_commit then
+                commit_hint(cand)
+            end
 
-        if is_on then
-            hint(cand, input_text, env.reverse)
+            if is_hint_on then
+                hint(cand, input_text, env.reverse)
+            end
+
+            yield(cand)
+            has_table = true
+        elseif cand.type == 'completion' then
+            if is_completion_on then
+                yield(cand)
+            elseif not has_table then
+                yield(cand)
+                return
+            else
+                return
+            end
+        else
+            yield(cand)
         end
-        
-        yield(cand)
     end
 end
 

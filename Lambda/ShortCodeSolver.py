@@ -30,34 +30,34 @@ def solve_cizu():
             if (JDTools.get_word(data[0][0]) is not None):
                 print('hit')
                 JDTools.change_word_shortcode_len(data[0][0], { data[0][2] }, len(short))
-        # else:
-        #     min_len = 99
-        #     multi = True
-        #     target = None
-        #     for word in data:
-        #         if len(word[0]) < min_len:
-        #             min_len = len(word[0])
-        #             multi = False
-        #             target = word
-        #         elif len(word[0]) == min_len:
-        #             multi = True
-
-        #     if (not multi):
-        #         print('hit 2')
-        #         JDTools.change_word_shortcode_len(target[0], { target[2] }, len(short))
         else:
-            print(short)
-            i = 1
+            min_len = 99
+            multi = True
+            target = None
             for word in data:
-                print("%d. %s" % (i, word))
-                i += 1
+                if len(word[0]) < min_len:
+                    min_len = len(word[0])
+                    multi = False
+                    target = word
+                elif len(word[0]) == min_len:
+                    multi = True
 
-            sel = input("choose: ")
-            if (sel.isdigit() and int(sel) <= len(data) and int(sel) > 0):
-                sel = int(sel) - 1
-                JDTools.change_word_shortcode_len(data[sel][0], { data[sel][2] }, len(short))
+            if (not multi):
+                print('hit 2')
+                JDTools.change_word_shortcode_len(target[0], { target[2] }, len(short))
             else:
-                break
+                print(short)
+                i = 1
+                for word in data:
+                    print("%d. %s" % (i, word))
+                    i += 1
+
+                sel = input("choose: ")
+                if (sel.isdigit() and int(sel) <= len(data) and int(sel) > 0):
+                    sel = int(sel) - 1
+                    JDTools.change_word_shortcode_len(data[sel][0], { data[sel][2] }, len(short))
+                else:
+                    break
 
 def solve_danzi():
     file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/单字健康报告.txt')

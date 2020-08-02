@@ -122,20 +122,18 @@ def pinyin2sy(py):
     s = JD_S2K[shengmu]
     y = JD_Y2K[yunmu]
 
-    sy = []
-    for ss in s:
-        for yy in y:
-            sy.append(ss+yy)
-
-    return sy
+    return [s+y]
 
 def pinyin2s(py):
     """全拼转声拼"""
     shengmu = sheng(py)
-    
+
+    if (shengmu not in JD_S2K):
+        return []
+
     s = JD_S2K[shengmu]
 
-    return s
+    return [s]
 
 def transform_py(py):
     """全拼预处理"""
@@ -491,9 +489,9 @@ def traverse_danzi(build = False, report = True):
                     if (len(sc) < 1):
                         break
 
-                    if sc in JD_RESERVED:
-                        sc = sc[:-1]
-                        continue
+                    # if sc in JD_RESERVED:
+                    #     sc = sc[:-1]
+                    #     continue
                     
                     if sc in codes:
                         if (codes[sc][0][3] == ZiDB.SUPER and which == ZiDB.GENERAL):
@@ -564,9 +562,9 @@ def traverse_cizu(build = False, report = True):
                 elif word_len != 3 and len(sc) < 4:
                     break
 
-                if sc in JD_RESERVED:
-                    sc = sc[:-1]
-                    continue
+                # if sc in JD_RESERVED:
+                #     sc = sc[:-1]
+                #     continue
                 
                 if sc not in dup_code_check:
                     avaliable_short = sc
@@ -1033,6 +1031,16 @@ def find_space_for_char(shape, pinyin):
 def sound_chars(word):
     return CiDB.sound_chars(word)
 
+def replace_static(text):
+    result = text
+    for token in JD_B:
+        result = result.replace("<%s>" % token, JD_B[token])
+    for token in JD_Y2K:
+        result = result.replace("<%s>" % token, JD_Y2K[token])
+    for token in JD_S2K:
+        result = result.replace("<%s>" % token, JD_S2K[token])
+    return result
+
 def build_static():
     static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Static')
 
@@ -1045,7 +1053,7 @@ def build_static():
         with open(RIME_PATH % STAITC_MAP[static], mode='w', encoding='utf-8', newline='\n') as outfile:
             outfile.write(RIME_HEADER % STAITC_MAP[static])
             with open(os.path.join(static_path, static), mode='r', encoding='utf-8') as infile:
-                outfile.write('\n'.join(line.strip() for line in infile.readlines()))
+                outfile.write('\n'.join(replace_static(line.strip()) for line in infile.readlines()))
 
 def find_all_pinyin_of_word(word):
     sound = sound_chars(word)

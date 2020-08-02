@@ -87,10 +87,10 @@ with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encodin
             #         changes.append((word, pinyin, min_space))
             #     else:
             #         break
-        for dup in dups:
-            word = dup[1]
-            pinyin = set(JDTools.find_word_pinyin_of_code(word, code)).intersection({' '.join(pinyin) for pinyin in JDTools.get_word(word).pinyins()})
-            changes.append((word, pinyin, 8))
+        # for dup in dups:
+        #     word = dup[1]
+        #     pinyin = set(JDTools.find_word_pinyin_of_code(word, code)).intersection({' '.join(pinyin) for pinyin in JDTools.get_word(word).pinyins()})
+        #     changes.append((word, pinyin, 8))
 
     for change in changes:
         JDTools.change_word_shortcode_len(*change)

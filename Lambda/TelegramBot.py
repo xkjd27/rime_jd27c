@@ -917,6 +917,16 @@ def getjd(update, context):
                 word = line.split('\t')[0]
                 jd6_words.add(word)
 
+    with urllib.request.urlopen('https://raw.githubusercontent.com/xkinput/Rime_JD/master/Tools/TermsTools/chaojizici.txt') as f:
+        data = f.read().decode('utf-8')
+        lines = data.split('\n')
+        for line in lines:
+            line = line.strip()
+            if '\t' in line:
+                word = line.split('\t')[0]
+                if len(word) > 1:
+                    jd6_words.add(word)
+
     jd6_diff = jd6_words.difference(jdc_words).difference(refuse_list)
 
     REPLY(update, ("键道6新词：\n" + CLEAN("\n".join(sorted(jd6_diff)))) if len(jd6_diff) > 0 else "无新词")

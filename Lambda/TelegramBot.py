@@ -748,12 +748,19 @@ def change_word(update, context):
         code = context.user_data['changing_word_code']
 
         TYPING(update)
+        
+        continue_change = JDTools.get_ci_of_code(code)
 
         result = Commands.safe_change_word(word, pinyin, code)
+
         REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
         LOG(result)
+
+        if continue_change is not None and len(continue_change) > 0:
+            CHOOSE(update, "是否要修改 %s 码词？" % code, ["/change " + ci.word() for ci in continue_change])
+
         return -1
     
     return 7

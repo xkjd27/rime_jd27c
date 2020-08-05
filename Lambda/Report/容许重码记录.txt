@@ -643,8 +643,8 @@ rgjcve
 	1	软脚
 
 rgjmvi
-	0	软件
-	1	远见
+	0	远见
+	1	元件
 
 rgrqvi
 	0	原由

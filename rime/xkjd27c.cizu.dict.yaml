@@ -52,6 +52,7 @@ sort: original
 榨汁机	;;j
 智者见智	;;j;
 纸芝居	;;ja
+谆谆教导	;;jd
 周转金	;;je
 谆谆教诲	;;jh
 抓住机会	;;jhi
@@ -1900,6 +1901,7 @@ sort: original
 重案	;jxt
 折节下士	;jxu
 中旬	;jxw
+重训	;jxwe
 中项	;jxx
 中西	;jxy
 种系	;jxye
@@ -2879,6 +2881,7 @@ sort: original
 主讲	;njxo
 诸将	;njxoo
 主机	;njy
+注记	;njya
 筑基	;njye
 助记	;njyi
 诸暨	;njyo
@@ -6431,6 +6434,7 @@ sort: original
 不争气	b;qve
 本周起	b;qvev
 不值钱	b;qvi
+百褶裙	b;qvo
 不知其二	b;qx
 不知去向	b;qxv
 不重要	b;r
@@ -6872,6 +6876,7 @@ sort: original
 并转	bd;g
 兵种	bd;j
 并重	bd;jo
+病重	bd;joe
 丙种	bd;jv
 冰镇	bd;k
 剥夺政治权利	bd;l
@@ -10029,6 +10034,7 @@ sort: original
 哺乳动物	brdwo
 不要担心	brdx
 拔地	brdy
+百元大钞	brdyv
 霸道	brdz
 拔刀	brdzi
 八月份	brf
@@ -21321,6 +21327,7 @@ sort: original
 蹲防	dwfl
 蹲伏	dwfn
 顿饭	dwft
+炖饭	dwfto
 第五个	dwg
 盾构	dwgs
 顿感	dwgt
@@ -28534,6 +28541,7 @@ sort: original
 刚请	glqd
 管理权	glqe
 刚劝	glqg
+钢圈	glqgi
 刚欠	glqm
 岗前	glqmi
 刚且	glqs
@@ -33863,6 +33871,7 @@ sort: original
 红绸	hjys
 红唇	hjyw
 洪朝	hjyz
+洪潮	hjyza
 花架子	hjz
 红嘴	hjzb
 洪泽	hjzf
@@ -39355,6 +39364,7 @@ sort: original
 近代化	jdhei
 竟和	jdhf
 泾河	jdhfa
+竞合	jdhfo
 惊骇	jdhh
 接电话	jdhi
 惊鸿	jdhj
@@ -43820,6 +43830,7 @@ sort: original
 积存	jycwe
 几次	jycy
 及此	jycye
+籍此	jycyei
 讥刺	jycyo
 基槽	jycz
 交叉点	jyd
@@ -47771,6 +47782,7 @@ sort: original
 枯燥乏味	kzfw
 考官	kzgg
 考工	kzgj
+考纲	kzgl
 考古	kzgn
 烤干	kzgt
 考过	kzgu
@@ -48149,6 +48161,7 @@ sort: original
 洛必达	lbda
 联邦德国	lbdg
 林带	lbdh
+连比带划	lbdhv
 凛冬	lbdj
 联邦调查局	lbdjv
 连本带利	lbdl
@@ -49404,6 +49417,7 @@ sort: original
 赖老	lhlz
 癞蛤蟆	lhm
 狸花猫	lhme
+莱姆	lhmn
 来蒙	lhmp
 来嘛	lhmr
 癞蛤蟆想吃天鹅肉	lhmro
@@ -56225,6 +56239,7 @@ sort: original
 码路	mrlnv
 麻溜	mrlq
 马六	mrlqa
+码流	mrlqv
 麻辣	mrlr
 马拉	mrlra
 没有理由	mrlrav
@@ -64449,6 +64464,7 @@ sort: original
 取模	q;muv
 曲美	q;mw
 曲霉	q;mwi
+袪魅	q;mwo
 青壮年	q;n
 去呢	q;nf
 取暖	q;ng
@@ -70138,6 +70154,7 @@ sort: original
 要逃	rctz
 因此是	rcu
 药水	rcub
+舀水	rcube
 要设	rcuf
 因材施教	rcuj
 腰身	rcuk
@@ -73465,6 +73482,7 @@ sort: original
 炎烈	rmls
 阎楼	rmlso
 阎罗	rmlu
+轧马路	rmlv
 眼泪	rmlw
 扬名立万	rmlwi
 言论	rmlwo
@@ -77198,6 +77216,8 @@ sort: original
 优先级	rxji
 雨雪交加	rxjj
 样件	rxjm
+阳间	rxjma
+英雄救美	rxjmi
 杨戬	rxjmv
 洋酒	rxjq
 养家	rxjr
@@ -78079,6 +78099,7 @@ sort: original
 认出来	rylo
 一愣	rylp
 遗留	rylq
+溢流	rylqa
 一流	rylqv
 一溜	rylqva
 一楼	ryls
@@ -80060,6 +80081,7 @@ sort: original
 宿命	snmd
 素面	snmm
 肃穆	snmn
+苏木	snmni
 酥麻	snmr
 速灭	snms
 塑膜	snmu
@@ -88421,6 +88443,7 @@ sort: original
 身边	ukbm
 申辩	ukbmi
 深部	ukbn
+深扒	ukbr
 申办	ukbt
 身板	ukbte
 申博	ukbu
@@ -97623,6 +97646,7 @@ sort: original
 无足轻重	wzq;
 万紫千红	wzqh
 外资企业	wzqr
+畏罪潜逃	wzqt
 文字狱	wzr
 温子仁	wzra
 我早有	wzre
@@ -104181,6 +104205,7 @@ sort: original
 寻究	xwjq
 询价	xwjr
 迅捷	xwjs
+训诫	xwjso
 爱屋及乌	xwjw
 小巫见大巫	xwjwi
 浔江	xwjx
@@ -112250,6 +112275,7 @@ sort: original
 走步	zsbn
 走吧	zsbr
 走板	zsbt
+走班	zsbtv
 走背	zsbw
 在所不惜	zsbx
 走笔	zsby
@@ -113339,6 +113365,7 @@ sort: original
 自然	zyrt
 孜然	zyrta
 自燃	zyrte
+自成一体	zyrtev
 左冲右突	zyrtv
 自若	zyru
 滋润	zyrw

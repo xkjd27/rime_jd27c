@@ -1,30 +1,24 @@
 import os
-from PinyinConsts import VALID_PY
+from PinyinConsts import VALID_PY, isWordCommon
 
-_fixed_general = None
-_fixed_super = None
-_db_general = None
-_db_super = None
-
-UNDEFINED = 0       # 未定义
-GENERAL = 1         # 通常
-SUPER = 2           # 超级
+_fixed = None
+_db = None
 
 class Ci:
-    def __init__(self, word, pinyins, which=UNDEFINED):
+    def __init__(self, word, pinyins):
         self._word = word
         self._pinyins = pinyins
-        self._which = which
+        self._common = isWordCommon(word)
 
     @classmethod
-    def fromLine(cls, line, which=UNDEFINED):
+    def fromLine(cls, line):
         obj = cls.__new__(cls)
         super(Ci, obj).__init__()
 
         data = line.split('\t')
         obj._word = data[0]
         obj._pinyins = []
-        obj._which = which
+        obj._common = isWordCommon(obj._word)
         for i in range(1, len(data), 3):
             obj._pinyins.append((tuple(data[i].split('/')), int(data[i+1]), int(data[i+2])))
         
@@ -45,20 +39,11 @@ class Ci:
     def word(self):
         return self._word
 
-    def which(self):
-        return self._which
+    def common(self):
+        return self._common
 
     def weights(self):
         return self._pinyins
-
-    def change_which(self, which):
-        """
-        更换词组隶属码表
-        ----------
-        which: CiDB.GENERAL | CiDB.SUPER
-            通常表 | 超级表
-        """
-        self._which = which
 
     def change_code_length(self, pinyins, length):
         """
@@ -134,27 +119,16 @@ class Ci:
 _path = os.path.dirname(os.path.abspath(__file__))
 
 def _loadDB():
-    global _db_general
-    global _db_super
-    if _db_general == None or _db_super == None:
-        _db_general = {}
-        _db_super = {}
+    global _db
+    if _db is None:
+        _db = {}
     else:
         return
     
     with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:
         for line in f:
-            word = Ci.fromLine(line.strip(), GENERAL)
-            _db_general[word._word] = word
-
-    with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
-        for line in f:
-            word = Ci.fromLine(line.strip(), SUPER)
-
-            if (word._word in _db_general):
-                print('警告，通常词和超级词重复：', word.word())
-            else:
-                _db_super[word._word] = word
+            word = Ci.fromLine(line.strip())
+            _db[word._word] = word
 
 # 符号
 NUM_CHAR = '零一二三四五六七八九'
@@ -178,20 +152,15 @@ def sound_chars(words):
 def get(word) -> Ci:
     _loadDB()
     
-    if word not in _db_general:
-        if word not in _db_super:
-            return None
-        return _db_super[word]
-    return _db_general[word]
+    if word not in _db:
+        return None
+    return _db[word]
 
-def all(which):
+def all():
     _loadDB()
-    if which == GENERAL:
-        return _db_general.values()
-    else:
-        return _db_super.values()
+    return _db.values()
 
-def add(word, pinyins, which = GENERAL):
+def add(word, pinyins):
     """
     添加词组到词库
     ----------
@@ -199,14 +168,12 @@ def add(word, pinyins, which = GENERAL):
         需要添加的词组
     pinyins: list[tuple(py: tuple(str), len: int, rank: int)]
         list[tuple(拼音, 码长, 码序权值)]
-    which: CiDB.GENERAL | CiDB.SUPER
-        通常表 | 超级表
     """
 
     _loadDB()
     
     assert len(word) != 1, '`%s`不是词组' % word
-    assert word not in _db_general and word not in _db_super, '`%s`词已存在' % word
+    assert word not in _db, '`%s`词已存在' % word
     assert len(pinyins) != 0, '`%s`词没有提供拼音' % word
 
     sound = sound_chars(word)
@@ -215,13 +182,11 @@ def add(word, pinyins, which = GENERAL):
         assert len(pinyin[0]) == len(sound), '`%s`词拼音`%s`不合法(长度不符)' % (word, " ".join(pinyin[0]))
         for py in pinyin[0]:
             assert py in VALID_PY, '`%s`词拼音`%s`不合法(%s)' % (word, " ".join(pinyin[0]), py)
+
+    new_ci = Ci(word, pinyins)
+    _db[word] = new_ci
     
-    if (which == GENERAL):
-        _db_general[word] = Ci(word, pinyins, which)
-        return _db_general[word]
-    else:
-        _db_super[word] = Ci(word, pinyins, which)
-        return _db_super[word]
+    return new_ci
 
 def remove(word, pinyins):
     """
@@ -234,72 +199,46 @@ def remove(word, pinyins):
     """
 
     _loadDB()
-    db = None
-    if word in _db_general:
-        db = _db_general
-    elif word in _db_super:
-        db = _db_super
+    _db = None
 
-    assert db is not None, '`%s`词已存在' % word
+    assert _db is not None, '`%s`词不存在' % word
 
-    db[word].remove_pinyins(pinyins)
+    _db[word].remove_pinyins(pinyins)
 
-    if len(db[word].pinyins()) <= 0:
-        del db[word]
+    if len(_db[word].pinyins()) <= 0:
+        del _db[word]
 
 def commit():
     _loadDB()
 
     with open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n') as f:
-        all_words = sorted(all(GENERAL), key=lambda x: x._word)
-        for ci in all_words:
-            f.write(ci.line()+'\n')
-
-    with open(os.path.join(_path, '超级.txt'), mode='w', encoding='utf-8', newline='\n') as f:
-        all_words = sorted(all(SUPER), key=lambda x: x._word)
+        all_words = sorted(all(), key=lambda x: x._word)
         for ci in all_words:
             f.write(ci.line()+'\n')
 
 def reset():
     '''Discard all changes and reload'''
-    global _db_general
-    global _db_super
-    global _fixed_general
-    global _fixed_super
-    del _fixed_general
-    del _fixed_super
-    del _db_general
-    del _db_super
-    _fixed_general = None
-    _fixed_super = None
-    _db_general = None
-    _db_super = None
+    global _db
+    global _fixed
+    del _fixed
+    del _db
+    _fixed = None
+    _db = None
 
-def fixed(which):
-    global _fixed_general
-    global _fixed_super
-    if (which == GENERAL):
-        if _fixed_general is None:
-            _fixed_general = []
-            with open(os.path.join(_path, '通常特定.txt'), mode='r', encoding='utf-8') as f:
-                for entry in f:
-                    line = entry.strip()
-                    if (len(line) <= 0 or line.startswith('#')):
-                        continue
+def fixed():
+    global _fixed
 
-                    data = line.split('\t')
-                    _fixed_general.append((data[0], data[1]))
-        
-        return _fixed_general
-    else:
-        if _fixed_super is None:
-            _fixed_super = []
-            with open(os.path.join(_path, '超级特定.txt'), mode='r', encoding='utf-8') as f:
-                for entry in f:
-                    line = entry.strip()
-                    if (len(line) <= 0 or line.startswith('#')):
-                        continue
+    if _fixed is None:
+        _fixed = []
+        with open(os.path.join(_path, '静态.txt'), mode='r', encoding='utf-8') as f:
+            for entry in f:
+                line = entry.strip()
+                if (len(line) <= 0 or line.startswith('#')):
+                    continue
 
-                    data = line.split('\t')
-                    _fixed_super.append((data[0], data[1]))
-        return _fixed_super
+                data = line.split('\t')
+                common = isWordCommon(data[0])
+                _fixed.append((data[0], data[1], common))
+
+    return _fixed
+

@@ -1,20 +1,15 @@
 import os
 import re
-from PinyinConsts import VALID_PY
-
-UNDEFINED = 0       # 未定义
-GENERAL = 1         # 通常
-SUPER = 2           # 超级
-HIDDEN = 3          # 无理
+from PinyinConsts import VALID_PY, isCharCommon
 
 class Zi:
-    def __init__(self, line, which=HIDDEN):
+    def __init__(self, line):
         data = line.split('\t')
         self._char = data[0]
         self._rank = int(data[1])
         self._shape = data[2]
         self._pinyins = []
-        self._type = which
+        self._common = isCharCommon(self._char)
         self._comment = None
         for i in range(3, len(data) - 1, 2):
             self._pinyins.append((data[i], int(data[i+1])))
@@ -43,8 +38,8 @@ class Zi:
     def rank(self):
         return self._rank
 
-    def which(self):
-        return self._type
+    def common(self):
+        return self._common
 
     def comment(self):
         if self._comment is None:
@@ -80,7 +75,7 @@ class Zi:
         shape: str
             形码
         """
-        assert re.search("^[乛丿丨丶一]{2,4}$", shape), '`%s`字形码不合法`(%s)`' % (self._char, shape)
+        assert re.search("^[乛丿丨丶㇐]{2,4}$", shape), '`%s`字形码不合法`(%s)`' % (self._char, shape)
         self._shape = shape
 
     def change_rank(self, rank):
@@ -91,15 +86,6 @@ class Zi:
             全码权值
         """
         self._rank = rank
-
-    def change_which(self, which):
-        """
-        更换单字隶属码表
-        ----------
-        which: ZiDB.GENERAL | ZiDB.SUPER
-            通常表 | 超级表
-        """
-        self._which = which
 
     def change_code_length(self, pinyins, length):
         """
@@ -132,42 +118,17 @@ _path = os.path.dirname(os.path.abspath(__file__))
 def __load():
     with open(os.path.join(_path, '通常.txt'), mode='r', encoding='utf-8') as f:
         for line in f:
-            char = Zi(line.strip(), GENERAL)
+            char = Zi(line.strip())
             _db[char._char] = char
 
-    with open(os.path.join(_path, '超级.txt'), mode='r', encoding='utf-8') as f:
-        for line in f:
-            char = Zi(line.strip(), SUPER)
-            if (char._char in _db):
-                print('警告，通常字和超级字重复：', char.char())
-            else:
-                _db[char._char] = char
-
-    with open(os.path.join(_path, '无理.txt'), mode='r', encoding='utf-8') as f:
-        for line in f:
-            char = Zi(line.strip(), HIDDEN)
-            if (char._char in _db):
-                print('警告，通常字和无理字重复：', char.char())
-            else:
-                _db[char._char] = char
-
-    with open(os.path.join(_path, '通常特定.txt'), mode='r', encoding='utf-8') as f:
+    with open(os.path.join(_path, '静态.txt'), mode='r', encoding='utf-8') as f:
         for entry in f:
             line = entry.strip()
             if (len(line) <= 0 or line.startswith('#')):
                 continue
 
             data = line.split('\t')
-            _fixed.append((data[0], data[1], GENERAL))
-
-    with open(os.path.join(_path, '超级特定.txt'), mode='r', encoding='utf-8') as f:
-        for entry in f:
-            line = entry.strip()
-            if (len(line) <= 0 or line.startswith('#')):
-                continue
-
-            data = line.split('\t')
-            _fixed.append((data[0], data[1], SUPER))
+            _fixed.append((data[0], data[1], isCharCommon(data[0])))
 
 __load()
 
@@ -185,14 +146,11 @@ def fixed():
 def reset():
     '''Discard all changes and reload'''
     global _db
-    global _fixed
     del _db
-    del _fixed
     _db = {}
-    _fixed = []
     __load()
 
-def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
+def add(char, shape, pinyins, rank, comment = None):
     """
     添加单字到字库
     ----------
@@ -204,14 +162,12 @@ def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
         拼音
     rank: int
         全码权值
-    which: ZiDB.GENERAL | ZiDB.SUPER
-        通常表 | 超级表
     comment: str
         注释
     """
 
     assert len(char) == 1, '`%s`不是单字' % char
-    assert re.search("^[乛丿丨丶一]{2,4}$", shape), '`%s`字形码不合法`(%s)`' % (char, shape)
+    assert re.search("^[乛丿丨丶㇐]{2,4}$", shape), '`%s`字形码不合法`(%s)`' % (char, shape)
     assert char not in _db, '`%s`字已存在' % char
     assert len(pinyins) != 0, '`%s`字没有提供拼音' % char
 
@@ -223,7 +179,7 @@ def add(char, shape, pinyins, rank, which = HIDDEN, comment = None):
         line += '\t%s\t%d' % pinyin
     if comment is not None:
         line += '\t%s' % comment
-    _db[char] = Zi(line, which)
+    _db[char] = Zi(line)
     return _db[char]
 
 
@@ -245,18 +201,9 @@ def remove(char, pinyins):
 
 def commit():
     all_char = sorted(all(), key=lambda x: x._char)
-    danzi = open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n')
-    chaoji = open(os.path.join(_path, '超级.txt'), mode='w', encoding='utf-8', newline='\n')
-    hidden = open(os.path.join(_path, '无理.txt'), mode='w', encoding='utf-8', newline='\n')
+    zifile = open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n')
 
     for zi in all_char:
-        if zi.which() == GENERAL:
-            danzi.write(zi.line()+'\n')
-        elif zi.which() == SUPER:
-            chaoji.write(zi.line()+'\n')
-        else:
-            hidden.write(zi.line()+'\n')
+        zifile.write(zi.line()+'\n')
     
-    danzi.close()
-    chaoji.close()
-    hidden.close()
+    zifile.close()

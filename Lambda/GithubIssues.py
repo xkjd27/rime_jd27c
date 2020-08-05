@@ -19,9 +19,9 @@ allowed_commands = {
     '排序': 4,
 }
 
-def find_commands_issue(content, which):
+def find_commands_issue(content):
     sanitized = content.replace('\r\n', '\n')
-    match = re.search('%s\n```\n((?:[^`]*\n)+)```' % ('通常字词' if which == GENERAL else '超级字词'), sanitized)
+    match = re.search('```\n((?:[^`]*\n)+)```', sanitized)
 
     if match is None:
         return []
@@ -33,9 +33,9 @@ def find_commands_issue(content, which):
         line = line.strip()
         if (not line.startswith('#')):
             if ('\t' in line):
-                command = tuple(['通常' if which == GENERAL else '超级'] + [data.strip() for data in line.split('\t')])
+                command = tuple([data.strip() for data in line.split('\t')])
             elif ('|' in line):
-                command = tuple(['通常' if which == GENERAL else '超级'] + [data.strip() for data in line.split('|')])
+                command = tuple([data.strip() for data in line.split('|')])
             else:
                 command = None
             if (command is not None and len(command) > 2 and command[1] in allowed_commands):

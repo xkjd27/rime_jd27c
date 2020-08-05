@@ -5,7 +5,7 @@ GENERAL = 1
 SUPER = 2
 
 # 添加单字
-def command_add_char(which, char, pinyin, code):
+def command_add_char(char, pinyin, code):
     short_len = 6
     if ('/' in code):
         data = code.split('/')
@@ -26,7 +26,7 @@ def command_add_char(which, char, pinyin, code):
         shape = code[2:]
         COMMAND_TRANSCRIPT.append('* 添加新字`%s (%s, %s)`' % (char, pinyin, shape))
         weight = JDTools.find_weight_for_char(shape, pinyin)
-        JDTools.add_char(char, JDTools.code2shape(shape), pinyin, short_len, weight, which)
+        JDTools.add_char(char, JDTools.code2shape(shape), pinyin, short_len, weight)
 
     # log codes
     new_codes = set(c[1] for c in (JDTools.gen_char(char))).difference(before)
@@ -39,7 +39,7 @@ def command_add_char(which, char, pinyin, code):
         COMMAND_TRANSCRIPT.append('  * `%s`' % c)
 
 # 添加词组
-def command_add_word(which, word, pinyin, code):
+def command_add_word(word, pinyin, code):
     short_len = len(code)
     weight = JDTools.find_weight_for_word(word, pinyin, short_len)
 
@@ -55,7 +55,7 @@ def command_add_word(which, word, pinyin, code):
             JDTools.add_word_pinyin(word, pinyin, short_len, weight)
     else:
         COMMAND_TRANSCRIPT.append('* 添加新词`%s (%s)`' % (word, pinyin))
-        JDTools.add_word(word, pinyin, short_len, weight, which)
+        JDTools.add_word(word, pinyin, short_len, weight)
 
     # log codes
     new_codes = set(c[1] for c in (JDTools.gen_word(word))).difference(before)
@@ -170,7 +170,7 @@ def command_change_word(word, pinyin, code):
         COMMAND_TRANSCRIPT.append('  * `%s`' % c)
 
 # 添加指令
-def command_add(which, command):
+def command_add(command):
     if len(command) < 3:
         COMMAND_TRANSCRIPT.append('* __`添加 %s`指令不合法__' % ' '.join(command))
         return
@@ -180,12 +180,12 @@ def command_add(which, command):
     code = command[2].strip()
     
     if (len(word) == 1):
-        command_add_char(which, word, pinyin, code)
+        command_add_char(word, pinyin, code)
     else:
-        command_add_word(which, word, pinyin, code)
+        command_add_word(word, pinyin, code)
 
 # 删除指令
-def command_delete(which, command):
+def command_delete(command):
     if len(command) < 2:
         COMMAND_TRANSCRIPT.append('* __`删除 %s`指令不合法__' % ' '.join(command))
         return
@@ -198,7 +198,7 @@ def command_delete(which, command):
         command_delete_word(word, pinyin)
 
 # 变码指令
-def command_change(which, command):
+def command_change(command):
     if len(command) < 3:
         COMMAND_TRANSCRIPT.append('* __`变码 %s`指令不合法__' % ' '.join(command))
         return
@@ -333,7 +333,7 @@ def command_rank_word(word, pinyin, code, rank):
             weight += 1
 
 # 排序指令
-def command_rank(which, command):
+def command_rank(command):
     code_part = command[2].split('#')
 
     if len(command) < 3 or len(code_part) < 2 or not code_part[1].isdigit():
@@ -355,18 +355,17 @@ def process_commands(commands):
         if (len(command) < 2):
             continue
         
-        which = GENERAL if command[0] == '通常' else SUPER
         cmd_name = command[1]
         print(" - Processing: %s" % str(command))
         try:
             if cmd_name == '添加':
-                command_add(which, command[2:])
+                command_add(command[2:])
             elif cmd_name == '删除':
-                command_delete(which, command[2:])
+                command_delete(command[2:])
             elif cmd_name == '变码':
-                command_change(which, command[2:])
+                command_change(command[2:])
             elif cmd_name == '排序':
-                command_rank(which, command[2:])
+                command_rank(command[2:])
             else:
                 COMMAND_TRANSCRIPT.append('* __`%s`指令不合法__' % ' '.join(command[1:]))
                 return
@@ -375,12 +374,12 @@ def process_commands(commands):
     
     JDTools.commit()
 
-def safe_add_word(which, word, pinyin, code):
+def safe_add_word(word, pinyin, code):
     global COMMAND_TRANSCRIPT
     og_transcript = COMMAND_TRANSCRIPT
     COMMAND_TRANSCRIPT = []
     try:
-        command_add_word(which, word, pinyin, code)
+        command_add_word(word, pinyin, code)
     except AssertionError as e:
         COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
     except:
@@ -390,12 +389,12 @@ def safe_add_word(which, word, pinyin, code):
     COMMAND_TRANSCRIPT = og_transcript
     return result
 
-def safe_add_char(which, char, pinyin, code):
+def safe_add_char(char, pinyin, code):
     global COMMAND_TRANSCRIPT
     og_transcript = COMMAND_TRANSCRIPT
     COMMAND_TRANSCRIPT = []
     try:
-        command_add_char(which, char, pinyin, code)
+        command_add_char(char, pinyin, code)
     except AssertionError as e:
         COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
     except:
@@ -494,37 +493,3 @@ def safe_rank_char(char, pinyin, code, rank):
     result = COMMAND_TRANSCRIPT
     COMMAND_TRANSCRIPT = og_transcript
     return result
-
-
-# command_add(1, ('正', 'zheng', 'srimwov'))
-# command_add(1, ('正', 'zhe', 'srimwov'))
-# command_add(1, ('A', 'zheng', 'srooiv'))
-
-# command_add(1, ('执着', 'zhi zhuo', 'fkfw'))
-# command_add(1, ('执着', 'zhi zhe', 'fkfw'))
-# command_add(1, ('AA', 'zheng zheng', 'fkfw'))
-
-# command_delete(1, ('AA', 'zheng zheng'))
-# command_delete(1, ('A', 'zheng'))
-
-# command_change(1, ('籽', 'zi', 'zkouai/zkab'))
-# command_change(1, ('籽', 'zi', 'zkouai/zkou'))
-# command_change(1, ('籽', 'zi', 'zkouai/zkoua'))
-# command_change(1, ('籽', 'zi', 'zkouau'))
-# command_change(1, ('籽', 'zi', 'zkouai/zkou'))
-
-# command_add(1, ('反选', 'fan xuan', 'ffxt'))
-# command_change(1, ('反旋', 'fan xuan', 'ffxtu'))
-
-# command_change(1, ('方方正正', 'fang fang zheng zheng', 'ffqq'))
-
-# command_rank(1, ('籽', 'zi', 'zkouai#2'))
-# command_rank(1, ('籽', 'zi', 'zkouai#1'))
-
-# command_rank(1, ('郑板桥', 'zhun bei zhe', 'qbqo#2'))
-
-# command_rank(1, ('找删', 'zhao shan', 'fzef#2'))
-# command_rank(1, ('初试', 'chu shi', 'jjekoo#1'))
-
-# process_commands([])
-# print(COMMAND_TRANSCRIPT)

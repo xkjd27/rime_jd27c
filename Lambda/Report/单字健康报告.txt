@@ -1,1 +1,31 @@
+可缩码："沌" ;gavai ->   ;gav (zhuan) | 通常
+全码序冲突：;yoiov 蹢 蹠 [0] (通常)
+全码序冲突：byveve 皕 夶 [0] (通常)
+可缩码："艸" czaiai ->   czai (cao) | 通常
+可缩码："屮" czaiii ->   czai (cao) | 通常
+可缩码："遯" dweoao ->   dweo (dun) | 通常
+可缩码："嘸" fnoevv ->  fnoev (fu) | 通常
+全码序冲突：gpeavi 鲠 㹴 [0] (通常)
+可缩码："芔" hbaiai ->  hbaia (hui) | 通常
+可缩码："吰" hjovea ->  hjove (hong) | 通常
+可缩码："䦆" jhiooi ->  jhioo (jue) | 通常
+全码序冲突：lqvvea 瑠 珋 [0] (通常)
+可缩码："沫" mfavvi ->    mfa (me) | 通常
+可缩码："茻" mlaiai ->   mlai (mang) | 通常
+可替换："醲" njviia ->    njv (替换超级字 "𬪩")
+可缩码："房" ploaov ->   ploa (pang) | 通常
+可缩码："碁" qyviiv ->  qyvii (qi) | 通常
+可缩码："熨" r;avoe ->  r;avo (yu) | 通常
+可缩码："肬" rqevea ->   rqev (you) | 通常
+全码序冲突：rqiavi 甴 由 [0] (通常)
+全码序冲突：rsoiav 嘢 咽 [0] (通常)
+可缩码："昚" ukveoi ->  ukveo (shen) | 通常
+可替换："卐"  wtavi ->   wtav (替换超级字 "𬇕")
+全码序冲突：wtoovv 案 完 [0] (通常)
+可缩码："案" wtoovv ->  wtoov (wan) | 通常
+可替换："噁" xfoviv ->   xfov (替换超级字 "𫫇")
+可缩码："鞌" xtoovi ->   xtoo (an) | 通常
+可缩码："屮" yfaiii ->   yfai (che) | 通常
+可缩码："沢" zfaave ->   zfaa (ze) | 通常
+可缩码："噌" zpooei ->  zpooe (zeng) | 通常
 检查完毕

@@ -43,3 +43,32 @@ VALID_PY = {
     'zhuang', 'zhui', 'zhun', 'zhuo', 'zi', 'zong', 'zou', 'zu', 'zuan', 'zui',
     'zun', 'zuo'
 }
+
+# 字符集
+COMMON_RANGE = [
+    (0x30, 0x40), # Digits
+    (0x41, 0x5B), # Upper Letters
+    (0x61, 0x7B), # Lower Letters
+    (0x2E80, 0x2EF4), # Radical
+    (0x3000, 0x3040), # Punct
+    (0x3100, 0x312E), # Bopomofo
+    (0x31C0, 0x31E4), # Stroke
+    (0x3400, 0x4DB6), # CJK-A
+    (0x4E00, 0x9FD1), # CJK
+    (0xF900, 0xFACF), # CJK-Compat
+    (0xFF00, 0xFFEF), # Full-width
+]
+
+def isCharCommon(char):
+    code = ord(char)
+    for rang in COMMON_RANGE:
+        if code >= rang[0] and code < rang[1]:
+            return True
+
+    return False
+
+def isWordCommon(text):
+    for char in text:
+        if not isCharCommon(char):
+            return False
+    return True

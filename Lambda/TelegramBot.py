@@ -511,29 +511,22 @@ def add_word(update, context):
 
     elif 'adding_word_code' not in context.user_data:
         context.user_data['adding_word_code'] = data.strip('*')
-        CHOOSE(update, "加哪个码表", ['通常', '超级'])
-
-    elif 'adding_word_which' not in context.user_data:
         word = context.user_data['adding_word']
         pinyin = context.user_data['adding_word_pinyin']
         code = context.user_data['adding_word_code']
-        which = 1 if data == '通常' else 2
-        context.user_data['adding_word_which'] = which
 
-        REPLY(update, "向 %s 码表里添加 %s 词\n拼音：%s\n编码：%s" % (data, word, pinyin, code))
+        REPLY(update, "添加 %s 词\n拼音：%s\n编码：%s" % (word, pinyin, code))
         CHOOSE(update, "确定要添加吗", ['是的'])
-
     else:
         word = context.user_data['adding_word']
         pinyin = context.user_data['adding_word_pinyin']
         code = context.user_data['adding_word_code']
-        which = context.user_data['adding_word_which']
 
         TYPING(update)
 
         continue_change = JDTools.get_ci_of_code(code)
 
-        result = Commands.safe_add_word(which, word, pinyin, code)
+        result = Commands.safe_add_word(word, pinyin, code)
         REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
@@ -578,17 +571,13 @@ def add_char(update, context):
     
     elif 'adding_char_code' not in context.user_data:
         context.user_data['adding_char_code'] = data.strip('*')
-        CHOOSE(update, "加哪个码表", ['通常', '超级'])
- 
-    elif 'adding_char_which' not in context.user_data:
+        
         char = context.user_data['adding_char']
         pinyin = context.user_data['adding_char_pinyin']
         code = context.user_data['adding_char_code']
         fullcode = context.user_data['adding_char_fullcode']
-        which = 1 if data == '通常' else 2
-        context.user_data['adding_char_which'] = which
 
-        REPLY(update, "向 %s 码表里添加 %s 字 \(%s\)" % (data, char, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
+        REPLY(update, "添加 %s 字 \(%s\)" % (char, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
         CHOOSE(update, "确定要添加吗", ['是的'])
 
     else:
@@ -596,11 +585,10 @@ def add_char(update, context):
         pinyin = context.user_data['adding_char_pinyin']
         code = context.user_data['adding_char_code']
         fullcode = context.user_data['adding_char_fullcode']
-        which = context.user_data['adding_char_which']
 
         TYPING(update)
 
-        result = Commands.safe_add_char(which, char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode)
+        result = Commands.safe_add_char(char, pinyin, "%s/%s" % (fullcode, code) if fullcode != code else fullcode)
         REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
 
@@ -936,7 +924,7 @@ def getjd(update, context):
 def default_message(update, context):
     data = update.message.text
     if data.startswith('/'):
-        REPLY('未进行操作')
+        REPLY(update, '未进行操作')
         return -1
 
     if (re.match('^[a-z;]{1,6}$', data)) or JDTools.get_char(data) is not None or JDTools.get_word(data) is not None:

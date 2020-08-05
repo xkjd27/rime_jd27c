@@ -370,6 +370,10 @@ brwlvv
 	0	不远万里
 	1	不要我了
 
+btrrvv
+	0	不太一样
+	0	不太容易
+
 bzryoo
 	0	爆衣
 	1	宝日
@@ -464,6 +468,10 @@ guuyii
 	0	国史
 	1	国师
 
+hbhuiv
+	0	合不合适
+	1	会不会是
+
 hfjyiv
 	0	合击
 	1	合辑
@@ -516,6 +524,10 @@ jquyio
 jr;xoo
 	0	家庄
 	1	交易中心
+
+jruyoo
+	0	交易市场
+	0	家室
 
 jsuyao
 	0	结识
@@ -606,6 +618,10 @@ qyryvv
 	0	七一
 	1	其一
 
+r;rvei
+	0	一种人
+	0	有种人
+
 rb;yie
 	0	银质
 	1	睿智
@@ -666,6 +682,10 @@ rjhvov
 	0	有计划
 	1	原计划
 
+rjrvii
+	0	软件业
+	0	软件园
+
 rk;yia
 	0	人治
 	1	人彘
@@ -691,9 +711,17 @@ rlrqav
 	0	游来游去
 	1	缘来缘去
 
+rmrioi
+	0	虞美人
+	0	野蛮人
+
 rmrmvv
 	0	严严
 	1	奄奄
+
+rmxyve
+	0	一脉相传
+	0	一脉相承
 
 rnuyao
 	0	如是
@@ -821,6 +849,11 @@ ryr;ov
 ryryoo
 	0	奕奕
 	0	日日
+	0	日益
+
+ryryvo
+	0	一意
+	0	一日
 
 rytjva
 	0	一统
@@ -835,6 +868,7 @@ ryuyai
 	1	已使
 
 ryuyoi
+	0	日食
 	0	易逝
 	1	衣食
 
@@ -845,6 +879,10 @@ ryuyvv
 rywkoo
 	0	日文
 	1	易问
+
+rywtvv
+	0	一万
+	0	一碗
 
 rywwoi
 	0	易位
@@ -905,6 +943,7 @@ uy;yoi
 
 uyj;ov
 	0	市场机制
+	0	市场竞争
 	0	市场经济体制
 
 uyjmoa
@@ -913,6 +952,7 @@ uyjmoa
 
 uyjreo
 	0	十家
+	0	生产经营
 	1	生产经验
 
 uyjyoi

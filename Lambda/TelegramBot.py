@@ -532,7 +532,7 @@ def add_word(update, context):
         TYPING(update)
 
         continue_change = JDTools.get_ci_of_code(code)
-        
+
         result = Commands.safe_add_word(which, word, pinyin, code)
         REPLY(update, "\n".join(MARK(result)))
         context.user_data.clear()
@@ -935,6 +935,9 @@ def getjd(update, context):
 
 def default_message(update, context):
     data = update.message.text
+    if data.startswith('/'):
+        REPLY('未进行操作')
+        return -1
 
     if (re.match('^[a-z;]{1,6}$', data)) or JDTools.get_char(data) is not None or JDTools.get_word(data) is not None:
         update.message.text = "/list " + data
@@ -956,7 +959,6 @@ add_convers = ConversationHandler(
         CommandHandler('pull', pull),
         CommandHandler('getjd', getjd),
         CommandHandler('start', start),
-        MessageHandler(Filters.command, cancel),
         MessageHandler(Filters.all, default_message)
     ],
     states={

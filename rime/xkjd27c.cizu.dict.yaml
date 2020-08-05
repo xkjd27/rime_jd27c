@@ -297,6 +297,7 @@ sort: original
 追认	;brk
 赘言	;brm
 坠入	;brn
+坠崖	;brr
 赘肉	;brs
 坠叶	;brsa
 诈败佯输	;bru
@@ -564,7 +565,8 @@ sort: original
 执法不严	;fbria
 遮风避雨	;fbro
 这般	;fbt
-折帛	;fbu
+这波	;fbu
+折帛	;fbui
 这杯	;fbw
 这笔	;fby
 折笔	;fbyi
@@ -4923,6 +4925,7 @@ sort: original
 装潢	;xhx
 真心话大冒险	;xhxe
 装好	;xhz
+桩号	;xhzv
 哲学家	;xj
 壮举	;xj;
 装进	;xjb
@@ -11727,6 +11730,7 @@ sort: original
 被摄	bwuf
 背身	bwuk
 悲伤	bwul
+备上	bwule
 背上	bwuli
 北上	bwulii
 不为什么	bwum
@@ -12767,6 +12771,8 @@ sort: original
 包孕	bzrw
 保养	bzrx
 包养	bzrxe
+抱养	bzrxi
+抱恙	bzrxio
 褒扬	bzrxo
 报以	bzry
 褒义	bzryo
@@ -15411,7 +15417,8 @@ sort: original
 糙米	czmy
 草帽	czmz
 错在哪	czn
-藏踪蹑迹	cznj
+操弄	cznj
+藏踪蹑迹	cznji
 槽内	cznw
 草拟	czny
 此作品	czp
@@ -15487,6 +15494,7 @@ sort: original
 从左向右	czxri
 草鞋	czxs
 草案	czxt
+存在性	czxv
 草香	czxx
 草席	czxy
 槽车	czyf
@@ -20019,6 +20027,7 @@ sort: original
 大吃	dryy
 大吵	dryz
 大潮	dryzv
+大钞	dryzvi
 多音字	drz
 大嘴	drzb
 大醉	drzbv
@@ -21817,6 +21826,7 @@ sort: original
 地暖	dyng
 低能	dynp
 蒂娜	dynr
+底泥	dyny
 低频	dypb
 地平	dypd
 底牌	dyph
@@ -32670,6 +32680,7 @@ sort: original
 合约	hfrh
 汇丰银行	hfrha
 和约	hfrhe
+和悦	hfrheo
 何月	hfrhi
 何用	hfrj
 合用	hfrji
@@ -34359,6 +34370,7 @@ sort: original
 汉尼拔	hnb
 湖滨	hnbb
 胡饼	hnbd
+好男不跟女斗	hnbda
 虎贲	hnbk
 互帮	hnbl
 湖边	hnbm
@@ -35475,6 +35487,7 @@ sort: original
 还有人	hrrv
 焕然一新	hrrx
 好人一生平安	hrrxa
+汗如雨下	hrrxaa
 还有一些	hrrxv
 好意思	hrs
 汉元素	hrsa
@@ -35796,6 +35809,7 @@ sort: original
 后出	hsyn
 后厨	hsyne
 后称	hsyp
+厚诚	hsypv
 后查	hsyr
 后产	hsyt
 厚唇	hsyw
@@ -44147,6 +44161,7 @@ sort: original
 及门	jymk
 急忙	jyml
 鸡面	jymm
+基面	jymmv
 继母	jymn
 积木	jymne
 极目	jymnv
@@ -53649,6 +53664,7 @@ sort: original
 老婆	lzpu
 老炮	lzpz
 老区	lzq;
+涝区	lzq;a
 老去	lzq;e
 乐在其中	lzq;ev
 捞取	lzq;i
@@ -59974,6 +59990,7 @@ sort: original
 闹意见	nrjoo
 那就	nrjq
 那家	nrjr
+娜迦	nrjra
 哪家	nrjro
 难以接受	nrju
 那一刻	nrk
@@ -60557,7 +60574,8 @@ sort: original
 那天下午	ntxwa
 南巡	ntxwe
 南浔	ntxwea
-逆天而行	ntxx
+南向	ntxx
+逆天而行	ntxxo
 南溪	ntxy
 南希	ntxye
 难熬	ntxz
@@ -60951,6 +60969,7 @@ sort: original
 你小子	nxz
 纳西族	nxza
 弄虚作假	nxzj
+南向资金	nxzje
 娘子	nxzy
 酿造	nxzz
 农场主	ny;
@@ -64520,6 +64539,7 @@ sort: original
 趣谈	q;tt
 去托	q;tu
 躯体	q;ty
+屈体	q;tya
 取替	q;tyv
 钱钟书	q;u
 轻装上阵	q;u;
@@ -74754,6 +74774,7 @@ sort: original
 怡情悦性	rqrxo
 有氧	rqrxv
 酉阳	rqrxva
+有恙	rqrxvo
 友谊	rqry
 又一	rqrya
 游移	rqryae
@@ -76019,6 +76040,7 @@ sort: original
 肉用	rsrji
 夜用	rsrjo
 椰蓉	rsrjv
+有色眼镜	rsrjve
 柔韧	rsrk
 野人	rsrki
 也让	rsrl
@@ -76117,6 +76139,7 @@ sort: original
 预算外	rsw
 营私舞弊	rswb
 野外	rswh
+叶问	rswk
 野望	rswl
 业务	rswn
 也无	rswna
@@ -77503,6 +77526,7 @@ sort: original
 羊肠	rxylo
 痒处	rxyn
 养成	rxyp
+扬程	rxypi
 羊城	rxypo
 阳岔	rxyr
 一线城市	rxyu
@@ -79950,6 +79974,7 @@ sort: original
 速败	snbh
 素白	snbhv
 塑编	snbm
+宿便	snbmo
 宿逋	snbn
 苏北	snbw
 俗鄙	snby
@@ -81380,6 +81405,7 @@ sort: original
 四溅	syjm
 四键	syjmi
 似箭	syjmie
+四件	syjmii
 四间	syjmio
 四旧	syjq
 私家	syjr
@@ -90729,6 +90755,7 @@ sort: original
 时隐时现	uruxo
 啥事	uruy
 沙石	uruya
+沙士	uruyav
 沙示	uruyav
 煞是	uruye
 傻事	uruyi
@@ -91261,6 +91288,7 @@ sort: original
 受我	uswue
 首位	usww
 收尾	uswwa
+手尾	uswwi
 守卫	uswwo
 首尾	uswwoa
 伸缩性	usx
@@ -97152,6 +97180,7 @@ sort: original
 未跑	wwpz
 委屈	wwq;
 委曲	wwq;e
+圩区	wwq;v
 为亲	wwqb
 未敲	wwqc
 为请	wwqd
@@ -97780,6 +97809,7 @@ sort: original
 许配	x;pw
 行政区	x;q
 序曲	x;q;
+圩区	x;q;v
 泄殖腔	x;qa
 许亲	x;qb
 行政区划	x;qh
@@ -97799,6 +97829,7 @@ sort: original
 虚热	x;rf
 许愿	x;rg
 续缘	x;rga
+圩垸	x;rgv
 续约	x;rh
 虚荣	x;rj
 需用	x;rjv
@@ -98843,6 +98874,7 @@ sort: original
 小云	xcrw
 小样	xcrx
 小杨	xcrxi
+小恙	xcrxio
 效益	xcry
 笑意	xcrye
 小姨	xcryi
@@ -99194,6 +99226,7 @@ sort: original
 刑律	xdl;
 杏林	xdlb
 性灵	xdld
+星灵	xdldo
 奥地利	xdle
 鹅蛋脸	xdlea
 爱抖露	xdlei
@@ -99712,6 +99745,7 @@ sort: original
 相辅相成	xfxyv
 消防车	xfy
 讹传	xfyg
+悬浮窗	xfyi
 蛾虫	xfyj
 讹称	xfyp
 恶臭	xfys
@@ -102057,6 +102091,7 @@ sort: original
 而学	xnxh
 喜怒哀乐	xnxl
 二线	xnxm
+尔尔	xnxn
 儿啊	xnxr
 而下	xnxrv
 而按	xnxt
@@ -102632,6 +102667,7 @@ sort: original
 下含	xrht
 二氧化碳	xrhtv
 瞎火	xrhu
+效用函数	xrhuo
 下一回	xrhv
 杏仁核	xrhvi
 瞎黑	xrhw
@@ -103559,6 +103595,7 @@ sort: original
 岸边	xtbm
 按不	xtbn
 暗部	xtbno
+安瓿	xtbnoo
 凹凸不平	xtbp
 俺把	xtbr
 儿童不宜	xtbre
@@ -103632,6 +103669,7 @@ sort: original
 暗航	xthl
 按户	xthn
 暗含	xtht
+暗涵	xthto
 暗火	xthu
 暗黑	xthw
 安魂	xthwo
@@ -103835,6 +103873,7 @@ sort: original
 小甜心	xtxie
 安闲	xtxm
 小偷小摸	xtxmi
+岸线	xtxmia
 暗线	xtxmo
 按下	xtxr
 暗下	xtxro

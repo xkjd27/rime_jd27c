@@ -139,7 +139,7 @@ ryuy
 	100	壹拾
 
 rywt
-	0	日晚
+	0	一晚
 	100	壹万
 
 stbh
@@ -372,7 +372,7 @@ brwlvv
 
 btrrvv
 	0	不太一样
-	0	不太容易
+	1	不太容易
 
 bzryoo
 	0	爆衣
@@ -526,8 +526,8 @@ jr;xoo
 	1	交易中心
 
 jruyoo
-	0	交易市场
 	0	家室
+	1	交易市场
 
 jsuyao
 	0	结识
@@ -620,7 +620,7 @@ qyryvv
 
 r;rvei
 	0	一种人
-	0	有种人
+	1	有种人
 
 rb;yie
 	0	银质
@@ -683,8 +683,8 @@ rjhvov
 	1	原计划
 
 rjrvii
-	0	软件业
 	0	软件园
+	1	软件业
 
 rk;yia
 	0	人治
@@ -712,16 +712,16 @@ rlrqav
 	1	缘来缘去
 
 rmrioi
-	0	虞美人
 	0	野蛮人
+	1	虞美人
 
 rmrmvv
 	0	严严
 	1	奄奄
 
 rmxyve
-	0	一脉相传
 	0	一脉相承
+	1	一脉相传
 
 rnuyao
 	0	如是
@@ -847,13 +847,13 @@ ryr;ov
 	1	易于
 
 ryryoo
-	0	奕奕
-	0	日日
 	0	日益
+	1	奕奕
+	2	日日
 
 ryryvo
-	0	一意
 	0	一日
+	1	一意
 
 rytjva
 	0	一统
@@ -869,8 +869,8 @@ ryuyai
 
 ryuyoi
 	0	日食
-	0	易逝
-	1	衣食
+	1	易逝
+	2	衣食
 
 ryuyvv
 	1	一世
@@ -880,10 +880,6 @@ rywkoo
 	0	日文
 	1	易问
 
-rywtvv
-	0	一万
-	0	一碗
-
 rywwoi
 	0	易位
 	1	日伪
@@ -891,7 +887,7 @@ rywwoi
 ryxboi
 	0	宜信
 	1	日信
-	1	易信
+	2	易信
 
 ryxxov
 	0	意想
@@ -942,9 +938,9 @@ uy;yoi
 	1	市值
 
 uyj;ov
-	0	市场机制
 	0	市场竞争
-	0	市场经济体制
+	1	市场机制
+	2	市场经济体制
 
 uyjmoa
 	0	施建
@@ -952,8 +948,8 @@ uyjmoa
 
 uyjreo
 	0	十家
-	0	生产经营
 	1	生产经验
+	2	生产经营
 
 uyjyoi
 	0	诗集
@@ -969,9 +965,9 @@ uyryeo
 	3	释义
 
 uyuyov
-	0	实事
-	1	时事
-	1	视事
+	0	时事
+	1	实事
+	2	视事
 
 uyuyvv
 	0	世世
@@ -1071,8 +1067,7 @@ xr;yvv
 
 xxrvoi
 	0	二噁英
-	0	二𫫇英
-	0	恶心人
+	1	二𫫇英
 
 xxuyoo
 	0	翔实

@@ -87,6 +87,7 @@ sort: original
 转	;g
 赚	;ga
 赚	;gaooe
+沌	;gav
 沌	;gavai
 篆	;ge
 馔	;gea
@@ -2120,6 +2121,8 @@ sort: original
 玼	cyvviv
 草	cz
 漕	cza
+屮	czai
+艸	czaia
 艸	czaiai
 屮	czaiii
 漕	czavia
@@ -2794,6 +2797,7 @@ sort: original
 遁	dweeo
 遁	dweeoa
 得	dweeoi
+遯	dweo
 遯	dweoao
 钝	dwi
 盹	dwia
@@ -3185,6 +3189,7 @@ sort: original
 福	fnoavo
 㕮	fnoe
 㕮	fnoeoe
+嘸	fnoev
 嘸	fnoevv
 咐	fnoi
 跗	fnoii
@@ -4188,6 +4193,7 @@ sort: original
 缋	hbaaia
 绘	hbaaiv
 洄	hbai
+芔	hbaia
 芔	hbaiai
 洄	hbaiav
 隳	hbaii
@@ -4499,6 +4505,7 @@ sort: original
 宏	hjoove
 黉	hjoovi
 哄	hjov
+吰	hjove
 吰	hjovea
 哄	hjovii
 竑	hjovv
@@ -5522,6 +5529,7 @@ sort: original
 鐍	jhioa
 傕	jhioae
 鐍	jhioao
+䦆	jhioo
 䦆	jhiooi
 镢	jhiov
 镢	jhiove
@@ -7390,8 +7398,8 @@ sort: original
 硫	lqveov
 琉	lqvv
 珋	lqvve
-珋	lqvvea
 瑠	lqvvea
+珋	lqvvea
 琉	lqvvov
 拉	lr
 邋	lra
@@ -8025,6 +8033,7 @@ sort: original
 酩	mdv
 酩	mdviea
 么	mf
+沫	mfa
 沫	mfavvi
 么	mfeaoo
 麽	mfo
@@ -8071,6 +8080,7 @@ sort: original
 鞔	mkviea
 忙	ml
 漭	mla
+茻	mlai
 茻	mlaiai
 漭	mlaiiv
 牤	mle
@@ -8706,6 +8716,7 @@ sort: original
 农	njoaea
 哝	njoo
 哝	njooae
+醲	njv
 醲	njviia
 弄	njvvve
 嫩	nk
@@ -9134,6 +9145,7 @@ sort: original
 螃	pli
 螃	pliaov
 庞	plo
+房	ploa
 房	ploaov
 旁	plovov
 庞	plovve
@@ -10358,6 +10370,7 @@ sort: original
 欺	qyviea
 期	qyviee
 其	qyvieo
+碁	qyvii
 碁	qyviiv
 圻	qyvo
 起	qyvoav
@@ -10421,6 +10434,7 @@ sort: original
 鬻	r;av
 㳚	r;ave
 㳚	r;aveo
+熨	r;avo
 熨	r;avoe
 聿	r;avv
 尉	r;avvi
@@ -11376,6 +11390,7 @@ sort: original
 繇	rqeoe
 繇	rqeoea
 釉	rqeoia
+肬	rqev
 肬	rqevea
 由	rqi
 邮	rqia
@@ -11391,8 +11406,8 @@ sort: original
 蝣	rqiaov
 囿	rqiav
 囿	rqiave
-由	rqiavi
 甴	rqiavi
+由	rqiavi
 挼	rqie
 挼	rqieeo
 悠	rqii
@@ -11568,8 +11583,8 @@ sort: original
 咽	rsoi
 蹂	rsoia
 蹂	rsoiao
-咽	rsoiav
 嘢	rsoiav
+咽	rsoiav
 晔	rsoii
 晔	rsoiie
 喝	rsoo
@@ -13339,6 +13354,7 @@ sort: original
 蜃	ukvei
 砷	ukveia
 蜃	ukveia
+昚	ukveo
 昚	ukveoi
 甚	ukvieo
 椹	ukvv
@@ -14179,7 +14195,7 @@ sort: original
 涴	wtao
 涴	wtaooa
 湾	wtaovi
-卐	wtavi
+卐	wtav
 卐	wtaviv
 丸	wte
 丸	wteaoo
@@ -14211,8 +14227,9 @@ sort: original
 剜	wtooii
 惋	wtooo
 惋	wtoooo
-完	wtoovv
+案	wtoov
 案	wtoovv
+完	wtoovv
 弯	wtov
 弯	wtovav
 万	wtv
@@ -14739,6 +14756,7 @@ sort: original
 颚	xfoov
 颚	xfoove
 额	xfoove
+噁	xfov
 呃	xfovea
 噁	xfoviv
 恶	xfv
@@ -15360,6 +15378,7 @@ sort: original
 谙	xtoaov
 暗	xtoi
 暗	xtoiov
+鞌	xtoo
 安	xtooae
 鞌	xtoovi
 案	xtoovv
@@ -15792,6 +15811,7 @@ sort: original
 嘬	ydooiv
 车	yf
 澈	yfa
+屮	yfai
 屮	yfaiii
 澈	yfaova
 彻	yfe
@@ -16540,6 +16560,7 @@ sort: original
 醉	zbviov
 则	zf
 泽	zfa
+沢	zfaa
 泽	zfaaov
 沢	zfaave
 则	zfaoii
@@ -16695,6 +16716,7 @@ sort: original
 曾	zpoeia
 甑	zpoeva
 憎	zpoo
+噌	zpooe
 噌	zpooei
 憎	zpoooe
 增	zpvooe

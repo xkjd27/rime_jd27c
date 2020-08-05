@@ -637,13 +637,15 @@ def traverse_cizu(build = False, report = True):
 
         records = list(codes.items())
         records.sort(key=lambda e: (len(e[0]), e[0]))
+
+        fullcode_issue = {}
         
         for record in records:
             code = record[0]
             dups = record[1]
             if len(dups) <= 1:
                 continue
-                
+            
             if (code in code_dup_lose_flag):
                 f = report_allowed
             else:
@@ -651,10 +653,24 @@ def traverse_cizu(build = False, report = True):
 
             f.write('%s\n' % code)
             
+            rank_check = set()
             for word in dups:
+                if word[2] in rank_check and word[1] not in fullcode_issue:
+                    fullcode_issue[word[1]] = dups
+                rank_check.add(word[2])
+
                 f.write('\t%d\t%s\n' % (word[2], word[0]))
-        
+
+
             f.write('\n')
+
+        report.write('---\n')
+        report.write('六码顺序问题\n')
+        for issue in sorted(list(fullcode_issue.items())):
+            report.write('%s\n' % issue[0])
+            for word in issue[1]:
+                report.write('\t%d\t%s\n' % (word[2], word[0]))
+            report.write('\n')
 
         report.close()
         report_allowed.close()

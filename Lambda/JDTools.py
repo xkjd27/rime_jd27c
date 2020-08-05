@@ -1084,7 +1084,7 @@ def get_all_zi():
     return ZiDB.all()
 
 def get_all_ci():
-    return CiDB.all(True) + CiDB.all(False)
+    return CiDB.all()
 
 def commit():
     """提交所有更改并生成新码表"""

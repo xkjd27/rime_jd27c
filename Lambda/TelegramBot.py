@@ -709,7 +709,7 @@ def change_word(update, context):
         pinyins = {}
         for code in JDTools.ci2codes(ci):
             ma = code[1]
-            py = code[-1]
+            py = code[-2]
             if (py in pinyins):
                 pinyins[py].append(ma)
             else:

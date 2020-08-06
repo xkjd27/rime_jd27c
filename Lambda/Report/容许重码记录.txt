@@ -986,6 +986,10 @@ uyzyva
 	0	石子
 	1	式子
 
+wnlyva
+	0	武力
+	1	无力
+
 wnlyvo
 	0	无礼
 	1	兀立

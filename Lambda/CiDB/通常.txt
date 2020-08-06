@@ -28754,6 +28754,7 @@
 嘴硬	zui/ying	4	0
 嘴笨	zui/ben	5	0
 嘴脸	zui/lian	4	0
+嘴臭	zui/chou	5	0
 嘴角	zui/jiao	4	0
 嘴贫	zui/pin	4	0
 嘴贱	zui/jian	6	0

@@ -101432,6 +101432,7 @@
 这么些	zhe/mo/xie	3	0
 这么做	zhe/me/zuo	3	1
 这么办	zhe/me/ban	3	1
+这么厉害	zhe/me/li/hai	4	0
 这么回事	zhe/me/hui/shi	4	0
 这么多	zhe/me/duo	3	1
 这么多人	zhe/me/duo/ren	4	1

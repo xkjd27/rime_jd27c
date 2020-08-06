@@ -216,7 +216,7 @@ def rank(update, context):
                 context.user_data.clear()
                 return -1
 
-            context.user_data['rank_pinyin'] = codes[0][-1]
+            context.user_data['rank_pinyin'] = codes[0][-2]
             CHOOSE(update, "确定要提升 %s 词 \(%s\) 至首位吗" % (data, code), ['是的'])
         else:
             zi = JDTools.get_char(data)

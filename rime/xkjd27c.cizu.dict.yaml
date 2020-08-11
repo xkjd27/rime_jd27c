@@ -4499,11 +4499,13 @@ sort: original
 展销	;txc
 占星	;txd
 毡靴	;txh
+沾血	;txha
 沾恩	;txk
 展现	;txm
 战线	;txmi
 状态下	;txo
 毡鞋	;txs
+沾血	;txsa
 整体性	;txv
 战讯	;txw
 站相	;txx
@@ -41670,6 +41672,7 @@ sort: original
 酒糟	jqzz
 经营者	jr;
 加油站	jr;a
+经验值	jr;aa
 金银珠宝	jr;b
 简言之	jr;e
 夹着	jr;f
@@ -41761,6 +41764,7 @@ sort: original
 加一点	jrda
 加队	jrdb
 胶原蛋白	jrdbe
+假吊	jrdc
 假定	jrdd
 江洋大盗	jrdda
 家丁	jrddo

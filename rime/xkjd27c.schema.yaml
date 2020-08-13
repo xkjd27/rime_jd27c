@@ -39,6 +39,9 @@ switches:
     states: [ 半, 全 ]
   - name: jffh
     states: [ 简, 繁 ]
+  - name: danzi_mode
+    reset: 0
+    states: [ "词组", "单字" ]
   - name: sbb_hint
     reset: 1
     states: [ "关₆₆₀", "开₆₆₀" ]
@@ -196,6 +199,8 @@ topup:
   min_length: 4
   max_length: 6
   auto_clear: true
+  min_length_danzi: 2
+  topup_command: false
 
 input_code:
   __include: "layout/input_code"

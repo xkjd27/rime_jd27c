@@ -35,10 +35,15 @@ local function commit_hint(cand)
     cand:get_genuine().comment = '⛔️' .. cand.comment
 end
 
+local function is_danzi(cand)
+    return utf8.len(cand.text) == 1
+end
+
 local function filter(input, env)
     local context = env.engine.context
     local is_hint_on = context:get_option('sbb_hint')
     local is_completion_on = context:get_option('completion')
+    local is_danzi_on = context:get_option('danzi_mode')
     local input_text = context.input
     local no_commit = string.len(input_text) < 4 and string.match(input_text, "^["..env.s.."]+$")
     local has_table = false
@@ -58,10 +63,14 @@ local function filter(input, env)
             has_table = true
         elseif cand.type == 'completion' then
             if is_completion_on then
-                yield(cand)
+                if not is_danzi_on or is_danzi(cand) then
+                    yield(cand)
+                end
             elseif not has_table then
-                yield(cand)
-                return
+                if not is_danzi_on or is_danzi(cand) then
+                    yield(cand)
+                    return
+                end
             else
                 return
             end

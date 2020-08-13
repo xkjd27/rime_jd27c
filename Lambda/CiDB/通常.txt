@@ -69244,7 +69244,7 @@
 流苏	liu/su	5	0
 流落	liu/luo	4	0
 流落他乡	liu/luo/ta/xiang	6	0
-流血	liu/xue	5	0
+流血	liu/xue	5	0	liu/xie	5	0
 流血漂橹	liu/xue/piao/lu	5	0
 流行	liu/xing	4	0
 流行性	liu/xing/xing	4	0

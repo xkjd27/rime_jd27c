@@ -30499,6 +30499,7 @@ sort: original
 过节	gujs
 国界	gujsi
 过街	gujsv
+过界	gujsvi
 工商界	gujv
 国军	gujw
 国君	gujwi
@@ -39878,6 +39879,7 @@ sort: original
 仅供参考	jgck
 卷层	jgcp
 卷次	jgcy
+聚光灯	jgd
 倦怠	jgdh
 卷动	jgdj
 激光打印机	jgdja
@@ -45554,6 +45556,7 @@ sort: original
 宽厚	kghs
 空格键	kgj
 宽近	kgjb
+髋关节	kgji
 宽减	kgjm
 宽假	kgjr
 宽解	kgjs
@@ -45748,10 +45751,12 @@ sort: original
 夸海口	khk
 开快	khkd
 开课	khkf
+开髋	khkg
 开开	khkh
 开孔	khkj
 开垦	khkk
 开库	khkn
+开胯	khkq
 开卡	khkr
 开口	khks
 开阔	khku
@@ -75341,6 +75346,7 @@ sort: original
 一有机会	rrjh
 因缘际会	rrjhi
 有一句话	rrjhv
+医养结合	rrjhvo
 热熔胶	rrji
 愚人节	rrjii
 雅间	rrjm
@@ -78447,6 +78453,7 @@ sort: original
 宜嗔宜喜	ryrxoo
 弋阳	ryrxv
 一吹一吸	ryrxvo
+医养	ryrxvo
 意义	ryry
 异议	ryrya
 翼翼	ryryaa
@@ -85062,6 +85069,7 @@ sort: original
 叹一口气	trkq
 他看	trkt
 它看	trkto
+踏勘	trktov
 同意了	trl
 塔林	trlb
 听雨两笔	trlbo
@@ -90786,6 +90794,7 @@ sort: original
 沙哑	urrr
 授人以鱼	urrri
 授人以渔	urrrii
+啥呀	urrro
 啥也	urrs
 事与愿违	urrw
 啥样	urrx
@@ -108604,6 +108613,7 @@ sort: original
 查扣	yrksv
 查看	yrkt
 察看	yrkto
+查勘	yrktv
 查考	yrkz
 扯远了	yrl
 差率	yrl;

@@ -700,8 +700,8 @@ rkryio
 	2	人日
 
 rkuyiv
-	0	人世
-	1	人事
+	0	人事
+	1	人世
 
 rkxdiv
 	0	人型

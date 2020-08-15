@@ -2057,6 +2057,7 @@ sort: original
 真会	;khb
 真坏	;khd
 真核	;khf
+振翮	;khfi
 真欢	;khg
 震寰	;khgv
 震害	;khh
@@ -9702,8 +9703,8 @@ sort: original
 补选	bnxgo
 不爱	bnxh
 补血	bnxho
-不削	bnxhv
-不学	bnxhvo
+不学	bnxhv
+不削	bnxhvi
 不凶	bnxj
 不限	bnxm
 不嫌	bnxmv
@@ -10779,6 +10780,7 @@ sort: original
 办到	btdz
 绊倒	btdza
 搬到	btdzi
+扳倒	btdzii
 半岛	btdzo
 半道	btdzoo
 白头发	btf
@@ -18659,8 +18661,8 @@ sort: original
 对你来说	dnlu
 到那里	dnlv
 渡轮	dnlw
-肚量	dnlx
-度量	dnlxo
+度量	dnlx
+肚量	dnlxe
 独立	dnly
 肚里	dnlye
 电脑迷	dnm
@@ -21648,6 +21650,7 @@ sort: original
 低保	dybz
 邸报	dybze
 底包	dybzo
+地堡	dybzv
 滴翠	dycb
 底册	dycf
 地财	dych
@@ -21660,6 +21663,7 @@ sort: original
 地层	dycpv
 地蚕	dyct
 地磁	dycy
+地刺	dycyv
 地槽	dycz
 大尺度	dyd
 敌对	dydb
@@ -24131,6 +24135,7 @@ sort: original
 浮出	fnyna
 复出	fnyne
 孵出	fnynea
+祓除	fnyno
 副处	fnynv
 福成	fnyp
 复查	fnyr
@@ -31486,6 +31491,7 @@ sort: original
 工作目标	gzmbv
 高妙	gzmc
 高明	gzmd
+公仔面	gzme
 高买	gzmh
 高门	gzmk
 高盲	gzml
@@ -37631,6 +37637,7 @@ sort: original
 好事	hzuy
 好使	hzuya
 好诗	hzuyao
+嚆矢	hzuyo
 耗时	hzuyv
 好少	hzuz
 海贼王	hzw
@@ -38135,6 +38142,7 @@ sort: original
 金吒	jb;r
 锦州	jb;s
 紧皱	jb;si
+金州	jb;sio
 进展	jb;t
 近战	jb;te
 仅占	jb;ti
@@ -39850,6 +39858,7 @@ sort: original
 卷纸	jg;y
 将功折罪	jg;z
 金箍棒	jgb
+鸡公煲	jgba
 卷标	jgbc
 卷饼	jgbd
 见怪不怪	jgbg
@@ -41653,6 +41662,7 @@ sort: original
 九二	jqxn
 精确性	jqxo
 救下	jqxr
+佶屈聱牙	jqxri
 旧鞋	jqxs
 就按	jqxt
 就像	jqxx
@@ -46215,6 +46225,7 @@ sort: original
 苦口婆心	kkpx
 垦区	kkq;
 恳请	kkqd
+肯綮	kkqdi
 恳求	kkqq
 客客气气	kkqqo
 恳切	kkqs
@@ -52358,7 +52369,8 @@ sort: original
 轮渡	lwdn
 雷达	lwdr
 伦敦	lwdw
-羸顿	lwdwo
+六味地黄丸	lwdwo
+羸顿	lwdwov
 论敌	lwdy
 泪滴	lwdya
 轮到	lwdz
@@ -65074,7 +65086,8 @@ sort: original
 翘首	qcus
 巧手	qcusv
 巧说	qcuu
-乔石	qcuy
+桥式	qcuy
+乔石	qcuye
 千错万错	qcwc
 巧问	qcwk
 翘望	qcwl
@@ -68960,11 +68973,11 @@ sort: original
 预热	r;rfa
 运指如飞	r;rfv
 芋圆	r;rg
-愉悦	r;rh
-预约	r;rha
+预约	r;rh
 鱼跃	r;rhe
 逾越	r;rhi
-应知应会	r;rho
+愉悦	r;rho
+应知应会	r;rhoe
 热衷于	r;ri
 惹争议	r;rie
 羽绒	r;rj
@@ -69143,6 +69156,7 @@ sort: original
 愈小	r;xc
 鱼腥	r;xd
 影只形单	r;xdo
+雨型	r;xdv
 余额	r;xf
 预选	r;xg
 雨雪	r;xh
@@ -69207,6 +69221,7 @@ sort: original
 尉迟	r;yya
 浴池	r;yyaa
 鱼池	r;yye
+玉墀	r;yyv
 一阵子	r;z
 遇则	r;zf
 余载	r;zh
@@ -70635,6 +70650,7 @@ sort: original
 伊甸园	rdrie
 人盯人	rdrii
 热带鱼	rdriv
+眼动仪	rdrivi
 应用	rdrj
 英勇	rdrji
 应让	rdrl
@@ -71839,6 +71855,7 @@ sort: original
 惹火了	rhli
 乐浪	rhll
 眼花缭乱	rhlli
+越浪	rhllv
 越冷	rhlp
 依葫芦画瓢	rhlpi
 阅览	rhlt
@@ -72664,6 +72681,7 @@ sort: original
 容载	rjzho
 牙尖嘴利	rjzl
 用足	rjzn
+瘾君子	rjzo
 冗杂	rjzr
 用作	rjzu
 一家子	rjzv
@@ -72949,8 +72967,8 @@ sort: original
 人氏	rkuyie
 仁师	rkuyii
 人是	rkuyio
-人世	rkuyiv
 人事	rkuyiv
+人世	rkuyiv
 人少	rkuz
 郁可唯	rkw
 人外	rkwh
@@ -75689,6 +75707,7 @@ sort: original
 有疑问	rrwve
 软任务	rrwvi
 亚伟	rrww
+任意妄为	rrwwi
 一如往昔	rrwx
 引以为傲	rrwxa
 阴阳五行	rrwxaa
@@ -82709,7 +82728,8 @@ sort: original
 挺旺	tdwl
 亭午	tdwn
 贪得无厌	tdwr
-听完	tdwt
+挺晚	tdwt
+听完	tdwto
 听我	tdwu
 廷尉	tdww
 天地万物	tdwwv
@@ -87208,6 +87228,7 @@ sort: original
 善罢甘休	ubgxo
 世博会	ubh
 睡会	ubhb
+水毁	ubhba
 水和	ubhf
 水患	ubhg
 叔本华	ubhi
@@ -93065,6 +93086,7 @@ sort: original
 拭去	uyq;i
 逝去	uyq;iv
 市区	uyq;o
+识曲	uyq;oi
 时区	uyq;ov
 识趣	uyq;ov
 诗琴	uyqb
@@ -97615,6 +97637,7 @@ sort: original
 危险区	wxqea
 无限期	wxqv
 外星人	wxr
+汪星人	wxra
 我需要	wxre
 五险一金	wxrj
 文学院	wxro
@@ -99153,6 +99176,7 @@ sort: original
 性状	xd;xo
 想到这儿	xd;xv
 性质	xd;y
+婞直	xd;ya
 行止	xd;ye
 兴致	xd;yo
 形制	xd;yv
@@ -110045,6 +110069,7 @@ sort: original
 超伦	yzlwvi
 超量	yzlx
 超力	yzly
+车仔面	yzm
 超买	yzmh
 超卖	yzmhv
 朝门	yzmk
@@ -110174,6 +110199,7 @@ sort: original
 嘲笑	yzxc
 超小	yzxcv
 吵醒	yzxd
+潮型	yzxda
 超额	yzxf
 超眩	yzxg
 巢穴	yzxh
@@ -113168,6 +113194,7 @@ sort: original
 自主	zy;n
 自助	zy;ne
 紫竹	zy;ni
+锱铢	zy;nii
 资助	zy;no
 祖冲之	zy;o
 自证	zy;p
@@ -113679,6 +113706,7 @@ sort: original
 早课	zzkf
 凿开	zzkh
 凿孔	zzkj
+孜孜矻矻	zzkk
 糟糠	zzkl
 灶坑	zzkp
 灶口	zzks

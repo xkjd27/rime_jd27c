@@ -2952,7 +2952,8 @@ sort: original
 逐年	;nnm
 猪年	;nnme
 主奴	;nnn
-中年男人	;nnr
+住哪	;nnr
+中年男人	;nnri
 主内	;nnw
 祝你	;nny
 助你	;nnyi
@@ -9484,6 +9485,7 @@ sort: original
 不穷	bnqj
 不欠	bnqm
 不前	bnqmv
+不浅	bnqmva
 不求	bnqq
 不切	bnqs
 布裙	bnqw
@@ -23255,6 +23257,7 @@ sort: original
 彷佛	flfu
 放飞	flfw
 芳菲	flfwi
+房费	flfwo
 法轮功	flg
 放归	flgb
 法律规定	flgd
@@ -41379,6 +41382,7 @@ sort: original
 酒精	jqjda
 久经	jqjde
 就见	jqjm
+九键	jqjme
 救救	jqjq
 久久	jqjqe
 舅舅	jqjqee
@@ -43003,6 +43007,7 @@ sort: original
 军事理论	jullov
 家属楼	julo
 精神力	juloo
+就是了	julooa
 近水楼台先得月	julr
 近水楼台	jult
 就事论事	julu
@@ -54847,6 +54852,8 @@ sort: original
 没觉得	mjd
 民进党	mjda
 没精打采	mjdc
+蛮简单的	mjdd
+蛮简单	mjdo
 没见过	mjg
 没几个	mjga
 毛巾杆	mjge
@@ -54972,6 +54979,9 @@ sort: original
 门面	mkmm
 门楣	mkmw
 没可能	mkn
+没可能的	mknd
+蛮困难的	mkndo
+蛮困难	mkno
 门内	mknw
 门票	mkpc
 门派	mkph
@@ -55571,6 +55581,7 @@ sort: original
 木垫	mndm
 目睹	mndn
 美能达	mndo
+蛮难的	mndoa
 木凳	mndp
 木豆	mnds
 牡丹	mndt
@@ -56746,6 +56757,7 @@ sort: original
 曼宁	mtndo
 慢牛	mtnq
 蛮牛	mtnqo
+蛮难	mtnt
 满脑	mtnz
 木托盘	mtp
 慢飘	mtpc

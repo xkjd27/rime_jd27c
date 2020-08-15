@@ -682,6 +682,7 @@ sort: original
 遮脸	;flm
 这路	;fln
 折柳	;flq
+这俩	;flr
 这楼	;fls
 遮拦	;flt
 这类	;flw
@@ -755,6 +756,7 @@ sort: original
 脂肪酸	;fs
 赭色	;fsf
 折算	;fsg
+这仨	;fsr
 这艘	;fss
 这三	;fst
 这所	;fsu
@@ -9643,6 +9645,7 @@ sort: original
 不擅	bnutv
 不说	bnuu
 不能说是	bnuuv
+不耐受	bnuv
 不顺	bnuw
 不爽	bnux
 不是	bnuy
@@ -13328,6 +13331,7 @@ sort: original
 磁感线	cgx
 攒心	cgxb
 窜下	cgxr
+窜稀	cgxy
 窜出	cgyn
 醋罐子	cgz
 汆子	cgzy
@@ -26121,6 +26125,7 @@ sort: original
 诡诈	gb;r
 贵州	gb;s
 贵胄	gb;si
+贵站	gb;t
 柜桌	gb;u
 官卑职小	gb;x
 硅脂	gb;y
@@ -26324,6 +26329,7 @@ sort: original
 跪求	gbqq
 果不其然	gbqr
 归群	gbqw
+贵群	gbqwi
 归期	gbqy
 鬼泣	gbqye
 搞不清楚	gbqyi
@@ -61126,6 +61132,7 @@ sort: original
 逆流	nylq
 你俩	nylr
 逆伦	nylw
+你俩	nylx
 泥里	nyly
 你老	nylz
 匿名	nymd
@@ -61157,6 +61164,7 @@ sort: original
 拟请	nyqd
 难成气候	nyqh
 泥鳅	nyqq
+你群	nyqw
 你强	nyqx
 牛初乳	nyr
 拟于	nyr;
@@ -76261,9 +76269,12 @@ sort: original
 晕头转向	rt;x
 染指	rt;y
 云同步	rtb
+乳糖不耐症	rtb;
 染病	rtbd
 染布	rtbn
+乳糖不耐	rtbne
 一天比一天	rtbt
+乳糖不耐受	rtbu
 有条不紊	rtbw
 燃爆	rtbz
 人头攒动	rtcd

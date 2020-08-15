@@ -1899,6 +1899,7 @@ sort: original
 中欧	;jxs
 中邪	;jxsi
 重案	;jxt
+重按	;jxte
 折节下士	;jxu
 中旬	;jxw
 重训	;jxwe
@@ -8370,6 +8371,7 @@ sort: original
 本身	bkuk
 别开生面	bkum
 本书	bkun
+不愧是你	bkunv
 本省	bkup
 笨手	bkus
 不可收拾	bkuu
@@ -13192,8 +13194,10 @@ sort: original
 测距	cfj;
 侧近	cfjb
 测井	cfjd
-测键	cfjm
+侧键	cfjm
+测键	cfjma
 侧记	cfjy
+侧刻	cfkf
 测控	cfkj
 侧刊	cfkt
 采访了	cfl
@@ -31953,6 +31957,7 @@ sort: original
 会空	hbkj
 会康	hbkl
 会哭	hbkn
+好，不愧是你	hbkna
 会坑	hbkp
 毫不客气	hbkq
 会卡	hbkr
@@ -65544,6 +65549,7 @@ sort: original
 倾斜	qdxs
 倾泻	qdxsi
 请安	qdxt
+轻按	qdxtv
 倾向	qdxx
 清香	qdxxa
 请降	qdxxo
@@ -69947,7 +69953,8 @@ sort: original
 腰鼓	rcgn
 尧沟	rcgs
 遥感	rcgt
-腰杆	rcgte
+遥杆	rcgte
+腰杆	rcgtev
 摇杆	rcgti
 要干	rcgtv
 要过	rcgu
@@ -74557,6 +74564,7 @@ sort: original
 游客	rqkf
 又可	rqkfa
 有课	rqkfv
+有刻	rqkfvo
 油款	rqkg
 又开	rqkh
 有空	rqkj
@@ -75236,7 +75244,8 @@ sort: original
 有一个人	rrgr
 远远高于	rrgrv
 牙垢	rrgs
-压杆	rrgt
+压感	rrgt
+压杆	rrgtv
 压过	rrgu
 也应该是	rrgua
 营养过剩	rrgui

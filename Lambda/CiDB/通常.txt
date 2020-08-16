@@ -113207,7 +113207,6 @@
 黑瘤	hei/liu	4	0
 黑白	hei/bai	4	0
 黑白分明	hei/bai/fen/ming	4	0
-黑白熊	hei/bai/xiong	4	0
 黑白片	hei/bai/pian	3	0
 黑白颠倒	hei/bai/dian/dao	4	0
 黑的	hei/de	4	0

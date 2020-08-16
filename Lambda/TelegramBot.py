@@ -99,6 +99,8 @@ def start(update, context):
 /pull - 从Github同步更新
 /push - 保存并上传
 /getjd - 获取键道6的新词
+/user_add - 添加用户词
+/user_delete - 删除用户词
 """)
 
 # Fallback
@@ -108,13 +110,157 @@ def cancel(update, context):
     return -1
 
 # Commands
+CUSTOM_DICT = {}
+CUSTOM_DICT_R = {}
+def load_custom():
+    CUSTOM_DICT.clear()
+    if os.path.isfile('./rime/xkjd27c.user.txt'):
+        with open('./rime/xkjd27c.user.txt', mode='r', encoding='utf-8') as infile:
+            for line in infile:
+                if (line.strip().startswith('#')):
+                    continue
+                data = line.split('\t')
+                if (len(data) != 2):
+                    continue
+                CUSTOM_DICT[data[0]] = data[1]
+                CUSTOM_DICT_R[data[1]] = data[0]
+
+load_custom()
+
+def add_custom(word, code):
+    if word in CUSTOM_DICT:
+        del CUSTOM_DICT_R[CUSTOM_DICT[word]]
+        del CUSTOM_DICT[word]
+
+    if code in CUSTOM_DICT_R:
+        return "%s 编码已经存在 \(%s\)" % (CLEAN(code), CLEAN(CUSTOM_DICT_R[code]))
+    
+    CUSTOM_DICT[word] = code
+    CUSTOM_DICT_R[code] = word
+
+def save_custom():
+    with open('./rime/xkjd27c.user.txt', mode='w', encoding='utf-8', newline='\n') as outfile:
+        data = sorted(list(CUSTOM_DICT_R.items()))
+        for line in data:
+            outfile.write("%s\t%s" % (line[1], line[0]))
+
+def remove_custom(info):
+    try:
+        if info in CUSTOM_DICT:
+            del CUSTOM_DICT_R[CUSTOM_DICT[info]]
+            del CUSTOM_DICT[info]
+        elif info in CUSTOM_DICT_R:
+            del CUSTOM_DICT[CUSTOM_DICT_R[info]]
+            del CUSTOM_DICT_R[info]
+        else:
+            return "%s 词条不存在" % info
+    except:
+        return None
+
+def user_add(update, context):
+    if update.effective_user.username not in ALLOWED_USER:
+        return -1
+
+    data = update.message.text
+
+    if (data.startswith('/')):
+        data = update.message.text.strip().split(' ')
+        if len(data) > 1:
+            word = ' '.join(data[1:])
+            update.message.text = word
+            return custom(update, context)
+        else:
+            REPLY(update, "请输入要添加的词条")
+            return 13
+    elif 'adding_custom' not in context.user_data:
+        context.user_data['adding_custom'] = data
+        REPLY(update, "正在添加自定词条词：%s，请提供编码" % data)
+        return 13
+    else:
+        result = add_custom(context.user_data['adding_custom'], data)
+        if result is not None:
+            REPLY(update, result)
+            return -1
+        else:
+            save_custom()
+
+            try:
+                auth_provider.load_session()
+                auth_provider.refresh_token()
+            except:
+                auth_url = client.auth_provider.get_auth_url(redirect_uri)
+                REPLY(update, "请运行 /push 以登录OneDrive")
+                context.user_data.clear()
+                return -1
+
+            try:
+                TYPING(update)
+                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.txt'].upload('./rime/xkjd27c.user.txt')
+                REPLY(update, "成功添加并更新到OneDrive")
+            except Exception as e:
+                REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)
+
+            context.user_data.clear()
+            return -1
+
+    REPLY(update, "未知错误")
+    context.user_data.clear()
+    return -1
+
+def user_delete(update, context):
+    if update.effective_user.username not in ALLOWED_USER:
+        return -1
+
+    data = update.message.text
+
+    if (data.startswith('/')):
+        data = update.message.text.strip().split(' ')
+        if len(data) > 1:
+            word = ' '.join(data[1:])
+            update.message.text = word
+            return custom(update, context)
+        else:
+            REPLY(update, "请输入要删除的词条/编码")
+            return 14
+    else:
+        result = remove_custom(data)
+        if result is not None:
+            REPLY(update, result)
+            return -1
+        else:
+            save_custom()
+
+            try:
+                auth_provider.load_session()
+                auth_provider.refresh_token()
+            except:
+                auth_url = client.auth_provider.get_auth_url(redirect_uri)
+                REPLY(update, "请运行 /push 以登录OneDrive")
+                context.user_data.clear()
+                return -1
+
+            try:
+                TYPING(update)
+                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.txt'].upload('./rime/xkjd27c.user.txt')
+                REPLY(update, "成功添加并更新到OneDrive")
+            except Exception as e:
+                REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)
+
+            context.user_data.clear()
+            return -1
+
+    REPLY(update, "未知错误")
+    context.user_data.clear()
+    return -1
+
+# Commands
 def add(update, context):
     if update.effective_user.username not in ALLOWED_USER:
         return -1
 
-    data = update.message.text.split()
+    data = update.message.text.strip().split(' ')
     if len(data) > 1:
-        word = data[1]
+        word = ' '.join(data[1:])
         update.message.text = word
         if (len(word) > 1):
             return add_word(update, context)
@@ -128,9 +274,9 @@ def delete(update, context):
     if update.effective_user.username not in ALLOWED_USER:
         return -1
 
-    data = update.message.text.split()
+    data = update.message.text.strip().split(' ')
     if len(data) > 1:
-        word = data[1]
+        word = ' '.join(data[1:])
         update.message.text = word
         if (len(word) > 1):
             return delete_word(update, context)
@@ -144,9 +290,9 @@ def change(update, context):
     if update.effective_user.username not in ALLOWED_USER:
         return -1
 
-    data = update.message.text.split()
+    data = update.message.text.strip().split(' ')
     if len(data) > 1:
-        word = data[1]
+        word = ' '.join(data[1:])
         update.message.text = word
         if (len(word) > 1):
             return change_word(update, context)
@@ -164,11 +310,11 @@ def rank(update, context):
 
     if 'rank_requested' not in context.user_data:
         context.user_data['rank_requested'] = True
-        data = data.split()
+        data = data.strip().split(' ')
         if (len(data) <= 1):
             REPLY(update, "请输入要排序的编码")
             return 9
-        data = data[1]
+        data = ' '.join(data[1:])
     
     if 'rank_code' not in context.user_data:
         context.user_data['rank_code'] = data
@@ -374,11 +520,11 @@ def list_command(update, context):
         return -1
 
     if 'list_requested' not in context.user_data:
-        data = update.message.text.split()
+        data = update.message.text.split(' ')
         context.user_data['list_requested'] = True
 
         if len(data) > 1:
-            word = data[1]
+            word = ' '.join(data[1:])
             update.message.text = word
             return list_command(update, context)
 
@@ -957,6 +1103,8 @@ add_convers = ConversationHandler(
         CommandHandler('pull', pull),
         CommandHandler('getjd', getjd),
         CommandHandler('start', start),
+        CommandHandler('user_add', user_add),
+        CommandHandler('user_delete', user_delete),
         MessageHandler(Filters.all, default_message)
     ],
     states={
@@ -973,6 +1121,8 @@ add_convers = ConversationHandler(
         10: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, list_command)],
         11: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, drop)],
         12: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, push)],
+        13: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, user_add)],
+        14: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, user_delete)],
     },
     fallbacks=[CommandHandler('cancel', cancel)]
 )

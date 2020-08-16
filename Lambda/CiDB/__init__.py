@@ -199,9 +199,8 @@ def remove(word, pinyins):
     """
 
     _loadDB()
-    _db = None
 
-    assert _db is not None, '`%s`词不存在' % word
+    assert _db[word] is not None, '`%s`词不存在' % word
 
     _db[word].remove_pinyins(pinyins)
 

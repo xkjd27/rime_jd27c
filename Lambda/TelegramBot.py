@@ -242,7 +242,7 @@ def user_delete(update, context):
 
             try:
                 TYPING(update)
-                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.txt'].upload('./rime/xkjd27c.user.txt')
+                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload('./rime/.xkjd27c.user.dict.yaml')
                 REPLY(update, "成功添加并更新到OneDrive")
             except Exception as e:
                 REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)

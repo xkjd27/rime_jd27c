@@ -4448,6 +4448,7 @@ sort: original
 占优	;trqii
 占压	;trr
 肢体语言	;trre
+主题医院	;trro
 展业	;trs
 沾染	;trt
 正投影	;trv
@@ -10897,6 +10898,7 @@ sort: original
 版面	btmm
 拌面	btmmi
 半亩	btmn
+半条命	btmo
 斑马	btmr
 悲天悯人	btmri
 半马	btmro
@@ -13495,10 +13497,12 @@ sort: original
 采乐	chlfee
 才乱	chlg
 才略	chlh
+彩虹六号	chlhe
 才来	chlhv
 才练	chlm
 财路	chln
 才留	chlq
+彩六	chlqe
 才漏	chls
 菜篮	chlt
 才累	chlw
@@ -21380,6 +21384,7 @@ sort: original
 大王卡	dwkv
 都忘了	dwl
 蹲了	dwlf
+弹丸论破	dwlp
 钝劣	dwls
 炖烂	dwlt
 对我来说	dwlu
@@ -22569,6 +22574,7 @@ sort: original
 服兵役	fbre
 反编译	fbrea
 发表意见	fbrj
+风暴英雄	fbrx
 福布斯	fbs
 饭饱思淫欲	fbsr
 副标题	fbt
@@ -22965,6 +22971,7 @@ sort: original
 分拣	fkjme
 汾酒	fkjq
 分家	fkjr
+反恐精英	fkjre
 分解	fkjs
 分界	fkjse
 粉浆	fkjx
@@ -29126,6 +29133,7 @@ sort: original
 孤傲	gnxz
 归纳出	gny
 鼓吹	gnyb
+鼓槌	gnybv
 雇车	gnyf
 古船	gnyg
 蛊虫	gnyj
@@ -37890,6 +37898,7 @@ sort: original
 讵料	j;lc
 巨灵	j;ld
 家长里短	j;ldo
+拒了	j;lf
 巨乱	j;lg
 价值论	j;li
 巨龙	j;lj
@@ -42911,6 +42920,7 @@ sort: original
 金童玉女	jtrn
 具体要求	jtrq
 家庭影院	jtrr
+军团要塞	jtrs
 交通运输	jtru
 集体所有制	jts;
 家徒四壁	jtsb
@@ -46873,6 +46883,7 @@ sort: original
 括约肌	krji
 可以解决	krjj
 开源节流	krjl
+狂热节拍	krjp
 可以接受	krju
 抗日救亡	krjw
 卡机	krjy
@@ -48870,6 +48881,7 @@ sort: original
 灵形	ldxdav
 菱形	ldxdi
 另行	ldxdo
+零点行动	ldxdv
 另选	ldxg
 令爱	ldxh
 领导下	ldxi
@@ -55763,6 +55775,7 @@ sort: original
 幕友	mnrqi
 牧业	mnrs
 木然	mnrt
+模拟人生	mnru
 模样	mnrx
 母羊	mnrxa
 沐阳	mnrxaa
@@ -62781,8 +62794,8 @@ sort: original
 普明	pnmd
 铺面	pnmm
 扑面	pnmmi
-普面	pnmmo
-谱面	pnmmov
+谱面	pnmmo
+普面	pnmmov
 扑灭	pnms
 铺满	pnmt
 朴茂	pnmz
@@ -66966,6 +66979,7 @@ sort: original
 求购	qqgs
 球杆	qqgt
 球果	qqgu
+全球攻势	qqgui
 求告	qqgz
 全球化	qqh
 巧取豪夺	qqhd
@@ -73166,6 +73180,7 @@ sort: original
 有利有弊	rlrb
 原来如此	rlrc
 越来越多	rlrd
+韵律源点	rlrdo
 月利润	rlre
 越来越高	rlrg
 越来越好	rlrh
@@ -73259,6 +73274,7 @@ sort: original
 人类学	rlx
 娱乐性	rlxa
 以礼相待	rlxd
+音律炫动	rlxdo
 游龙戏凤	rlxf
 热力学	rlxi
 依赖性	rlxiv
@@ -78716,6 +78732,7 @@ sort: original
 日销	ryxco
 一差二错	ryxcv
 异性	ryxd
+异形	ryxda
 异型	ryxda
 异姓	ryxdaa
 以诚相待	ryxdao
@@ -82984,6 +83001,7 @@ sort: original
 天高地阔	tgdk
 太公钓鱼	tgdr
 天高地远	tgdrv
+太鼓达人	tgdrvv
 天罡地煞	tgdu
 太过分	tgf
 团粉	tgfk
@@ -83153,6 +83171,7 @@ sort: original
 台港	thgla
 太古	thgn
 偷换概念	thgni
+太鼓	thgnv
 太庚	thgp
 太够	thgs
 太过	thgu
@@ -88939,6 +88958,7 @@ sort: original
 尚属	ul;ni
 上证	ul;p
 始乱终弃	ul;q
+胜利之日	ul;r
 上周	ul;s
 商周	ul;so
 商战	ul;t
@@ -89417,6 +89437,7 @@ sort: original
 鼠目寸光	umcg
 生命财产安全	umcq
 生命财产	umcy
+什么都	umd
 什么东东	umdd
 什么都不知道	umddi
 什么都有	umdr
@@ -99333,8 +99354,8 @@ sort: original
 星级	xdjy
 行迹	xdjye
 小肚鸡肠	xdjyi
-性急	xdjyo
-星际	xdjyoa
+星际	xdjyo
+性急	xdjyoe
 形迹	xdjyv
 想得开	xdk
 幸亏	xdkb
@@ -99932,6 +99953,7 @@ sort: original
 悬带	xgdh
 宣东	xgdj
 循规蹈矩	xgdje
+炫动	xgdjo
 选点	xgdm
 宣读	xgdn
 选读	xgdne
@@ -100855,6 +100877,7 @@ sort: original
 学子	xhzyo
 二进制	xj;
 胸椎	xj;b
+星际争霸	xj;bo
 凶宅	xj;h
 胸中	xj;j
 胸针	xj;k
@@ -106885,6 +106908,7 @@ sort: original
 充钱	yjqm
 重签	yjqme
 冲切	yjqs
+虫群	yjqw
 重启	yjqy
 充气	yjqyo
 常见于	yjr

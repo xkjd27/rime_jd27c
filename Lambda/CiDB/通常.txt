@@ -52254,6 +52254,7 @@
 拐骗	guai/pian	4	0
 拒不	ju/bu	6	0
 拒之门外	ju/zhi/men/wai	4	0
+拒了	ju/le	4	0
 拒人于千里之外	ju/ren/yu/wai	4	0
 拒付	ju/fu	5	0
 拒开	ju/kai	4	0

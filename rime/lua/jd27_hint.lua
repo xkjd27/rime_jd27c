@@ -45,7 +45,13 @@ local function filter(input, env)
     local is_completion_on = context:get_option('completion')
     local is_danzi_on = context:get_option('danzi_mode')
     local input_text = context.input
-    local no_commit = string.len(input_text) < 4 and string.match(input_text, "^["..env.s.."]+$")
+    local min_length = env.topup_length
+
+    if is_danzi_on then
+        min_length = env.danzi_length
+    end
+
+    local no_commit = string.len(input_text) < min_length and string.match(input_text, "^["..env.s.."]+$")
     local has_table = false
     local first = true
 
@@ -86,6 +92,8 @@ local function init(env)
 
     env.b = config:get_string("topup/topup_with")
     env.s = config:get_string("topup/topup_this")
+    env.topup_length = config:get_int("topup/min_length")
+    env.danzi_length = config:get_int("topup/min_length_danzi")
     env.reverse = ReverseDb("build/".. dict_name .. ".reverse.bin")
 end
 

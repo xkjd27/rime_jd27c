@@ -142,7 +142,7 @@ def save_custom():
     with open('./rime/xkjd27c.user.txt', mode='w', encoding='utf-8', newline='\n') as outfile:
         data = sorted(list(CUSTOM_DICT_R.items()))
         for line in data:
-            outfile.write("%s\t%s" % (line[1], line[0]))
+            outfile.write("%s\t%s\n" % (line[1], line[0]))
 
 def remove_custom(info):
     try:

@@ -168,7 +168,7 @@ def user_add(update, context):
         if len(data) > 1:
             word = ' '.join(data[1:])
             update.message.text = word
-            return custom(update, context)
+            return user_add(update, context)
         else:
             REPLY(update, "请输入要添加的词条")
             return 13

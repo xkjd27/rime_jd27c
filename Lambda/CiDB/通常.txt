@@ -9000,6 +9000,7 @@
 什么样的人	shen/me/yang/ren	6	0
 什么玩意	shen/me/wan/yi	4	0
 什么程度	shen/me/cheng/du	4	0
+什么都	shen/me/dou	3	0
 什么都不知道	shen/me/dou/dao	5	0
 什么都有	shen/me/dou/you	4	0
 什么都没有	shen/me/dou/you	5	0

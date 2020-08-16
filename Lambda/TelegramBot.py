@@ -114,8 +114,8 @@ CUSTOM_DICT = {}
 CUSTOM_DICT_R = {}
 def load_custom():
     CUSTOM_DICT.clear()
-    if os.path.isfile('./rime/xkjd27c.user.txt'):
-        with open('./rime/xkjd27c.user.txt', mode='r', encoding='utf-8') as infile:
+    if os.path.isfile('./rime/.xkjd27c.user.dict.yaml'):
+        with open('./rime/.xkjd27c.user.dict.yaml', mode='r', encoding='utf-8') as infile:
             for line in infile:
                 if (line.strip().startswith('#')):
                     continue
@@ -139,8 +139,9 @@ def add_custom(word, code):
     CUSTOM_DICT_R[code] = word
 
 def save_custom():
-    with open('./rime/xkjd27c.user.txt', mode='w', encoding='utf-8', newline='\n') as outfile:
+    with open('./rime/.xkjd27c.user.dict.yaml', mode='w', encoding='utf-8', newline='\n') as outfile:
         data = sorted(list(CUSTOM_DICT_R.items()))
+        outfile.write('# coding: utf-8\n---\nname: xkjd27c.user\nversion: "q2"\nsort: original\n...\n')
         for line in data:
             outfile.write("%s\t%s\n" % (line[1], line[0]))
 
@@ -195,7 +196,7 @@ def user_add(update, context):
 
             try:
                 TYPING(update)
-                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.txt'].upload('./rime/xkjd27c.user.txt')
+                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload('./rime/.xkjd27c.user.dict.yaml')
                 REPLY(update, "成功添加并更新到OneDrive")
             except Exception as e:
                 REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)

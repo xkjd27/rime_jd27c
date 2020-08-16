@@ -74,7 +74,6 @@ engine:
   translators:
     - punct_translator
     - table_translator
-    - table_translator@user_dict
     - table_translator@danzi_lookup
     - lua_translator@input_translator
     
@@ -161,15 +160,6 @@ translator:
   enable_sentence: false
   enable_user_dict: false
   encode_commit_history: false
-  initial_quality: 0
-
-user_dict:
-  dictionary: ""
-  user_dict: xkjd27c.user
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: true
-  initial_quality: -1
 
 jffh:
   opencc_config: s2t.json

@@ -119,7 +119,7 @@ def load_custom():
             for line in infile:
                 if (line.strip().startswith('#')):
                     continue
-                data = line.split('\t')
+                data = line.strip().split('\t')
                 if (len(data) != 2):
                     continue
                 CUSTOM_DICT[data[0]] = data[1]

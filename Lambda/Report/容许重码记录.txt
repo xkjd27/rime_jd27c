@@ -585,6 +585,10 @@ lmjsva
 	0	连结
 	1	联结
 
+mr;rav
+	0	没有注意
+	1	没有这样
+
 mrrrav
 	0	没有原因
 	1	没有意义
@@ -596,6 +600,10 @@ mumrai
 mwryoo
 	0	美日
 	1	美衣
+
+nrxxaa
+	0	难以想象
+	1	难以相信
 
 q;jmvi
 	0	去捡
@@ -645,6 +653,10 @@ rdbvve
 rg;niv
 	0	圆柱
 	1	人工智能
+
+rg;rai
+	0	如果这样
+	1	阳光照耀
 
 rg;yva
 	0	原汁

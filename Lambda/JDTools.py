@@ -655,7 +655,7 @@ def traverse_cizu(build = False, report = True):
             
             rank_check = set()
             for word in dups:
-                if word[2] in rank_check and word[1] not in fullcode_issue:
+                if len(code) == 6 and word[2] in rank_check and word[1] not in fullcode_issue:
                     fullcode_issue[word[1]] = dups
                 rank_check.add(word[2])
 

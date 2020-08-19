@@ -875,8 +875,9 @@ sort: original
 转变	;gbm
 主管部门	;gbmo
 珠光宝气	;gbq
-砖霸	;gbr
+转吧	;gbr
 猪狗不如	;gbre
+砖霸	;gbrv
 专版	;gbt
 转播	;gbu
 转臂	;gby
@@ -6483,6 +6484,7 @@ sort: original
 不知所措	b;sc
 不知死活	b;sh
 不知所云	b;sr
+不知所谓	b;sw
 不知所踪	b;sz
 不中听	b;t
 本质特征	b;t;
@@ -6917,6 +6919,7 @@ sort: original
 兵变	bdbme
 并不	bdbn
 兵部	bdbne
+不但不能	bdbnv
 百毒不侵	bdbq
 并把	bdbr
 百读不厌	bdbrv
@@ -7051,6 +7054,7 @@ sort: original
 遍地开花	bdkh
 冰窟	bdkn
 不大可能	bdknv
+不但可以	bdkr
 并口	bdks
 病况	bdkx
 不得了	bdl
@@ -7086,6 +7090,7 @@ sort: original
 冰面	bdmm
 兵募	bdmn
 兵马	bdmr
+不但没有	bdmrv
 病魔	bdmu
 并没	bdmw
 并茂	bdmz
@@ -7402,7 +7407,8 @@ sort: original
 宝贵经验	bgjr
 不干净	bgjv
 不挂科	bgk
-办公楼	bgl
+不过了	bgl
+办公楼	bgla
 不甘落后	bglh
 八国联军	bglj
 波光粼粼	bgll
@@ -7469,7 +7475,8 @@ sort: original
 半个小时	bgxu
 不甘心	bgxv
 不顾安危	bgxw
-不过尔尔	bgxx
+不敢相信	bgxx
+不过尔尔	bgxxv
 不构成	bgy
 不规则	bgz
 不敢自专	bgz;
@@ -8495,7 +8502,8 @@ sort: original
 棒读	bldn
 棒打	bldr
 榜单	bldt
-闭路电视	bldu
+不了多少	bldu
+闭路电视	blduo
 布隆迪	bldv
 不列颠	bldvv
 薄利多销	bldx
@@ -11379,6 +11387,7 @@ sort: original
 不失为	buw
 波纹	buwk
 博文	buwke
+不是为了	buwl
 榜上无名	buwm
 博物	buwn
 必输无疑	buwr
@@ -13137,6 +13146,7 @@ sort: original
 匆匆忙忙	ccmm
 残次品	ccp
 从此以	ccr
+从此以后	ccrh
 草苁蓉	ccri
 村村通	cct
 层次上	ccu
@@ -13919,8 +13929,10 @@ sort: original
 藏拙	cl;u
 藏之	cl;y
 从来不	clb
-苍白	clbh
+从来不会	clbh
+苍白	clbhi
 此路不通	clbt
+从来不是	clbu
 藏北	clbw
 舱壁	clby
 藏宝	clbz
@@ -13935,7 +13947,8 @@ sort: original
 藏毒	cldn
 从来都没有	cldr
 仓单	cldt
-藏躲	cldu
+从来都是	cldu
+藏躲	cldui
 舱底	cldy
 材料费	clf
 仓房	clfl
@@ -13957,6 +13970,7 @@ sort: original
 藏奸	cljm
 藏酒	cljq
 仓颉	cljs
+从来就是	clju
 沧江	cljx
 才离开	clk
 仓库	clkn
@@ -13981,7 +13995,8 @@ sort: original
 舱门	clmk
 苍茫	clml
 舱面	clmm
-藏马	clmr
+从来没有	clmr
+藏马	clmri
 才令你	cln
 苍南	clnt
 舱内	clnw
@@ -42950,6 +42965,7 @@ sort: original
 进退维谷	jtwg
 进退无门	jtwm
 具体问题	jtwt
+今天晚上	jtwu
 交通线	jtx
 警惕性	jtxi
 交通安全	jtxq
@@ -42964,6 +42980,7 @@ sort: original
 今天在	jtzi
 兼听则明	jtzm
 家庭作业	jtzr
+今天早上	jtzu
 今天早晨	jtzy
 驾驶证	ju;
 精神支柱	ju;;
@@ -49775,6 +49792,7 @@ sort: original
 立交桥	ljq
 隆庆	ljqd
 龙泉	ljqg
+了解情况	ljqk
 量角器	ljqo
 龙球	ljqq
 垄墙	ljqx
@@ -49807,6 +49825,7 @@ sort: original
 龙云	ljrw
 领军人物	ljrwi
 笼养	ljrx
+了解一下	ljrxa
 龙阳	ljrxv
 龙椅	ljry
 龙裔	ljryv
@@ -71164,6 +71183,7 @@ sort: original
 圆顶	rgddiv
 软的	rgdf
 圆的	rgdfi
+一个地方	rgdfv
 远端	rgdg
 软缎	rgdgv
 元代	rgdh
@@ -71230,6 +71250,7 @@ sort: original
 圆滚滚	rggi
 软工	rggj
 员工	rggjo
+一个国家	rggjv
 有关国家	rggjvo
 荣归故里	rggl
 缘故	rggn
@@ -71623,6 +71644,7 @@ sort: original
 软卧	rgwu
 如果我是	rgwua
 以攻为守	rgwuav
+一个晚上	rgwuv
 原位	rgww
 愿为	rgwwv
 原委	rgwwve
@@ -73156,7 +73178,8 @@ sort: original
 热辣辣	rlli
 人流量	rllia
 让路	rlln
-人类历史上	rllu
+人类历史	rllu
+人类历史上	rllui
 一缕缕	rllv
 让利	rlly
 有礼貌	rlm
@@ -75465,6 +75488,7 @@ sort: original
 让人们	rrmoi
 亚孟	rrmp
 亚麻	rrmr
+仍然没有	rrmri
 永远没有	rrmro
 远远没有	rrmrv
 压蔓	rrmt
@@ -76778,6 +76802,7 @@ sort: original
 云山雾绕	ruwrv
 若我	ruwu
 游山玩水	ruwua
+一上午	ruwv
 一事无成	ruwy
 艺术性	rux
 若需	rux;
@@ -77090,6 +77115,7 @@ sort: original
 云山	rwutv
 耘硕	rwuu
 医务室	rwuv
+一晚上	rwuvo
 运势	rwuy
 陨石	rwuya
 润湿	rwuyaa
@@ -88435,6 +88461,7 @@ sort: original
 受精卵	ujle
 数据流	ujlo
 守纪律	ujloa
+世界历史	ujlu
 世界里	ujlv
 世界领先	ujlx
 世纪末	ujm
@@ -88505,6 +88532,7 @@ sort: original
 世界市场	ujuy
 省纪委	ujw
 世界卫生组织	ujw;
+世界文化	ujwh
 世界文明	ujwm
 舍己为人	ujwr
 实际问题	ujwt
@@ -89452,6 +89480,7 @@ sort: original
 什么都	umd
 什么东东	umdd
 什么都不知道	umddi
+什么地方	umdf
 什么都有	umdr
 什么都没有	umdri
 善莫大焉	umdro
@@ -89464,7 +89493,9 @@ sort: original
 神秘感	umg
 什么鬼	umgi
 使命感	umgii
+什么感觉	umgj
 审美观	umgo
+什么关系	umgx
 书名号	umh
 水墨画	umha
 沙漠化	umhaa
@@ -89491,7 +89522,8 @@ sort: original
 审美疲劳	umpl
 舍命陪君子	umpz
 什么区别	umqb
-神马情况	umqk
+什么情况	umqk
+神马情况	umqko
 声名鹊起	umqq
 什么人	umr
 实名认证	umr;
@@ -89517,26 +89549,32 @@ sort: original
 什么颜色	umrsi
 神马意思	umrso
 什么也没说	umru
+什么样子	umrz
 史密斯	ums
 神秘色彩	umsc
 杀马特	umt
 水蜜桃	umta
 生命体	umte
+什么条件	umtj
 什么事	umu
 杀马诗	umue
 什么时候	umuh
 神马时候	umuho
-沙门氏菌	umuj
+什么时间	umuj
+沙门氏菌	umuja
 熟门熟路	umul
 双目失明	umum
 说明书	umuo
 市面上	umuov
+什么事情	umuq
+什么声音	umur
 声明说	umuv
 山明水秀	umux
 说明文	umw
 双马尾	umwa
 什么玩意	umwr
-说明问题	umwt
+什么问题	umwt
+说明问题	umwto
 生命危险	umwx
 生命线	umx
 什么啊	umxi
@@ -94858,6 +94896,7 @@ sort: original
 亡者	wl;fo
 王者	wl;fv
 网传	wl;g
+为了这个	wl;go
 网摘	wl;h
 望诊	wl;k
 网主	wl;n
@@ -95042,6 +95081,7 @@ sort: original
 网迷	wlmy
 为了你	wln
 亡女	wln;
+为了能够	wlng
 往年	wlnm
 忘年	wlnmo
 为了能	wlno
@@ -95145,6 +95185,7 @@ sort: original
 网上	wlul
 往上	wlule
 网商	wluli
+为了什么	wlum
 旺盛	wlup
 往生	wlupe
 枉杀	wlur
@@ -105142,7 +105183,8 @@ sort: original
 想想	xxxx
 湘乡	xxxxa
 香香	xxxxe
-恩恩爱爱	xxxxi
+休息休息	xxxxi
+恩恩爱爱	xxxxii
 惺惺相惜	xxxxo
 想象	xxxxv
 相向	xxxxve
@@ -106512,6 +106554,7 @@ sort: original
 川马	ygmr
 串谋	ygms
 传媒	ygmw
+串女	ygn;
 穿暖	ygng
 船内	ygnw
 传你	ygny

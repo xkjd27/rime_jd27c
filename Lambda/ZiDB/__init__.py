@@ -147,7 +147,13 @@ def reset():
     '''Discard all changes and reload'''
     global _db
     del _db
+
+    global _fixed
+    del _fixed
+
     _db = {}
+    _fixed = []
+    
     __load()
 
 def add(char, shape, pinyins, rank, comment = None):

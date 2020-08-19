@@ -2944,6 +2944,7 @@ sort: original
 助眠	;nmmi
 瞩目	;nmn
 注目	;nmna
+逐码	;nmr
 主谋	;nms
 竹篾	;nmse
 注满	;nmt
@@ -25438,6 +25439,7 @@ sort: original
 反社会	fuh
 发生后	fuha
 佛会	fuhb
+反射弧	fuhe
 佛海	fuhh
 风声鹤唳	fuhl
 腹式呼吸	fuhx
@@ -39939,7 +39941,8 @@ sort: original
 捐款	jgkg
 眷口	jgks
 狷狂	jgkx
-经过了	jgl
+就怪了	jgl
+经过了	jgla
 娟玲	jgld
 见惯了	jgli
 金刚狼	jglii
@@ -41380,6 +41383,7 @@ sort: original
 就范	jqft
 酒鬼	jqgb
 酒柜	jqgba
+就怪	jqgd
 九个	jqgf
 纠葛	jqgfa
 九歌	jqgfe
@@ -88193,6 +88197,7 @@ sort: original
 社会财富	uhcf
 适合的	uhd
 生活大爆炸	uhd;
+筛掉	uhdc
 神魂颠倒	uhdd
 晒得	uhdf
 守恒定律	uhdl

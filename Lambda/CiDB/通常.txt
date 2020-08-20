@@ -61809,6 +61809,7 @@
 朋荣	peng/rong	4	0
 服下	fu/xia	4	0
 服不服	fu/bu/fu	4	0
+服主	fu/zhu	5	0
 服了	fu/le	4	0
 服从	fu/cong	4	0
 服从于	fu/cong/yu	4	0

@@ -1052,7 +1052,7 @@ def build_static():
         with open(RIME_PATH % STAITC_MAP[static], mode='w', encoding='utf-8', newline='\n') as outfile:
             outfile.write(RIME_HEADER % STAITC_MAP[static])
             with open(os.path.join(static_path, static), mode='r', encoding='utf-8') as infile:
-                outfile.write('\n'.join(replace_static(line.strip()) for line in infile.readlines()))
+                outfile.write('\n'.join(replace_static(line.strip()) for line in infile))
 
 def find_all_pinyin_of_word(word):
     sound = sound_chars(word)

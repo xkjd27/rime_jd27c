@@ -60,7 +60,7 @@ sort: original
 毕竟	bov
 不过	bv
 不到	bva
-变成	bve
+并不	bve
 不想	bvi
 本来	bvo
 不禁	bvv
@@ -97,7 +97,7 @@ sort: original
 到了	da
 大约	daa
 打架	dae
-肚子	dai
+懂了	dai
 都能	dao
 当即	dav
 当然	de
@@ -119,7 +119,7 @@ sort: original
 大家	doo
 地方	dov
 东西	dv
-得到	dva
+大概	dva
 对面	dve
 底下	dvi
 大哥	dvo
@@ -187,12 +187,12 @@ sort: original
 还没	ha
 缓缓	haa
 还好	hae
-孩子	hai
+好了	hai
 还能	hao
 喝酒	hav
 好的	he
 很多	hea
-获得	hee
+还行	hee
 浑身	hei
 或者	heo
 回答	hev
@@ -203,7 +203,7 @@ sort: original
 黄金	hio
 还会	hiv
 还是	ho
-或许	hoa
+好吧	hoa
 火焰	hoe
 哈哈	hoi
 回家	hoo
@@ -220,11 +220,11 @@ sort: original
 加油	jai
 绝对	jao
 渐渐	jav
-几乎	je
+居然	je
 竟然	jea
 觉得	jee
 阶段	jei
-进入	jeo
+几乎	jeo
 就算	jev
 几个	ji
 结果	jia
@@ -334,10 +334,10 @@ sort: original
 没事	mvi
 模样	mvo
 每天	mvv
-能力	na
+那也	na
 年纪	naa
 你好	nae
-女孩	nai
+你也	nai
 难以	nao
 农民	nav
 那么	ne
@@ -352,9 +352,9 @@ sort: original
 那个	nii
 那位	nio
 那些	niv
-难道	no
+那就	no
 内心	noa
-怒火	noe
+难道	noe
 那是	noi
 内容	noo
 内部	nov
@@ -445,7 +445,7 @@ sort: original
 因为	ro
 应该	roa
 认为	roe
-容易	roi
+于是	roi
 一定	roo
 一次	rov
 然而	rv
@@ -577,7 +577,7 @@ sort: original
 喜欢	xa
 系统	xaa
 小姐	xae
-小子	xai
+行了	xai
 学习	xao
 而已	xav
 许多	xe

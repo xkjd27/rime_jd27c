@@ -102946,6 +102946,7 @@
 迟延	chi/yan	4	0
 迟慢	chi/man	4	0
 迟早	chi/zao	4	0
+迟早药丸	chi/zao/yao/wan	5	0
 迟暮	chi/mu	4	0
 迟暮之年	chi/mu/zhi/nian	4	0
 迟来	chi/lai	4	0

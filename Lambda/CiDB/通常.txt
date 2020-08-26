@@ -53370,6 +53370,7 @@
 指名	zhi/ming	6	0
 指名道姓	zhi/ming/dao/xing	4	0
 指向	zhi/xiang	4	0
+指啥	zhi/sha	4	0
 指头	zhi/tou	4	0
 指套	zhi/tao	4	0
 指定	zhi/ding	4	0

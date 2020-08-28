@@ -19119,6 +19119,7 @@
 别馋	bie/chan	4	0
 别骂	bie/ma	4	0
 别鹤孤鸾	bie/he/gu/luan	4	0
+刮了	gua/le	5	0
 刮净	gua/jing	4	0
 刮削	gua/xiao	4	0
 刮去	gua/qu	4	0

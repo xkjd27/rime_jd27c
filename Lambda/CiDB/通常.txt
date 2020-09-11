@@ -63720,6 +63720,7 @@
 枪声	qiang/sheng	5	0
 枪崩	qiang/beng	4	0
 枪弹	qiang/dan	4	0
+枪弹辩驳	qiang/dan/bian/bo	4	0
 枪战	qiang/zhan	5	0
 枪手	qiang/shou	4	0
 枪打出头鸟	qiang/da/chu/niao	6	0

@@ -108385,6 +108385,7 @@
 阿敏	a/min	4	0
 阿文	a/wen	5	0
 阿斗	a/dou	5	0
+阿斯巴甜	a/si/ba/tian	5	0
 阿方	a/fang	5	0
 阿族	a/zu	4	0
 阿昌	a/chang	5	0

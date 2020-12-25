@@ -321,6 +321,10 @@ ryxda
 	0	之形
 	1	之幸
 
+;yxrev
+	0	直下
+	1	知耻而后勇
+
 bdrvvi
 	0	本地人
 	1	不动摇
@@ -467,6 +471,10 @@ gbuvvi
 gufnie
 	0	国父
 	1	果腹
+
+gulyio
+	0	国立
+	1	果粒
 
 guuyii
 	0	国史
@@ -681,6 +689,10 @@ rgjmvi
 rgrqvi
 	0	原由
 	1	一个月前
+
+rgukvo
+	0	原审
+	1	原神
 
 rgwwvo
 	0	原味
@@ -953,6 +965,10 @@ uy;pov
 	0	时政
 	1	施政
 
+uy;yoa
+	0	施治
+	1	试纸
+
 uy;yoi
 	0	是指
 	1	市值
@@ -1013,6 +1029,10 @@ wnlyva
 wnlyvo
 	0	无礼
 	1	兀立
+
+wnryva
+	0	无异
+	1	无以
 
 wnryvo
 	0	五日
@@ -1108,6 +1128,10 @@ ynjdai
 ynuyoo
 	0	初识
 	1	初试
+
+yrhqii
+	0	茶花
+	1	插花
 
 yrjbii
 	0	插紧

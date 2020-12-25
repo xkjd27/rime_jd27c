@@ -973,13 +973,16 @@ def find_weight_for_word(word, pinyin, length):
                 
     return weight
 
-def find_space_for_word(word, pinyin):
+def find_space_for_word(word, pinyin, current = True):
     codes = list(word2codes(word, pinyin, 6, False, True))
     if len(codes) == 0:
         return None
     
     short = [code[:-1] for code in codes]
-    _, lookup = get_current_cizu_codes()
+    if current:
+        _, lookup = get_current_cizu_codes()
+    else:
+        _, lookup = get_cizu_codes()
 
     full_dup = 0
     for code in codes:
@@ -1020,7 +1023,7 @@ def find_space_for_char(shape, pinyin):
             if code in lookup:
                 avaliable = False
                 break
-        
+
         if (avaliable):
             avaliable_spaces.append(i)
         short = [code[:-1] for code in short]

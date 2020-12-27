@@ -113870,6 +113870,7 @@
 鹖鸡	he/ji	5	0
 鹞子	yao/zi	6	0
 鹞鹰	yao/ying	5	0
+鹡鸰	ji/ling	5	0
 鹣鲽情深	jian/die/qing/shen	4	0
 鹤乡	he/xiang	4	0
 鹤双	he/shuang	4	0

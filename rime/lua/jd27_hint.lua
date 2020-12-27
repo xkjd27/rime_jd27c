@@ -35,6 +35,11 @@ local function commit_hint(cand)
     cand:get_genuine().comment = '⛔️' .. cand.comment
 end
 
+local function secondary_hint(cand)
+    -- 次码提示
+    cand:get_genuine().comment = '🔹' .. cand.comment
+end
+
 local function is_danzi(cand)
     return utf8.len(cand.text) == 1
 end
@@ -59,8 +64,11 @@ local function filter(input, env)
         if no_commit and first then
             commit_hint(cand)
         end
-        first = false
         if cand.type == 'table' then
+            if not first then
+                secondary_hint(cand)
+            end
+
             if is_hint_on then
                 hint(cand, input_text, env)
             end
@@ -83,6 +91,7 @@ local function filter(input, env)
         else
             yield(cand)
         end
+        first = false
     end
 end
 

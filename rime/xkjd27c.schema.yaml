@@ -193,7 +193,7 @@ recognizer:
   patterns:
     __include: "layout/patterns"
     danzi_lookup: "[a-z;`]*`+[a-z;`]*"
-      
+
 topup:
   __include: "layout/topup"
   min_length: 4

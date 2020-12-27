@@ -5,17 +5,21 @@
     ------------
     Schema配置
     ------------
-    1. 将topup.lua添加至rime.lua
+    1. Schema中要启用自动补全提示并禁用自动上屏
+        "translator/enable_completion": true
+        "speller/auto_select": false
+
+    2. 将topup.lua添加至rime.lua
         topup_processor = require("topup")
     
-    2. 将topup_processor挂接在speller之前
+    3. 将topup_processor挂接在speller之前
         processors:
-          ...
-          - lua_processor@topup_processor
-          - speller
-          ...
+            ...
+            - lua_processor@topup_processor
+            - speller
+            ...
     
-    3. 配置顶功处理器
+    4. 配置顶功处理器
         topup:
             topup_with: "aeiov" # 顶功集合码，通常为形码
             min_length: 4  # 无顶功码自动上屏的长度

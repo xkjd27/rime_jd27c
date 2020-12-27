@@ -180,6 +180,8 @@ sort: original
 纼	;kaaa
 纼	;kaaav
 缜	;kaaeo
+姫	;kae
+姫	;kaevi
 浈	;kai
 浈	;kaiva
 阵	;kaiva
@@ -1120,7 +1122,7 @@ sort: original
 摆	bhieia
 拜	bhievv
 佰	bhiv
-佰	bhivei
+佰	bhiveo
 兡	bhkfeo
 呗	bho
 呗	bhoaoo
@@ -2068,6 +2070,8 @@ sort: original
 存	cwveai
 寸	cwvi
 寸	cwvioo
+壿	cwvo
+壿	cwvooe
 村	cwvvio
 次	cy
 赐	cya
@@ -2831,6 +2835,8 @@ sort: original
 礅	dwveov
 砘	dwveva
 墩	dwvo
+壿	dwvoo
+壿	dwvooe
 墩	dwvoov
 地	dy
 滴	dya
@@ -3000,7 +3006,9 @@ sort: original
 份	fkieoa
 偾	fkieov
 芬	fkii
+蕡	fkiie
 芬	fkiieo
+蕡	fkiieo
 棻	fkiiv
 棻	fkiivv
 粉	fko
@@ -4220,7 +4228,9 @@ sort: original
 蛔	hbia
 翙	hbiaa
 翙	hbiaao
+睢	hbiai
 蛔	hbiaia
+睢	hbiaio
 回	hbiaoo
 蟪	hbiav
 蟪	hbiavi
@@ -6031,6 +6041,8 @@ sort: original
 降	jxai
 降	jxaiea
 疆	jxav
+弜	jxava
+弜	jxavav
 犟	jxave
 犟	jxavev
 江	jxaviv
@@ -8062,6 +8074,8 @@ sort: original
 劢	mhvaae
 迈	mhvaoa
 霾	mhvo
+売	mhvoe
+売	mhvoea
 霾	mhvoeo
 埋	mhvoia
 麦	mhvv
@@ -8261,10 +8275,10 @@ sort: original
 吗	mr
 妈	mra
 马	mraa
-孖	mraaa
-孖	mraaaa
 马	mraavv
 妈	mraeaa
+孖	mrai
+孖	mraiai
 犸	mre
 犸	mreaaa
 抹	mri
@@ -15736,6 +15750,8 @@ sort: original
 憙	xyvooa
 喜	xyvooo
 熹	xyvooo
+囍	xyvov
+囍	xyvovo
 栖	xyvv
 栖	xyvvia
 奥	xz
@@ -16446,6 +16462,8 @@ sort: original
 媸	yyaeai
 蚩	yyai
 蚩	yyaiia
+翄	yyao
+翄	yyaoeo
 尺	yyav
 弛	yyava
 弛	yyavai
@@ -16858,12 +16876,13 @@ sort: original
 噂	zwoo
 噂	zwooev
 樽	zwv
+壿	zwvo
 樽	zwvoev
+壿	zwvooe
 字	zy
 子	zya
 淄	zyaa
 缁	zyaaa
-孖	zyaaaa
 淄	zyaaaa
 缁	zyaaaa
 甾	zyaai
@@ -16871,6 +16890,8 @@ sort: original
 姊	zyae
 姊	zyaeea
 孜	zyai
+孖	zyaia
+孖	zyaiai
 孜	zyaiev
 子	zyaivv
 滋	zyao

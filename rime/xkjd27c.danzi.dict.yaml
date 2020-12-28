@@ -3934,6 +3934,8 @@ sort: original
 卦	gqv
 栝	gqve
 栝	gqvevi
+颪	gqvi
+颪	gqviea
 坬	gqvo
 坬	gqvoee
 卦	gqvoio
@@ -5004,7 +5006,9 @@ sort: original
 璜	hxvvvi
 好	hz
 浩	hza
+恏	hzae
 好	hzaeai
+恏	hzaeoa
 浩	hzaevi
 濠	hzao
 灏	hzaoi
@@ -5219,6 +5223,8 @@ sort: original
 巾	jbiaii
 仅	jbiaoo
 搢	jbie
+仐	jbieo
+仐	jbieoo
 搢	jbievi
 紧	jbii
 荩	jbiia
@@ -5344,11 +5350,15 @@ sort: original
 燋	jcoei
 燋	jcoeio
 嚼	jcoeoo
+嘦	jcoev
+嘦	jcoevi
 跤	jcoi
 噍	jcoio
 噍	jcoiov
 跤	jcoiov
 觉	jcoo
+嘂	jcooa
+嘂	jcooai
 窖	jcooe
 窖	jcooev
 觉	jcooia
@@ -5613,6 +5623,8 @@ sort: original
 缄	jmaav
 缄	jmaave
 奸	jmae
+姦	jmaea
+姦	jmaeae
 奸	jmaevv
 艰	jmao
 艰	jmaoav
@@ -6042,6 +6054,7 @@ sort: original
 降	jxaiea
 疆	jxav
 弜	jxava
+勥	jxavae
 弜	jxavav
 犟	jxave
 犟	jxavev
@@ -6219,6 +6232,7 @@ sort: original
 冀	jyivia
 佶	jyivo
 佶	jyivoo
+亼	jyivv
 记	jyo
 计	jyoa
 记	jyoaav
@@ -8407,6 +8421,7 @@ sort: original
 莫	mui
 默	muia
 冒	muiai
+瞐	muiaia
 冒	muiaia
 墨	muiav
 默	muiave
@@ -8949,6 +8964,7 @@ sort: original
 泥	nyaave
 妮	nyae
 妮	nyaeav
+氼	nyaii
 尼	nyavea
 腻	nye
 猊	nyea
@@ -9327,6 +9343,8 @@ sort: original
 帕	priaei
 扒	prie
 扒	prieeo
+掱	priei
+掱	prieie
 葩	prii
 芭	priia
 芭	priiai
@@ -11173,7 +11191,9 @@ sort: original
 韧	rkv
 轫	rkva
 轫	rkvaae
+忈	rkvv
 韧	rkvvae
+忈	rkvvoa
 让	rl
 瀼	rla
 瀼	rlaovo
@@ -12250,6 +12270,8 @@ sort: original
 粟	snvioe
 素	snvv
 素	snvvaa
+玊	snvvi
+玊	snvviv
 僧	sp
 僧	spioei
 撒	sr
@@ -12314,6 +12336,10 @@ sort: original
 馓	ste
 馓	steavi
 伞	sti
+仐	stie
+仐	stieoo
+傘	stii
+傘	stiiii
 伞	stioee
 糁	sto
 糁	stoeao
@@ -13682,7 +13708,9 @@ sort: original
 单	utoei
 单	utoeia
 剡	utoeii
+羴	utoeo
 煽	utoeoa
+羴	utoeoe
 善	utoeoo
 闪	utoi
 跚	utoie
@@ -15028,6 +15056,7 @@ sort: original
 狝	xmeae
 狝	xmeaea
 馅	xmeaea
+鱻	xmeaea
 猃	xmeai
 猃	xmeaiv
 鲜	xmeaoe

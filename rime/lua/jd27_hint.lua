@@ -59,13 +59,14 @@ local function filter(input, env)
     local no_commit = string.len(input_text) < min_length and string.match(input_text, "^["..env.s.."]+$")
     local has_table = false
     local first = true
+    local is_b = string.match(input_text, "^["..env.b.."]")
 
     for cand in input:iter() do
         if no_commit and first then
             commit_hint(cand)
         end
         if cand.type == 'table' then
-            if not first then
+            if not first and not is_b then
                 secondary_hint(cand)
             end
 

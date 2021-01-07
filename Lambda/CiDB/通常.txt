@@ -52740,6 +52740,7 @@
 拉肚	la/du	5	0
 拉肚子	la/du/zi	3	0
 拉肠	la/chang	5	0
+拉胯	la/kua	4	0
 拉脱维亚	la/tuo/wei/ya	5	0
 拉腿	la/tui	4	0
 拉花	la/hua	4	0

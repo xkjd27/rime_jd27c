@@ -12,60 +12,6 @@ from Layout import *
 RIME_HEADER = '# 由键道：涵自动生成\n---\nname: %s\nversion: "q2"\nsort: original\n...\n' % (RIME_SCHEMA + ".%s")
 RIME_PATH = 'rime/%s' % (RIME_SCHEMA + ".%s.dict.yaml")
 
-# 拼音变体转换表
-PY_TRANSFORM = {
-    'qve': 'que',
-    'lve': 'lue',
-    'jve': 'jue',
-    'xve': 'xue',
-    'yve': 'yue',
-    'm': 'en',
-    'ng': 'eng',
-}
-
-# 特殊声母表
-PY_SHENG = {
-    'a': '~',
-    'ai': '~',
-    'an': '~',
-    'ang': '~',
-    'ao': '~',
-    'e': '~',
-    'ei': '~',
-    'en': '~',
-    'eng': '~',
-    'er': '~',
-    'o': '~',
-    'ou': '~',
-}
-
-# 特殊韵母表
-PY_YUN = {
-    'ya': 'ia', 
-    'yan': 'ian', 
-    'yang': 'iang',
-    'yao': 'iao',
-    'ye': 'ie',
-    'yong': 'iong',
-    'you': 'iu',
-    'ju': 'v',
-    'qu': 'v',
-    'xu': 'v',
-    'yu': 'v',
-    'a': 'a',
-    'ai': 'ai',
-    'an': 'an',
-    'ang': 'ang',
-    'ao': 'ao',
-    'e': 'e',
-    'ei': 'ei',
-    'en': 'en',
-    'eng': 'eng',
-    'er': 'er',
-    'o': 'o',
-    'ou': 'ou',
-}
-
 # ---------------------------------
 #             辅助函数
 # ---------------------------------

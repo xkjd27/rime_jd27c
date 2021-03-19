@@ -1,5 +1,59 @@
 RIME_SCHEMA = "xkjd27c"
 
+# 拼音变体转换表
+PY_TRANSFORM = {
+    'qve': 'que',
+    'lve': 'lue',
+    'jve': 'jue',
+    'xve': 'xue',
+    'yve': 'yue',
+    'm': 'en',
+    'ng': 'eng',
+}
+
+# 特殊声母表
+PY_SHENG = {
+    'a': '~',
+    'ai': '~',
+    'an': '~',
+    'ang': '~',
+    'ao': '~',
+    'e': '~',
+    'ei': '~',
+    'en': '~',
+    'eng': '~',
+    'er': '~',
+    'o': '~',
+    'ou': '~',
+}
+
+# 特殊韵母表
+PY_YUN = {
+    'ya': 'ia', 
+    'yan': 'ian', 
+    'yang': 'iang',
+    'yao': 'iao',
+    'ye': 'ie',
+    'yong': 'iong',
+    'you': 'iu',
+    'ju': 'v',
+    'qu': 'v',
+    'xu': 'v',
+    'yu': 'v',
+    'a': 'a',
+    'ai': 'ai',
+    'an': 'an',
+    'ang': 'ang',
+    'ao': 'ao',
+    'e': 'e',
+    'ei': 'ei',
+    'en': 'en',
+    'eng': 'eng',
+    'er': 'er',
+    'o': 'o',
+    'ou': 'ou',
+}
+
 JD_S2K = {
     'q': 'q',
     'w': 'w',

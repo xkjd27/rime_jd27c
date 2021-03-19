@@ -2,7 +2,7 @@ import JDTools
 import sys
 import itertools
 
-sys.stdout.reconfigure(encoding='utf-16')
+sys.stdout.reconfigure(encoding='utf-8')
 
 cis = JDTools.get_all_ci()
 

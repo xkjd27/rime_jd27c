@@ -98792,6 +98792,7 @@
 贴着	tie/zhe	5	0
 贴紧	tie/jin	5	0
 贴纸	tie/zhi	4	0
+贴纸包	tie/zhi/bao	4	0
 贴脸	tie/lian	5	0
 贴膜	tie/mo	5	0
 贴花	tie/hua	5	0

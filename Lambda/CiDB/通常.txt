@@ -69516,6 +69516,7 @@
 注重	zhu/zhong	4	0
 注销	zhu/xiao	4	0
 注音	zhu/yin	4	0
+注音符号	zhu/yin/fu/hao	4	0
 泪人	lei/ren	5	0
 泪儿	lei/er	4	0
 泪光	lei/guang	4	0

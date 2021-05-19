@@ -23676,6 +23676,7 @@
 反人类	fan/ren/lei	4	0
 反代	fan/dai	5	0
 反伤	fan/shang	5	0
+反作弊	fan/zuo/bi	4	0
 反作用	fan/zuo/yong	5	0
 反例	fan/li	5	0
 反侦察	fan/zhen/cha	3	0

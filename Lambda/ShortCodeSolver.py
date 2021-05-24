@@ -98,5 +98,5 @@ def solve_danzi():
             else:
                 break
 
-solve_danzi()
+solve_cizu()
 JDTools.commit()

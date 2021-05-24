@@ -309,14 +309,6 @@ fyxda
 	0	之形
 	1	之幸
 
-bfwlvv
-	0	不远万里
-	1	不要我了
-
-bkfyvo
-	0	本意
-	1	本义
-
 bmfyio
 	0	便衣
 	1	便意
@@ -387,10 +379,6 @@ dyf;vv
 	0	地域
 	1	达成一致
 
-f;rvei
-	0	一种人
-	1	有种人
-
 fd;yve
 	0	硬直
 	1	硬脂
@@ -403,21 +391,9 @@ ffdfvv
 	0	远远大于
 	1	远远低于
 
-ffxfvv
-	0	有样学样
-	2	牙牙学语
-
-fgdmvi
-	0	远点
-	1	原电
-
 fgfqvi
 	0	原由
 	1	一个月前
-
-fgjmvi
-	0	远见
-	1	元件
 
 fgukvo
 	0	原审
@@ -426,10 +402,6 @@ fgukvo
 fgwwvo
 	0	原味
 	1	原为
-
-fjdmei
-	0	用电
-	1	用典
 
 fjhvov
 	0	有计划
@@ -446,10 +418,6 @@ flqyov
 fmfmvv
 	0	严严
 	1	奄奄
-
-fmrioi
-	0	野蛮人
-	1	虞美人
 
 fmxyve
 	0	一脉相承
@@ -476,10 +444,6 @@ fruyav
 	1	法式
 	2	法事
 
-fsukoo
-	0	夜神
-	1	夜审
-
 fthqeo
 	0	反话
 	1	番话
@@ -487,10 +451,6 @@ fthqeo
 fumfvi
 	0	有什么用
 	1	有什么意义
-
-furjiv
-	0	由奢入俭
-	1	由奢入简
 
 fwuyvv
 	0	云石
@@ -506,7 +466,6 @@ fy;yiv
 
 fy;yoe
 	0	译制
-	1	益智
 	2	义肢
 
 fydjav
@@ -537,14 +496,6 @@ fymdoe
 	0	易名
 	1	夜长梦多
 
-fyq;ov
-	0	疫区
-	1	意趣
-
-fyqyoe
-	0	义气
-	1	意气
-
 fytjva
 	0	一统
 	1	一通
@@ -553,17 +504,9 @@ fyuyai
 	0	已逝
 	1	已使
 
-fyuyoi
-	1	易逝
-	2	衣食
-
 fyuyvv
 	1	一世
 	2	轶事
-
-fyxboi
-	0	宜信
-	2	易信
 
 gbuvvi
 	0	根本上
@@ -605,10 +548,6 @@ jcusoi
 	0	交手
 	1	交售
 
-jdryoo
-	1	精日
-	2	竟日
-
 jduyov
 	0	惊世
 	1	京东商城
@@ -645,17 +584,9 @@ jyf;ev
 	0	急于
 	1	及于
 
-jyfyaa
-	0	既已
-	1	即以
-
 jynmae
 	0	鸡年
 	1	纪年
-
-jyryeo
-	0	祭日
-	1	几日
 
 jyunoo
 	0	记数
@@ -681,22 +612,6 @@ lmjsva
 	0	连结
 	1	联结
 
-mf;fav
-	0	没有注意
-	1	没有这样
-
-mfffav
-	0	没有原因
-	1	没有意义
-
-mumfai
-	0	没什么用
-	1	没什么两样
-
-nfxxaa
-	0	难以想象
-	1	难以相信
-
 q;jmvi
 	0	去捡
 	1	取件
@@ -720,14 +635,6 @@ qyfyvv
 qyjyev
 	0	气机
 	1	气极
-
-rgjcve
-	0	软胶
-	1	软脚
-
-rjfvii
-	0	软件园
-	1	软件业
 
 rk;yia
 	0	人治
@@ -765,10 +672,6 @@ uruyav
 	0	沙士
 	1	沙示
 
-uumfoi
-	0	是什么样
-	1	是什么原因
-
 uy;fie
 	1	逝者
 	2	侍者
@@ -789,10 +692,6 @@ uy;yoi
 	0	是指
 	1	市值
 
-uyffva
-	0	事出反常必有妖
-	0	事出有因
-
 uyfyeo
 	0	失忆
 	1	失意
@@ -802,10 +701,6 @@ uyj;ov
 	0	市场竞争
 	1	市场机制
 	2	市场经济体制
-
-uyjfeo
-	1	生产经验
-	2	生产经营
 
 uyjmoa
 	0	施建
@@ -866,10 +761,6 @@ wtuyvv
 	0	万世
 	1	顽石
 
-wumfoi
-	0	为什么要
-	1	为什么不可以
-
 ww;yoo
 	0	为之
 	1	谓之
@@ -911,17 +802,9 @@ xhhzoo
 	1	哀号
 	2	哀嚎
 
-xlftoa
-	0	吓了一跳
-	1	吓了一大跳
-
 xmxheo
 	0	腺癌
 	1	衔哀
-
-xxfvoi
-	0	二噁英
-	1	二𫫇英
 
 xxuyoo
 	0	翔实

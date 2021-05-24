@@ -1,3 +1,190 @@
+可缩码："荫"  fbiia ->   fbii (yin) | 通常
+可缩码："茚"  fbiie ->   fbii (yin) | 通常
+可缩码："茵"  fbiii ->   fbii (yin) | 通常
+可缩码："苂"  fbiio ->   fbii (yin) | 通常
+可缩码："铟"  fbioi ->   fbio (yin) | 通常
+可缩码："龈"  fbiva ->   fbiv (yin) | 通常
+可缩码："龂"  fbive ->   fbiv (yin) | 通常
+可缩码："鄞"  fbvia ->    fbv (yin) | 通常
+可缩码："堙"   fbvo ->    fbv (yin) | 通常
+可缩码："垠"  fbvoa ->    fbv (yin) | 通常
+可缩码："霪" fbvoae ->    fbv (yin) | 通常
+可缩码："圻"  fbvoe ->    fbv (yin) | 通常
+可缩码："慭"  fbvoo ->    fbv (yin) | 通常
+可缩码："珢"   fbvv ->    fbv (yin) | 通常
+可缩码："烎"  fbvvo ->    fbv (yin) | 通常
+重码：    fc ['要', '覅']
+可缩码："箢"  fgevo ->   fgev (yuan) | 通常
+可缩码："辕"   fgva ->    fgv (yuan) | 通常
+可缩码："橼"  fgvaa ->    fgv (yuan) | 通常
+可缩码："鸢"  fgvae ->    fgv (yuan) | 通常
+可缩码："原"   fgve ->    fgv (yuan) | 通常
+可缩码："愿"  fgveo ->    fgv (yuan) | 通常
+可缩码："袁"   fgvo ->    fgv (yuan) | 通常
+可缩码："垸"  fgvoo ->    fgv (yuan) | 通常
+可缩码："垣"  fgvov ->    fgv (yuan) | 通常
+可缩码："塬" fgvove ->    fgv (yuan) | 通常
+可缩码："远"   fgvv ->    fgv (yuan) | 通常
+可缩码："瑗"  fgvve ->    fgv (yuan) | 通常
+可缩码："鼋"  fgvvo ->    fgv (yuan) | 通常
+可缩码："涌"  fjaao ->   fjaa (yong) | 通常
+可缩码："邕" fjaaoa ->   fjaa (yong) | 通常
+可缩码："泳"  fjaoa ->   fjao (yong) | 通常
+可缩码："甬"  fjaoi ->   fjao (yong) | 通常
+可缩码："恿"  fjaoo ->   fjao (yong) | 通常
+可缩码："澭"  fjaov ->   fjao (yong) | 通常
+可缩码："鲬"  fjeaa ->   fjea (yong) | 通常
+可缩码："鳙"  fjeao ->   fjea (yong) | 通常
+可缩码："蛹"   fjia ->    fji (yong) | 通常
+可缩码："俑"  fjiao ->    fji (yong) | 通常
+可缩码："颙"  fjiav ->    fji (yong) | 通常
+可缩码："拥"   fjie ->    fji (yong) | 通常
+可缩码："佣"  fjiea ->    fji (yong) | 通常
+可缩码："镛"  fjioo ->    fji (yong) | 通常
+可缩码："永"   fjoa ->    fjo (yong) | 通常
+可缩码："踊"   fjoi ->    fjo (yong) | 通常
+可缩码："喁"  fjoia ->    fjo (yong) | 通常
+可缩码："咏"   fjoo ->    fjo (yong) | 通常
+可缩码："㶲"  fjooe ->    fjo (yong) | 通常
+可缩码："慵"  fjooo ->    fjo (yong) | 通常
+可缩码："庸"   fjov ->    fjo (yong) | 通常
+可缩码："雍"  fjova ->    fjo (yong) | 通常
+可缩码："鄘" fjovai ->    fjo (yong) | 通常
+可缩码："痈"  fjove ->    fjo (yong) | 通常
+可缩码："饔"  fjovi ->    fjo (yong) | 通常
+可缩码："壅"  fjovv ->    fjo (yong) | 通常
+可缩码："埇"  fjvoa ->    fjv (yong) | 通常
+可缩码："栐" fjvoaa ->    fjv (yong) | 通常
+可缩码："墉"  fjvoo ->    fjv (yong) | 通常
+重码：    fr ['压', '法']
+重码：   fre ['乏', '衙']
+重码：  frev ['氩', '筏']
+重码：   fri ['押', '罚']
+重码：  friv ['伐', '伢']
+重码：   fro ['呀', '阀']
+重码：   frv ['牙', '珐']
+重码：  frve ['砑', '砝']
+全码序冲突：frvevo 砝 压 [0] (通常)
+重码：    fs ['也', '否']
+可缩码："液"   fsao ->    fsa (ye) | 通常
+重码：   fse ['爷', '缶']
+可缩码："野"  fsiaa ->   fsia (ye) | 通常
+可缩码："曳"  fsiav ->   fsia (ye) | 通常
+可缩码："拽"  fsiei ->   fsie (ye) | 通常
+可缩码："掖"  fsieo ->   fsie (ye) | 通常
+可缩码："揶"  fsiev ->   fsie (ye) | 通常
+可缩码："嘢" fsoiav ->  fsoia (ye) | 通常
+重码：   fsv ['不', '页']
+重码：    fw ['云', '飞']
+重码：   fwa ['允', '费']
+重码：  fwaa ['沸', '纭']
+重码：  fwae ['妃', '孕']
+全码序冲突：fwaeai 淝 孕 [0] (通常)
+可缩码："涢"  fwaoa ->   fwao (yun) | 通常
+可缩码："贠" fwaoao ->   fwao (yun) | 通常
+重码：   fwe ['匀', '肥']
+重码：  fwea ['狁', '狒']
+重码：  fwev ['肺', '氲']
+重码： fwevv ['筠', '篚']
+重码：   fwi ['蕴', '非']
+重码：  fwii ['芸', '菲']
+重码：   fwo ['废', '晕']
+重码：  fwoa ['诽', '郧']
+重码：  fwoo ['悱', '愠']
+重码：  fwov ['吠', '韵']
+重码：   fwv ['匪', '运']
+全码序冲突：fwvivv 酝 匪 [0] (通常)
+重码：  fwvo ['鋆', '霏']
+全码序冲突：fwvoiv 霏 鋆 [0] (通常)
+重码：  fwvv ['榧', '耘']
+可缩码："议"   fyoa ->    fyo (yi) | 通常
+可缩码："译"  fyoaa ->    fyo (yi) | 通常
+可缩码："诒" fyoaao ->    fyo (yi) | 通常
+可缩码："诣"  fyoae ->    fyo (yi) | 通常
+可缩码："扅" fyoaea ->    fyo (yi) | 通常
+可缩码："邑"  fyoai ->    fyo (yi) | 通常
+可缩码："谊"  fyoao ->    fyo (yi) | 通常
+可缩码："扆" fyoaov ->    fyo (yi) | 通常
+可缩码："祎"  fyoav ->    fyo (yi) | 通常
+可缩码："义"   fyoe ->    fyo (yi) | 通常
+可缩码："熠"  fyoea ->    fyo (yi) | 通常
+可缩码："益"  fyoei ->    fyo (yi) | 通常
+可缩码："燚"  fyoeo ->    fyo (yi) | 通常
+可缩码："易"   fyoi ->    fyo (yi) | 通常
+可缩码："咿"  fyoia ->    fyo (yi) | 通常
+可缩码："昳"  fyoie ->    fyo (yi) | 通常
+可缩码："呓" fyoiia ->    fyo (yi) | 通常
+可缩码："宜"   fyoo ->    fyo (yi) | 通常
+可缩码："忆"  fyooa ->    fyo (yi) | 通常
+可缩码："怡" fyooao ->    fyo (yi) | 通常
+可缩码："怿" fyooao ->    fyo (yi) | 通常
+可缩码："嗌"  fyooe ->    fyo (yi) | 通常
+可缩码："悒"  fyooo ->    fyo (yi) | 通常
+可缩码："噫"  fyoov ->    fyo (yi) | 通常
+可缩码："宧" fyoovi ->    fyo (yi) | 通常
+可缩码："亦"   fyov ->    fyo (yi) | 通常
+可缩码："咦"  fyova ->    fyo (yi) | 通常
+可缩码："翊" fyovao ->    fyo (yi) | 通常
+可缩码："衣"  fyove ->    fyo (yi) | 通常
+可缩码："疫" fyovea ->    fyo (yi) | 通常
+可缩码："毅" fyovea ->    fyo (yi) | 通常
+可缩码："旖" fyovev ->    fyo (yi) | 通常
+可缩码："裔"  fyovi ->    fyo (yi) | 通常
+可缩码："廙" fyovia ->    fyo (yi) | 通常
+可缩码："意"  fyovo ->    fyo (yi) | 通常
+可缩码："裛" fyovoa ->    fyo (yi) | 通常
+可缩码："癔" fyovov ->    fyo (yi) | 通常
+可缩码："弈"  fyovv ->    fyo (yi) | 通常
+可缩码："痍" fyovva ->    fyo (yi) | 通常
+可缩码："奕" fyovve ->    fyo (yi) | 通常
+可缩码："瘗" fyovvo ->    fyo (yi) | 通常
 全码序冲突：mziaia 帽 冒 [1] (通常)
 可替换："氼"  nyaii ->   nyai (替换超级字 "𨺙")
+可缩码："汭" rbaiae ->     rb (rui) | 通常
+可缩码："蚋" rbiaia ->     rb (rui) | 通常
+可缩码："蕊"   rbii ->     rb (rui) | 通常
+可缩码："芮" rbiiia ->     rb (rui) | 通常
+可缩码："蕤"  rbiiv ->     rb (rui) | 通常
+可缩码："锐"   rbio ->     rb (rui) | 通常
+可缩码："睿"   rbiv ->     rb (rui) | 通常
+可缩码："叡" rbivao ->     rb (rui) | 通常
+可缩码："瑞"    rbv ->     rb (rui) | 通常
+可缩码："枘"   rbvi ->     rb (rui) | 通常
+可缩码："媆" rgaeve ->     rg (ruan) | 通常
+可缩码："阮"   rgai ->     rg (ruan) | 通常
+可缩码："朊"   rgev ->     rg (ruan) | 通常
+可缩码："软"    rgv ->     rg (ruan) | 通常
+可缩码："堧" rgvove ->     rg (ruan) | 通常
+可缩码："瓀"  rgvvv ->     rg (ruan) | 通常
+可缩码："绒"   rjaa ->     rj (rong) | 通常
+可缩码："溶"   rjao ->     rj (rong) | 通常
+可缩码："狨"   rjea ->     rj (rong) | 通常
+可缩码："肜"   rjee ->     rj (rong) | 通常
+可缩码："荣"    rji ->     rj (rong) | 通常
+可缩码："嵘"  rjiai ->     rj (rong) | 通常
+可缩码："蝾" rjiaii ->     rj (rong) | 通常
+可缩码："蓉"   rjii ->     rj (rong) | 通常
+可缩码："茸"  rjiiv ->     rj (rong) | 通常
+可缩码："镕"   rjio ->     rj (rong) | 通常
+可缩码："容"    rjo ->     rj (rong) | 通常
+可缩码："冗"  rjoae ->     rj (rong) | 通常
+可缩码："熔"   rjoe ->     rj (rong) | 通常
+可缩码："融"    rjv ->     rj (rong) | 通常
+可缩码："榕"   rjvo ->     rj (rong) | 通常
+可缩码："戎"   rjvv ->     rj (rong) | 通常
+可缩码："瑢"  rjvvo ->     rj (rong) | 通常
+可缩码："挼"   rqie ->     rq (rua) | 通常
+可缩码："柔"    rsa ->     rs (rou) | 通常
+可缩码："肉"   rsia ->     rs (rou) | 通常
+可缩码："揉"   rsie ->     rs (rou) | 通常
+可缩码："糅"  rsoea ->     rs (rou) | 通常
+可缩码："蹂"  rsoia ->     rs (rou) | 通常
+可缩码："宍"  rsooo ->     rs (rou) | 通常
+可缩码："𫐓"  rsvaa ->     rs (rou) | 超级
+可缩码："鞣"  rsvia ->     rs (rou) | 通常
+可缩码："润"   rwao ->     rw (run) | 通常
+可缩码："闰"   rwoi ->     rw (run) | 通常
+可缩码："驲" ryaaoi ->     ry (ri) | 通常
+可缩码："䒤" ryiioi ->     ry (ri) | 通常
+可缩码："日"    ryo ->     ry (ri) | 通常
 检查完毕

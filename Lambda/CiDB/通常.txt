@@ -68075,6 +68075,7 @@
 汇款人	hui/kuan/ren	4	0
 汇款给	hui/kuan/gei	3	0
 汇流	hui/liu	5	0
+汇源	hui/yuan	5	0
 汇演	hui/yan	4	0
 汇率	hui/lv	4	0
 汇票	hui/piao	4	0

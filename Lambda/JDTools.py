@@ -1,9 +1,9 @@
 import sys
 import os
-import ZiDB
-import CiDB
+from . import ZiDB
+from . import CiDB
 import itertools
-from Layout import *
+from .Layout import *
 
 # ---------------------------------
 #               常量

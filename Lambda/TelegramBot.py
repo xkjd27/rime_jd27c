@@ -1,12 +1,13 @@
 from dotenv import load_dotenv
-import logging
 import os
-import JDTools
-import Commands
+from . import JDTools
+from . import Commands
 import re
 from bisect import bisect_left
-from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove, ChatAction, ParseMode)
+from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, ChatAction, ParseMode
 from telegram.ext import Updater, CommandHandler, ConversationHandler, MessageHandler, Filters
+from telegram.utils.helpers import escape_markdown
+from typing import List, Dict
 from git import Repo
 import onedrivesdk
 import urllib.request
@@ -43,13 +44,14 @@ dispatcher = updater.dispatcher
 
 # dispatcher.add_error_handler(error_callback)
 
-LOG_STATUS = []
+LOG_STATUS: List[str] = []
 
-def LOG(result):
+def LOG(result: List[str]):
     global LOG_STATUS
     LOG_STATUS += result
 
-def CLEAN(text):
+def CLEAN(text: str) -> str:
+    return escape_markdown(text, version = 2)
     return (
         text.replace('*', '')
             .replace('__', '*')
@@ -66,7 +68,7 @@ def CLEAN(text):
             .replace('.', '\.')
     )
 
-def MARK(result):
+def MARK(result: List[str]) -> List[str]:
     res = []
     for line in result:
         res.append(CLEAN(line))
@@ -904,7 +906,6 @@ def change_word(update, context):
         return -1
     
     return 7
-
 
 def change_char(update, context):
     data = update.message.text

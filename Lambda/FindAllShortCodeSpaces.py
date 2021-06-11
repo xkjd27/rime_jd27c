@@ -1,4 +1,4 @@
-import JDTools
+from . import JDTools
 
 entries, codes = JDTools.get_current_danzi_codes()
 

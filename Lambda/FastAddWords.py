@@ -1,5 +1,4 @@
-import JDTools
-import Commands
+from . import JDTools
 import sys
 
 words = []

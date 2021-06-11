@@ -1,4 +1,4 @@
-import JDTools
+from . import JDTools
 
 COMMAND_TRANSCRIPT = []
 GENERAL = 1

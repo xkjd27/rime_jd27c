@@ -1,5 +1,5 @@
-import JDTools
-import Commands
+from . import JDTools
+from . import Commands
 import sys
 
 char = "觍" # sys.argv[1]

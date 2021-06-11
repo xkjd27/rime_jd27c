@@ -1,6 +1,6 @@
 import os
 import re
-from PinyinConsts import VALID_PY, isCharCommon
+from ..PinyinConsts import VALID_PY, isCharCommon
 
 class Zi:
     def __init__(self, line):

@@ -6,7 +6,6 @@ import re
 from bisect import bisect_left
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, ChatAction, ParseMode
 from telegram.ext import Updater, CommandHandler, ConversationHandler, MessageHandler, Filters
-from telegram.utils.helpers import escape_markdown
 from typing import List, Dict
 from git import Repo
 import onedrivesdk
@@ -51,7 +50,6 @@ def LOG(result: List[str]):
     LOG_STATUS += result
 
 def CLEAN(text: str) -> str:
-    return escape_markdown(text, version = 2)
     return (
         text.replace('*', '')
             .replace('__', '*')

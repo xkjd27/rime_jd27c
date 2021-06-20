@@ -382,7 +382,7 @@ sort: original
 珍藏册	;cc
 这次的	;cd
 仲裁员	;cf
-注册费	;cf
+注册费	;cfa
 政策法规	;cfg
 中村丰	;cfi
 中草药	;cfi
@@ -431,9 +431,9 @@ sort: original
 主导地位	;ddw
 指导地位	;ddwi
 重点大学	;ddx
-猪队友	;df
 这地方	;df
 指导方针	;df;
+猪队友	;dfe
 重大意义	;dff
 指导意义	;dffi
 长大以后	;dfh
@@ -545,7 +545,6 @@ sort: original
 直到最后	;dzh
 镇定自若	;dzr
 志愿者	;f;
-执法者	;f;
 中庸之道	;f;d
 朱元璋	;f;e
 遮遮	;f;f
@@ -554,6 +553,7 @@ sort: original
 只有这样	;f;fo
 折转	;f;g
 眨一眨	;f;i
+执法者	;f;ia
 中央政治局	;f;j
 这种	;f;j
 折衷	;f;ji
@@ -584,10 +584,10 @@ sort: original
 这招	;f;z
 遮罩	;f;zo
 专业版	;fb
-支付宝	;fb
 重要保证	;fb;
 重要标志	;fb;e
 这并	;fbd
+支付宝	;fbe
 这一部分	;fbf
 执法必严	;fbfi
 执法不严	;fbfia
@@ -689,11 +689,11 @@ sort: original
 这道	;fdz
 这倒	;fdzo
 主要有	;ff
-障眼法	;ff
 这与	;ff;
 这雨	;ff;o
 这样一种	;ff;o
 只有一种	;ff;ov
+障眼法	;ffa
 遮阴	;ffb
 折印	;ffbi
 遮荫	;ffbo
@@ -846,8 +846,8 @@ sort: original
 终于可以	;fkfa
 这样可以	;fkfo
 这颗	;fkfo
-照样可以	;fkfov
 这棵	;fkfov
+照样可以	;fkfov
 这款	;fkg
 这样看来	;fkl
 这一刻	;fko
@@ -3419,7 +3419,6 @@ sort: original
 主委	;nwwoe
 执牛耳	;nx
 诛心	;nxb
-猪心	;nxbe
 注销	;nxc
 住校	;nxci
 助销	;nxcii
@@ -17547,7 +17546,6 @@ sort: original
 待到	dhdze
 带刀	dhdzv
 大红大紫	dhdzva
-电话费	dhf
 都会有	dhf
 待遇	dhf;
 黛玉	dhf;i
@@ -17557,6 +17555,7 @@ sort: original
 待迎	dhfd
 代远	dhfg
 岱岳	dhfh
+电话费	dhfi
 代用	dhfj
 待用	dhfje
 带分	dhfk
@@ -18223,10 +18222,10 @@ sort: original
 对口词	dkc
 大快朵颐	dkdf
 大开大合	dkdh
-大开发	dkf
 都可以	dkf
 大开眼界	dkfj
 大可以	dkfv
+大开发	dkfvv
 大哭一场	dkfy
 电控柜	dkg
 大客户	dkh
@@ -20421,7 +20420,6 @@ sort: original
 跌倒	dsdzo
 跌到	dsdzov
 第三方	dsf
-第三页	dsf
 斗鱼	dsf;
 都与	dsf;e
 斗玉	dsf;o
@@ -20435,6 +20433,7 @@ sort: original
 蝶妖	dsfci
 都应	dsfd
 叠影	dsfda
+第三页	dsfe
 都愿	dsfg
 都用	dsfj
 蝶泳	dsfji

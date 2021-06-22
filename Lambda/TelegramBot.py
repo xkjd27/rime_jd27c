@@ -20,13 +20,23 @@ client_id=os.environ['ONEDRIVE_CLIENTID']
 api_base_url='https://api.onedrive.com/v1.0/'
 scopes=['wl.signin', 'wl.offline_access', 'onedrive.readwrite']
 
-http_provider = onedrivesdk.HttpProvider()
-auth_provider = onedrivesdk.AuthProvider(
-    http_provider=http_provider,
-    client_id=client_id,
-    scopes=scopes)
+onedrive_session_names = ["session.pickle", "session.tsfreddie.pickle"]
 
-client = onedrivesdk.OneDriveClient(api_base_url, auth_provider, http_provider) 
+onedrive_sessions = {}
+
+for name in onedrive_session_names:
+    http_provider = onedrivesdk.HttpProvider()
+    auth_provider = onedrivesdk.AuthProvider(
+        http_provider=http_provider,
+        client_id=client_id,
+        scopes=scopes)
+
+    client = onedrivesdk.OneDriveClient(api_base_url, auth_provider, http_provider) 
+    onedrive_sessions[name] = {
+        "http_provider": http_provider,
+        "auth_provider": auth_provider,
+        "client": client,
+    }
 
 
 ALLOWED_USER = set(os.environ['TELEGRAM_BOT_USER'].split(','))
@@ -96,7 +106,7 @@ def start(update, context):
 /list - 查看字词在码表的位置
 /status - 查看当前修改
 /drop - 放弃当前的修改
-/pull - 从Github同步更新
+/pull - 从 Github 同步更新
 /push - 保存并上传
 /getjd - 获取键道6的新词
 /user_add - 添加用户词
@@ -133,7 +143,7 @@ def add_custom(word, code):
         del CUSTOM_DICT[word]
 
     if code in CUSTOM_DICT_R:
-        return "%s 编码已经存在 \(%s\)" % (CLEAN(code), CLEAN(CUSTOM_DICT_R[code]))
+        return "%s 编码已经存在（%s）" % (CLEAN(code), CLEAN(CUSTOM_DICT_R[code]))
     
     CUSTOM_DICT[word] = code
     CUSTOM_DICT_R[code] = word
@@ -157,6 +167,28 @@ def remove_custom(info):
             return "%s 词条不存在" % info
     except:
         return None
+
+def save_user_dict_to_onedrive(update) -> int:
+    """Return -1 when failed, None when success.
+    """
+    for session_name, session in onedrive_sessions.items():
+        auth_provider = session["auth_provider"]
+        client = session["client"]
+        try:
+            auth_provider.load_session(path=session_name)
+            auth_provider.refresh_token()
+        except:
+            REPLY(update, f"请运行 /push 以登录 OneDrive @ {session_name}")
+            context.user_data.clear()
+            return -1
+
+        try:
+            TYPING(update)
+            client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload('./rime/.xkjd27c.user.dict.yaml')
+            REPLY(update, f"成功添加并更新到 OneDrive @ {session_name}")
+        except Exception as e:
+            REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}", ParseMode.HTML)
+
 
 def user_add(update, context):
     if update.effective_user.username not in ALLOWED_USER:
@@ -184,23 +216,10 @@ def user_add(update, context):
             return -1
         else:
             save_custom()
-
-            try:
-                auth_provider.load_session()
-                auth_provider.refresh_token()
-            except:
-                auth_url = client.auth_provider.get_auth_url(redirect_uri)
-                REPLY(update, "请运行 /push 以登录OneDrive")
-                context.user_data.clear()
-                return -1
-
-            try:
-                TYPING(update)
-                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload('./rime/.xkjd27c.user.dict.yaml')
-                REPLY(update, "成功添加并更新到OneDrive")
-            except Exception as e:
-                REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)
-
+            upload_outcome = save_user_dict_to_onedrive(update)
+            if upload_outcome is not None:
+                return upload_outcome
+            
             context.user_data.clear()
             return -1
 
@@ -231,21 +250,9 @@ def user_delete(update, context):
         else:
             save_custom()
 
-            try:
-                auth_provider.load_session()
-                auth_provider.refresh_token()
-            except:
-                auth_url = client.auth_provider.get_auth_url(redirect_uri)
-                REPLY(update, "请运行 /push 以登录OneDrive")
-                context.user_data.clear()
-                return -1
-
-            try:
-                TYPING(update)
-                client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload('./rime/.xkjd27c.user.dict.yaml')
-                REPLY(update, "成功添加并更新到OneDrive")
-            except Exception as e:
-                REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)
+            upload_outcome = save_user_dict_to_onedrive(update)
+            if upload_outcome is not None:
+                return upload_outcome
 
             context.user_data.clear()
             return -1
@@ -379,7 +386,7 @@ def rank(update, context):
                 return -1
 
             context.user_data['rank_pinyin'] = codes[0][-1]
-            CHOOSE(update, "确定要提升 %s 字全码 \(%s\) 至首位吗" % (data, code), ['是的'])
+            CHOOSE(update, "确定要提升 %s 字全码（%s）至首位吗" % (data, code), ['是的'])
     else:
         word = context.user_data['rank_word']
         pinyin = context.user_data['rank_pinyin']
@@ -418,12 +425,12 @@ def pull(update, context):
 
     if (len(LOG_STATUS) > 0):
         REPLY(update, "\n".join(MARK(LOG_STATUS)))
-        REPLY(update, '有未提交修改，请先Push或Drop当前修改')
+        REPLY(update, '有未提交修改，请先 push 或 drop 当前修改')
         return -1
 
     TYPING(update)
     repo = Repo('.').git
-    REPLY(update, 'Pull完成 %s' % repo.pull(), ParseMode.HTML)
+    REPLY(update, 'pull 完成 %s' % repo.pull(), ParseMode.HTML)
     JDTools.reset()
     return -1
     
@@ -447,7 +454,7 @@ def push(update, context):
                 repo.commit(m="更新码表\n%s" % "\n".join(LOG_STATUS))
                 repo.push()
 
-                REPLY(update, '构建完毕，Push成功')
+                REPLY(update, '构建完毕，push 成功')
             else:
                 REPLY(update, '构建完毕，码表无改动')
 
@@ -458,35 +465,43 @@ def push(update, context):
             return -1
 
         TYPING(update)
-
-        try:
-            # try load session
-            auth_provider.load_session()
-            auth_provider.refresh_token()
-        except:
-            # get new session
-            auth_url = client.auth_provider.get_auth_url(redirect_uri)
-            REPLY(update, "请登录OneDrive:\n %s\n并输入CODE" % auth_url, ParseMode.HTML)
-            context.user_data['requested_code'] = True
-            return 12
+        
+        for session_name, session in onedrive_sessions.items():
+            auth_provider = session["auth_provider"]
+            client = session["client"]
+            try:
+                # try load session
+                auth_provider.load_session(path=session_name)
+                auth_provider.refresh_token()
+            except:
+                # get new session
+                auth_url = client.auth_provider.get_auth_url(redirect_uri)
+                REPLY(update, f"请登录 OneDrive @ {session_name}:\n{auth_url}\n并输入 CODE", ParseMode.HTML)
+                context.user_data['requested_code'] = session_name
+                return 12
     else:
+        session_name = context.user_data['requested_code']
+        auth_provider = onedrive_sessions[session_name]["auth_provider"]
+        client = onedrive_sessions[session_name]["client"]
         context.user_data.clear()
         code = update.message.text
         try:
             client.auth_provider.authenticate(code, redirect_uri, client_secret)
-            auth_provider.save_session()
+            auth_provider.save_session(path=session_name)
         except:
-            REPLY(update, "OneDrive登录失败")
+            REPLY(update, f"OneDrive @ {session_name} 登录失败")
             return -1
+    for session_name, session in onedrive_sessions.items():
+        client = session["client"]
 
-    try:
-        TYPING(update)
-        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.cizu.dict.yaml'].upload('./rime/xkjd27c.cizu.dict.yaml')
-        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.danzi.dict.yaml'].upload('./rime/xkjd27c.danzi.dict.yaml')
-        client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.chaojizici.dict.yaml'].upload('./rime/xkjd27c.chaojizici.dict.yaml')
-        REPLY(update, "OneDrive上传成功")
-    except Exception as e:
-        REPLY(update, "OneDrive上传失败: \n%s" % e, ParseMode.HTML)
+        try:
+            TYPING(update)
+            client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.cizu.dict.yaml'].upload('./rime/xkjd27c.cizu.dict.yaml')
+            client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.danzi.dict.yaml'].upload('./rime/xkjd27c.danzi.dict.yaml')
+            client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.chaojizici.dict.yaml'].upload('./rime/xkjd27c.chaojizici.dict.yaml')
+            REPLY(update, f"OneDrive @ {session_name} 上传成功")
+        except Exception as e:
+            REPLY(update, f"OneDrive @ {session_name} 上传失败: \n%s" % e, ParseMode.HTML)
 
     return -1
 
@@ -617,7 +632,7 @@ def add_word(update, context):
 
         ci = JDTools.get_word(word)
         if (ci is not None and tuple(pinyin.split(' ')) in ci.pinyins()):
-            REPLY(update, "该词已有拼音\(%s\)，已取消操作。" % pinyin)
+            REPLY(update, "该词已有拼音（%s），已取消操作。" % pinyin)
             context.user_data.clear()
             return -1
 
@@ -636,7 +651,7 @@ def add_word(update, context):
         
         if not wanted_correct:
             fix_code = codes[0][:len(wanted_code)]
-            REPLY(update, "提供的编码笔码\(%s\)可能有误\n已自动修正为: %s" % (wanted_code, fix_code))
+            REPLY(update, "提供的编码笔码（%s）可能有误\n已自动修正为: %s" % (wanted_code, fix_code))
             wanted_code = fix_code
         
         min_recommend = 6
@@ -645,11 +660,11 @@ def add_word(update, context):
                 min_recommend = min(min_recommend, space)
 
         if min_recommend > len(wanted_code) and min_recommend == 6:
-            REPLY(update, "您提供的编码可能有重码，只有6码空间可用，6码有%d重码。" % (dup))
+            REPLY(update, "您提供的编码可能有重码，只有6码空间可用，6 码有 %d 重码。" % (dup))
         elif min_recommend > len(wanted_code):
-            REPLY(update, "您提供的编码可能有重码，推荐使用%d码。" % (min_recommend))
+            REPLY(update, "您提供的编码可能有重码，推荐使用 %d 码。" % (min_recommend))
         elif min_recommend < len(wanted_code):
-            REPLY(update, "该词可以使用更短的%d码。" % (min_recommend))
+            REPLY(update, "该词可以使用更短的 %d 码。" % (min_recommend))
         else:
             update.message.text = wanted_code
             return add_word(update, context)
@@ -724,7 +739,7 @@ def add_char(update, context):
         code = context.user_data['adding_char_code']
         fullcode = context.user_data['adding_char_fullcode']
 
-        REPLY(update, "添加 %s 字 \(%s\)" % (char, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
+        REPLY(update, "添加 %s 字（%s）" % (char, "%s/%s" % (fullcode, code) if fullcode != code else fullcode))
         CHOOSE(update, "确定要添加吗", ['是的'])
 
     else:
@@ -1090,6 +1105,8 @@ def default_message(update, context):
         update.message.text = "/add " + data
         return add(update, context)
 
+cancel_handler = MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel)
+
 add_convers = ConversationHandler(
     entry_points=[
         CommandHandler('add', add),
@@ -1108,21 +1125,21 @@ add_convers = ConversationHandler(
         MessageHandler(Filters.all, default_message)
     ],
     states={
-        0: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.regex('^.$'), add_char), MessageHandler(Filters.all, add_word)],
-        1: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, add_word)],
-        2: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, add_char)],
-        3: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.regex('^.$'), delete_char), MessageHandler(Filters.all, delete_word)],
-        4: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, delete_word)],
-        5: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, delete_char)],
-        6: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.regex('^.$'), change_char), MessageHandler(Filters.all, change_word)],
-        7: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, change_word)],
-        8: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, change_char)],
-        9: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, rank)],
-        10: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, list_command)],
-        11: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, drop)],
-        12: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, push)],
-        13: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, user_add)],
-        14: [MessageHandler(Filters.regex('^(/取消|/cancel)$'), cancel), MessageHandler(Filters.all, user_delete)],
+        0: [cancel_handler, MessageHandler(Filters.regex('^.$'), add_char), MessageHandler(Filters.all, add_word)],
+        1: [cancel_handler, MessageHandler(Filters.all, add_word)],
+        2: [cancel_handler, MessageHandler(Filters.all, add_char)],
+        3: [cancel_handler, MessageHandler(Filters.regex('^.$'), delete_char), MessageHandler(Filters.all, delete_word)],
+        4: [cancel_handler, MessageHandler(Filters.all, delete_word)],
+        5: [cancel_handler, MessageHandler(Filters.all, delete_char)],
+        6: [cancel_handler, MessageHandler(Filters.regex('^.$'), change_char), MessageHandler(Filters.all, change_word)],
+        7: [cancel_handler, MessageHandler(Filters.all, change_word)],
+        8: [cancel_handler, MessageHandler(Filters.all, change_char)],
+        9: [cancel_handler, MessageHandler(Filters.all, rank)],
+        10: [cancel_handler, MessageHandler(Filters.all, list_command)],
+        11: [cancel_handler, MessageHandler(Filters.all, drop)],
+        12: [cancel_handler, MessageHandler(Filters.all, push)],
+        13: [cancel_handler, MessageHandler(Filters.all, user_add)],
+        14: [cancel_handler, MessageHandler(Filters.all, user_delete)],
     },
     fallbacks=[CommandHandler('cancel', cancel)]
 )

@@ -270,13 +270,30 @@ fyxda
 	0	异形
 	100	异型
 
+wqbfv
+	0	万千百十元角分
+	100	万仟佰拾元角分
+
 ;b;ivi
 	0	抓不住
 	1	止不住
 
+;f;jii
+	0	折中
+	1	中央政治局
+
+;ff;ov
+	0	只有一种
+	1	这样一种
+
 ;fkfov
 	0	这棵
-	1	照样可以
+	1	这样可以
+	2	照样可以
+
+;fwtov
+	0	主要问题
+	1	这一问题
 
 ;gufii
 	0	中国石油
@@ -309,6 +326,10 @@ fyxda
 	0	之形
 	1	之幸
 
+bjrfva
+	0	不尽如人意
+	1	不绝如发
+
 bmfyio
 	0	便衣
 	1	便意
@@ -317,6 +338,10 @@ bn;yvi
 	0	布置
 	1	不值
 
+bnflva
+	0	不防
+	2	不能原谅
+
 bnfnve
 	0	不负
 	1	不复
@@ -324,6 +349,10 @@ bnfnve
 bnfrva
 	0	不能否认
 	1	不发
+
+bnfwva
+	0	不费
+	1	不允
 
 bnfyva
 	0	不已
@@ -342,6 +371,10 @@ bnxxve
 	0	不香
 	1	不象
 
+bufdvv
+	0	表示压力很大
+	1	表示反对
+
 dgwwea
 	0	短尾
 	1	段尾
@@ -357,6 +390,10 @@ dpjyav
 drdrvv
 	0	达达
 	1	鞑靼
+
+drfrvv
+	0	大雅
+	1	大牙
 
 drqyvo
 	0	大器
@@ -379,6 +416,22 @@ dyf;vv
 	0	地域
 	1	达成一致
 
+f;fwva
+	0	原汁原味
+	1	于飞
+
+f;fyoo
+	0	语义
+	1	宇宙飞船
+
+fbfvov
+	0	有必要
+	1	有悖于
+
+fbuvva
+	0	一本书
+	1	一杯水
+
 fd;yve
 	0	硬直
 	1	硬脂
@@ -387,9 +440,25 @@ fdbvve
 	0	一大包
 	1	一大笔
 
+fdfqva
+	0	云淡风轻
+	1	一对夫妻
+
+fdlyie
+	0	营利
+	1	蜚短流长
+
+ffbfva
+	0	有法必依
+	1	有法不依
+
 ffdfvv
 	0	远远大于
 	1	远远低于
+
+ffffaa
+	0	隐隐约约
+	1	纷纷扬扬
 
 fgfqvi
 	0	原由
@@ -415,6 +484,10 @@ flqyov
 	0	放起
 	1	房契
 
+fmdyoi
+	0	烟蒂
+	1	粉墨登场
+
 fmfmvv
 	0	严严
 	1	奄奄
@@ -431,6 +504,10 @@ fnuyev
 	0	腹式
 	1	复式
 
+fqflvo
+	0	于情于理
+	1	有房
+
 fqwwvv
 	0	有违
 	1	与其为伍
@@ -438,6 +515,14 @@ fqwwvv
 fqxdvv
 	0	有型
 	1	有幸
+
+fr;yae
+	0	法制
+	1	发质
+
+frjdvv
+	0	雅静
+	1	压境
 
 fruyav
 	0	发式
@@ -451,6 +536,10 @@ fthqeo
 fumfvi
 	0	有什么用
 	1	有什么意义
+
+fwfwiv
+	0	亿万富翁
+	1	耀武扬威
 
 fwuyvv
 	0	云石
@@ -476,9 +565,17 @@ fyf;ov
 	0	益于
 	1	易于
 
+fyfsvo
+	0	一叶
+	1	夫唱妇随
+
 fyfxvo
 	0	一吹一吸
 	1	医养
+
+fyfyii
+	0	非常非常
+	1	薏苡
 
 fyjmve
 	0	一箭
@@ -512,6 +609,10 @@ gbuvvi
 	0	根本上
 	1	赶不上
 
+gfbtev
+	0	各有不同
+	1	各班
+
 gufnie
 	0	国父
 	1	果腹
@@ -528,6 +629,10 @@ hbhuiv
 	0	合不合适
 	1	会不会是
 
+hfj;ev
+	0	很有价值
+	1	和聚
+
 hfjyiv
 	0	合击
 	1	合辑
@@ -543,6 +648,10 @@ hzxxae
 jbbyiv
 	0	紧逼
 	1	金碧
+
+jcfrea
+	0	脚法
+	1	教法
 
 jcusoi
 	0	交手
@@ -692,6 +801,19 @@ uy;yoi
 	0	是指
 	1	市值
 
+uyfroa
+	0	施法
+	1	实发
+
+uyfwov
+	0	诗云
+	1	时运
+
+uyfxov
+	0	市场份额
+	1	市场营销
+	2	市场分析
+
 uyfyeo
 	0	失忆
 	1	失意
@@ -785,6 +907,10 @@ xchfii
 	0	小荷
 	1	萧何
 
+xd;fvi
+	0	相当重要
+	1	现代主义
+
 xddvie
 	0	喜当爹
 	1	相当多
@@ -797,10 +923,18 @@ xf;uvv
 	0	需要注意的是
 	1	需要指出的是
 
+xhfrea
+	0	爱发
+	1	血法
+
 xhhzoo
 	0	学号
 	1	哀号
 	2	哀嚎
+
+xmf;ee
+	0	鲜鱼
+	1	血脉偾张
 
 xmxheo
 	0	腺癌

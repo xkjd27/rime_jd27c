@@ -18863,6 +18863,7 @@
 删重	shan/chong	4	0
 删错	shan/cuo	4	0
 删除	shan/chu	4	0
+删除线	shan/chu/xian	4	0
 删除键	shan/chu/jian	5	0
 判为	pan/wei	5	0
 判令	pan/ling	4	0

@@ -178,14 +178,14 @@ def save_user_dict_to_onedrive(update) -> int:
             auth_provider.load_session(path=session_name)
             auth_provider.refresh_token()
         except:
-            REPLY(update, f"请运行 /push 以登录 OneDrive @ {session_name}")
+            REPLY(update, f"请运行 /push 以登录 OneDrive @ {session_name}", parse_mode=None)
             context.user_data.clear()
             return -1
 
         try:
             TYPING(update)
             client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload('./rime/.xkjd27c.user.dict.yaml')
-            REPLY(update, f"成功添加并更新到 OneDrive @ {session_name}")
+            REPLY(update, f"成功添加并更新到 OneDrive @ {session_name}", parse_mode=None)
         except Exception as e:
             REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}", ParseMode.HTML)
 
@@ -489,7 +489,7 @@ def push(update, context):
             client.auth_provider.authenticate(code, redirect_uri, client_secret)
             auth_provider.save_session(path=session_name)
         except:
-            REPLY(update, f"OneDrive @ {session_name} 登录失败")
+            REPLY(update, f"OneDrive @ {session_name} 登录失败", parse_mode=None)
             return -1
     for session_name, session in onedrive_sessions.items():
         client = session["client"]
@@ -499,7 +499,7 @@ def push(update, context):
             client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.cizu.dict.yaml'].upload('./rime/xkjd27c.cizu.dict.yaml')
             client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.danzi.dict.yaml'].upload('./rime/xkjd27c.danzi.dict.yaml')
             client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.chaojizici.dict.yaml'].upload('./rime/xkjd27c.chaojizici.dict.yaml')
-            REPLY(update, f"OneDrive @ {session_name} 上传成功")
+            REPLY(update, f"OneDrive @ {session_name} 上传成功", parse_mode=None)
         except Exception as e:
             REPLY(update, f"OneDrive @ {session_name} 上传失败: \n%s" % e, ParseMode.HTML)
 

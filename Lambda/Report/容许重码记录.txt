@@ -313,6 +313,10 @@ wqbfv
 	0	正片
 	1	正篇
 
+;yfrvv
+	0	枝桠
+	1	植牙
+
 ;yfyeo
 	0	直译
 	1	旨意
@@ -605,13 +609,13 @@ fyuyvv
 	1	一世
 	2	轶事
 
-gbuvvi
-	0	根本上
-	1	赶不上
-
 gfbtev
 	0	各有不同
 	1	各班
+
+gjqdvo
+	0	共庆
+	1	共情
 
 gufnie
 	0	国父
@@ -720,6 +724,10 @@ lduyiv
 lmjsva
 	0	连结
 	1	联结
+
+mduyoi
+	0	明史
+	1	明誓
 
 q;jmvi
 	0	去捡
@@ -898,6 +906,7 @@ xbdyoi
 xbjyoo
 	0	心计
 	1	心悸
+	2	心迹
 
 xbxdoo
 	0	新星

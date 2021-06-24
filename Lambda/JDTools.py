@@ -1,5 +1,6 @@
 import sys
 import os
+from pathlib import Path
 from . import ZiDB
 from . import CiDB
 import itertools
@@ -1035,6 +1036,25 @@ def get_all_zi():
 def get_all_ci():
     return CiDB.all()
 
+def build_log_tsv():
+    """Build code list for log input."""
+    root = Path("rime/")
+    with open(f"log_input/{RIME_SCHEMA}.txt", "w") as out:
+        for f in root.iterdir():
+            if f.name.endswith(".yaml"):
+                with f.open("r") as src:
+                    skip = True
+                    for line in src:
+                        line = line.strip()
+                        if line == "...":
+                            skip = False
+                            continue
+                        if skip:
+                            continue
+                        if not line or line.startswith("#"):
+                            continue
+                        out.write(line + "\n")
+
 def commit():
     """提交所有更改并生成新码表"""
     clear_danzi_codes()
@@ -1045,6 +1065,7 @@ def commit():
     traverse_cizu(True, True)
     build_chaoji()
     build_static()
+    build_log_tsv()
 
 def reset():
 

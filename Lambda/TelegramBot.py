@@ -499,6 +499,7 @@ def push(update, context):
             client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.cizu.dict.yaml'].upload('./rime/xkjd27c.cizu.dict.yaml')
             client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.danzi.dict.yaml'].upload('./rime/xkjd27c.danzi.dict.yaml')
             client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.chaojizici.dict.yaml'].upload('./rime/xkjd27c.chaojizici.dict.yaml')
+            client.item(drive='me', path=os.environ['ONEDRIVE_PATH']).children['xkjd27c.txt'].upload('./log_input/xkjd27c.txt')
             REPLY(update, f"OneDrive @ {session_name} 上传成功", parse_mode=None)
         except Exception as e:
             REPLY(update, f"OneDrive @ {session_name} 上传失败: \n%s" % e, ParseMode.HTML)

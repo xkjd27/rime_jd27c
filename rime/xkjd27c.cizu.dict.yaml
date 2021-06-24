@@ -2199,6 +2199,7 @@ sort: original
 中下	;jxri
 仲夏	;jxriv
 中欧	;jxs
+重谢	;jxse
 中邪	;jxsi
 重案	;jxt
 重按	;jxte
@@ -9230,6 +9231,7 @@ sort: original
 变冷	bmlp
 变流	bmlq
 编列	bmls
+遍览	bmlt
 辩论	bmlw
 变量	bmlx
 变凉	bmlxo
@@ -9322,6 +9324,7 @@ sort: original
 边谈	bmtt
 变体	bmty
 遍体	bmtyo
+辩题	bmtyoo
 扁桃	bmtz
 表面上	bmu
 边水	bmub
@@ -12491,6 +12494,7 @@ sort: original
 比起	byqy
 荸荠	byqyi
 闭起	byqyo
+闭气	byqyoe
 不吃肉	byr
 笔锐	byrb
 比热	byrf
@@ -13730,6 +13734,7 @@ sort: original
 采掘	chjhe
 裁剪	chjm
 裁减	chjme
+采检	chjmev
 才就	chjq
 菜价	chjr
 才接	chjs
@@ -19181,6 +19186,7 @@ sort: original
 独身	dnuk
 赌神	dnuka
 独上	dnul
+赌上	dnula
 堵上	dnulv
 读书	dnun
 读数	dnuno
@@ -25884,6 +25890,7 @@ sort: original
 一个孩子	fghzvi
 一根筋	fgj
 原句	fgj;
+远距	fgj;v
 远近	fgjb
 缘尽	fgjba
 一个箭步	fgjbv
@@ -31966,6 +31973,7 @@ sort: original
 风湿病	fub
 掩饰不住	fub;
 一手包办	fubb
+风水宝地	fubd
 一时半会	fubh
 遇事不决	fubj
 一声不吭	fubk
@@ -32119,6 +32127,7 @@ sort: original
 佛乐	fulf
 玉树临风	fulfv
 一式两份	fulfvv
+鹰视狼顾	fulg
 衣衫褴褛	full
 有生力量	fullv
 夜深了	fulo
@@ -32443,6 +32452,7 @@ sort: original
 云烟	fwfmv
 肺腑	fwfn
 孕妇	fwfna
+非负	fwfni
 阎王爷	fwfo
 非风	fwfp
 费油	fwfq
@@ -32472,6 +32482,7 @@ sort: original
 肥羊	fwfxe
 蕴养	fwfxi
 因为一些	fwfxio
+野无遗贤	fwfxiv
 云阳	fwfxv
 杳无音信	fwfxvv
 非议	fwfy
@@ -35534,6 +35545,7 @@ sort: original
 归一化	gfhi
 各行	gfhl
 各户	gfhn
+高峰会	gfho
 歌喉	gfhs
 官运亨通	gfht
 过氧化	gfhv
@@ -39218,6 +39230,7 @@ sort: original
 格式化	guh
 国徽	guhb
 国会	guhbi
+锅灰	guhbiv
 过会	guhbv
 国槐	guhd
 故事会	guhe
@@ -45636,6 +45649,7 @@ sort: original
 昏头	hwtse
 黑帖	hwtsi
 黑炭	hwtt
+黑碳	hwtti
 婚托	hwtu
 馄饨	hwtw
 黑体	hwty
@@ -47281,6 +47295,7 @@ sort: original
 进六	jblq
 禁猎	jbls
 金兰	jblt
+金锣	jblu
 金轮	jblw
 锦纶	jblwi
 尽量	jblx
@@ -52351,6 +52366,7 @@ sort: original
 江月	jxfh
 见血封喉	jxfhi
 仅限于	jxfi
+金镶玉	jxfii
 将用	jxfj
 降分	jxfk
 惊喜欲狂	jxfko
@@ -57776,6 +57792,7 @@ sort: original
 灵枢	ldunav
 领属	lduni
 零数	ldunv
+路德社	lduo
 铃声	ldup
 零售	ldus
 领受	ldusi
@@ -58828,6 +58845,7 @@ sort: original
 笼括	ljku
 了解了	ljl
 隆林	ljlb
+龙鳞	ljlbv
 龙陵	ljld
 聋了	ljlf
 蓝精灵	ljli
@@ -58901,6 +58919,7 @@ sort: original
 龙山	ljut
 龙朔	ljuu
 两脚兽	ljuv
+零假设	ljuvi
 龙虱	ljuy
 龙文	ljwk
 龙王	ljwl
@@ -63487,6 +63506,7 @@ sort: original
 买东西	mdxa
 没得选	mdxae
 没的选	mdxaee
+马丁靴	mdxav
 铭心	mdxb
 明信	mdxbo
 名校	mdxc
@@ -63757,6 +63777,7 @@ sort: original
 敏感度	mgde
 某个地方	mgdf
 每个地方	mgdfe
+镁光灯	mgdi
 没过多久	mgdj
 美工刀	mgdo
 目光短浅	mgdq
@@ -66917,6 +66938,7 @@ sort: original
 迷倒	mydz
 密道	mydzo
 谜语	myf;
+迷因	myfb
 迷药	myfc
 密钥	myfco
 满城风雨	myff
@@ -68719,6 +68741,7 @@ sort: original
 那么少	nmuae
 念摄	nmuf
 年审	nmuk
+那没事了	nmul
 念书	nmun
 年数	nmune
 年生	nmup
@@ -69416,6 +69439,7 @@ sort: original
 镍价	nsjr
 捏积	nsjy
 弄死了	nsl
+那算了吧	nslb
 捏了	nslf
 南斯拉夫	nslfe
 捏脸	nslm
@@ -71756,6 +71780,7 @@ sort: original
 片盘	pmpt
 偏颇	pmpu
 偏僻	pmpy
+骗炮	pmpz
 贫民区	pmq
 骗取	pmq;
 片区	pmq;e
@@ -72822,6 +72847,7 @@ sort: original
 婆子	puzya
 陪着	pw;f
 配种	pw;j
+配重	pw;jv
 佩珍	pw;k
 赔账	pw;l
 胚珠	pw;n
@@ -78155,6 +78181,7 @@ sort: original
 软件	rgjm
 软解	rgjs
 软基	rgjy
+阮藉	rgjya
 让顾客	rgk
 如果可以	rgkf
 人工客服	rgkfi
@@ -82055,6 +82082,7 @@ sort: original
 锁好	suhz
 搜神记	suj
 所举	suj;
+随手记	suja
 缩进	sujb
 锁紧	sujbi
 所交	sujc
@@ -84865,6 +84893,7 @@ sort: original
 铜牌	tjph
 通篇	tjpm
 通铺	tjpn
+通膨	tjpp
 通盘	tjpt
 捅破	tjpu
 统配	tjpw
@@ -87904,6 +87933,7 @@ sort: original
 天造地设	tzdu
 逃遁	tzdw
 掏底	tzdy
+陶笛	tzdya
 逃到	tzdz
 投资方	tzf
 逃狱	tzf;
@@ -90305,6 +90335,7 @@ sort: original
 上档	uldli
 商店	uldm
 上都	uldn
+赏读	uldni
 商都	uldno
 上等	uldp
 上达	uldr
@@ -94168,6 +94199,7 @@ sort: original
 施救	uyjqov
 施加	uyjr
 十佳	uyjre
+释迦	uyjrea
 十家	uyjreo
 史家	uyjri
 市价	uyjro
@@ -95014,6 +95046,7 @@ sort: original
 物质世界	w;uj
 五指山	w;uv
 未知数	w;uve
+王中王	w;w
 稳扎稳打	w;wd
 万中无一	w;wf
 文治武功	w;wg
@@ -96706,6 +96739,7 @@ sort: original
 乌冬	wndje
 武当	wndl
 污点	wndm
+误点	wndmo
 五点	wndmv
 五毒	wndn
 误读	wndno
@@ -101597,6 +101631,7 @@ sort: original
 选为	xgww
 习惯性	xgx
 喧嚣	xgxc
+选型	xgxd
 吅吅	xgxg
 玄学	xgxh
 形槁心灰	xgxhv
@@ -102662,6 +102697,7 @@ sort: original
 巡逻队	xlda
 阿拉丁	xldai
 绚丽多彩	xldc
+详略得当	xldd
 爱劳动	xlde
 小浪底	xldi
 修罗道	xldii
@@ -105937,6 +105973,7 @@ sort: original
 象牙	xxfre
 乡野	xxfs
 香液	xxfse
+香叶	xxfseo
 相爷	xxfsv
 想也	xxfsva
 喜形于色	xxfsvv
@@ -106419,6 +106456,7 @@ sort: original
 乡下	xxxra
 欣欣向荣	xxxre
 想写	xxxs
+详写	xxxso
 想些	xxxsv
 相偕	xxxsvi
 想按	xxxt
@@ -109177,6 +109215,7 @@ sort: original
 储备	ynbw
 除弊	ynby
 出包	ynbz
+除暴	ynbza
 触宝	ynbze
 初测	yncf
 出彩	ynch
@@ -109288,6 +109327,7 @@ sort: original
 出局	ynj;
 出具	ynj;a
 陈年旧账	ynj;ae
+雏菊	ynj;e
 初具	ynj;o
 厨具	ynj;v
 出尽	ynjb
@@ -109367,6 +109407,7 @@ sort: original
 出没	ynmua
 除没	ynmw
 触媒	ynmwe
+除毛	ynmz
 纯牛奶	ynn
 处女	ynn;
 雏鸟	ynnc
@@ -109538,6 +109579,7 @@ sort: original
 黜责	ynzf
 处在	ynzh
 出在	ynzha
+除灾	ynzhao
 拆腻子	ynzi
 出租	ynzn
 出走	ynzs
@@ -109884,6 +109926,7 @@ sort: original
 长期以来	yqfl
 锄强扶弱	yqfr
 长期化	yqh
+长期护理	yqhl
 成气候	yqhv
 抽气机	yqj
 成群结队	yqjd
@@ -110931,10 +110974,12 @@ sort: original
 窗棂	yxld
 尘埃落定	yxldi
 窗帘	yxlm
+朝鲜冷面	yxlme
 产销量	yxlo
 创立	yxly
 创利	yxlyi
 程序名	yxm
+朝鲜面	yxme
 窗门	yxmk
 创面	yxmm
 窗幔	yxmt
@@ -111866,6 +111911,7 @@ sort: original
 做不了	zbl
 最绿	zbl;
 最令	zbld
+资本利得	zbldo
 自变量	zble
 醉了	zblf
 自不量力	zbll

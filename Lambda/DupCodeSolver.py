@@ -1,4 +1,4 @@
-import JDTools
+from . import JDTools
 import os
 import re
 

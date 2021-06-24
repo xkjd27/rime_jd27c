@@ -1,5 +1,5 @@
 import os
-from PinyinConsts import VALID_PY, isWordCommon
+from ..PinyinConsts import VALID_PY, isWordCommon
 
 _fixed = None
 _db = None

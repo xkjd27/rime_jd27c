@@ -6,6 +6,10 @@ brbh
 	0	八百
 	100	捌佰
 
+brfg
+	0	八元
+	100	捌元
+
 brfk
 	0	八分
 	100	捌分
@@ -18,10 +22,6 @@ brqm
 	0	八千
 	100	捌仟
 
-brrg
-	0	八元
-	100	捌元
-
 bruy
 	0	八十
 	100	捌拾
@@ -30,9 +30,41 @@ brwt
 	0	八万
 	100	捌万
 
+fybh
+	0	一百
+	100	壹佰
+
+fyfg
+	0	医院
+	100	壹元
+
+fyfk
+	0	一份
+	100	壹分
+
+fyjc
+	0	一觉
+	100	壹角
+
+fyqm
+	0	以前
+	100	壹仟
+
+fyuy
+	0	意识
+	100	壹拾
+
+fywt
+	0	一晚
+	100	壹万
+
 jqbh
 	0	九百
 	100	玖佰
+
+jqfg
+	0	救援
+	100	玖元
 
 jqfk
 	0	纠纷
@@ -46,10 +78,6 @@ jqqm
 	0	九千
 	100	玖仟
 
-jqrg
-	0	救援
-	100	玖元
-
 jquy
 	0	就是
 	100	玖拾
@@ -62,6 +90,10 @@ lqbh
 	0	六百
 	100	陆佰
 
+lqfg
+	0	六元
+	100	陆元
+
 lqjc
 	0	六角
 	100	陆角
@@ -69,10 +101,6 @@ lqjc
 lqqm
 	0	六千
 	100	陆仟
-
-lqrg
-	0	六元
-	100	陆元
 
 lquy
 	0	流失
@@ -82,13 +110,17 @@ lqwt
 	0	六万
 	100	陆万
 
-qmrg
+qmfg
 	0	千元
 	100	仟元
 
 qybh
 	0	七百
 	100	柒佰
+
+qyfg
+	0	起源
+	100	柒元
 
 qyfk
 	0	气氛
@@ -102,10 +134,6 @@ qyqm
 	0	七千
 	100	柒仟
 
-qyrg
-	0	起源
-	100	柒元
-
 qyuy
 	0	其实
 	100	柒拾
@@ -114,37 +142,13 @@ qywt
 	0	七万
 	100	柒万
 
-rybh
-	0	一百
-	100	壹佰
-
-ryfk
-	0	一份
-	100	壹分
-
-ryjc
-	0	一觉
-	100	壹角
-
-ryqm
-	0	以前
-	100	壹仟
-
-ryrg
-	0	医院
-	100	壹元
-
-ryuy
-	0	意识
-	100	壹拾
-
-rywt
-	0	一晚
-	100	壹万
-
 stbh
 	0	三百
 	100	叁佰
+
+stfg
+	0	三元
+	100	叁元
 
 stfk
 	0	三分
@@ -158,10 +162,6 @@ stqm
 	0	三千
 	100	叁仟
 
-strg
-	0	三元
-	100	叁元
-
 stuy
 	0	三十
 	100	叁拾
@@ -173,6 +173,10 @@ stwt
 sybh
 	0	四百
 	100	肆佰
+
+syfg
+	0	寺院
+	100	肆元
 
 syfk
 	0	私分
@@ -186,10 +190,6 @@ syqm
 	0	四千
 	100	肆仟
 
-syrg
-	0	寺院
-	100	肆元
-
 syuy
 	0	四十
 	100	肆拾
@@ -202,7 +202,7 @@ uwqf
 	0	十万千百十元角分
 	100	拾万仟佰拾元角分
 
-uyrg
+uyfg
 	0	师院
 	100	拾元
 
@@ -213,6 +213,10 @@ uywt
 wnbh
 	0	五百
 	100	伍佰
+
+wnfg
+	0	无缘
+	100	伍元
 
 wnfk
 	0	五分
@@ -226,10 +230,6 @@ wnqm
 	0	五千
 	100	伍仟
 
-wnrg
-	0	无缘
-	100	伍元
-
 wnuy
 	0	无视
 	100	伍拾
@@ -238,13 +238,13 @@ wnwt
 	0	五万
 	100	伍万
 
-wqbf
-	0	万千百十元角分
-	100	万仟佰拾元角分
-
 xnbh
 	0	二百
 	100	贰佰
+
+xnfg
+	0	二元
+	100	贰元
 
 xnfk
 	0	二分
@@ -258,10 +258,6 @@ xnqm
 	0	二千
 	100	贰仟
 
-xnrg
-	0	二元
-	100	贰元
-
 xnuy
 	0	而是
 	100	贰拾
@@ -270,19 +266,36 @@ xnwt
 	0	二万
 	100	贰万
 
-ryxda
+fyxda
 	0	异形
 	100	异型
 
-;;rroe
-	0	这种意义
-	1	只重衣衫不重人
+wqbfv
+	0	万千百十元角分
+	100	万仟佰拾元角分
 
 ;b;ivi
 	0	抓不住
 	1	止不住
 
-;gurii
+;f;jii
+	0	折中
+	1	中央政治局
+
+;ff;ov
+	0	只有一种
+	1	这样一种
+
+;fkfov
+	0	这棵
+	1	这样可以
+	2	照样可以
+
+;fwtov
+	0	主要问题
+	1	这一问题
+
+;gufii
 	0	中国石油
 	1	中国社会科学院
 
@@ -290,8 +303,7 @@ ryxda
 	0	砖厂
 	1	转场
 
-;jryio
-	0	中日
+;jfyio
 	1	钟意
 	2	忠义
 	3	众议
@@ -301,17 +313,13 @@ ryxda
 	0	正片
 	1	正篇
 
-;yryeo
+;yfrvv
+	0	枝桠
+	1	植牙
+
+;yfyeo
 	0	直译
 	1	旨意
-
-;yryio
-	0	执意
-	1	指日
-
-;yryoo
-	0	之日
-	1	之义
 
 ;yuyiv
 	0	芝士
@@ -322,25 +330,21 @@ ryxda
 	0	之形
 	1	之幸
 
-;yxrev
-	0	直下
-	1	知耻而后勇
+bjrfva
+	0	不尽如人意
+	1	不绝如发
 
-bdrvvi
-	0	本地人
-	1	不动摇
-
-bkryvo
-	0	本意
-	1	本义
-
-bmryio
+bmfyio
 	0	便衣
 	1	便意
 
 bn;yvi
 	0	布置
 	1	不值
+
+bnflva
+	0	不防
+	2	不能原谅
 
 bnfnve
 	0	不负
@@ -350,13 +354,13 @@ bnfrva
 	0	不能否认
 	1	不发
 
-bnryva
+bnfwva
+	0	不费
+	1	不允
+
+bnfyva
 	0	不已
 	1	不以
-
-bnryvo
-	0	布衣
-	1	不日
 
 bnuyvo
 	0	不实
@@ -371,25 +375,9 @@ bnxxve
 	0	不香
 	1	不象
 
-brbrvi
-	0	不仁不义
-	1	不依不饶
-
-brwlvv
-	0	不远万里
-	1	不要我了
-
-btrrvv
-	0	不太一样
-	1	不太容易
-
-bzryoo
-	0	爆衣
-	1	宝日
-
-dfryeo
-	0	得益
-	1	德日
+bufdvv
+	0	表示压力很大
+	1	表示反对
 
 dgwwea
 	0	短尾
@@ -403,21 +391,17 @@ dpjyav
 	0	登机
 	1	登基
 
-drdrvi
-	0	大仁大义
-	1	大眼瞪小眼
-
 drdrvv
 	0	达达
 	1	鞑靼
 
+drfrvv
+	0	大雅
+	1	大牙
+
 drqyvo
 	0	大器
 	1	大旗
-
-drryvo
-	0	大义
-	1	达日
 
 drulii
 	0	打上
@@ -427,18 +411,94 @@ druyvi
 	0	大使
 	1	大势
 
-dur;ev
+duf;ev
 	0	多雨
 	1	躲雨
 	3	独树一帜
 
-dyr;vv
+dyf;vv
 	0	地域
 	1	达成一致
+
+f;fwva
+	0	原汁原味
+	1	于飞
+
+f;fyoo
+	0	语义
+	1	宇宙飞船
+
+fbfvov
+	0	有必要
+	1	有悖于
+
+fbuvva
+	0	一本书
+	1	一杯水
+
+fd;yve
+	0	硬直
+	1	硬脂
+
+fdbvve
+	0	一大包
+	1	一大笔
+
+fdfqva
+	0	云淡风轻
+	1	一对夫妻
+
+fdlyie
+	0	营利
+	1	蜚短流长
+
+ffbfva
+	0	有法必依
+	1	有法不依
+
+ffdfvv
+	0	远远大于
+	1	远远低于
+
+ffffaa
+	0	隐隐约约
+	1	纷纷扬扬
+
+fgfqvi
+	0	原由
+	1	一个月前
+
+fgukvo
+	0	原审
+	1	原神
+
+fgwwvo
+	0	原味
+	1	原为
+
+fjhvov
+	0	有计划
+	1	原计划
+
+flfqav
+	0	游来游去
+	1	缘来缘去
 
 flqyov
 	0	放起
 	1	房契
+
+fmdyoi
+	0	烟蒂
+	1	粉墨登场
+
+fmfmvv
+	0	严严
+	1	奄奄
+
+fmxyve
+	0	一脉相承
+	1	一脉相传
 
 fnuneo
 	0	负数
@@ -447,6 +507,26 @@ fnuneo
 fnuyev
 	0	腹式
 	1	复式
+
+fqflvo
+	0	于情于理
+	1	有房
+
+fqwwvv
+	0	有违
+	1	与其为伍
+
+fqxdvv
+	0	有型
+	1	有幸
+
+fr;yae
+	0	法制
+	1	发质
+
+frjdvv
+	0	雅静
+	1	压境
 
 fruyav
 	0	发式
@@ -457,17 +537,85 @@ fthqeo
 	0	反话
 	1	番话
 
-ftrqev
-	0	犯有
-	1	风土人情
+fumfvi
+	0	有什么用
+	1	有什么意义
 
-ftryeo
-	0	反日
-	1	反译
+fwfwiv
+	0	亿万富翁
+	1	耀武扬威
 
-gbuvvi
-	0	根本上
-	1	赶不上
+fwuyvv
+	0	云石
+	1	一无是处
+
+fy;yae
+	0	已知
+	1	异质
+
+fy;yiv
+	0	遗址
+	1	遗志
+
+fy;yoe
+	0	译制
+	2	义肢
+
+fydjav
+	0	异动
+	1	已成定局
+
+fyf;ov
+	0	益于
+	1	易于
+
+fyfsvo
+	0	一叶
+	1	夫唱妇随
+
+fyfxvo
+	0	一吹一吸
+	1	医养
+
+fyfyii
+	0	非常非常
+	1	薏苡
+
+fyjmve
+	0	一箭
+	1	一简
+
+fyjmvi
+	0	一件
+	1	一剑
+
+fyjroa
+	0	衣架
+	2	语出惊人
+
+fymdoe
+	0	易名
+	1	夜长梦多
+
+fytjva
+	0	一统
+	1	一通
+
+fyuyai
+	0	已逝
+	1	已使
+
+fyuyvv
+	1	一世
+	2	轶事
+
+gfbtev
+	0	各有不同
+	1	各班
+
+gjqdvo
+	0	共庆
+	1	共情
 
 gufnie
 	0	国父
@@ -485,13 +633,13 @@ hbhuiv
 	0	合不合适
 	1	会不会是
 
+hfj;ev
+	0	很有价值
+	1	和聚
+
 hfjyiv
 	0	合击
 	1	合辑
-
-hfryio
-	0	何日
-	1	合意
 
 huuyov
 	0	火石
@@ -505,14 +653,13 @@ jbbyiv
 	0	紧逼
 	1	金碧
 
+jcfrea
+	0	脚法
+	1	教法
+
 jcusoi
 	0	交手
 	1	交售
-
-jdryoo
-	0	精益
-	1	精日
-	2	竟日
 
 jduyov
 	0	惊世
@@ -522,7 +669,7 @@ jm;yii
 	0	键值
 	1	剑指
 
-jmr;iv
+jmf;iv
 	0	见于
 	1	剑雨
 
@@ -534,19 +681,11 @@ jquyio
 	0	旧识
 	1	旧诗
 
-jr;xoo
-	0	家庄
-	1	交易中心
-
-jruyoo
-	0	家室
-	1	交易市场
-
 jsuyao
 	0	结识
 	1	届时
 
-jxr;ov
+jxf;ov
 	0	将与
 	1	兼而有之
 
@@ -554,21 +693,13 @@ jydmvi
 	0	基点
 	1	机电
 
-jynmae
-	0	鸡年
-	1	纪年
-
-jyr;ev
+jyf;ev
 	0	急于
 	1	及于
 
-jyryaa
-	0	既已
-	1	即以
-
-jyryeo
-	0	祭日
-	1	几日
+jynmae
+	0	鸡年
+	1	纪年
 
 jyunoo
 	0	记数
@@ -582,7 +713,7 @@ jyuyvo
 	0	吉时
 	1	极是
 
-kfrgea
+kffgea
 	0	科院
 	1	科源
 
@@ -594,34 +725,17 @@ lmjsva
 	0	连结
 	1	联结
 
-mr;rav
-	0	没有注意
-	1	没有这样
-
-mrrrav
-	0	没有原因
-	1	没有意义
-
-mumrai
-	0	没什么用
-	1	没什么两样
-
-mwryoo
-	0	美日
-	1	美衣
-
-nrxxaa
-	0	难以想象
-	1	难以相信
+mduyoi
+	0	明史
+	1	明誓
 
 q;jmvi
 	0	去捡
 	1	取件
 
-qdryoo
+qdfyoo
 	0	情义
 	1	情意
-	2	晴日
 
 qgypiv
 	0	全城
@@ -631,102 +745,25 @@ qybdve
 	0	奇兵
 	1	取长补短
 
-qyjyev
-	0	气机
-	1	气极
-
-qyryvv
+qyfyvv
 	0	七一
 	1	其一
 
-r;rvei
-	0	一种人
-	1	有种人
-
-rb;yie
-	0	银质
-	1	睿智
-
-rcuyiv
-	0	药石
-	1	人才市场
-
-rd;yve
-	0	硬直
-	1	硬脂
-
-rdbvve
-	0	一大包
-	1	一大笔
-
-rg;niv
-	0	圆柱
-	1	人工智能
-
-rg;rai
-	0	如果这样
-	1	阳光照耀
-
-rg;yva
-	0	原汁
-	1	软纸
-
-rgdmvi
-	0	远点
-	1	原电
-
-rghqvi
-	0	软化
-	1	袁花
-
-rgjcve
-	0	软胶
-	1	软脚
-
-rgjmvi
-	0	远见
-	1	元件
-
-rgrqvi
-	0	原由
-	1	一个月前
-
-rgukvo
-	0	原审
-	1	原神
-
-rgwwvo
-	0	原味
-	1	原为
-
-rgxdvo
-	0	软性
-	1	有关系的
-
-rjdmei
-	0	用电
-	1	用典
-
-rjhvov
-	0	有计划
-	1	原计划
-
-rjrvii
-	0	软件园
-	1	软件业
+qyjyev
+	0	气机
+	1	气极
 
 rk;yia
 	0	人治
 	1	人彘
 
+rkfyio
+	0	仁义
+	1	人意
+
 rkqyiv
 	0	任其
 	1	人妻
-
-rkryio
-	0	仁义
-	1	人意
-	2	人日
 
 rkuyiv
 	0	人事
@@ -736,223 +773,21 @@ rkxdiv
 	0	人型
 	1	人形
 
-rlrqav
-	0	游来游去
-	1	缘来缘去
-
-rmrioi
-	0	野蛮人
-	1	虞美人
-
-rmrmvv
-	0	严严
-	1	奄奄
-
-rmxyve
-	0	一脉相承
-	1	一脉相传
-
 rnuyao
 	0	如是
 	1	如诗
-
-rqrgav
-	0	又远
-	1	又软
-
-rqryvo
-	0	有意
-	1	有日
-
-rqwwvv
-	0	有违
-	1	与其为伍
-
-rqxdvv
-	0	有型
-	1	有幸
-
-rrbuii
-	0	依依不舍
-	1	遇人不淑
-
-rrdrvv
-	0	远远大于
-	1	远远低于
-
-rrjroa
-	0	日以继夜
-	1	夜以继日
-
-rrxrvv
-	0	有样学样
-	2	牙牙学语
-
-rsukoo
-	0	夜神
-	1	夜审
-
-rumrvi
-	0	有什么用
-	1	有什么意义
-
-rurjiv
-	0	由奢入俭
-	1	由奢入简
-
-rwuyvv
-	0	云石
-	1	一无是处
-
-ry;yae
-	0	已知
-	1	异质
-
-ry;yiv
-	0	遗址
-	1	遗志
-
-ry;yoe
-	0	译制
-	1	益智
-	2	义肢
-	3	日制
-
-rybtov
-	0	易班
-	1	日班
-
-rydjav
-	0	异动
-	1	已成定局
-
-ryfroa
-	0	益发
-	1	日发
-
-ryjdoa
-	0	易经
-	1	日经
-
-ryjmve
-	0	一箭
-	1	一简
-
-ryjmvi
-	0	一件
-	1	一剑
-
-ryjroa
-	0	衣架
-	1	日加
-	2	语出惊人
-
-ryjyoo
-	0	日记
-	1	易记
-
-rylcoo
-	0	日料
-	1	衣料
-
-rymdoe
-	0	易名
-	1	夜长梦多
-
-ryq;ov
-	0	疫区
-	1	意趣
-
-ryqyoe
-	0	义气
-	1	意气
-
-ryqyov
-	1	日起
-	2	弈棋
-
-ryr;ov
-	0	益于
-	1	易于
-
-ryrxvo
-	0	一吹一吸
-	1	医养
-
-ryryoo
-	0	日益
-	1	奕奕
-	2	日日
-
-ryryvo
-	0	一日
-	1	一意
-
-rytjva
-	0	一统
-	1	一通
-
-ryunoo
-	0	日数
-	1	义塾
-
-ryuyai
-	0	已逝
-	1	已使
-
-ryuyoi
-	0	日食
-	1	易逝
-	2	衣食
-
-ryuyvv
-	1	一世
-	2	轶事
-
-rywkoo
-	0	日文
-	1	易问
-
-rywwoi
-	0	易位
-	1	日伪
-
-ryxboi
-	0	宜信
-	1	日信
-	2	易信
-
-ryxxov
-	0	意想
-	1	日相
-
-ryynoa
-	0	日出
-	1	译出
-
-ryzhov
-	0	亦在
-	1	日在
 
 syjyvo
 	0	死寂
 	1	死记
 
-tjryio
-	0	同日
-	1	同义
-
-ulrjia
+ulfjia
 	0	睡了一觉
 	1	摔了一跤
 
 uruyav
 	0	沙士
 	1	沙示
-
-uumroi
-	0	是什么样
-	1	是什么原因
 
 uy;fie
 	1	逝者
@@ -974,6 +809,24 @@ uy;yoi
 	0	是指
 	1	市值
 
+uyfroa
+	0	施法
+	1	实发
+
+uyfwov
+	0	诗云
+	1	时运
+
+uyfxov
+	0	市场份额
+	1	市场营销
+	2	市场分析
+
+uyfyeo
+	0	失忆
+	1	失意
+	3	释义
+
 uyj;ov
 	0	市场竞争
 	1	市场机制
@@ -983,11 +836,6 @@ uyjmoa
 	0	施建
 	1	视奸
 
-uyjreo
-	0	十家
-	1	生产经验
-	2	生产经营
-
 uyjyoi
 	0	诗集
 	1	市集
@@ -995,11 +843,6 @@ uyjyoi
 uyq;ov
 	0	时区
 	1	识趣
-
-uyryeo
-	0	失忆
-	1	失意
-	3	释义
 
 uyuyov
 	0	时事
@@ -1023,6 +866,19 @@ uyzyva
 	0	石子
 	1	式子
 
+wnfyva
+	0	无异
+	1	无以
+
+wnfyvo
+	1	无益
+	2	无义
+
+wnfyvv
+	0	五一
+	1	巫医
+	2	武夷
+
 wnlyva
 	0	武力
 	1	无力
@@ -1031,27 +887,9 @@ wnlyvo
 	0	无礼
 	1	兀立
 
-wnryva
-	0	无异
-	1	无以
-
-wnryvo
-	0	五日
-	1	无益
-	2	无义
-
-wnryvv
-	0	五一
-	1	巫医
-	2	武夷
-
 wtuyvv
 	0	万世
 	1	顽石
-
-wumroi
-	0	为什么要
-	1	为什么不可以
 
 ww;yoo
 	0	为之
@@ -1068,10 +906,7 @@ xbdyoi
 xbjyoo
 	0	心计
 	1	心悸
-
-xbrrvv
-	0	西班牙语
-	1	西班牙人
+	2	心迹
 
 xbxdoo
 	0	新星
@@ -1081,6 +916,10 @@ xchfii
 	0	小荷
 	1	萧何
 
+xd;fvi
+	0	相当重要
+	1	现代主义
+
 xddvie
 	0	喜当爹
 	1	相当多
@@ -1089,30 +928,26 @@ xdqyee
 	0	行乞
 	1	行气
 
+xf;uvv
+	0	需要注意的是
+	1	需要指出的是
+
+xhfrea
+	0	爱发
+	1	血法
+
 xhhzoo
 	0	学号
 	1	哀号
 	2	哀嚎
 
-xlrtoa
-	0	吓了一跳
-	1	吓了一大跳
+xmf;ee
+	0	鲜鱼
+	1	血脉偾张
 
 xmxheo
 	0	腺癌
 	1	衔哀
-
-xr;uvv
-	0	需要注意的是
-	1	需要指出的是
-
-xr;yvv
-	0	夏至
-	1	需要指出
-
-xxrvoi
-	0	二噁英
-	1	二𫫇英
 
 xxuyoo
 	0	翔实
@@ -1141,14 +976,6 @@ yrjbii
 zhuyvo
 	0	再试
 	1	再是
-
-zruyei
-	0	杂史
-	1	自由市场
-
-zrzree
-	0	自然资源
-	1	自怨自艾
 
 zulfie
 	0	作乐

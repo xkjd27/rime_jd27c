@@ -81920,6 +81920,7 @@
 社会安定	she/hui/an/ding	5	0
 社会实践	she/hui/shi/jian	4	0
 社会工作	she/hui/gong/zuo	4	0
+社会工程学	she/hui/gong/xue	5	0
 社会建设	she/hui/jian/she	4	0
 社会形态	she/hui/xing/tai	4	0
 社会影响	she/hui/ying/xiang	4	0
@@ -85936,6 +85937,7 @@
 红酒	hong/jiu	4	0
 红铅	hong/qian	4	0
 红门	hong/men	4	0
+红队	hong/dui	4	0
 红霉素	hong/mei/su	3	0
 红霞	hong/xia	4	0
 红顶	hong/ding	4	0
@@ -93687,6 +93689,7 @@
 蓝衣	lan/yi	4	0
 蓝证	lan/zheng	5	0
 蓝调	lan/tiao	5	0
+蓝队	lan/dui	4	0
 蓝青	lan/qing	4	0
 蓝领	lan/ling	4	0
 蓝颜	lan/yan	5	0
@@ -98081,6 +98084,7 @@
 谁来	shui/lai	4	0	shei/lai	4	0
 谁比	shui/bi	5	0	shei/bi	4	0
 谁没	shui/mei	4	0	shei/mei	4	0
+谁用	shei/yong	4	0
 谁的	shui/de	5	0	shei/de	4	0
 谁看	shui/kan	4	0	shei/kan	4	0
 谁知	shei/zhi	4	0

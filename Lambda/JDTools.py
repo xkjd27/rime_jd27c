@@ -1039,10 +1039,10 @@ def get_all_ci():
 def build_log_tsv():
     """Build code list for log input."""
     root = Path("rime/")
-    with open(f"log_input/{RIME_SCHEMA}.txt", "w") as out:
+    with open(f"log_input/{RIME_SCHEMA}.txt", "w", encoding="utf-8") as out:
         for f in root.iterdir():
             if f.name.endswith(".yaml"):
-                with f.open("r") as src:
+                with f.open("r", encoding="utf-8") as src:
                     skip = True
                     for line in src:
                         line = line.strip()

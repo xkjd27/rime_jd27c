@@ -19626,6 +19626,7 @@ sort: original
 大败	drbhva
 大摆	drbhvi
 大本	drbk
+打本	drbki
 大棒	drbl
 打榜	drbli
 答辩	drbm
@@ -39255,6 +39256,7 @@ sort: original
 锅垢	gugs
 果敢	gugt
 蝈蝈	gugu
+过过	guguv
 过给	gugw
 国光	gugx
 过高	gugz
@@ -39438,6 +39440,7 @@ sort: original
 过天	gutm
 攻守同盟	gutmv
 国土	gutn
+过图	gutnv
 过头	guts
 锅贴	gutsi
 国体	guty
@@ -43916,6 +43919,7 @@ sort: original
 花白	hqbh
 华强北	hqbi
 话本	hqbk
+画本	hqbkv
 花边	hqbm
 哗变	hqbmo
 画布	hqbn
@@ -59114,6 +59118,7 @@ sort: original
 伦理观	llgi
 狼顾	llgn
 狼狗	llgs
+浪过	llgu
 老龄化	llh
 流浪汉	llha
 浪河	llhf
@@ -63176,7 +63181,9 @@ sort: original
 卖不出去	mbyq
 末班车	mbyv
 毛笔字	mbz
+买本子	mbza
 抿嘴	mbzb
+卖本子	mbze
 满不在乎	mbzh
 民族	mbzn
 默不作声	mbzu
@@ -63907,6 +63914,8 @@ sort: original
 埋置	mh;y
 梦幻般	mhb
 迷惑不解	mhbj
+买本	mhbk
+卖本	mhbke
 迈步	mhbn
 模糊不清	mhbq
 麦霸	mhbr
@@ -72158,6 +72167,7 @@ sort: original
 棚改	ppgh
 捧哏	ppgk
 碰过	ppgu
+捧过	ppgui
 翩翩公子	ppgz
 品牌化	pph
 捧回	pphb
@@ -72352,6 +72362,7 @@ sort: original
 怕狗	prgs
 怕干	prgt
 爬过	prgu
+扒过	prgui
 怕给	prgw
 爬高	prgz
 怕灰	prhb
@@ -72605,6 +72616,8 @@ sort: original
 盘古	ptgn
 盼顾	ptgni
 叛国	ptgu
+盘过	ptgue
+判过	ptguo
 判给	ptgw
 攀高	ptgz
 普通话	pth
@@ -73375,6 +73388,7 @@ sort: original
 抛掷	pz;yi
 跑表	pzbc
 炮兵	pzbd
+跑本	pzbk
 跑遍	pzbm
 跑步	pzbn
 泡吧	pzbr
@@ -73513,6 +73527,7 @@ sort: original
 泡汤	pztl
 跑堂	pztlo
 刨土	pztn
+跑图	pztno
 泡腾	pztp
 炮塔	pztr
 抛投	pzts
@@ -74236,6 +74251,7 @@ sort: original
 敲更	qcgp
 巧干	qcgt
 敲过	qcgu
+撬过	qcgui
 撬棍	qcgw
 侨汇	qchb
 撬坏	qchd
@@ -91820,6 +91836,7 @@ sort: original
 申请表	uqb
 生气勃勃	uqbb
 刷白	uqbh
+刷本	uqbk
 声情并茂	uqbm
 上气不接下气	uqbq
 耍把	uqbr
@@ -107548,6 +107565,7 @@ sort: original
 吹出	ybyn
 垂成	ybyp
 筹备组	ybz
+出本子	ybza
 垂足	ybzn
 吹奏	ybzs
 吹走	ybzso
@@ -112454,6 +112472,7 @@ sort: original
 作法自毙	zfzb
 自业自得	zfzd
 租房子	zfze
+造房子	zfzeo
 啧啧	zfzf
 自言自语	zfzfe
 自怨自艾	zfzfee
@@ -115271,6 +115290,7 @@ sort: original
 造影	zzfd
 枣园	zzfg
 造访	zzfl
+造房	zzfle
 造福	zzfn
 曾祖父	zzfo
 遭逢	zzfp
@@ -115287,10 +115307,13 @@ sort: original
 造诣	zzfye
 早该	zzgh
 早寡	zzgq
+造过	zzgu
+凿过	zzgui
 糟糕	zzgz
 在最后	zzh
 早会	zzhb
 藻绘	zzhbi
+凿坏	zzhd
 皂河	zzhf
 遭害	zzhh
 枣红	zzhj
@@ -115361,6 +115384,7 @@ sort: original
 早前	zzqm
 早秋	zzqq
 早强	zzqx
+凿墙	zzqxi
 早期	zzqy
 早起	zzqyo
 凿枘	zzrb
@@ -115423,6 +115447,7 @@ sort: original
 遭袭	zzxy
 总资产	zzy
 早车	zzyf
+造车	zzyfe
 造船	zzyg
 早晨	zzyk
 早场	zzyl

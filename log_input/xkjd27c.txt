@@ -21256,6 +21256,7 @@
 轧钢	;rgl
 榨干	;rgt
 炸锅	;rgu
+扎过	;rgui
 轧辊	;rgw
 轧光	;rgx
 炸高	;rgz
@@ -22225,6 +22226,7 @@
 照相馆	;xgo
 主心骨	;xgoo
 装过	;xgu
+撞过	;xgui
 执行公务	;xgw
 状告	;xgz
 真心话	;xh
@@ -29103,6 +29105,7 @@
 悲痛	bwtj
 背痛	bwtji
 悲恸	bwtjio
+被烫	bwtl
 倍添	bwtm
 北图	bwtn
 背疼	bwtp
@@ -30006,6 +30009,7 @@
 爆肝	bzgto
 包裹	bzgu
 报国	bzgui
+抱过	bzguiv
 包给	bzgw
 报给	bzgwi
 曝光	bzgx
@@ -30900,6 +30904,7 @@
 才干	chgt
 才敢	chgtv
 才过	chgu
+踩过	chguo
 才给	chgw
 采光	chgx
 才高	chgz
@@ -31697,9 +31702,11 @@
 擦屁股	cpg
 曾跟	cpgk
 曾敢	cpgt
+蹭过	cpgu
 曾给	cpgw
 层高	cpgz
 曾和	cphf
+蹭喝	cphfo
 噌吰	cphj
 曾获	cphu
 曾经	cpjd
@@ -31718,6 +31725,7 @@
 词牌名	cpm
 层面	cpmm
 层内	cpnw
+蹭破皮	cpp
 蹭破	cppu
 曾去	cpq;
 曾请	cpqd
@@ -31743,6 +31751,7 @@
 蹭车	cpyf
 层出	cpyn
 曾称	cpyp
+蹭吃	cpyy
 曾在	cpzh
 蹭脏	cpzl
 曾做	cpzu
@@ -33432,6 +33441,7 @@
 吊挂	dcgq
 吊钩	dcgs
 钓竿	dcgt
+掉过	dcgu
 调给	dcgw
 掉光	dcgx
 调回	dchb
@@ -38536,6 +38546,7 @@
 多行	duhl
 单身汉	duho
 朵花	duhq
+多花	duhqe
 多哈	duhr
 多厚	duhs
 多汗	duht
@@ -41284,6 +41295,7 @@
 因系	fbxy
 非比寻常	fbxyi
 发不出	fby
+异丙醇	fbya
 引车	fbyf
 银川	fbyg
 银钗	fbyh
@@ -41480,11 +41492,13 @@
 要干	fcgtv
 要过	fcgu
 腰果	fcgue
+咬过	fcguo
 要给	fcgw
 摇滚	fcgwi
 药膏	fcgz
 油菜花	fch
 要回	fchb
+要坏	fchd
 吆喝	fchf
 药盒	fchfi
 咬合	fchfo
@@ -47824,6 +47838,7 @@
 发过	frgu
 法国	frgua
 压过	frguv
+轧过	frguv
 发给	frgw
 法棍	frgwa
 依然故我	frgwi
@@ -47838,6 +47853,7 @@
 发回	frhba
 押汇	frhbi
 压坏	frhd
+轧坏	frhd
 发坏	frhda
 亚河	frhf
 丫鬟	frhg
@@ -48089,6 +48105,7 @@
 发丝	frsy
 雅思	frsyv
 压死	frsyvv
+轧死	frsyvv
 发骚	frsz
 房日兔	frt
 发推	frtb
@@ -53136,6 +53153,7 @@
 官府	ggfn
 鳏夫	ggfne
 官服	ggfno
+关服	ggfnoe
 广告法	ggfo
 官俸	ggfp
 惯有	ggfq
@@ -53170,6 +53188,8 @@
 管沟	gggs
 观感	gggt
 棺椁	gggu
+管过	gggue
+关过	ggguo
 功高盖世	ggguv
 观光	gggx
 公共关系	gggxe
@@ -55448,6 +55468,7 @@
 呱呱	gqgq
 挂钩	gqgs
 瓜果	gqgu
+挂过	gqgui
 挂给	gqgw
 供求关系	gqgx
 敢情好	gqh
@@ -61211,6 +61232,7 @@
 划过	hqgu
 滑过	hqgua
 花果	hqgui
+画过	hqguv
 划给	hqgw
 花光	hqgx
 画稿	hqgz
@@ -62704,6 +62726,7 @@
 黑狗	hwgs
 婚媾	hwgsa
 黑锅	hwgu
+黑过	hwgui
 毫无关系	hwgx
 混合	hwhf
 黑河	hwhfi
@@ -66603,9 +66626,12 @@
 经济领域	jjlfa
 经济理论	jjll
 经济力量	jjlla
+酒精绵	jjm
 阶级矛盾	jjmd
 经济贸易	jjmf
 急急忙忙	jjmm
+酒精绵片	jjmp
+酒精棉球	jjmq
 近几年	jjn
 绞尽脑汁	jjn;
 经久耐用	jjnf
@@ -67030,6 +67056,7 @@
 见过	jmgu
 建国	jmgua
 坚果	jmgui
+减过	jmguo
 见光	jmgx
 建光	jmgxa
 经贸关系	jmgxae
@@ -70946,6 +70973,7 @@
 亏量	kblx
 暌离	kbly
 跨部门	kbm
+看不明白	kbmb
 夔门	kbmk
 亏面	kbmm
 溃灭	kbms
@@ -71665,6 +71693,7 @@
 克星	kfxde
 颗星	kfxdi
 口服心服	kfxf
+开源协议	kfxfv
 可选	kfxg
 科学	kfxh
 咳血	kfxho
@@ -71931,7 +71960,8 @@
 开运	khfw
 开阳	khfx
 开议	khfy
-凯歌	khgf
+开个	khgf
+凯歌	khgfi
 开关	khgg
 开馆	khggv
 开工	khgj
@@ -72942,6 +72972,7 @@
 坑木	kpmn
 坑蒙	kpmp
 坑农	kpnj
+磕破皮	kpp
 坑骗	kppm
 开瓶器	kpq
 铿锵	kpqx
@@ -73413,6 +73444,7 @@
 看顾	ktgn
 看够	ktgs
 看过	ktgu
+砍过	ktguv
 砍光	ktgx
 看稿	ktgz
 恳谈会	kth
@@ -75167,6 +75199,7 @@
 懒洋洋	lffoa
 立法院	lffoaa
 疗养院	lffoo
+晾衣服	lffooe
 刘亦菲	lffooi
 乐友	lffq
 另有隐情	lffqo
@@ -78975,6 +79008,9 @@
 流行歌曲	lxgqa
 晾干	lxgt
 两国	lxgu
+晾过	lxguo
+凉过	lxguov
+亮过	lxguov
 量给	lxgw
 亮光	lxgx
 两广	lxgxv
@@ -79058,6 +79094,7 @@
 留下来	lxle
 亮了	lxlf
 凉了	lxlfo
+晾了	lxlfoa
 两龙	lxlj
 两联	lxlm
 两路	lxln
@@ -81138,6 +81175,7 @@
 麦秆	mhgt
 买过	mhgu
 卖国	mhgue
+卖过	mhguev
 迈过	mhguv
 卖给	mhgw
 买给	mhgwa
@@ -81865,6 +81903,7 @@
 免排	mmph
 面盆	mmpk
 面庞	mmpl
+绵片	mmpm
 面盘	mmpt
 免赔	mmpw
 面皮	mmpy
@@ -82407,6 +82446,7 @@
 猛男	mpnt
 萌娘	mpnx
 蒙你	mpny
+磨破皮	mpp
 蒙骗	mppm
 猛扑	mppn
 孟婆	mppu
@@ -82847,6 +82887,7 @@
 篾工	msgj
 某国	msgu
 灭国	msguv
+灭过	msguvv
 谋和	mshf
 谋害	mshh
 谋划	mshq
@@ -84232,6 +84273,7 @@
 密集	myjyo
 米克	mykf
 米宽	mykg
+密恐	mykj
 米糠	mykl
 迷卡	mykr
 迷狂	mykx
@@ -91158,6 +91200,7 @@
 勤耕	qbgp
 勤沟	qbgs
 秦国	qbgu
+亲过	qbguo
 岂不怪哉	qbgz
 秦桧	qbhb
 秦淮	qbhd
@@ -93463,6 +93506,7 @@
 球杆	qqgt
 球果	qqgu
 全球攻势	qqgui
+求过	qqguv
 求告	qqgz
 全球化	qqh
 巧取豪夺	qqhd
@@ -95215,6 +95259,7 @@
 热管	rfgg
 热狗	rfgs
 热锅	rfgu
+热过	rfgui
 人缘好	rfh
 热河	rfhf
 热害	rfhh
@@ -97964,6 +98009,7 @@
 三和弦	shx
 腮腺	shxm
 塞尔	shxn
+塞下	shxr
 三好学生	shxu
 散货船	shy
 赛车	shyf
@@ -101594,6 +101640,7 @@
 太庚	thgp
 太够	thgs
 太过	thgu
+抬过	thgui
 童话故事	thguo
 泰国	thguv
 太高	thgz
@@ -102358,6 +102405,7 @@
 搪瓷	tlcy
 屠龙刀	tld
 弹力带	tlda
+躺对	tldb
 烫得	tldf
 唐代	tldh
 唐栋	tldj
@@ -102405,6 +102453,7 @@
 糖苷	tlgto
 糖果	tlgu
 汤锅	tlgua
+烫过	tlguav
 糖膏	tlgz
 讨论会	tlh
 偷梁换柱	tlh;
@@ -102422,6 +102471,7 @@
 堂皇	tlhx
 堂号	tlhz
 通力合作	tlhza
+躺好	tlhze
 拖拉机	tlj
 烫金	tljb
 糖精	tljd
@@ -105376,6 +105426,7 @@
 失之东隅，收之桑榆	u;df
 是真的吗	u;dm
 谁知道呢	u;dn
+是真的	u;do
 守株待兔	u;dt
 是这样	u;f
 水煮鱼	u;fa
@@ -112039,6 +112090,7 @@
 少耕	uzgp
 稍感	uzgt
 烧锅	uzgu
+烧过	uzguo
 少给	uzgw
 烧光	uzgx
 稍高	uzgz
@@ -115304,6 +115356,7 @@
 为甚么	wumov
 我妈	wumr
 我慢	wumt
+卫生棉条	wumta
 为什么是	wumu
 玩什么	wumv
 我没	wumw
@@ -115372,6 +115425,7 @@
 我提	wuty
 窝逃	wutz
 我是说	wuu
+卫生栓	wuua
 我睡	wuub
 万世师表	wuubv
 外省市	wuue
@@ -115655,6 +115709,7 @@
 卫国	wwgua
 魏国	wwgue
 为过	wwguo
+喂过	wwguov
 未果	wwguv
 为给	wwgw
 未滚	wwgwv
@@ -117888,6 +117943,7 @@
 行径	xdjde
 行经	xdjdea
 醒觉	xdjh
+消毒酒精	xdjj
 心胆俱裂	xdjl
 兴建	xdjm
 星舰	xdjmo
@@ -118053,6 +118109,7 @@
 形体	xdty
 星体	xdtyo
 行动上	xdu
+消毒水	xdua
 兴衰	xdud
 相对湿度	xdudv
 爱迪生	xdue
@@ -119121,6 +119178,7 @@
 爱国	xhgu
 爱过	xhgue
 挨过	xhgui
+削过	xhguiv
 学过	xhguo
 学棍	xhgw
 血光	xhgx
@@ -119211,6 +119269,7 @@
 血块	xhkd
 学科	xhkf
 埃克	xhkfv
+削开	xhkh
 哀恳	xhkk
 爱哭	xhkn
 血库	xhkne
@@ -127010,6 +127069,7 @@
 瞠目	ypmn
 承蒙	ypmp
 盛满	ypmt
+撑满	ypmti
 成魔	ypmu
 称美	ypmw
 乘幂	ypmy
@@ -127120,7 +127180,9 @@
 呈现	ypxm
 成仙	ypxmv
 城下	ypxr
+撑下	ypxri
 成啊	ypxrv
+盛下	ypxrvv
 称谢	ypxs
 成安	ypxt
 长篇小说	ypxu
@@ -127837,6 +127899,7 @@
 城市规划	yugh
 戳咕	yugn
 辍耕	yugp
+戳过	yugu
 初始化	yuh
 戳祸	yuhu
 城市化	yuhv
@@ -130324,8 +130387,8 @@
 宗教学	zjxo
 总辖	zjxr
 总按	zjxt
-纵向	zjxx
-总想	zjxxo
+总想	zjxx
+纵向	zjxxa
 棕溪	zjxy
 紫禁城	zjy
 总厂	zjyl
@@ -130334,6 +130397,7 @@
 总产	zjyt
 棕床	zjyx
 走街串巷	zjyxv
+总吃	zjyy
 自己做	zjz
 总则	zjzf
 自觉自愿	zjzfe
@@ -131275,6 +131339,7 @@
 总体规划	ztgh
 攒够	ztgs
 咱敢	ztgt
+赞过	ztgu
 暂告	ztgz
 座谈会	zth
 赞和	zthf

@@ -528,6 +528,10 @@ frjdvv
 	0	雅静
 	1	压境
 
+frsyvv
+	0	压死
+	1	轧死
+
 fruyav
 	0	发式
 	1	法式
@@ -724,6 +728,10 @@ lduyiv
 lmjsva
 	0	连结
 	1	联结
+
+lxguov
+	0	凉过
+	1	亮过
 
 mduyoi
 	0	明史

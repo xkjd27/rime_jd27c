@@ -7512,6 +7512,7 @@ sort: original
 不法分子	bffz
 不应该	bfg
 避风港	bfga
+饱腹感	bfge
 搬运工	bfgi
 不应该是	bfgu
 殡仪馆	bfgv
@@ -12773,6 +12774,7 @@ sort: original
 不足与谋	bzfmv
 报复	bzfn
 包袱	bzfne
+饱腹	bzfnee
 抱负	bzfni
 暴富	bzfno
 暴风	bzfp
@@ -51713,6 +51715,7 @@ sort: original
 界外	jswh
 见所未见	jswj
 接吻	jswk
+借问	jswki
 诘问	jswko
 结网	jswl
 皆无	jswn
@@ -57258,6 +57261,7 @@ sort: original
 淋浴	lbf;
 淋雨	lbf;a
 邻域	lbf;i
+两步验证	lbf;v
 林阴	lbfb
 林荫	lbfbv
 临颍	lbfd
@@ -57369,6 +57373,7 @@ sort: original
 林强	lbqx
 拎起	lbqy
 礼拜日	lbr
+两步认证	lbr;
 麟瑞	lbrb
 临人	lbrk
 临汝	lbrn
@@ -100144,6 +100149,7 @@ sort: original
 笑语	xcf;e
 小于	xcf;i
 小鱼	xcf;ie
+二次验证	xcf;v
 小阴	xcfb
 消音	xcfba
 逍遥	xcfc
@@ -100421,6 +100427,7 @@ sort: original
 小气	xcqy
 消气	xcqya
 小憩	xcqyi
+二次认证	xcr;
 小蕊	xcrb
 小阮	xcrg
 笑容	xcrj

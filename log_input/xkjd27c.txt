@@ -17977,6 +17977,7 @@
 这回	;fhb
 折回	;fhbi
 这会	;fhbo
+直引号	;fhe
 折合	;fhf
 这还	;fhh
 这很	;fhk
@@ -28640,6 +28641,7 @@
 博龙	bulj
 闭上了眼睛	buljo
 波浪	bull
+不甚了了	bullv
 不识庐山真面目	bulm
 拨楞	bulp
 波流	bulq
@@ -50954,6 +50956,7 @@
 益达	fydro
 一打	fydrv
 医大	fydrvv
+一大	fydrvv
 一斗	fyds
 一跌	fydsv
 一叠	fydsva
@@ -63615,6 +63618,7 @@
 豪迈	hzmh
 好卖	hzmha
 豪门	hzmk
+号门	hzmko
 好忙	hzml
 好面	hzmm
 好木	hzmn
@@ -112592,6 +112596,7 @@
 委员会	wfhe
 污言秽语	wfhf
 毋庸讳言	wfhfa
+弯引号	wfho
 我已经	wfj
 我也觉得	wfjd
 万分景仰	wfjf

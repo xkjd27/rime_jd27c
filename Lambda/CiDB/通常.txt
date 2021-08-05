@@ -72693,6 +72693,7 @@
 潘老	pan/lao	4	0
 潘虹	pan/hong	4	0
 潘达	pan/da	4	0
+潘通	pan/tong	4	0
 潘金莲	pan/jin/lian	4	0
 潘集	pan/ji	4	0
 潜伏	qian/fu	4	0

@@ -734,7 +734,9 @@
 啁	;soeav
 州	;soeoi
 咒	;soo
+呪	;sooe
 咒	;sooea
+呪	;sooea
 宙	;sooi
 宙	;sooia
 轴	;sv
@@ -24410,6 +24412,7 @@
 冰窟	bdkn
 不大可能	bdknv
 并口	bdks
+北达科他	bdkt
 病况	bdkx
 不得了	bdl
 兵临	bdlb
@@ -24822,6 +24825,7 @@
 不以为耻	bfwy
 不用谢	bfx
 不分轩轾	bfx;
+博伊西	bfxe
 不翼而飞	bfxf
 不言而喻	bfxfv
 闭月羞花	bfxh
@@ -25786,6 +25790,7 @@
 不可理喻	bklf
 本来	bklh
 本联	bklm
+北卡罗来纳	bkln
 别哭了	bklo
 奔流	bklq
 本栏	bklt
@@ -25991,9 +25996,11 @@
 白兰地	blde
 邦德	bldf
 绑得	bldfa
+不列颠哥伦比亚	bldfv
 帮带	bldh
 绑带	bldha
 波罗的海	bldhai
+伯灵顿	bldi
 棒读	bldn
 棒打	bldr
 榜单	bldt
@@ -26106,6 +26113,7 @@
 保龄球	blq
 棒球	blqq
 壁立千仞	blqr
+布里奇波特	blqt
 博览群书	blqu
 玻璃球	blqv
 帮腔	blqx
@@ -26116,12 +26124,14 @@
 表里如一	blrf
 帮人	blrk
 布鲁斯	bls
+布里斯班	blsb
 白罗斯	blse
 壁垒森严	blsf
 棒酸	blsg
 辩论赛	blso
 巴勒斯坦	blst
 不落俗套	blstv
+比灵斯	blsv
 布鲁塞尔	blsx
 便利贴	blt
 绑腿	bltb
@@ -28246,6 +28256,7 @@
 半筐	btkx
 标题栏	btl
 伴侣	btl;
+波特兰	btla
 拌料	btlc
 版聊	btlce
 办了	btlf
@@ -29153,6 +29164,7 @@
 不问世事	bwuuv
 背时	bwuy
 贝氏	bwuya
+卑诗	bwuye
 北师	bwuyi
 背饰	bwuyie
 北史	bwuyii
@@ -30072,6 +30084,7 @@
 不自觉	bzjv
 暴君	bzjw
 褒奖	bzjx
+包浆	bzjxe
 宝鸡	bzjy
 包机	bzjye
 保级	bzjyi
@@ -35492,6 +35505,7 @@
 大快人心	dkrx
 对抗赛	dks
 得克萨斯	dkss
+德克萨斯	dksse
 大块头	dkt
 打开天窗说亮话	dkth
 德克士	dku
@@ -35869,6 +35883,7 @@
 电邀	dmfc
 电影	dmfd
 点映	dmfdi
+德梅因	dmfe
 都没有用	dmff
 电源	dmfg
 点源	dmfgi
@@ -42297,6 +42312,7 @@
 远道而来	fdxl
 应先	fdxm
 婴儿	fdxn
+印第安纳	fdxne
 放得下	fdxo
 颖秀	fdxq
 赢下	fdxr
@@ -42304,6 +42320,7 @@
 赢啊	fdxro
 一代新人	fdxrv
 影协	fdxs
+印第安纳波利斯	fdxse
 应按	fdxt
 异端邪说	fdxu
 运动鞋	fdxv
@@ -43841,6 +43858,7 @@
 异乎寻常	fhxya
 月息	fhxye
 发挥出	fhy
+凤凰城	fhye
 萤火虫	fhyi
 月尘	fhyk
 越长	fhyl
@@ -43856,6 +43874,7 @@
 约绰	fhyu
 沿海城市	fhyua
 浴火重生	fhyuao
+盐湖城	fhyv
 用户组	fhz
 发挥作用	fhzf
 月在	fhzh
@@ -44787,6 +44806,7 @@
 放榜	flbl
 一了百了	flblv
 方便	flbm
+亚拉巴马	flbmv
 方步	flbn
 易拉宝	flbo
 房办	flbt
@@ -45089,6 +45109,7 @@
 访美	flmw
 仿冒	flmz
 阴历年	fln
+伊利诺伊	flnf
 防粘	flnm
 房奴	flnn
 方能	flnp
@@ -45153,6 +45174,7 @@
 放送	flsjo
 耶路撒冷	flsl
 访苏	flsn
+亚利桑那	flsnv
 叶绿素	flso
 放散	flst
 医疗所	flsv
@@ -45760,6 +45782,7 @@
 盐亭	fmtd
 烟台	fmth
 砚台	fmthv
+佛蒙特	fmti
 腌桶	fmtj
 眼瞳	fmtji
 炎唐	fmtl
@@ -45836,6 +45859,7 @@
 燕窝	fmwu
 眼窝	fmwui
 有名无实	fmwuv
+燕尾	fmww
 圆满完成	fmwy
 亚马逊	fmx
 延续	fmx;
@@ -47829,6 +47853,7 @@
 发个	frgf
 发哥	frgfa
 发咯	frgfao
+法戈	frgfav
 雅阁	frgfv
 法官	frgg
 牙关	frggv
@@ -51923,6 +51948,7 @@
 优哉游哉	fzfzi
 有资格	fzg
 有则改之	fzg;
+负罪感	fzge
 远走高飞	fzgf
 分组会	fzh
 复杂化	fzhe
@@ -58165,6 +58191,7 @@
 回帖	hbtsi
 会谈	hbtt
 回弹	hbtti
+霍巴特	hbtv
 合并同类项	hbtx
 挥涕	hbty
 湖北省	hbu
@@ -60381,6 +60408,7 @@
 行风	hlfp
 航油	hlfq
 行业	hlfs
+哈利法克斯	hlfso
 航运	hlfw
 火龙果	hlg
 行规	hlgb
@@ -60722,6 +60750,7 @@
 胡来	hnlhe
 呼隆	hnlj
 虎狼	hnll
+火奴鲁鲁	hnllo
 互联	hnlm
 糊脸	hnlmo
 互连	hnlmv
@@ -63189,6 +63218,7 @@
 慌忙	hxml
 黄冕	hxmm
 荒木	hxmn
+怀俄明	hxmo
 荒谬	hxmq
 皇马	hxmr
 黄麻	hxmrv
@@ -66789,6 +66819,7 @@
 惊恐万状	jkw;
 杰克逊	jkx
 健康向上	jkxu
+杰克逊维尔	jkxx
 甲壳虫	jky
 健康成长	jky;
 艰苦创业	jkyf
@@ -70972,6 +71003,7 @@
 溃军	kbjw
 看不看	kbk
 睽睽	kbkb
+魁北克	kbke
 可不可以	kbkf
 苦不堪言	kbkfi
 肯不肯	kbki
@@ -72761,6 +72793,7 @@
 哭得	kndfo
 库缎	kndg
 苦短	kndgi
+康涅狄格	kndgo
 裤带	kndh
 裤袋	kndho
 肯尼迪	kndi
@@ -73319,6 +73352,7 @@
 口如	ksrn
 扣肉	ksrs
 口若	ksru
+堪萨斯	kss
 口算	kssg
 口诵	kssj
 口诉	kssn
@@ -73484,6 +73518,7 @@
 看剧	ktj;
 看尽	ktjb
 勘校	ktjc
+肯塔基	ktji
 看见	ktjm
 看酒	ktjq
 开拓进取	ktjqv
@@ -73644,6 +73679,7 @@
 开始了	kul
 抗衰老	kuli
 阔路	kuln
+昆士兰	kulo
 扩列	kuls
 蛞蝼	kulsi
 阔落	kulu
@@ -73871,6 +73907,7 @@
 狂狷	kxjg
 苦心积虑	kxjl
 科学技术是第一生产力	kxjle
+卡尔加里	kxjli
 框槛	kxjm
 匡救	kxjq
 框架	kxjr
@@ -74832,6 +74869,7 @@
 灵的	lddf
 领带	lddh
 罗德岛	lddi
+罗得岛	lddie
 灵动	lddj
 铃铛	lddl
 零点	lddm
@@ -75335,6 +75373,7 @@
 乐色	lfsf
 老有所养	lfsfe
 老有所乐	lfsl
+路易斯安那	lfsn
 刘易斯	lfso
 狼烟四起	lfsq
 勒索	lfsu
@@ -75372,6 +75411,7 @@
 里应外合	lfwh
 了哇	lfwr
 勒韦	lfww
+路易维尔	lfwx
 拉风箱	lfx
 了一些	lfxa
 冷眼相待	lfxd
@@ -80714,6 +80754,7 @@
 没大没小	mdmx
 冥迷	mdmy
 名猫	mdmz
+蒙大拿	mdn
 鸣鸟	mdnc
 明年	mdnm
 名品	mdpb
@@ -80992,6 +81033,7 @@
 媚眼如丝	mfrs
 木芙蓉	mfrv
 没意思	mfs
+孟菲斯	mfsa
 买一送一	mfsf
 名扬四海	mfsh
 没有丝毫	mfsha
@@ -81443,6 +81485,7 @@
 门对	mkdb
 门吊	mkdc
 闷顶	mkdd
+蒙克顿	mkdi
 门洞	mkdj
 门挡	mkdl
 门店	mkdm
@@ -81667,6 +81710,7 @@
 盲孔	mlkj
 芒康	mlkl
 毛利率	mll
+马里兰	mlla
 莽林	mllb
 忙乱	mllg
 模棱两可	mllk
@@ -82266,6 +82310,7 @@
 模拟人生	mnru
 玛纳斯	mns
 暮岁	mnsb
+明尼苏达	mnsd
 暮色	mnsf
 钼酸	mnsg
 木塞	mnsh
@@ -82276,6 +82321,7 @@
 姆斯	mnsya
 慕斯	mnsyi
 模拟题	mnt
+马尼托巴	mntb
 木条	mntc
 木梃	mntd
 穆特	mntf
@@ -82319,6 +82365,7 @@
 木匣	mnxr
 木啊	mnxrv
 木偶	mnxs
+明尼阿波利斯	mnxso
 木屑	mnxsv
 泌尿系统	mnxt
 木箱	mnxx
@@ -82887,6 +82934,8 @@
 某种	ms;j
 灭种	ms;jv
 某镇	ms;k
+麻萨诸塞	ms;s
+马萨诸塞	ms;sa
 谋职	ms;y
 某只	ms;yv
 莫桑比克	msbk
@@ -82943,6 +82992,7 @@
 马三立	mslav
 灭了	mslf
 谋略	mslh
+密苏里	mslo
 某类	mslw
 莫斯利安	mslx
 牟利	msly
@@ -84146,6 +84196,7 @@
 墨西哥	mxgi
 莫西干	mxgiv
 某些国家	mxgj
+密歇根	mxgo
 墨西哥城	mxgy
 没信号	mxh
 满心欢喜	mxhx
@@ -84178,11 +84229,13 @@
 明显是	mxuo
 某些事情	mxuq
 没希望	mxw
+密尔沃基	mxwj
 面向未来	mxwl
 某些问题	mxwt
 名下无虚	mxwx
 马鞍形	mxx
 马歇尔	mxxa
+密西西比	mxxb
 毛细血管	mxxg
 面向现代化	mxxh
 木偶戏	mxxv
@@ -84869,6 +84922,7 @@
 您看	nbkt
 怒不可遏	nbkx
 您来	nblh
+内布拉斯加	nblj
 那不勒斯	nbls
 鸟不拉屎	nblu
 您老	nblz
@@ -85072,6 +85126,7 @@
 拧开	ndkh
 宁肯	ndkk
 佞口	ndks
+南达科他	ndkt
 尼德兰	ndl
 宁陵	ndld
 拿到了	ndli
@@ -85375,6 +85430,7 @@
 耐得	nhdf
 虐待	nhdh
 男孩的	nhdi
+内华达	nhdii
 乃东	nhdj
 奈杜	nhdn
 奶豆	nhds
@@ -85420,6 +85476,7 @@
 疟疾	nhjy
 奈基	nhjyv
 拿回扣	nhk
+纽华克	nhka
 耐克	nhkf
 耐苦	nhkn
 耐看	nhkt
@@ -85748,6 +85805,7 @@
 嫩江	nkjx
 你看看	nkk
 嫩绿	nkl;
+南卡罗来纳	nkln
 南柯梦	nkm
 嫩苗	nkmc
 嫩模	nkmu
@@ -86173,6 +86231,7 @@
 怒视	nnuy
 南泥湾	nnw
 能奈我何	nnwh
+努纳武特	nnwt
 奴性	nnxd
 驽下	nnxr
 努出	nnyn
@@ -87067,6 +87126,7 @@
 南溪	ntxy
 南希	ntxye
 难熬	ntxz
+南澳	ntxze
 南川	ntyg
 南充	ntyj
 南陈	ntyk
@@ -87287,6 +87347,7 @@
 内江	nwjx
 内急	nwjy
 内积	nwjyi
+纽瓦克	nwk
 内愧	nwkb
 内窥	nwkbi
 内科	nwkf
@@ -87418,6 +87479,7 @@
 耐心等待	nxdd
 酿的	nxdf
 那些地方	nxdfa
+南澳大利亚	nxdfe
 那些东西	nxdx
 你想要	nxf
 哪些方面	nxfm
@@ -88938,6 +89000,7 @@
 霹雳舞	plw
 旁午	plwn
 普罗旺斯	plws
+普罗维登斯	plwso
 螃蟹	plxs
 旁系	plxy
 旁穿	plyg
@@ -90107,6 +90170,7 @@
 婆娑	pusu
 破损	pusw
 颇似	pusy
+珀斯	pusyv
 陪审团	put
 珀特	putf
 坡田	putm
@@ -98625,6 +98689,7 @@
 夙诺	snnu
 松嫩平原	snpf
 素朴	snpn
+苏瀑	snpni
 速配	snpw
 酥皮	snpy
 素皮	snpyv
@@ -98892,7 +98957,9 @@
 搜客	sskf
 搜索框	sski
 松松垮垮	sskk
+萨斯卡通	sskt
 搜括	ssku
+萨斯喀彻温	sskw
 搜索论	ssl
 搜了	sslf
 馊了	sslfe
@@ -102501,6 +102568,7 @@
 讨论会	tlh
 偷梁换柱	tlh;
 堂会	tlhb
+特拉华	tlhe
 唐河	tlhf
 棠海	tlhh
 体力活	tlhi
@@ -103295,6 +103363,7 @@
 徒刑	tnxde
 土星	tnxdv
 吐血	tnxh
+田纳西	tnxi
 图恩	tnxk
 凸显	tnxm
 凸现	tnxmi
@@ -103953,6 +104022,7 @@
 塔斯曼	tsm
 偷瞄	tsmc
 透明	tsmd
+塔斯马尼亚	tsmf
 铁门	tsmk
 头面	tsmm
 贴面	tsmma
@@ -106400,6 +106470,7 @@
 射洪	ufhj
 商业化	ufho
 奢华	ufhq
+圣约翰斯	ufhs
 社火	ufhu
 摄魂	ufhw
 涉黑	ufhwa
@@ -114025,6 +114096,7 @@
 无止	wn;yvi
 无照	wn;z
 万能表	wnb
+温尼伯	wnba
 万年不变	wnbb
 无表	wnbc
 无病	wnbd
@@ -114683,6 +114755,7 @@
 忘其所以	wqsf
 为前提	wqt
 完全统一	wqtf
+威奇托	wqtv
 无期徒刑	wqtx
 完全是	wqu
 王岐山	wquv
@@ -114873,6 +114946,7 @@
 无所顾忌	wsgj
 为四化	wsh
 我死后哪管洪水涛天	wsht
+威斯康星	wskx
 卫斯理	wsl
 往死里打	wsld
 往死里	wsle
@@ -116273,6 +116347,7 @@
 尾形码	wxm
 文学名著	wxm;
 沃尔玛	wxma
+威尔明顿	wxmd
 我爱你	wxn
 我想你	wxne
 玩儿闹	wxnv
@@ -116949,6 +117024,7 @@
 心宽	xbkgo
 新开	xbkh
 新空	xbkj
+阿布奎基	xbkja
 信控	xbkji
 新垦	xbkk
 新康	xbkl
@@ -116982,6 +117058,7 @@
 小白脸	xbli
 新龙	xblj
 爱别离苦	xblk
+新不伦瑞克	xblko
 新浪	xbll
 新郎	xbllo
 鞍不离马	xblm
@@ -117962,6 +118039,7 @@
 星辉	xdhbo
 幸会	xdhbv
 爱德华	xdhe
+爱达荷	xdhev
 星河	xdhf
 现代汉语	xdhfv
 兴环	xdhg
@@ -118025,6 +118103,7 @@
 刑律	xdl;
 杏林	xdlb
 性灵	xdld
+阿德莱德	xdlda
 星灵	xdldo
 奥地利	xdle
 鹅蛋脸	xdlea
@@ -118043,6 +118122,7 @@
 新德里	xdloei
 新大陆	xdlov
 暗地里	xdlovi
+安大略	xdlovi
 姓刘	xdlq
 下大力气	xdlqv
 行啦	xdlr
@@ -118466,6 +118546,7 @@
 阿胶	xfjc
 额角	xfjco
 血压计	xfje
+西弗吉尼亚	xfjf
 小眼睛	xfji
 小妖精	xfjia
 消费记录	xfjl
@@ -118682,6 +118763,7 @@
 心悦诚服	xfyf
 讹传	xfyg
 悬浮窗	xfyi
+小岩城	xfyii
 蛾虫	xfyj
 降妖除魔	xfym
 讹称	xfyp
@@ -119081,6 +119163,7 @@
 爱播	xhbue
 二话不说	xhbuv
 纤毫毕现	xhbx
+新罕布什尔	xhbxo
 雪碧	xhby
 笑话百出	xhbye
 雪豹	xhbz
@@ -119241,6 +119324,7 @@
 爱辉	xhhbe
 学坏	xhhd
 笑哈哈	xhhe
+爱荷华	xhhei
 爱河	xhhf
 爱喝	xhhfe
 哀唤	xhhg
@@ -119977,7 +120061,10 @@
 信口开河	xkkh
 摁扣	xkks
 阿卡林	xkl
+安克拉治	xkl;
 星空两笔	xklb
+俄克拉荷马	xklm
+安克雷奇	xklq
 奥卡姆	xkm
 奥卡姆剃刀	xkmd
 恩茂	xkmz
@@ -119992,6 +120079,7 @@
 心口如一	xkrf
 恩荣	xkrj
 恩人	xkrk
+阿肯色	xks
 新课题	xkt
 心宽体肥	xktf
 心宽体胖	xktp
@@ -120155,6 +120243,7 @@
 心里头	xlto
 昂头	xlts
 二郎腿	xltv
+夏洛特	xltva
 昂吞	xltw
 按理说	xlu
 阿里山	xlua
@@ -120381,6 +120470,7 @@
 笑面虎	xmh
 贤惠	xmhb
 显怀	xmhd
+奥马哈	xmhe
 显赫	xmhf
 先河	xmhfe
 仙鹤	xmhfi
@@ -120673,6 +120763,7 @@
 像模像样	xmxfi
 先选	xmxg
 阿猫阿狗	xmxga
+新墨西哥	xmxgo
 鲜血	xmxh
 献血	xmxhe
 腺癌	xmxheo
@@ -121043,6 +121134,7 @@
 二万	xnwt
 贰万	xnwt
 而我	xnwu
+新南威尔士	xnwuo
 校内网	xnwv
 二位	xnww
 而为	xnwwv
@@ -121541,6 +121633,7 @@
 下咽	xrfmv
 相濡以沫	xrfmva
 夏衍	xrfmve
+夏延	xrfmve
 下浮	xrfn
 阿夫	xrfna
 阿福	xrfnao
@@ -122152,6 +122245,7 @@
 写卡	xskr
 鞋口	xsks
 偶看	xskt
+新斯科舍	xsku
 斜靠	xskz
 下三烂	xsl
 斜率	xsl;
@@ -122918,6 +123012,7 @@
 相视而笑	xuxx
 蓄水池	xuy
 兴衰成败	xuyb
+小石城	xuyi
 细水长流	xuyl
 显示出	xuyo
 心事重重	xuyy
@@ -123192,6 +123287,7 @@
 唏嘘不已	xxbfo
 刑讯逼供	xxbg
 想拜	xxbh
+阿尔伯克基	xxbj
 向本	xxbk
 相帮	xxbl
 凶相毕露	xxble
@@ -123204,6 +123300,7 @@
 想别	xxbs
 阿尔卑斯	xxbsa
 相伴	xxbt
+阿尔伯塔	xxbta
 香波	xxbu
 阿尔卑斯山	xxbua
 二向箔	xxbv
@@ -123237,6 +123334,7 @@
 许许多多	xxddoo
 想的	xxdf
 想得	xxdfv
+西澳大利亚	xxdfva
 向段	xxdg
 相待	xxdh
 熊熊大火	xxdha
@@ -123748,6 +123846,7 @@
 血腥味	xxwe
 向外	xxwh
 想歪	xxwhv
+艾奥瓦	xxwi
 悬而未决	xxwj
 想问	xxwk
 向往	xxwl
@@ -124375,6 +124474,7 @@
 西西	xyxyv
 熙熙	xyxyvv
 西奥	xyxz
+西澳	xyxzv
 兴冲冲	xyy
 线程池	xyya
 洗吹	xyyb
@@ -128363,6 +128463,7 @@
 闯入	yxrn
 怆然	yxrt
 储蓄所	yxs
+查尔斯顿	yxsd
 闯丧	yxsl
 长相厮守	yxsu
 查尔斯	yxsv
@@ -129068,6 +129169,7 @@
 最重要的	z;fdoe
 自主研发	z;ff
 在这样一个	z;fg
+佐治亚	z;fi
 在这方面	z;fm
 最主要	z;fo
 最重要的事	z;fu
@@ -133396,6 +133498,8 @@
 𬟽	djiava
 𬍡	dlaa
 𬍡	dlaavv
+𪠽	dloi
+𪠽	dloioa
 𣗋	dlvi
 𣗋	dlvioe
 𬭊	dniov

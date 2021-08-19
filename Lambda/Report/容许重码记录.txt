@@ -940,6 +940,10 @@ xddvie
 	0	喜当爹
 	1	相当多
 
+xdlovi
+	0	暗地里
+	1	安大略
+
 xdqyee
 	0	行乞
 	1	行气
@@ -964,6 +968,10 @@ xmf;ee
 xmxheo
 	0	腺癌
 	1	衔哀
+
+xrfmve
+	0	夏衍
+	1	夏延
 
 xxuyoo
 	0	翔实

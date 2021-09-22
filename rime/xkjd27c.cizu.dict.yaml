@@ -1530,6 +1530,7 @@ sort: original
 转向	;gxx
 这个现象	;gxxo
 专项	;gxxv
+专享	;gxxvo
 专席	;gxy
 中港城	;gy
 专车	;gyf
@@ -3650,6 +3651,7 @@ sort: original
 症候	;phs
 征婚	;phw
 证婚	;phwo
+正黑	;phwv
 正好	;phz
 证号	;phzo
 正号	;phzv
@@ -3820,6 +3822,7 @@ sort: original
 政务	;pwn
 证物	;pwno
 正午	;pwnv
+正误	;pwnvo
 整晚	;pwt
 政委	;pww
 证伪	;pwwo
@@ -26900,6 +26903,7 @@ sort: original
 反间计	fjj
 用具	fjj;
 泳具	fjj;a
+永居	fjj;o
 用尽	fjjb
 涌进	fjjba
 用劲	fjjbe
@@ -40549,6 +40553,7 @@ sort: original
 很长一段时间	h;fj
 好整以暇	h;fx
 呼之欲出	h;fy
+还珠格格	h;gg
 互助会	h;h
 后知后觉	h;hj
 轰炸机	h;j
@@ -42497,6 +42502,7 @@ sort: original
 海上	hhul
 海商	hhula
 还属	hhun
+恒河沙	hhuo
 还剩	hhup
 还受	hhus
 海山	hhut
@@ -44040,6 +44046,7 @@ sort: original
 华严	hqfmi
 画幅	hqfn
 华服	hqfni
+华夫	hqfniv
 画风	hqfp
 华丰	hqfpi
 话锋	hqfpo
@@ -53609,6 +53616,7 @@ sort: original
 几重	jyyj
 击沉	jyyk
 机场	jyyl
+激唱	jyyla
 几场	jyyle
 饥肠	jyylee
 基础	jyyn
@@ -68088,6 +68096,7 @@ sort: original
 难以忍受	nfru
 逆运算	nfs
 那一天	nft
+那由他	nfta
 哪一天	nfto
 闹翻天	nftoe
 你也是	nfu
@@ -71128,6 +71137,7 @@ sort: original
 平放	pdflvo
 平衍	pdfm
 平复	pdfn
+平抚	pdfnv
 屏风	pdfp
 平邮	pdfq
 评优	pdfqo
@@ -87655,6 +87665,7 @@ sort: original
 甜味剂	twj
 屯聚	twj;
 吞进	twjb
+体温计	twji
 天无绝人之路	twjl
 退伍军人	twjr
 囤积	twjy
@@ -89593,9 +89604,10 @@ sort: original
 硕果累累	ugll
 瘦骨嶙峋	uglx
 栓牢	uglz
-石鬼面	ugm
+手擀面	ugm
 神鬼莫测	ugmc
 闩门	ugmk
+石鬼面	ugmv
 肾功能	ugn
 陕甘宁	ugna
 水果盘	ugp
@@ -92106,8 +92118,8 @@ sort: original
 深入发展	urf;a
 水溶液	urfa
 授人以柄	urfb
-杀婴	urfd
-沙鹰	urfda
+沙鹰	urfd
+杀婴	urfde
 杀人犯	urfe
 授人以渔	urff
 授人以鱼	urffi
@@ -92524,6 +92536,7 @@ sort: original
 受够	usgse
 手感	usgt
 生死关头	usgte
+手擀	usgti
 受过	usgu
 售给	usgw
 售光	usgx
@@ -96688,7 +96701,8 @@ sort: original
 闻了闻	wlw
 五里雾中	wlw;
 物联网	wlwe
-外来务工人员	wlwf
+万里无云	wlwf
+外来务工人员	wlwfe
 往外	wlwh
 握了握	wlwi
 网纹	wlwk
@@ -96809,6 +96823,7 @@ sort: original
 卫冕冠军	wmgj
 我们国家	wmgje
 我们会	wmh
+微米黑	wmhe
 我们还要	wmhf
 我们家	wmj
 我们觉得	wmjd
@@ -97540,6 +97555,7 @@ sort: original
 无穷大	wqd
 我确定	wqde
 无情对	wqdv
+文泉驿	wqf
 完全一致	wqf;
 完全一样	wqff
 无权过问	wqgw
@@ -105130,6 +105146,7 @@ sort: original
 稀松平常	xspye
 悬索桥	xsq
 撷取	xsq;
+阿僧祇	xsqa
 暗送秋波	xsqb
 斜桥	xsqc
 写清	xsqd

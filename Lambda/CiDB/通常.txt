@@ -109462,6 +109462,7 @@
 附近的人	fu/jin/de/ren	4	0
 附送	fu/song	4	0
 附骥	fu/ji	5	0
+附魔	fu/mo	5	0
 际会	ji/hui	6	0
 际遇	ji/yu	5	0
 陆万	liu/wan	4	100

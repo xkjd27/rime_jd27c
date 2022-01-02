@@ -67918,6 +67918,7 @@
 氪灯	ke/deng	4	0
 氪金	ke/jin	4	0
 氮化	dan/hua	5	0
+氮化镓	dan/hua/jia	4	0
 氮气	dan/qi	5	0
 氮泵	dan/beng	4	0
 氮磷	dan/lin	4	0

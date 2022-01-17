@@ -669,6 +669,10 @@ jbbyiv
 	0	紧逼
 	1	金碧
 
+jbguvi
+	0	禁果
+	1	晋国
+
 jcfrea
 	0	脚法
 	1	教法

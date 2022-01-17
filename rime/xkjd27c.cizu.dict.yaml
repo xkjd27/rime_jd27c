@@ -4946,6 +4946,7 @@ sort: original
 准奏	;wzs
 肫子	;wzy
 专心致志	;x;;
+种姓制度	;x;d
 装着	;x;f
 真心真意	;x;fe
 中心主义	;x;fi
@@ -5822,6 +5823,7 @@ sort: original
 支取	;yq;
 知趣	;yq;e
 只取	;yq;o
+跖屈	;yq;oa
 志趣	;yq;v
 执勤	;yqb
 值勤	;yqbi
@@ -7893,6 +7895,7 @@ sort: original
 白玉	bhf;
 败于	bhf;a
 百余	bhf;v
+编后语	bhfa
 白银	bhfb
 白药	bhfc
 白影	bhfd
@@ -11904,6 +11907,7 @@ sort: original
 不完全	bwq
 北区	bwq;
 博闻强识	bwq;e
+背屈	bwq;i
 被擒	bwqb
 不畏强暴	bwqbv
 北桥	bwqc
@@ -23409,6 +23413,7 @@ sort: original
 发展时期	f;uqa
 淤沙	f;ur
 预售	f;us
+预收	f;usa
 玉手	f;usv
 玉山	f;ut
 发展势头	f;uta
@@ -24194,6 +24199,7 @@ sort: original
 咬着	fc;fo
 要转	fc;g
 瑶寨	fc;h
+要债	fc;hv
 咬中	fc;j
 要真	fc;k
 药疹	fc;ki
@@ -25387,6 +25393,7 @@ sort: original
 跃跃欲试	fffuo
 运用于	fffv
 一月份	fffve
+袁爷爷	fffvee
 医药费	fffvi
 一咬牙	fffvo
 有意义	fffvoo
@@ -25580,6 +25587,7 @@ sort: original
 摇摇头	ffti
 营业厅	fftii
 菲亚特	fftiv
+颐养天年	fftn
 音乐厅	ffto
 育婴堂	fftoa
 应用题	fftoe
@@ -28843,6 +28851,7 @@ sort: original
 副班	fnbt
 浮板	fnbta
 腹板	fnbte
+蝜蝂	fnbti
 覆板	fnbtv
 父辈	fnbw
 伏笔	fnby
@@ -31839,6 +31848,7 @@ sort: original
 反派	ftphe
 翻牌	ftphee
 饭盆	ftpk
+翻篇	ftpm
 反扑	ftpn
 帆篷	ftpp
 反扒	ftpr
@@ -32119,6 +32129,7 @@ sort: original
 疑神疑鬼	fufge
 佛曰	fufh
 有伤风化	fufhv
+越少越好	fufhvi
 翻山越岭	fufl
 有史以来	fuflv
 有生以来	fuflve
@@ -33152,6 +33163,7 @@ sort: original
 言笑晏晏	fxffo
 飞蛾赴火	fxfh
 又爱又恨	fxfha
+越小越好	fxfhv
 仰泳	fxfj
 隐形眼镜	fxfja
 养分	fxfk
@@ -34190,6 +34202,7 @@ sort: original
 一来	fylhv
 非常冷	fyli
 艺龙	fylj
+翼龙	fylja
 伊朗	fyll
 风尘碌碌	fylle
 依恋	fylm
@@ -35511,6 +35524,7 @@ sort: original
 各支	gf;ye
 咯吱	gf;yo
 格致	gf;yv
+革职	gf;yvv
 国防部	gfb
 国防部长	gfb;
 孤阴不生，独阳不长	gfb;a
@@ -40059,6 +40073,7 @@ sort: original
 公而忘私	gxws
 光玩	gxwt
 攻心为上	gxwu
+过膝袜	gxwv
 广为	gxww
 感谢信	gxx
 光绪	gxx;
@@ -41349,6 +41364,7 @@ sort: original
 邯郸学步	hdxbv
 坏笑	hdxc
 轰动效应	hdxf
+蝴蝶效应	hdxfi
 好大喜功	hdxg
 黑灯瞎火	hdxh
 怀恩	hdxk
@@ -44819,6 +44835,7 @@ sort: original
 汉中	ht;j
 涵箴	ht;k
 汗珠	ht;n
+糊涂账	ht;o
 寒症	ht;p
 寒颤	ht;t
 寒战	ht;to
@@ -47319,6 +47336,7 @@ sort: original
 仅够	jbgs
 巾帼	jbgu
 进过	jbguv
+禁果	jbguvi
 晋国	jbguvi
 金光	jbgx
 绝不姑息	jbgxa
@@ -49719,6 +49737,7 @@ sort: original
 加利福尼亚州	jlf;a
 教练员	jlfe
 加利福尼亚	jlff
+金缕玉衣	jlffi
 敬老院	jlfi
 纪律严明	jlfm
 居里夫人	jlfr
@@ -53455,6 +53474,7 @@ sort: original
 激起	jyqya
 即期	jyqyav
 及其	jyqye
+祭旗	jyqyeo
 几期	jyqyev
 集齐	jyqyi
 记起	jyqyo
@@ -62631,6 +62651,7 @@ sort: original
 丽莎	lyurv
 里手	lyus
 历山	lyut
+骊山	lyuta
 立说	lyuu
 理顺	lyuw
 历史	lyuy
@@ -66396,6 +66417,7 @@ sort: original
 墨迹	mujy
 墨基	mujyi
 莫急	mujyie
+磨叽	mujyo
 美术课	muk
 模块	mukd
 莫科	mukf
@@ -66456,6 +66478,7 @@ sort: original
 陌陌	mumuaa
 没什么事	mumuai
 脉脉	mumue
+馍馍	mumuee
 摸摸	mumui
 墨墨	mumuii
 磨墨	mumuo
@@ -66721,6 +66744,7 @@ sort: original
 煤窑	mwfco
 美英	mwfd
 没影	mwfda
+魅影	mwfde
 美元	mwfg
 美院	mwfgo
 梅园	mwfgv
@@ -72999,6 +73023,7 @@ sort: original
 颇佳	pujra
 破甲	pujrv
 破解	pujs
+破戒	pujsv
 迫降	pujx
 坡降	pujxv
 破击	pujy
@@ -77623,6 +77648,7 @@ sort: original
 欺压	qyfrv
 企业	qyfs
 旗幡	qyft
+青春饭	qyfv
 起飞	qyfw
 汽运	qyfwa
 气韵	qyfwe
@@ -87778,6 +87804,7 @@ sort: original
 吞卡	twkr
 太晚了	twl
 吞了	twlf
+调味料	twlo
 吞留	twlq
 屯粮	twlx
 屯里	twly
@@ -89443,6 +89470,7 @@ sort: original
 社奎	ufkb
 社科	ufkf
 射孔	ufkj
+社恐	ufkjo
 蛇口	ufks
 少废口舌	ufku
 煞费苦心	ufkx
@@ -92463,6 +92491,7 @@ sort: original
 杀人罪	urz
 沙嘴	urzb
 沙灾	urzh
+食人族	urzi
 沙赞	urzt
 傻子	urzy
 沙子	urzya
@@ -92999,6 +93028,7 @@ sort: original
 首座	uszu
 手作	uszui
 瘦子	uszy
+首字	uszyo
 扇坠	ut;b
 率土之滨	ut;bo
 闪着	ut;f
@@ -99439,6 +99469,7 @@ sort: original
 序跋	x;br
 许吧	x;bro
 叙别	x;bs
+续杯	x;bw
 心照不宣	x;bx
 虚报	x;bz
 续保	x;bza
@@ -99693,6 +99724,7 @@ sort: original
 安枕而卧	x;xw
 许逊	x;xwo
 许巷	x;xx
+需向	x;xxv
 嘘唏	x;xy
 血债血偿	x;xye
 二指禅	x;y
@@ -99784,6 +99816,7 @@ sort: original
 新队	xbdb
 新调	xbdc
 新丁	xbdd
+腺病毒	xbde
 新的	xbdf
 阿鼻地狱	xbdfa
 心得	xbdfo
@@ -99911,6 +99944,7 @@ sort: original
 信函	xbht
 心寒	xbhto
 心火	xbhu
+薪火	xbhui
 而不会	xbhv
 新婚	xbhw
 心黑	xbhwo
@@ -103633,6 +103667,7 @@ sort: original
 闲谈	xmtt
 相貌堂堂	xmttv
 先提	xmty
+腺体	xmtye
 仙桃	xmtz
 峨眉山	xmu
 先睡	xmub
@@ -105975,6 +106010,7 @@ sort: original
 巡诊	xw;k
 勋章	xw;l
 写文章	xw;o
+辛烷值	xw;oo
 熏蒸	xw;p
 巡展	xw;t
 新闻中心	xw;x
@@ -107704,6 +107740,7 @@ sort: original
 锤锻	ybdg
 垂带	ybdh
 传帮带	ybdi
+茶百道	ybdiv
 吹动	ybdj
 吹荡	ybdl
 差不多了	ybdlo
@@ -110771,6 +110808,7 @@ sort: original
 愁绪	ysx;
 抽心	ysxb
 丑恶	ysxf
+穿隧效应	ysxfo
 抽选	ysxg
 抽血	ysxh
 抽闲	ysxm
@@ -112123,6 +112161,7 @@ sort: original
 在这样的	z;fd
 最主要的	z;fdo
 最重要的	z;fdoe
+自住房	z;fe
 自主研发	z;ff
 在这样一个	z;fg
 佐治亚	z;fi
@@ -113431,6 +113470,7 @@ sort: original
 总评	zjpd
 最佳拍档	zjpdo
 宗派	zjph
+纵排	zjpha
 棕片	zjpm
 宗谱	zjpn
 总怕	zjpr
@@ -114190,6 +114230,7 @@ sort: original
 砸票	zrpc
 杂评	zrpd
 杂牌	zrph
+砸盘	zrpt
 砸破	zrpu
 砸跑	zrpz
 责任区	zrq
@@ -115163,6 +115204,7 @@ sort: original
 字道	zydzo
 自语	zyf;
 自娱	zyf;e
+自愈	zyf;ei
 滋阴	zyfb
 自饮	zyfbe
 字音	zyfbo
@@ -115415,6 +115457,7 @@ sort: original
 自成体系	zytx
 字体	zyty
 自提	zytye
+自体	zytyei
 自讨	zytz
 滋水	zyub
 自设	zyuf

@@ -60467,6 +60467,7 @@
 冷若冰霜	lrbu
 蜡笔	lrby
 蜡层	lrcp
+溜肉段	lrd
 拉丁	lrdd
 拉的	lrdf
 拉断	lrdg
@@ -79584,6 +79585,7 @@
 揉搓	rscu
 鞣草	rscz
 肉丁	rsdd
+肉段	rsdg
 肉冻	rsdj
 肉垫	rsdm
 肉店	rsdmi

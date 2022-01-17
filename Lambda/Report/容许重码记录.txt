@@ -829,6 +829,14 @@ uy;yoi
 	0	是指
 	1	市值
 
+uyfmeo
+	0	失言
+	1	矢言
+
+uyfqov
+	0	时有
+	1	市场预期
+
 uyfroa
 	0	施法
 	1	实发

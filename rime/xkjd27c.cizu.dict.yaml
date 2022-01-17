@@ -2043,6 +2043,7 @@ sort: original
 中篇	;jpm
 中铺	;jpn
 中盘	;jpt
+中配	;jpw
 种皮	;jpy
 椎间盘突出	;jpyv
 转接器	;jq
@@ -2225,6 +2226,7 @@ sort: original
 中出	;jyn
 忠诚	;jyp
 终成	;jypa
+中程	;jypi
 中差	;jyr
 众筹	;jys
 重酬	;jyse
@@ -7769,6 +7771,7 @@ sort: original
 不感兴趣	bgxq
 半个小时	bgxu
 不甘心	bgxv
+不敢想	bgxva
 不顾安危	bgxw
 不敢相信	bgxx
 不过尔尔	bgxxv
@@ -8637,6 +8640,7 @@ sort: original
 本派	bkph
 本片	bkpm
 本篇	bkpmv
+不可怕	bkpv
 本批	bkpy
 奔跑	bkpz
 不客气	bkq
@@ -9117,6 +9121,7 @@ sort: original
 百慕大	bmdv
 遍地	bmdy
 贬低	bmdya
+变低	bmdyo
 编导	bmdz
 便道	bmdzi
 变道	bmdzo
@@ -9213,6 +9218,7 @@ sort: original
 部门经理	bmjlo
 不明就里	bmjlv
 边检	bmjm
+便笺	bmjmi
 变旧	bmjq
 变价	bmjr
 边界	bmjs
@@ -11595,6 +11601,7 @@ sort: original
 剥下	buxr
 播下	buxri
 不顺心	buxv
+不省心	buxvi
 不是啊	buxvo
 博讯	buxw
 博士学位	buxwe
@@ -11666,6 +11673,7 @@ sort: original
 背侧	bwcfi
 北仓	bwcl
 悲惨	bwct
+备餐	bwcte
 钡餐	bwcti
 备存	bwcw
 被刺	bwcy
@@ -17214,6 +17222,7 @@ sort: original
 得按	dfxt
 大音希声	dfxu
 大方向	dfxv
+大游行	dfxva
 地方性	dfxvo
 大有希望	dfxw
 得悉	dfxy
@@ -17751,6 +17760,7 @@ sort: original
 呆萌	dhmp
 代码	dhmr
 怠慢	dhmt
+呆满	dhmto
 黛眉	dhmw
 黛米	dhmy
 戴帽	dhmz
@@ -21300,6 +21310,7 @@ sort: original
 躲躲	duduee
 咄咄	duduo
 堕地	dudy
+多地	dudye
 多到	dudz
 躲到	dudze
 大师傅	duf
@@ -25237,6 +25248,7 @@ sort: original
 一言半语	ffbfv
 有法必依	ffbfva
 有法不依	ffbfva
+一夜暴富	ffbfvo
 一语不发	ffbfvo
 有一部分	ffbfvv
 远远不够	ffbg
@@ -30914,6 +30926,7 @@ sort: original
 法强	frqxaa
 发起	frqy
 法器	frqya
+发妻	frqyav
 雅气	frqyv
 发热	frrf
 亚热	frrfv
@@ -33021,6 +33034,7 @@ sort: original
 养正	fx;p
 扬州	fx;s
 也许只是	fx;u
+一心只读圣贤书	fx;uv
 副县长	fx;v
 副校长	fx;vv
 佯装	fx;x
@@ -35306,6 +35320,7 @@ sort: original
 搞得定	gddi
 拐动	gddj
 拐点	gddm
+固定搭配	gddp
 更多的人	gddr
 怪诞	gddt
 更多的是	gddu
@@ -35429,6 +35444,7 @@ sort: original
 个东西	gdx
 肝胆相照	gdx;
 怪笑	gdxc
+公德心	gdxe
 个多小时	gdxu
 怪相	gdxx
 高等学校	gdxxo
@@ -36068,6 +36084,7 @@ sort: original
 关井	ggjd
 归根结底	ggjdi
 官爵	ggjh
+冠绝	ggjho
 光棍节	ggji
 骨骼肌	ggjii
 个国家	ggjiio
@@ -39190,11 +39207,13 @@ sort: original
 故事背景	gubj
 国本	gubk
 过磅	gubl
+光说不练	gubli
 锅边	gubm
 锅巴	gubr
 国别	gubs
 过半	gubt
 国拨	gubu
+光说不练假把势	gubui
 国币	guby
 国宝	gubz
 过饱	gubzv
@@ -46540,7 +46559,8 @@ sort: original
 豪泰	hzth
 好痛	hztj
 好烫	hztl
-浩田	hztm
+好甜	hztm
+浩田	hztma
 好图	hztn
 好疼	hztp
 好头	hzts
@@ -47821,7 +47841,8 @@ sort: original
 精彩纷呈	jcfyoe
 交谊	jcfyoo
 较易	jcfyv
-娇贵	jcgb
+交规	jcgb
+娇贵	jcgba
 交割	jcgf
 教官	jcgg
 浇灌	jcgga
@@ -53286,6 +53307,7 @@ sort: original
 吉良	jylxv
 激励	jyly
 几里	jylye
+几例	jylyei
 几粒	jylyeo
 肌理	jylyev
 吉利	jylyv
@@ -54338,6 +54360,7 @@ sort: original
 可见	kfjm
 课件	kfjmo
 课间	kfjmoo
+咖啡机	kfjo
 可就	kfjq
 窠臼	kfjqo
 客家	kfjr
@@ -57486,6 +57509,7 @@ sort: original
 遴选	lbxg
 林学	lbxh
 临县	lbxm
+六边形	lbxo
 林岫	lbxq
 临夏	lbxr
 鳞屑	lbxs
@@ -58128,6 +58152,7 @@ sort: original
 旅游景点	lfjd
 立法机关	lfjg
 劳逸结合	lfjh
+乐见	lfjm
 旅游局	lfjo
 辣眼睛	lfjoi
 乐嘉	lfjr
@@ -58178,6 +58203,7 @@ sort: original
 立法权	lfqoav
 另有其人	lfqr
 连衣裙	lfqv
+力压群雄	lfqx
 老妇人	lfr
 理应如此	lfrc
 乐人	lfrk
@@ -61357,6 +61383,7 @@ sort: original
 刘少奇	luq
 梁实秋	luqa
 罗衾	luqb
+临时起意	luqf
 罗圈	luqg
 流觞曲水	luqu
 老实人	lur
@@ -61780,7 +61807,7 @@ sort: original
 两半	lxbt
 凉拌	lxbto
 两拨	lxbu
-两耳不闻窗外事，一心只读圣贤书	lxbuv
+两耳不闻窗外事	lxbuv
 两倍	lxbw
 流行病学	lxbx
 两笔	lxby
@@ -76210,6 +76237,7 @@ sort: original
 歉收	qmuso
 千山	qmut
 清明上河图	qmuta
+前山	qmuto
 浅说	qmuu
 全面实施	qmuui
 前世	qmuy
@@ -77267,6 +77295,7 @@ sort: original
 强吗	qxmr
 强蛮	qxmt
 前些年	qxn
+千禧年	qxne
 强扭	qxnq
 墙内	qxnw
 抢票	qxpc
@@ -77564,6 +77593,7 @@ sort: original
 乞丐	qygh
 气概	qyghe
 气功	qygj
+启功	qygjo
 奇功	qygjv
 七根	qygk
 气根	qygke
@@ -78809,6 +78839,7 @@ sort: original
 任咎	rkjq
 人家	rkjr
 人杰	rkjs
+人口基数	rkju
 人均	rkjw
 忍俊	rkjwa
 人际	rkjy
@@ -79359,6 +79390,7 @@ sort: original
 入土	rntne
 如他	rntr
 乳头	rnts
+乳贴	rntse
 如碳	rntt
 入托	rntu
 如题	rnty
@@ -79740,6 +79772,7 @@ sort: original
 染缸	rtgl
 然谷	rtgn
 忍痛割爱	rtgx
+人体工程学	rtgxi
 人体工程	rtgy
 软通货	rth
 染患	rthg
@@ -79887,6 +79920,7 @@ sort: original
 弱气	ruqy
 日收入	rur
 人山人海	rurh
+人上人	ruri
 人生若只如初见	rurj
 若人	rurk
 人生如梦	rurm
@@ -82566,6 +82600,7 @@ sort: original
 思想道德	sxdd
 思想道德建设	sxdu
 塞尔达传说	sxduo
+三星堆	sxdv
 所需要	sxf
 孙媳妇	sxfa
 所需要的	sxfd
@@ -82805,6 +82840,7 @@ sort: original
 私教	syjce
 四脚	syjci
 四角	syjcie
+嘶叫	syjco
 泗泾	syjd
 丝径	syjda
 司警	syjdai
@@ -85633,6 +85669,7 @@ sort: original
 填方	tmfl
 天眼	tmfm
 觍颜	tmfmi
+天衍	tmfmv
 天赋	tmfn
 天府	tmfnv
 天父	tmfnve
@@ -88809,8 +88846,9 @@ sort: original
 是不是一个	ubug
 适不适合	ubuh
 手把手	ubui
-上半时	ubuio
+上半生	ubuio
 上半身	ubuioe
+上半时	ubuioo
 睡不睡	ubuiv
 十八世纪	ubuj
 手不释卷	ubuji
@@ -88940,6 +88978,7 @@ sort: original
 恃才傲物	ucxw
 数得着	ud;
 水电站	ud;a
+受得住	ud;e
 树大招风	ud;f
 睡得着	ud;i
 率众	ud;j
@@ -89032,6 +89071,7 @@ sort: original
 受到了	udl
 收到了	udla
 身单力薄	udlb
+势单力薄	udlbi
 率领	udld
 受得了	udle
 刹帝利	udleo
@@ -90882,6 +90922,7 @@ sort: original
 上式	uluyiv
 商事	uluyo
 上哨	uluz
+十六烷值	ulw;
 上外	ulwh
 始料未及	ulwj
 上文	ulwk
@@ -90967,6 +91008,7 @@ sort: original
 生命周期	um;q
 盛名之下	um;x
 说明白	umb
+圣母婊	umba
 使命必达	umbd
 什么办法	umbf
 睡眠不足	umbz
@@ -93859,6 +93901,7 @@ sort: original
 双龙	uxlj
 爽朗	uxll
 双喜临门	uxlm
+双链	uxlma
 双路	uxln
 双流	uxlq
 手下留情	uxlqi
@@ -94316,6 +94359,7 @@ sort: original
 是故	uygno
 世故	uygnv
 石鼓	uygnvv
+匙羹	uygp
 石沟	uygs
 实干	uygt
 实感	uygto
@@ -94622,6 +94666,7 @@ sort: original
 世青	uyqdvv
 生成器	uyqe
 实权	uyqg
+十全	uyqge
 事权	uyqgv
 失却	uyqh
 势成骑虎	uyqhi
@@ -98580,6 +98625,7 @@ sort: original
 喂药	wwfco
 为迎	wwfd
 勿谓言之不喻	wwff
+勿谓言之不预	wwffe
 委员	wwfg
 微愿	wwfge
 围圆	wwfgi
@@ -98876,6 +98922,7 @@ sort: original
 为情	wwqdo
 万物起源	wwqf
 维权	wwqg
+威权	wwqgv
 为求	wwqq
 弯弯曲曲	wwqqo
 完完全全	wwqqoo
@@ -100054,6 +100101,7 @@ sort: original
 心说	xbuuo
 二把手	xbuv
 下半身	xbuvo
+下半生	xbuvoe
 心事	xbuy
 信使	xbuyi
 心室	xbuyo
@@ -101381,6 +101429,7 @@ sort: original
 学分绩	xfjoe
 新一届	xfjov
 西游记	xfjv
+下飞机	xfjva
 下页键	xfjvv
 俄军	xfjw
 俄将	xfjx
@@ -104262,6 +104311,7 @@ sort: original
 修书	xqun
 休书	xquni
 修省	xqup
+兴趣使然	xqur
 袖手	xqus
 修手	xqusi
 修缮	xqut
@@ -106026,6 +106076,7 @@ sort: original
 衔尾蛇	xwu
 县委书记	xwuj
 殉身	xwuk
+响尾蛇	xwuo
 循声	xwup
 驯兽	xwus
 驯善	xwut
@@ -110750,6 +110801,7 @@ sort: original
 产科	ytkf
 吹弹可破	ytkp
 穿透力	ytl
+产率	ytl;
 出台了	ytla
 禅林	ytlb
 馋了	ytlf
@@ -111306,6 +111358,7 @@ sort: original
 床头	yxts
 窗体	yxty
 窗套	yxtz
+传销头子	yxtzi
 超现实	yxu
 承销商	yxua
 创税	yxub
@@ -112171,6 +112224,7 @@ sort: original
 嘴角	zbjc
 最精	zbjd
 最绝	zbjh
+作比较	zbji
 赞不绝口	zbjk
 最简	zbjm
 自报家门	zbjme

@@ -43360,6 +43360,7 @@
 后浪推前浪	hltl
 航天	hltm
 夯土	hltn
+行头	hlts
 夯砣	hltu
 囫囵吞枣	hltz
 花露水	hlu
@@ -51944,6 +51945,7 @@
 家庭环境	jthj
 惊涛骇浪	jthl
 惊叹号	jtho
+剪贴画	jthoa
 据统计	jtj
 家庭教育	jtjf
 集团军	jtji
@@ -54480,6 +54482,7 @@
 客运量	kflo
 客流	kflq
 克拉	kflr
+坷垃	kflrv
 可列	kfls
 刻漏	kflso
 岢岚	kflt
@@ -97367,7 +97370,8 @@
 兀立	wnlyvo
 五老	wnlz
 胃黏膜	wnm
-武庙	wnmc
+五秒	wnmc
+武庙	wnmcv
 无名	wnmd
 无明	wnmdv
 雾霾	wnmh

@@ -74024,6 +74024,7 @@
 热敷	re/fu	4	0
 热旱	re/han	4	0
 热昏	re/hun	4	0
+热更	re/geng	4	0
 热望	re/wang	4	0
 热板	re/ban	4	0
 热极	re/ji	4	0

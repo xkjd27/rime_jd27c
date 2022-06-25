@@ -114773,6 +114773,7 @@
 麦迪	mai/di	4	0
 麦金塔	mai/jin/ta	3	0
 麦霸	mai/ba	4	0
+麸质	fu/zhi	6	0
 麻乱	ma/luan	4	0
 麻了	ma/le	5	0
 麻冲	ma/chong	4	0

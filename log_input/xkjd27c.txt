@@ -28825,6 +28825,7 @@
 福祉	fn;yo
 腐殖	fn;yov
 副职	fn;yv
+麸质	fn;yve
 一念之差	fn;yvi
 辐照	fn;z
 一年半	fnb

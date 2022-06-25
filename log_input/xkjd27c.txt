@@ -17046,6 +17046,7 @@
 打飞机	dfjia
 电业局	dfjii
 电影界	dfjio
+打牙忌	dfjiv
 地方经济	dfjj
 得见	dfjm
 得救	dfjq
@@ -30808,6 +30809,7 @@
 发际	frjyaa
 发髻	frjyav
 压级	frjyv
+牙忌	frjyva
 与日俱增	frjz
 亿人口	frk
 压块	frkd

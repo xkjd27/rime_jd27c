@@ -84425,6 +84425,7 @@
 端午	duan/wu	4	0
 端午节	duan/wu/jie	3	0
 端口	duan/kou	4	0
+端口号	duan/kou/hao	4	0
 端坐	duan/zuo	4	0
 端墙	duan/qiang	5	0
 端庄	duan/zhuang	4	0

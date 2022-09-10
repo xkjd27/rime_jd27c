@@ -18314,6 +18314,7 @@
 大哭一场	dkfy
 电控柜	dkg
 大客户	dkh
+端口号	dkho
 多快好省	dkhu
 读卡机	dkj
 地矿局	dkjv

@@ -96134,6 +96134,7 @@
 西部大开发	xi/bu/da/fa	5	0
 西部开发	xi/bu/kai/fa	5	0
 西都	xi/du	6	0
+西里尔	xi/li/er	5	0
 西铭	xi/ming	4	0
 西门	xi/men	4	0
 西门子	xi/men/zi	5	0

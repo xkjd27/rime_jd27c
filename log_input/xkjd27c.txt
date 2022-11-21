@@ -17155,6 +17155,7 @@
 大有人在	dfrz
 丢眼色	dfs
 嘚瑟	dfsf
+得瑟	dfsfe
 德颂	dfsj
 答非所问	dfsw
 的死	dfsy
@@ -113575,6 +113576,7 @@
 粽子	zjzy
 自给自足	zjzz
 躁狂症	zk;
+怎着	zk;f
 怎知	zk;y
 怎不	zkbn
 自愧不如	zkbr
@@ -114124,7 +114126,8 @@
 杂七杂八	zqzb
 自轻自贱	zqzj
 责任制	zr;
-自然主义	zr;f
+咋着	zr;f
+自然主义	zr;fe
 杂种	zr;j
 砸中	zr;jv
 杂猪	zr;n

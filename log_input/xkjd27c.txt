@@ -86270,8 +86270,9 @@
 图三	tnst
 徒孙	tnsw
 兔狲	tnswe
-土司	tnsy
+吐司	tnsy
 吐丝	tnsyo
+土司	tnsyv
 土特	tntf
 同年同月	tntfi
 土堂	tntl

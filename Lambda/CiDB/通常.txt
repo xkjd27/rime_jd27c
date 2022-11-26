@@ -105839,6 +105839,7 @@
 郊区	jiao/qu	4	0
 郊外	jiao/wai	4	0
 郊游	jiao/you	6	0
+郊狼	jiao/lang	4	0
 郊野	jiao/ye	4	0
 郎中	lang/zhong	4	0
 郎乡	lang/xiang	4	0

@@ -103916,6 +103916,7 @@
 连天	lian/tian	4	0
 连头	lian/tou	5	0
 连夺	lian/duo	4	0
+连字	lian/zi	5	0
 连山	lian/shan	4	0
 连带	lian/dai	4	0
 连带着	lian/dai/zhe	5	0

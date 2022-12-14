@@ -518,7 +518,7 @@ fqflvo
 
 fqfyvo
 	0	有意
-	0	有益
+	1	有益
 
 fqwwvv
 	0	有违

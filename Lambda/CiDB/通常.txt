@@ -115601,3 +115601,4 @@
 龟鳖	gui/bie	4	0
 龟龟	gui/gui	4	0
 𪨊包	song/bao	4	0
+𰻝𰻝面	biang/biang/mian	4	0

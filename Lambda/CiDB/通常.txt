@@ -103992,6 +103992,7 @@
 连署	lian/shu	5	0
 连翘	lian/qiao	4	0
 连胜	lian/sheng	5	0
+连花清瘟	lian/hua/qing/wen	4	0
 连蒙带猜	lian/meng/dai/cai	5	0
 连衣	lian/yi	5	0
 连衣裙	lian/yi/qun	4	0

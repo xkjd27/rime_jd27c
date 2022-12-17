@@ -52982,6 +52982,7 @@
 拆腻子	chai/ni/zi	4	0
 拆装	chai/zhuang	4	0
 拆解	chai/jie	4	0
+拆词	chai/ci	4	0
 拆账	chai/zhang	4	0
 拆迁	chai/qian	4	0
 拆违	chai/wei	4	0

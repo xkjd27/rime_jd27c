@@ -1055,6 +1055,35 @@ def build_log_tsv():
                             continue
                         out.write(line + "\n")
 
+def build_fcitx5_table():
+    """Build fcitx5 table."""
+    root = Path("rime/")
+    with open(f"fcitx5/{RIME_SCHEMA}.txt", "w", encoding="utf-8") as out:
+        out.write(
+            "KeyCode=abcdefghijklmnopqrstuvwxyz;\n"
+            "Length=6\n"
+            "[Rule]\n"
+            "e2=p11+p12+p21+p22+p13+p23\n"
+            "e3=p11+p21+p31+p13+p23+p33\n"
+            "a4=p11+p21+p31+n11+p13+p23\n"
+            "[Data]\n"
+        )
+        for f in root.iterdir():
+            if f.name.endswith(".yaml"):
+                with f.open("r", encoding="utf-8") as src:
+                    skip = True
+                    for line in src:
+                        line = line.strip()
+                        if line == "...":
+                            skip = False
+                            continue
+                        if skip:
+                            continue
+                        if "\t" not in line or line.startswith("#"):
+                            continue
+                        word, code = line.split("\t")
+                        out.write(f"{code} {word}\n")
+
 def commit():
     """提交所有更改并生成新码表"""
     clear_danzi_codes()
@@ -1066,6 +1095,7 @@ def commit():
     build_chaoji()
     build_static()
     build_log_tsv()
+    build_fcitx5_table()
 
 def reset():
 

@@ -1057,6 +1057,11 @@ def build_log_tsv():
 
 def build_fcitx5_table():
     """Build fcitx5 table."""
+    def find_and_pop_first(files, name):
+        for idx, i in enumerate(files):
+            if name in i.name:
+                return files.pop(idx)
+        return None
     root = Path("rime/")
     with open(f"fcitx5/{RIME_SCHEMA}.txt", "w", encoding="utf-8") as out:
         out.write(
@@ -1068,21 +1073,31 @@ def build_fcitx5_table():
             "a4=p11+p21+p31+n11+p13+p23\n"
             "[Data]\n"
         )
+        files = []
         for f in root.iterdir():
             if f.name.endswith(".yaml"):
-                with f.open("r", encoding="utf-8") as src:
-                    skip = True
-                    for line in src:
-                        line = line.strip()
-                        if line == "...":
-                            skip = False
-                            continue
-                        if skip:
-                            continue
-                        if "\t" not in line or line.startswith("#"):
-                            continue
-                        word, code = line.split("\t")
-                        out.write(f"{code} {word}\n")
+                files.append(f)    
+        d_user = find_and_pop_first(files, "user.dict.yaml")
+        d_danzi = find_and_pop_first(files, "danzi.dict.yaml")
+        d_cizu = find_and_pop_first(files, "cizu.dict.yaml")
+        d_buchong = find_and_pop_first(files, "buchong.dict.yaml")
+        d_chaojizici = find_and_pop_first(files, "chaojizici.dict.yaml")
+        d_sbb = find_and_pop_first(files, "sbb.dict.yaml")
+        files = [d_user, d_danzi, d_cizu, d_buchong, d_chaojizici, d_sbb, *files]
+        for f in files:
+            with f.open("r", encoding="utf-8") as src:
+                skip = True
+                for line in src:
+                    line = line.strip()
+                    if line == "...":
+                        skip = False
+                        continue
+                    if skip:
+                        continue
+                    if "\t" not in line or line.startswith("#"):
+                        continue
+                    word, code = line.split("\t")
+                    out.write(f"{code} {word}\n")
 
 def commit():
     """提交所有更改并生成新码表"""

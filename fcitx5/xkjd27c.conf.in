@@ -7,6 +7,7 @@ Addon=table
 Configurable=True
 
 [Table]
+File=./xkjd27c.main.dict
 # 选择第二个候选词
 # SecondCandidate=
 # 选择第三个候选词

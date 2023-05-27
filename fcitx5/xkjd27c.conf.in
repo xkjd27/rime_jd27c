@@ -41,7 +41,7 @@ UseSystemLanguageModel=True
 # 根据当前上下文排序候选词
 UseContextRelatedOrder=False
 # 模糊键
-MatchingKey=z
+MatchingKey=`
 # 触发拼音的前缀键
 PinyinKey=[
 # 自动选择候选词

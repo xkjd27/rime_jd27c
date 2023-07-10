@@ -1519,6 +1519,7 @@
 这个星期	;gxqo
 撰写	;gxs
 赚些	;gxsa
+转写	;gxsv
 专案	;gxt
 专讯	;gxw
 转向	;gxx

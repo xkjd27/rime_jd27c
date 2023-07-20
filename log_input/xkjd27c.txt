@@ -33062,6 +33062,7 @@
 阳宅	fx;h
 痒疹	fx;k
 仰仗	fx;l
+样张	fx;lv
 养猪	fx;n
 阈限值	fx;o
 养正	fx;p

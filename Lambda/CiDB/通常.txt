@@ -64981,6 +64981,7 @@
 样币	yang/bi	4	0
 样带	yang/dai	4	0
 样式	yang/shi	4	0
+样张	yang/zhang	5	0
 样方	yang/fang	5	0
 样本	yang/ben	4	0
 样机	yang/ji	5	0

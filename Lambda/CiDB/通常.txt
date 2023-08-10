@@ -13045,6 +13045,7 @@
 值日	zhi/ri	4	0
 值日生	zhi/ri/sheng	3	0
 值更	zhi/geng	4	0
+值机	zhi/ji	5	0
 值此	zhi/ci	5	0
 值班	zhi/ban	4	0
 值班员	zhi/ban/yuan	5	0

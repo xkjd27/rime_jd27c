@@ -121276,6 +121276,8 @@
 㹴	gpea
 㹴	gpeavi
 鲠	gpeavi
+畊	gpi
+畊	gpiavv
 庚	gpo
 羹	gpoe
 羹	gpoeoe

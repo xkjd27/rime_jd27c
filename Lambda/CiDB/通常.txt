@@ -83409,6 +83409,7 @@
 称赞道	cheng/zan/dao	3	0
 称身	chen/shen	4	0
 称道	cheng/dao	5	0
+称重	cheng/zhong	5	0
 称量	chen/liang	4	0
 称雄	cheng/xiong	4	0
 称霸	cheng/ba	4	0

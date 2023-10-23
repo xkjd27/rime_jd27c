@@ -6,3 +6,7 @@
 
 ### 布局
 ![Layout](/Lambda/Images/layout.png)
+
+* Rime 输入法方案： `/rime`
+* 落格输入法用码表： `/log_input`
+* Fcitx5 用码表： `/fcitx5`

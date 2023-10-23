@@ -1099,6 +1099,8 @@ def build_fcitx5_table():
                     word, code = line.split("\t")
                     out.write(f"{code} {word}\n")
 
+    os.system(f"libime_tabledict fcitx5/{RIME_SCHEMA}.txt fcitx5/{RIME_SCHEMA}.dict")
+
 def commit():
     """提交所有更改并生成新码表"""
     clear_danzi_codes()

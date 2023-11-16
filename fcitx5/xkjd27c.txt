@@ -5300,6 +5300,8 @@ gpe 鲠
 gpea 㹴
 gpeavi 㹴
 gpeavi 鲠
+gpi 畊
+gpiavv 畊
 gpo 庚
 gpoe 羹
 gpoeoe 羹
@@ -18576,6 +18578,7 @@ zzvvoo 璪
 ;gxqo 这个星期
 ;gxs 撰写
 ;gxsa 赚些
+;gxsv 转写
 ;gxt 专案
 ;gxw 专讯
 ;gxx 转向
@@ -22719,6 +22722,7 @@ zzvvoo 璪
 ;yjya 织机
 ;yjye 制剂
 ;yjyev 直击
+;yjyi 值机
 ;yjyo 之际
 ;yjyoa 只鸡
 ;yjyoo 之计
@@ -24928,6 +24932,7 @@ bhdni 拜读
 bhdnia 摆渡
 bhdnv 百毒
 bhdp 白等
+bhdpi 拜登
 bhdq 白丢
 bhdr 白搭
 bhdrv 百搭
@@ -50118,6 +50123,7 @@ fx;fo 言下之意
 fx;h 阳宅
 fx;k 痒疹
 fx;l 仰仗
+fx;lv 样张
 fx;n 养猪
 fx;o 阈限值
 fx;p 养正
@@ -127110,6 +127116,7 @@ yp;fe 乘着
 yp;fv 盛着
 yp;h 城寨
 yp;j 承重
+yp;je 称重
 yp;jv 城中
 yp;k 城镇
 yp;kv 成真

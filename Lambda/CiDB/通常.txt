@@ -53488,6 +53488,7 @@
 拜望	bai/wang	4	0
 拜泉	bai/quan	4	0
 拜爵	bai/jue	4	0
+拜登	bai/deng	5	0
 拜盟	bai/meng	4	0
 拜神	bai/shen	4	0
 拜耳	bai/er	4	0

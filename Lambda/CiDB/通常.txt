@@ -107945,6 +107945,7 @@
 锃亮	zeng/liang	5	0
 锄头	chu/tou	5	0
 锄强扶弱	chu/qiang/fu/ruo	4	0
+锅包肉	guo/bao/rou	4	0
 锅垢	guo/gou	4	0
 锅巴	guo/ba	4	0
 锅庄	guo/zhuang	4	0

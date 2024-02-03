@@ -93941,6 +93941,7 @@
 蒙空	meng/kong	4	0
 蒙童	meng/tong	4	0
 蒙等	meng/deng	4	0
+蒙纳	meng/na	4	0
 蒙羞	meng/xiu	4	0
 蒙老	meng/lao	4	0
 蒙色	meng/se	4	0

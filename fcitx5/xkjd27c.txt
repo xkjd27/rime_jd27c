@@ -49513,6 +49513,7 @@ fwbmi 业务部门
 fwbmv 一文不名
 fwbn 肺部
 fwbna 也未必能
+fwbo 富文本
 fwbp 飞迸
 fwbq 分文不取
 fwbr 非把

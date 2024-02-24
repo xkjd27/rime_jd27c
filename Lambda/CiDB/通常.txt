@@ -39087,6 +39087,7 @@
 富态	fu/tai	4	0
 富户	fu/hu	4	0
 富文	fu/wen	5	0
+富文本	fu/wen/ben	4	0
 富春	fu/chun	4	0
 富有	fu/you	4	0
 富有成效	fu/you/cheng/xiao	4	0

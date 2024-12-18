@@ -2,4 +2,5 @@ PyGithub
 gitpython
 python-telegram-bot
 python-dotenv
-onedrivesdk < 2
+msgraph-sdk
+msal

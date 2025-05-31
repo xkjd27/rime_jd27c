@@ -543,7 +543,8 @@ async def push(update, context):
                     drive_item = client.drives['me'].items.by_path(os.environ['ONEDRIVE_PATH']).children[filename].upload(file_content)
                 await REPLY(update, f"OneDrive @ {session_name} 上传成功", parse_mode=None)
             except Exception as e:
-                await REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}", ParseMode.HTML)
+                import traceback
+                await REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}\n{traceback.format_exc()}", ParseMode.HTML)
 
     return -1
 

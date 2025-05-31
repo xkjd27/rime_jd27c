@@ -540,7 +540,7 @@ async def push(update, context):
                     file_path = './rime/' + filename if not filename.endswith('.txt') else './log_input/' + filename
                     with open(file_path, 'rb') as upload_file:
                         file_content = upload_file.read()
-                    drive_item = client.me.drive.root.item_by_path(os.environ['ONEDRIVE_PATH'] + '/' + filename).content.upload(file_content)
+                    drive_item = client.me.drive.items.item_by_path(os.environ['ONEDRIVE_PATH'] + '/' + filename).content.upload(file_content)
                 await REPLY(update, f"OneDrive @ {session_name} 上传成功", parse_mode=None)
             except Exception as e:
                 import traceback

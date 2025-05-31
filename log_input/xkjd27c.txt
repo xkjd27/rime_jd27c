@@ -95790,8 +95790,8 @@
 外国语大学	wgfx
 忘光光	wgg
 王公贵族	wggz
-外国货	wgh
-温哥华	wgha
+温哥华	wgh
+外国货	wghe
 万公斤	wgj
 万贯家财	wgjc
 我感觉到	wgjd

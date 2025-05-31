@@ -247,7 +247,8 @@ async def save_user_dict_to_onedrive(update) -> int:
             drive_item = client.drives['me'].items.by_path(os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload(file_content)
             await REPLY(update, f"成功添加并更新到 OneDrive @ {session_name}", parse_mode=None)
         except Exception as e:
-            await REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}", ParseMode.HTML)
+            import traceback
+            await REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}\n{traceback.format_exc()}", ParseMode.HTML)
             return -1
 
 async def user_add(update, context):

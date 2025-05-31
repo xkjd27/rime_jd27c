@@ -112851,8 +112851,8 @@ wgfq 无官一身轻
 wgfx 外国语大学
 wgg 忘光光
 wggz 王公贵族
-wgh 外国货
-wgha 温哥华
+wgh 温哥华
+wghe 外国货
 wgj 万公斤
 wgjc 万贯家财
 wgjd 我感觉到

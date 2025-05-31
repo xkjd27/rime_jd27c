@@ -118726,7 +118726,8 @@ xfst 爱因斯坦
 xfsu 讹索
 xfsuo 心有所属
 xfsy 饿死
-xft 阿凡提
+xft 西雅图
+xfta 阿凡提
 xftd 鹅亭
 xfte 象牙塔
 xfti 小丫头
@@ -118735,7 +118736,6 @@ xfto 吓一跳
 xfts 额头
 xftsi 峨铁
 xftu 讹脱
-xftv 西雅图
 xftvv 下雨天
 xftw 二一添作五
 xfu 消防栓

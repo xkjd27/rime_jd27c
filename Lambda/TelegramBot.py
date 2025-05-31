@@ -151,7 +151,7 @@ def MARK(result: List[str]) -> List[str]:
 async def TYPING(update: Update):
     await update.message.chat.send_action(action=ChatAction.TYPING)
 
-async def REPLY(update: Update, text: str, parse_mode=ParseMode.MARKDOWN_V2):
+async def REPLY(update: Update, text: str, parse_mode=ParseMode.HTML):
     await update.message.reply_text(text=text, reply_markup=ReplyKeyboardRemove(), parse_mode=parse_mode)
 
 async def CHOOSE(update: Update, text: str, choice: List[str], parse_mode=ParseMode.MARKDOWN_V2):

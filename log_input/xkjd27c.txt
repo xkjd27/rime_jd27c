@@ -101665,7 +101665,8 @@
 讹索	xfsu
 心有所属	xfsuo
 饿死	xfsy
-阿凡提	xft
+西雅图	xft
+阿凡提	xfta
 鹅亭	xftd
 象牙塔	xfte
 小丫头	xfti
@@ -101674,7 +101675,6 @@
 额头	xfts
 峨铁	xftsi
 讹脱	xftu
-西雅图	xftv
 下雨天	xftvv
 二一添作五	xftw
 消防栓	xfu

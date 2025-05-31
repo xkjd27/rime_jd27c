@@ -244,7 +244,7 @@ async def save_user_dict_to_onedrive(update) -> int:
                 file_content = upload_file.read()
 
             # Upload file using Graph API
-            drive_item = client.me.drive.root.item_by_path(os.environ['ONEDRIVE_PATH'] + '/xkjd27c.user.dict.yaml').content.upload(file_content)
+            drive_item = client.drives.by_drive_id('me').items.by_drive_item_id(os.environ['ONEDRIVE_PATH'] + '/xkjd27c.user.dict.yaml:').content.put(file_content)
             await REPLY(update, f"成功添加并更新到 OneDrive @ {session_name}", parse_mode=None)
         except Exception as e:
             import traceback

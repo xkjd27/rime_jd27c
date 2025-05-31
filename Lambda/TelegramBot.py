@@ -244,7 +244,7 @@ async def save_user_dict_to_onedrive(update) -> int:
                 file_content = upload_file.read()
 
             # Upload file using Graph API
-            drive_item = client.drives.me.items.by_path(os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload(file_content)
+            drive_item = client.me.drives.items.by_path(os.environ['ONEDRIVE_PATH']).children['xkjd27c.user.dict.yaml'].upload(file_content)
             await REPLY(update, f"成功添加并更新到 OneDrive @ {session_name}", parse_mode=None)
         except Exception as e:
             import traceback
@@ -540,7 +540,7 @@ async def push(update, context):
                     file_path = './rime/' + filename if not filename.endswith('.txt') else './log_input/' + filename
                     with open(file_path, 'rb') as upload_file:
                         file_content = upload_file.read()
-                    drive_item = client.drives.me.items.by_path(os.environ['ONEDRIVE_PATH']).children[filename].upload(file_content)
+                    drive_item = client.me.drives.items.by_path(os.environ['ONEDRIVE_PATH']).children[filename].upload(file_content)
                 await REPLY(update, f"OneDrive @ {session_name} 上传成功", parse_mode=None)
             except Exception as e:
                 import traceback

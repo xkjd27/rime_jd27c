@@ -133334,6 +133334,10 @@
 𦒍	tjovao
 𬳿	tnaa
 𬳿	tnaaiv
+𲎿	treo
+𲎿	treoai
+𲰼	tria
+𲰼	triaai
 	trve
 	trveve
 𬶍	tueao

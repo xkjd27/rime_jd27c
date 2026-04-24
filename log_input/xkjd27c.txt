@@ -21684,6 +21684,7 @@
 钝兵	dwbd
 敦本	dwbk
 蹲便	dwbm
+墩布	dwbn
 蹲班	dwbt
 顿踣	dwbu
 遁北	dwbw
@@ -21702,6 +21703,7 @@
 蹲点	dwdm
 惇笃	dwdn
 遁地	dwdy
+墩地	dwdyv
 蹲到	dwdz
 动物园	dwf
 蹲防	dwfl

@@ -38745,6 +38745,7 @@ dwbc 蹲膘
 dwbd 钝兵
 dwbk 敦本
 dwbm 蹲便
+dwbn 墩布
 dwbt 蹲班
 dwbu 顿踣
 dwbw 遁北
@@ -38763,6 +38764,7 @@ dwdl 独往独来
 dwdm 蹲点
 dwdn 惇笃
 dwdy 遁地
+dwdyv 墩地
 dwdz 蹲到
 dwf 动物园
 dwfl 蹲防

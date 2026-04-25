@@ -28985,6 +28985,7 @@
 赴港	fngl
 福冈	fnglo
 复古	fngn
+跗骨	fngno
 复感	fngt
 富国	fngu
 复国	fngue
@@ -37457,6 +37458,7 @@
 刚换	glhg
 港航	glhl
 刚呼	glhn
+嘎拉哈	glho
 钢化	glhq
 管理后台	glht
 港货	glhu
@@ -43728,6 +43730,7 @@
 糊涂	hntn
 胡涂	hntne
 胡腾	hntp
+糊塌	hntr
 虎头	hnts
 户头	hntso
 湖滩	hntt
@@ -45168,6 +45171,7 @@
 含在	htzhi
 汉藏	htzl
 汉族	htzn
+糊塌子	htzo
 旱作	htzu
 汉字	htzy
 汉子	htzya
@@ -46867,6 +46871,7 @@
 居功	j;gja
 巨贾	j;gn
 价值观念	j;gni
+距骨	j;gno
 橘柑	j;gt
 举国	j;gu
 举过	j;guo
@@ -84953,6 +84958,7 @@
 太祖	thzn
 太杂	thzr
 台座	thzu
+塌糊子	thzv
 太子	thzy
 台资	thzya
 台子	thzyaa
@@ -86596,6 +86602,7 @@
 他很	trhk
 它很	trhko
 他行	trhl
+塌糊	trhn
 他花	trhq
 塔哈	trhr
 獭猴	trhs
@@ -103727,6 +103734,7 @@
 闲事	xmuyov
 现实	xmuyv
 咸湿	xmuyva
+咸食	xmuyvi
 现时	xmuyvo
 现世	xmuyvv
 嫌少	xmuz
@@ -105184,6 +105192,7 @@
 鞋跟	xsgk
 斜杠	xsgl
 斜谷	xsgn
+楔骨	xsgnv
 耦耕	xsgp
 偶感	xsgt
 斜杆	xsgti

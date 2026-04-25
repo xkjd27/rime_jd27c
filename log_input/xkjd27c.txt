@@ -101677,7 +101677,7 @@
 额头	xfts
 峨铁	xftsi
 讹脱	xftu
-下雨天	xftvv
+下雨天	xftv
 二一添作五	xftw
 消防栓	xfu
 骁勇善战	xfu;

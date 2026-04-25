@@ -118738,7 +118738,7 @@ xfto 吓一跳
 xfts 额头
 xftsi 峨铁
 xftu 讹脱
-xftvv 下雨天
+xftv 下雨天
 xftw 二一添作五
 xfu 消防栓
 xfu; 骁勇善战

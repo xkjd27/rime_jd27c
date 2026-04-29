@@ -22543,7 +22543,8 @@ zzvvoo 璪
 ;yfpe 直缝
 ;yfpi 指缝
 ;yfq 只有
-;yfqe 质优
+;yfqe 直邮
+;yfqei 质优
 ;yfqi 挚友
 ;yfqo 之有
 ;yfqoo 之忧
@@ -98633,6 +98634,7 @@ snfs 宿业
 snft 肃反
 snfw 宿费
 snfwi 苏菲
+snfwv 速运
 snfx 素养
 sng 所能够
 sngb 速归

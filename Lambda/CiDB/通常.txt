@@ -53540,6 +53540,7 @@
 拢在	long/zai	4	0
 拢总	long/zong	4	0
 拣精剔肥	jian/jing/ti/fei	5	0
+拣货	jian/huo	5	0
 拣起	jian/qi	6	0
 拣选	jian/xuan	4	0
 拥入	yong/ru	5	0

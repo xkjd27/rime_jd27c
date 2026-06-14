@@ -79931,7 +79931,8 @@ lzft 劳烦
 lzfte 老范
 lzftei 乱作一团
 lzfto 牢饭
-lzfv 柳宗元
+lzfv 连字符
+lzfvo 柳宗元
 lzfw 老肥
 lzfx 老杨
 lzfxe 狼子野心

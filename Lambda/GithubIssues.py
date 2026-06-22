@@ -77,7 +77,7 @@ g = Github(os.environ['GITHUB_TOKEN'])
 
 # GITHUB Repo
 github_repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
-repo_path = os.path.join(os.environ['GITHUB_WORKSPACE'])
+repo_path = os.environ['GITHUB_WORKSPACE']
 
 # GIT Repo
 print("Setting up Git")
@@ -118,18 +118,14 @@ for issue in open_issues:
     if issue.pull_request is not None:
         continue
 
-    super_commands = find_commands_issue(issue.body, SUPER)
-    genreal_commands = find_commands_issue(issue.body, GENERAL)
-
-    ALL_COMMANDS += super_commands
-    ALL_COMMANDS += genreal_commands
+    ALL_COMMANDS += find_commands_issue(issue.body)
 
     pr_comment += 'Closes #%d\n' % issue.number
 
     # remove labels
     issue.edit(labels=[])
 
-if (len(ALL_COMMANDS) < 0):
+if (len(ALL_COMMANDS) == 0):
     print('No Commands')
     exit(0)
 

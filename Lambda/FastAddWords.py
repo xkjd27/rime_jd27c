@@ -26,7 +26,7 @@ if can_add:
             print("添加失败:", word, pinyin)
             quit()
 
-        codes, spaces, weight = JDTools.find_space_for_word(word, pinyin, False)
+        codes, spaces, weight = space_data
         length = 6
         for l in spaces:
             if len(word) == 3 and l >= 3:

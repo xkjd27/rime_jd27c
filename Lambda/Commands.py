@@ -1,4 +1,8 @@
+import logging
+
 from . import JDTools
+
+logger = logging.getLogger(__name__)
 
 COMMAND_TRANSCRIPT = []
 GENERAL = 1
@@ -356,7 +360,7 @@ def process_commands(commands):
             continue
         
         cmd_name = command[1]
-        print(" - Processing: %s" % str(command))
+        logger.info("Processing: %s", command)
         try:
             if cmd_name == '添加':
                 command_add(command[2:])
@@ -374,122 +378,47 @@ def process_commands(commands):
     
     JDTools.commit()
 
-def safe_add_word(word, pinyin, code):
+def _run_safe(fn, *args):
+    """Run a command function in an isolated transcript, capturing failures.
+
+    Assertion messages are surfaced to the user; any other exception is logged
+    with a full traceback and reported generically.
+    """
     global COMMAND_TRANSCRIPT
     og_transcript = COMMAND_TRANSCRIPT
     COMMAND_TRANSCRIPT = []
     try:
-        command_add_word(word, pinyin, code)
+        fn(*args)
     except AssertionError as e:
         COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
+    except Exception:
+        logger.exception("%s failed", getattr(fn, "__name__", fn))
         COMMAND_TRANSCRIPT.append('  * __未知错误__')
 
     result = COMMAND_TRANSCRIPT
     COMMAND_TRANSCRIPT = og_transcript
     return result
+
+def safe_add_word(word, pinyin, code):
+    return _run_safe(command_add_word, word, pinyin, code)
 
 def safe_add_char(char, pinyin, code):
-    global COMMAND_TRANSCRIPT
-    og_transcript = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = []
-    try:
-        command_add_char(char, pinyin, code)
-    except AssertionError as e:
-        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
-        COMMAND_TRANSCRIPT.append('  * __未知错误__')
-
-    result = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = og_transcript
-    return result
+    return _run_safe(command_add_char, char, pinyin, code)
 
 def safe_delete_word(word, pinyin):
-    global COMMAND_TRANSCRIPT
-    og_transcript = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = []
-    try:
-        command_delete_word(word, pinyin)
-    except AssertionError as e:
-        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
-        COMMAND_TRANSCRIPT.append('  * __未知错误__')
-
-    result = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = og_transcript
-    return result
+    return _run_safe(command_delete_word, word, pinyin)
 
 def safe_delete_char(char, pinyin):
-    global COMMAND_TRANSCRIPT
-    og_transcript = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = []
-    try:
-        command_delete_char(char, pinyin)
-    except AssertionError as e:
-        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
-        COMMAND_TRANSCRIPT.append('  * __未知错误__')
-
-    result = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = og_transcript
-    return result
+    return _run_safe(command_delete_char, char, pinyin)
 
 def safe_change_word(word, pinyin, code):
-    global COMMAND_TRANSCRIPT
-    og_transcript = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = []
-    try:
-        command_change_word(word, pinyin, code)
-    except AssertionError as e:
-        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
-        COMMAND_TRANSCRIPT.append('  * __未知错误__')
-
-    result = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = og_transcript
-    return result
+    return _run_safe(command_change_word, word, pinyin, code)
 
 def safe_change_char(char, pinyin, code):
-    global COMMAND_TRANSCRIPT
-    og_transcript = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = []
-    try:
-        command_change_char(char, pinyin, code)
-    except AssertionError as e:
-        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
-        COMMAND_TRANSCRIPT.append('  * __未知错误__')
-
-    result = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = og_transcript
-    return result
+    return _run_safe(command_change_char, char, pinyin, code)
 
 def safe_rank_word(word, pinyin, code, rank):
-    global COMMAND_TRANSCRIPT
-    og_transcript = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = []
-    try:
-        command_rank_word(word, pinyin, code, rank)
-    except AssertionError as e:
-        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
-        COMMAND_TRANSCRIPT.append('  * __未知错误__')
-
-    result = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = og_transcript
-    return result
+    return _run_safe(command_rank_word, word, pinyin, code, rank)
 
 def safe_rank_char(char, pinyin, code, rank):
-    global COMMAND_TRANSCRIPT
-    og_transcript = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = []
-    try:
-        command_rank_char(char, pinyin, code, rank)
-    except AssertionError as e:
-        COMMAND_TRANSCRIPT.append('  * __%s__' % str(e))
-    except:
-        COMMAND_TRANSCRIPT.append('  * __未知错误__')
-
-    result = COMMAND_TRANSCRIPT
-    COMMAND_TRANSCRIPT = og_transcript
-    return result
+    return _run_safe(command_rank_char, char, pinyin, code, rank)

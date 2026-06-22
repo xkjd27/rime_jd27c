@@ -1,17 +1,19 @@
 import sys
 import os
+import subprocess
 from pathlib import Path
 from . import ZiDB
 from . import CiDB
 import itertools
 from .Layout import *
+from . import paths
 
 # ---------------------------------
 #               常量
 # ---------------------------------
 
 RIME_HEADER = '# 由键道：涵自动生成\n---\nname: %s\nversion: "q2"\nsort: original\n...\n' % (RIME_SCHEMA + ".%s")
-RIME_PATH = 'rime/%s' % (RIME_SCHEMA + ".%s.dict.yaml")
+RIME_PATH = paths.RIME_DICT_PATH
 
 # ---------------------------------
 #             辅助函数
@@ -103,7 +105,7 @@ def isGBK(char):
     try:
         char.encode('gbk')
         return True
-    except:
+    except UnicodeEncodeError:
         return False
 
 def char2codes(shape, pinyin, length, short = True, full = True):
@@ -165,27 +167,23 @@ def zi2codes(zi, short = True, full = True):
     
     return codes
 
+# Module-level 码表缓存。None 表示尚未构建或已失效。
+_entries = None
+_entries_r = None
+_word_entries = None
+_word_entries_r = None
+
 def get_danzi_codes():
     """获取单字码表"""
 
     global _entries
     global _entries_r
 
-    try:
-        _entries
-    except:
-        _entries = None
-
-    try:
-        _entries_r
-    except:
-        _entries_r = None
-
-    if (_entries == None or _entries_r == None):
-        _entries = []
-        _entries_r = {}
-    else:
+    if _entries is not None and _entries_r is not None:
         return _entries, _entries_r
+
+    _entries = []
+    _entries_r = {}
 
     chars = ZiDB.all()
     for zi in chars:
@@ -214,21 +212,11 @@ def get_cizu_codes():
     global _word_entries
     global _word_entries_r
 
-    try:
-        _word_entries
-    except:
-        _word_entries = None
-
-    try:
-        _word_entries_r
-    except:
-        _word_entries_r = None
-
-    if (_word_entries == None or _word_entries_r == None):
-        _word_entries = []
-        _word_entries_r = {}
-    else:
+    if _word_entries is not None and _word_entries_r is not None:
         return _word_entries, _word_entries_r
+
+    _word_entries = []
+    _word_entries_r = {}
 
     words = CiDB.all()
     for ci in words:
@@ -265,34 +253,16 @@ def clear_danzi_codes():
     global _entries
     global _entries_r
 
-    try:
-        del _entries
-        _entries = None
-    except:
-        _entries = None
-
-    try:
-        del _entries_r
-        _entries_r = None
-    except:
-        _entries_r = None
+    _entries = None
+    _entries_r = None
 
 def clear_cizu_codes():
     """Dirtify词组码表"""
     global _word_entries
     global _word_entries_r
 
-    try:
-        del _word_entries
-        _word_entries = None
-    except:
-        _word_entries = None
-
-    try:
-        del _word_entries_r
-        _word_entries_r = None
-    except:
-        _word_entries_r = None
+    _word_entries = None
+    _word_entries_r = None
 
 def word_pinyin2codes(pys):
     """词拼音转声码"""
@@ -358,7 +328,7 @@ def ci2codes(ci, short = True, full = False):
     if len(sound_chars) == 3: # 三字词需三码
         third_char = ZiDB.get(sound_chars[2])
         if (third_char is None):
-            return set()
+            return None
         shape += s(third_char.shape()[0])
 
     for data in weights:
@@ -406,7 +376,7 @@ def traverse_danzi(build = False, report = True):
         danzi = None
 
     if report:
-        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/单字健康报告.txt')
+        report_path = paths.REPORT_DANZI
         report = open(report_path, mode='w', encoding='utf-8', newline='\n')
     else:
         report = None
@@ -491,7 +461,7 @@ def traverse_cizu(build = False, report = True):
         f = None
 
     if report:
-        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/词组优化报告.txt')
+        report_path = paths.REPORT_CIZU_OPTIMIZE
         optimize = open(report_path, mode='w', encoding='utf-8', newline='\n')
     else:
         optimize = None
@@ -560,8 +530,8 @@ def traverse_cizu(build = False, report = True):
             dup_word_count += len(codes[code])
 
     if report:
-        report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/词组重码报告.txt')
-        report_path_2 = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/容许重码记录.txt')
+        report_path = paths.REPORT_CIZU_DUP
+        report_path_2 = paths.REPORT_CIZU_ALLOWED
         report = open(report_path, mode='w', encoding='utf-8', newline='\n')
         report_allowed = open(report_path_2, mode='w', encoding='utf-8', newline='\n')
 
@@ -626,15 +596,12 @@ def traverse_cizu(build = False, report = True):
 def build_chaoji():
     chaoji = list(filter(lambda e: not e[3], get_danzi_codes()[0])) + list(filter(lambda e: not e[4], get_cizu_codes()[0]))
 
-    f = open(RIME_PATH % 'chaojizici', mode='w', encoding='utf-8', newline='\n')
-    f.write(RIME_HEADER % 'chaojizici')
+    with open(RIME_PATH % 'chaojizici', mode='w', encoding='utf-8', newline='\n') as f:
+        f.write(RIME_HEADER % 'chaojizici')
 
-    for entry in chaoji:
-        word, code, rank = entry[:3]
-        if f is not None:
+        for entry in chaoji:
+            word, code, rank = entry[:3]
             f.write(word+'\t'+code+'\n')
-
-    f.close()
 
 # ---------------------------------
 #               指令
@@ -875,12 +842,6 @@ def change_word_shortcode_weight(word, pinyins, weight):
     ci.change_code_rank(pys, weight)
     cizu_mark_dirty()
 
-def find_word_shortcode_weight(word, pinyins):
-    ci = CiDB.get(word)
-    assert ci is not None, '`%s`词不存在' % word
-    pys = set(tuple(transform_py(py) for py in qpy.split(' ')) for qpy in pinyins)
-    ci.change_code_rank(pys, weight)
-
 def gen_char(char, short = True, full = True):
     zi = ZiDB.get(char)
     if zi is None:
@@ -991,7 +952,7 @@ def replace_static(text):
     return result
 
 def build_static():
-    static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Static')
+    static_path = paths.STATIC_DIR
 
     STAITC_MAP = {
         '声笔笔.txt': 'sbb',
@@ -1038,8 +999,8 @@ def get_all_ci():
 
 def build_log_tsv():
     """Build code list for log input."""
-    root = Path("rime/")
-    with open(f"log_input/{RIME_SCHEMA}.txt", "w", encoding="utf-8") as out:
+    root = Path(paths.RIME_DIR)
+    with open(paths.LOG_INPUT_FILE, "w", encoding="utf-8") as out:
         for f in root.iterdir():
             if f.name.endswith(".yaml"):
                 with f.open("r", encoding="utf-8") as src:
@@ -1062,8 +1023,8 @@ def build_fcitx5_table():
             if name in i.name:
                 return files.pop(idx)
         return None
-    root = Path("rime/")
-    with open(f"fcitx5/{RIME_SCHEMA}.txt", "w", encoding="utf-8") as out:
+    root = Path(paths.RIME_DIR)
+    with open(paths.FCITX5_TXT, "w", encoding="utf-8") as out:
         out.write(
             "KeyCode=abcdefghijklmnopqrstuvwxyz;\n"
             "Length=6\n"
@@ -1099,7 +1060,7 @@ def build_fcitx5_table():
                     word, code = line.split("\t")
                     out.write(f"{code} {word}\n")
 
-    os.system(f"libime_tabledict fcitx5/{RIME_SCHEMA}.txt fcitx5/{RIME_SCHEMA}.dict")
+    subprocess.run(["libime_tabledict", paths.FCITX5_TXT, paths.FCITX5_DICT], check=True)
 
 def commit():
     """提交所有更改并生成新码表"""

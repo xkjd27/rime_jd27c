@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 from . import JDTools
 from . import Commands
+from . import paths
 import re
 from bisect import bisect_left
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
@@ -18,18 +19,36 @@ from telegram.constants import ParseMode
 from typing import List, Dict
 from git import Repo
 import urllib.request
+import urllib.parse
 import time
+import logging
+import functools
+import traceback
 from azure.core.credentials import AccessToken
 from msal import ConfidentialClientApplication, SerializableTokenCache
 from msgraph import GraphServiceClient
 
 load_dotenv()
 
+logger = logging.getLogger(__name__)
+
+
+def require_env(name: str) -> str:
+    """Return the value of a required environment variable or raise a clear error."""
+    value = os.environ.get(name)
+    if not value:
+        raise RuntimeError(
+            f"Required environment variable {name!r} is not set. "
+            f"Define it in your environment or .env file."
+        )
+    return value
+
+
 # Microsoft Graph API Setup
 AZURE_TENANT_ID = "9188040d-6c67-4c5b-b112-36a304b66dad"
-AZURE_CLIENT_ID = os.environ["AZURE_CLIENT_ID"]
-AZURE_CLIENT_SECRET = os.environ["AZURE_CLIENT_SECRET"]
-AZURE_REDIRECT_URI = os.environ["AZURE_REDIRECT_URI"]
+AZURE_CLIENT_ID = require_env("AZURE_CLIENT_ID")
+AZURE_CLIENT_SECRET = require_env("AZURE_CLIENT_SECRET")
+AZURE_REDIRECT_URI = require_env("AZURE_REDIRECT_URI")
 GRAPH_SCOPES = ['https://graph.microsoft.com/.default']
 
 class MSALCredential:
@@ -38,7 +57,8 @@ class MSALCredential:
         self.cache = SerializableTokenCache()
         cache_file = f"token_cache_{session_name}.bin"
         if os.path.exists(cache_file):
-            self.cache.deserialize(open(cache_file, "r").read())
+            with open(cache_file, "r") as cache_fh:
+                self.cache.deserialize(cache_fh.read())
         self.app = ConfidentialClientApplication(
             client_id=AZURE_CLIENT_ID,
             client_credential=AZURE_CLIENT_SECRET,
@@ -62,8 +82,8 @@ class MSALCredential:
     def process_auth_response_url(self, auth_resp_url, flow):
         app = self.app
         # parse query string into dict
-        auth_resp_url = auth_resp_url.split("?")[1]
-        auth_resp = dict(q.split("=") for q in auth_resp_url.split("&"))
+        query = urllib.parse.urlparse(auth_resp_url).query
+        auth_resp = {k: v[0] for k, v in urllib.parse.parse_qs(query).items()}
 
         try:
             result = app.acquire_token_by_auth_code_flow(flow, auth_resp)
@@ -116,7 +136,7 @@ for name in session_names:
         "client": client,
     }
 
-ALLOWED_USER = set(os.environ['TELEGRAM_BOT_USER'].split(','))
+ALLOWED_USER = set(require_env('TELEGRAM_BOT_USER').split(','))
 
 LOG_STATUS: List[str] = []
 
@@ -158,11 +178,18 @@ async def CHOOSE(update: Update, text: str, choice: List[str], parse_mode=ParseM
     await update.message.reply_text(text=text, reply_markup=ReplyKeyboardMarkup(
         [choice, ['/取消']], one_time_keyboard=True), parse_mode=parse_mode)
 
+def restricted(handler):
+    """Restrict a handler to ALLOWED_USER; unauthorized callers end the conversation."""
+    @functools.wraps(handler)
+    async def wrapper(update, context, *args, **kwargs):
+        if update.effective_user.username not in ALLOWED_USER:
+            return -1
+        return await handler(update, context, *args, **kwargs)
+    return wrapper
+
 # Help
+@restricted
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if update.effective_user.username not in ALLOWED_USER:
-        return
-    
     await update.message.reply_text(text="""指令列表:
 /add - 添加字词
 /delete - 删除字词
@@ -189,8 +216,8 @@ CUSTOM_DICT = {}
 CUSTOM_DICT_R = {}
 def load_custom():
     CUSTOM_DICT.clear()
-    if os.path.isfile('./rime/.xkjd27c.user.dict.yaml'):
-        with open('./rime/.xkjd27c.user.dict.yaml', mode='r', encoding='utf-8') as infile:
+    if os.path.isfile(paths.USER_DICT_FILE):
+        with open(paths.USER_DICT_FILE, mode='r', encoding='utf-8') as infile:
             for line in infile:
                 if (line.strip().startswith('#')):
                     continue
@@ -214,7 +241,7 @@ def add_custom(word, code):
     CUSTOM_DICT_R[code] = word
 
 def save_custom():
-    with open('./rime/.xkjd27c.user.dict.yaml', mode='w', encoding='utf-8', newline='\n') as outfile:
+    with open(paths.USER_DICT_FILE, mode='w', encoding='utf-8', newline='\n') as outfile:
         data = sorted(list(CUSTOM_DICT_R.items()))
         outfile.write('# coding: utf-8\n---\nname: xkjd27c.user\nversion: "q2"\nsort: original\n...\n')
         for line in data:
@@ -230,31 +257,48 @@ def remove_custom(info):
             del CUSTOM_DICT_R[info]
         else:
             return f"{info} 词条不存在"
-    except:
+    except KeyError:
+        logger.exception("remove_custom failed for %r", info)
         return None
 
-async def save_user_dict_to_onedrive(update) -> int:
-    """Return -1 when failed, None when success.
+async def _upload_files_to_onedrive(update, files, success_message, fail_fast):
+    """Upload ``(local_path, remote_name)`` pairs to OneDrive for each Graph session.
+
+    Returns -1 if any session failed, otherwise None. When ``fail_fast`` is True
+    the first failing session returns immediately. ``success_message`` may contain
+    a ``{session_name}`` placeholder.
     """
+    onedrive_path = require_env('ONEDRIVE_PATH')
+    outcome = None
     for session_name, session in graph_sessions.items():
         client = session["client"]
         try:
-            # Read the file content
-            with open('./rime/.xkjd27c.user.dict.yaml', 'rb') as upload_file:
-                file_content = upload_file.read()
-
-            # Upload file using Graph API
-            drive_item = client.drives.by_drive_id('me').items.by_drive_item_id(os.environ['ONEDRIVE_PATH'] + '/xkjd27c.user.dict.yaml:').content.put(file_content)
-            await REPLY(update, f"成功添加并更新到 OneDrive @ {session_name}", parse_mode=None)
+            for local_path, remote_name in files:
+                with open(local_path, 'rb') as upload_file:
+                    file_content = upload_file.read()
+                client.drives.by_drive_id('me').items.by_drive_item_id(
+                    onedrive_path + '/' + remote_name + ':'
+                ).content.put(file_content)
+            await REPLY(update, success_message.format(session_name=session_name), parse_mode=None)
         except Exception as e:
-            import traceback
+            logger.exception("OneDrive upload failed @ %s", session_name)
             await REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}\n{traceback.format_exc()}", ParseMode.HTML)
-            return -1
+            outcome = -1
+            if fail_fast:
+                return outcome
+    return outcome
 
+async def save_user_dict_to_onedrive(update) -> int:
+    """Return -1 when failed, None when success."""
+    return await _upload_files_to_onedrive(
+        update,
+        [(paths.USER_DICT_FILE, paths.USER_DICT_NAME)],
+        "成功添加并更新到 OneDrive @ {session_name}",
+        fail_fast=True,
+    )
+
+@restricted
 async def user_add(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     data = update.message.text
 
     if (data.startswith('/')):
@@ -289,10 +333,8 @@ async def user_add(update, context):
     context.user_data.clear()
     return -1
 
+@restricted
 async def user_delete(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     data = update.message.text
 
     if (data.startswith('/')):
@@ -313,7 +355,7 @@ async def user_delete(update, context):
         else:
             save_custom()
 
-            upload_outcome = save_user_dict_to_onedrive(update)
+            upload_outcome = await save_user_dict_to_onedrive(update)
             if upload_outcome is not None:
                 return upload_outcome
 
@@ -325,61 +367,36 @@ async def user_delete(update, context):
     return -1
 
 # Commands
+async def _dispatch_word_or_char(update, context, word_handler, char_handler, prompt, prompt_state):
+    """Shared entry logic for add/delete/change: route inline args to the word or
+    char handler, otherwise prompt the user and enter ``prompt_state``."""
+    data = update.message.text.strip().split(' ')
+    if len(data) > 1:
+        word = ' '.join(data[1:])
+        with update.message._unfrozen():
+            update.message.text = word
+        if len(word) > 1:
+            return await word_handler(update, context)
+        else:
+            return await char_handler(update, context)
+
+    await REPLY(update, prompt)
+    return prompt_state
+
+@restricted
 async def add(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
+    return await _dispatch_word_or_char(update, context, add_word, add_char, "请输入要添加的字/词", 0)
 
-    data = update.message.text.strip().split(' ')
-    if len(data) > 1:
-        word = ' '.join(data[1:])
-        with update.message._unfrozen():
-            update.message.text = word
-        if (len(word) > 1):
-            return await add_word(update, context)
-        else:
-            return await add_char(update, context)
-
-    await REPLY(update, "请输入要添加的字/词")
-    return 0
-
+@restricted
 async def delete(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
+    return await _dispatch_word_or_char(update, context, delete_word, delete_char, "请输入要删除的字/词", 3)
 
-    data = update.message.text.strip().split(' ')
-    if len(data) > 1:
-        word = ' '.join(data[1:])
-        with update.message._unfrozen():
-            update.message.text = word
-        if (len(word) > 1):
-            return await delete_word(update, context)
-        else:
-            return await delete_char(update, context)
-
-    await REPLY(update, "请输入要删除的字/词")
-    return 3
-
+@restricted
 async def change(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
+    return await _dispatch_word_or_char(update, context, change_word, change_char, "请输入要修改的字/词", 6)
 
-    data = update.message.text.strip().split(' ')
-    if len(data) > 1:
-        word = ' '.join(data[1:])
-        with update.message._unfrozen():
-            update.message.text = word
-        if (len(word) > 1):
-            return await change_word(update, context)
-        else:
-            return await change_char(update, context)
-        
-    await REPLY(update, "请输入要修改的字/词")
-    return 6
-
+@restricted
 async def rank(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     data = update.message.text
 
     if 'rank_requested' not in context.user_data:
@@ -430,7 +447,7 @@ async def rank(update, context):
                 context.user_data.clear()
                 return -1
 
-            codes = list(filter(lambda c : c[1] == code, JDTools.ci2codes(ci)))
+            codes = list(filter(lambda c : c[1] == code, JDTools.ci2codes(ci) or []))
             if (len(codes) == 0):
                 await REPLY(update, "未知错误")
                 context.user_data.clear()
@@ -475,20 +492,16 @@ async def rank(update, context):
 
     return 9
 
+@restricted
 async def status(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     if (len(LOG_STATUS) == 0):
         await REPLY(update, "无变化")
         return -1
     await REPLY(update, "\n".join(MARK(LOG_STATUS)))
     return -1
 
+@restricted
 async def pull(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     if (len(LOG_STATUS) > 0):
         await REPLY(update, "\n".join(MARK(LOG_STATUS)))
         await REPLY(update, '有未提交修改，请先 push 或 drop 当前修改')
@@ -500,10 +513,8 @@ async def pull(update, context):
     JDTools.reset()
     return -1
     
+@restricted
 async def push(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     if 'requested_code' not in context.user_data:
         await REPLY(update, '正在构建，请稍候...')
 
@@ -525,44 +536,24 @@ async def push(update, context):
                 await REPLY(update, '构建完毕，码表无改动')
 
             LOG_STATUS.clear()
-        except Exception as e:
+        except Exception:
+            logger.exception("push/build failed")
             await REPLY(update, '构建失败')
-            raise e
             return -1
 
         await TYPING(update)
-        
-        for session_name, session in graph_sessions.items():
-            client = session["client"]
-            try:
-                # Upload files using Graph API
-                for filename in ['xkjd27c.cizu.dict.yaml', 'xkjd27c.danzi.dict.yaml', 'xkjd27c.chaojizici.dict.yaml', 'xkjd27c.txt']:
-                    file_path = './rime/' + filename if not filename.endswith('.txt') else './log_input/' + filename
-                    with open(file_path, 'rb') as upload_file:
-                        file_content = upload_file.read()
-                    drive_item = client.drives.by_drive_id('me').items.by_drive_item_id(os.environ['ONEDRIVE_PATH'] + '/' + filename + ':').content.put(file_content)
-                await REPLY(update, f"OneDrive @ {session_name} 上传成功", parse_mode=None)
-            except Exception as e:
-                import traceback
-                await REPLY(update, f"OneDrive @ {session_name} 上传失败: \n{e}\n{traceback.format_exc()}", ParseMode.HTML)
+
+        upload_files = [
+            (paths.RIME_DIR + '/' + filename if not filename.endswith('.txt') else paths.LOG_INPUT_DIR + '/' + filename, filename)
+            for filename in ['xkjd27c.cizu.dict.yaml', 'xkjd27c.danzi.dict.yaml', 'xkjd27c.chaojizici.dict.yaml', 'xkjd27c.txt']
+        ]
+        await _upload_files_to_onedrive(update, upload_files, "OneDrive @ {session_name} 上传成功", fail_fast=False)
 
     return -1
 
-def binary_search(arr, low, high, x): 
-    if high >= low: 
-        mid = (high + low) // 2
-        if arr[mid][1] == x: 
-            return mid 
-        elif arr[mid][1] > x: 
-            return binary_search(arr, low, mid - 1, x) 
-        else: 
-            return binary_search(arr, mid + 1, high, x) 
-    else: 
-        return -1
-
 async def list_code(data, code, update):
-    index = binary_search(data, 0, len(data), code)
-    if (index > 0):
+    index = bisect_left(data, code, key=lambda e: e[1])
+    if index < len(data) and data[index][1] == code:
         start = min(len(data) - 5, max(index - 2, 0))
         result = []
         for i in range(max(start, 0), min(start + 5, len(data))):
@@ -574,10 +565,8 @@ async def list_code(data, code, update):
         return True
     return False
 
+@restricted
 async def list_command(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     if 'list_requested' not in context.user_data:
         data = update.message.text.split(' ')
         context.user_data['list_requested'] = True
@@ -616,10 +605,8 @@ async def list_command(update, context):
     
     return 10
 
+@restricted
 async def drop(update, context):
-    if update.effective_user.username not in ALLOWED_USER:
-        return -1
-
     if 'drop_requested' not in context.user_data:
         context.user_data['drop_requested'] = True
 
@@ -915,7 +902,7 @@ async def change_word(update, context):
             return -1
 
         pinyins = {}
-        for code in JDTools.ci2codes(ci):
+        for code in (JDTools.ci2codes(ci) or []):
             ma = code[1]
             py = code[-2]
             if (py in pinyins):
@@ -1107,8 +1094,7 @@ async def getjd(update, context):
 
     refuse_list = set()
 
-    static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'CiDB')
-    with open(os.path.join(static_path, "拒绝.txt"), mode='r', encoding='utf-8') as infile:
+    with open(paths.REFUSE_FILE, mode='r', encoding='utf-8') as infile:
         for line in infile:
             refuse_list.add(line.strip())
 
@@ -1153,9 +1139,18 @@ async def default_message(update, context):
             update.message.text = "/add " + data
         return await add(update, context)
 
+async def error_handler(update, context):
+    logger.error("Exception while handling an update", exc_info=context.error)
+
 def main():
     # Initialize bot
-    application = Application.builder().token(os.environ['TELEGRAM_BOT_TOKEN']).build()
+    logging.basicConfig(
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        level=logging.INFO,
+    )
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+
+    application = Application.builder().token(require_env('TELEGRAM_BOT_TOKEN')).build()
 
     # Add handlers
     cancel_handler = MessageHandler(filters.Regex('^(/取消|/cancel)$'), cancel)
@@ -1190,7 +1185,6 @@ def main():
             9: [cancel_handler, MessageHandler(filters.ALL, rank)],
             10: [cancel_handler, MessageHandler(filters.ALL, list_command)],
             11: [cancel_handler, MessageHandler(filters.ALL, drop)],
-            12: [cancel_handler, MessageHandler(filters.ALL, push)],
             13: [cancel_handler, MessageHandler(filters.ALL, user_add)],
             14: [cancel_handler, MessageHandler(filters.ALL, user_delete)],
         },
@@ -1198,6 +1192,7 @@ def main():
     )
 
     application.add_handler(add_convers)
+    application.add_error_handler(error_handler)
 
     # Start bot
     application.run_polling()

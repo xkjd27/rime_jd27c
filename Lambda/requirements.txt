@@ -4,3 +4,4 @@ python-telegram-bot
 python-dotenv
 msgraph-sdk
 msal
+pytest

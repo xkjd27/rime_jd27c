@@ -1,14 +1,17 @@
 from . import JDTools
+from . import paths
 import os
 import re
 
 def solve_cizu():
-    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/词组优化报告.txt')
+    file_path = paths.REPORT_CIZU_OPTIMIZE
 
     short_space = {}
     with open(file_path, mode='r', encoding='utf-8') as f:
         for line in f:
-            match = re.search('可缩码："(.*)" (.*) -> (.*) \((.*)\)', line)
+            match = re.search(r'可缩码："(.*)" (.*) -> (.*) \((.*)\)', line)
+            if match is None:
+                continue
             word = match[1]
             code = match[2].strip()
             short = match[3].strip()
@@ -60,12 +63,12 @@ def solve_cizu():
                     break
 
 def solve_danzi():
-    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report/单字健康报告.txt')
+    file_path = paths.REPORT_DANZI
 
     short_space = {}
     with open(file_path, mode='r', encoding='utf-8') as f:
         for line in f:
-            match = re.search('可缩码："(.*)" (.*) -> (.*) \((.*)\)', line)
+            match = re.search(r'可缩码："(.*)" (.*) -> (.*) \((.*)\)', line)
             if match is None:
                 continue
             

@@ -81,6 +81,9 @@ class Ci:
             需要查找的拼音
         """
         result = 0
+        # NOTE: returns the max short-code rank across all of the word's pinyins.
+        # The `pinyins` argument is intentionally not used for filtering here; it is
+        # retained for call-site compatibility (see Commands.command_rank_word).
         for weight in self._pinyins:
             result = max(result, weight[2])
         return result
@@ -219,8 +222,6 @@ def reset():
     '''Discard all changes and reload'''
     global _db
     global _fixed
-    del _fixed
-    del _db
     _fixed = None
     _db = None
 

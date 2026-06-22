@@ -146,14 +146,11 @@ def fixed():
 def reset():
     '''Discard all changes and reload'''
     global _db
-    del _db
-
     global _fixed
-    del _fixed
 
     _db = {}
     _fixed = []
-    
+
     __load()
 
 def add(char, shape, pinyins, rank, comment = None):
@@ -207,9 +204,6 @@ def remove(char, pinyins):
 
 def commit():
     all_char = sorted(all(), key=lambda x: x._char)
-    zifile = open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n')
-
-    for zi in all_char:
-        zifile.write(zi.line()+'\n')
-    
-    zifile.close()
+    with open(os.path.join(_path, '通常.txt'), mode='w', encoding='utf-8', newline='\n') as zifile:
+        for zi in all_char:
+            zifile.write(zi.line()+'\n')

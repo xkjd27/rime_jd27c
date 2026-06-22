@@ -1,12 +1,12 @@
 from . import JDTools
+from . import paths
 import urllib.request
 import sys
 import os
 
 refuse_list = set()
 
-static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'CiDB')
-with open(os.path.join(static_path, "拒绝.txt"), mode='r', encoding='utf-8') as infile:
+with open(paths.REFUSE_FILE, mode='r', encoding='utf-8') as infile:
     for line in infile:
         refuse_list.add(line.strip())
 

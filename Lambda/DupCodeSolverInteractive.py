@@ -1,4 +1,5 @@
 from . import JDTools
+from . import paths
 import os
 import sys
 import re
@@ -20,9 +21,8 @@ readline.set_auto_history(True)
 
 
 # read report
-report_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Report')
 command = ""
-with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encoding='utf-8') as infile:
+with open(paths.REPORT_CIZU_DUP, mode='r', encoding='utf-8') as infile:
     for line in infile:
         if line.strip() == '---':
             break
@@ -56,11 +56,19 @@ with open(os.path.join(report_path, "词组重码报告.txt"), mode='r', encodin
             print(f"    #{idx}: {zh} ({priority})")
 
             possible_py: Set[str] = set(JDTools.find_word_pinyin_of_code(zh, code))
-            real_py: Set[str] = {' '.join(pinyin) for pinyin in JDTools.get_word(zh).pinyins()}
+            ci = JDTools.get_word(zh)
+            if ci is None:
+                print(f"        skipped: {zh} not found")
+                continue
+            real_py: Set[str] = {' '.join(pinyin) for pinyin in ci.pinyins()}
             pinyins: List[str] = list(possible_py.intersection(real_py))
             # e.g. ["pin yin"]
 
-            print(f"        working on pinyin {pinyins}[0]")
+            if len(pinyins) == 0:
+                print(f"        skipped: no matching pinyin for {zh}")
+                continue
+
+            print(f"        working on pinyin {pinyins[0]}")
             full_codes, avail_space, full_dup = JDTools.find_space_for_word(zh, pinyins[0])
             print("       ", full_codes, "w/ avail len", avail_space)
             dup_zh_pinyin.append((zh, pinyins, full_codes[0]))

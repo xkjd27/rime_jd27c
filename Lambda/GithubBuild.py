@@ -7,7 +7,7 @@ from git import Repo
 JDTools.commit()
 
 # GITHUB Repo
-repo_path = os.path.join(os.environ['GITHUB_WORKSPACE'])
+repo_path = os.environ['GITHUB_WORKSPACE']
 
 repo = Repo(repo_path).git
 
